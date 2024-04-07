@@ -1,8 +1,0 @@
-warning: overriding the module target triple with fpga64-xilinx-none [-Woverride-module]
-remark: <unknown>:0:0: array_partition dim=1 type=cyclic factor=16 variable=A.u3_29fixp 1 mm A.u3_29fixp 
-remark: <unknown>:0:0: Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'A.u3_29fixp' due to pipeline pragma
-remark: <unknown>:0:0: array_partition dim=1 type=cyclic factor=33 variable=B.u2_30fixp 1 mm B.u2_30fixp 
-remark: <unknown>:0:0: Inferring pragma 'array_partition type=cyclic factor=33 dim=1' for array 'B.u2_30fixp' due to pipeline pragma
-remark: <unknown>:0:0: Applying array_partition to 'B.u2_30fixp': Cyclic partitioning with factor 33 on dimension 1.
-remark: <unknown>:0:0: Applying array_partition to 'A.u3_29fixp': Cyclic partitioning with factor 16 on dimension 1.
-1 warning generated.

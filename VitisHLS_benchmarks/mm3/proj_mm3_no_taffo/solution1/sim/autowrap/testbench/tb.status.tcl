@@ -1,1 +1,0 @@
-set ::AESL_AUTOSIM::gTopFileName /home/bruno/Desktop/benchmarks/mm3/proj_mm3_no_taffo/solution1/./sim/autowrap/testbench/mm3_no_taffo.c_pre.c.tb.c

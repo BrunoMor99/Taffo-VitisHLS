@@ -1,7 +1,0 @@
-Running: xsim.dir/covariance/xsimk -simmode gui -wdb covariance.wdb -simrunnum 0 -socket 51419
-Design successfully loaded
-Design Loading Memory Usage: 30352 KB (Peak: 30352 KB)
-Design Loading CPU Usage: 30 ms
-Simulation completed
-Simulation Memory Usage: 121144 KB (Peak: 169620 KB)
-Simulation CPU Usage: 8690 ms

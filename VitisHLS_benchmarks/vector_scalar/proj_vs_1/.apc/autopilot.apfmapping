@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
-  <source>
-    <originFiles name="vs.c" path="/home/bruno/Desktop/benchmarks/vector_scalar/vs.c"/>
-  </source>
-  <testbench>
-    <originFiles name="vs.c" path="/home/bruno/Desktop/benchmarks/vector_scalar/vs.c"/>
-  </testbench>
-</autopilotfilemapping:AutoPilotFileMapping>

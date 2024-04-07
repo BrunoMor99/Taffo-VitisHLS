@@ -1,7 +1,0 @@
-Running: xsim.dir/atax/xsimk -simmode gui -wdb atax.wdb -simrunnum 0 -socket 55007
-Design successfully loaded
-Design Loading Memory Usage: 29244 KB (Peak: 29244 KB)
-Design Loading CPU Usage: 20 ms
-Simulation completed
-Simulation Memory Usage: 120148 KB (Peak: 168512 KB)
-Simulation CPU Usage: 690 ms

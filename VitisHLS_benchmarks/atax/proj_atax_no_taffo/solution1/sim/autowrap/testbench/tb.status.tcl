@@ -1,1 +1,0 @@
-set ::AESL_AUTOSIM::gTopFileName /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/./sim/autowrap/testbench/atax_no_taffo.c_pre.c.tb.c

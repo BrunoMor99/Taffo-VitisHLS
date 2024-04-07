@@ -1,1 +1,0 @@
-set ::AESL_AUTOSIM::gTopFileName /home/bruno/Desktop/benchmarks/gemm/proj_gemm_no_taffo/solution1/./sim/autowrap/testbench/gemm_no_taffoin2.c_pre.c.tb.c

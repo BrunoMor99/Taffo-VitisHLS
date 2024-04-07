@@ -1,1 +1,0 @@
-set ::AESL_AUTOSIM::gTopFileName /home/bruno/Desktop/benchmarks/doitgen/proj_doitgen/solution1/./sim/autowrap/testbench/doitgen_taffo.c_pre.c.tb.c

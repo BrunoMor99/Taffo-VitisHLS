@@ -1,5 +1,0 @@
-<pragmas>
-<pragma file="gemm_no_taffoin2.c" line="85" pragmaType="pipeline" parentfunction="mm" off="0" ii="1" rewind="0" style=""/>
-<pragma file="gemm_no_taffoin2.c" line="88" pragmaType="unroll" parentfunction="mm" factor="4" skip_exit_check="0"/>
-<pragma file="gemm_no_taffoin2.c" line="91" pragmaType="pipeline" parentfunction="mm" off="0" ii="1" rewind="0" style=""/>
-</pragmas>

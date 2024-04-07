@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
-  <source>
-    <originFiles name="doitgen_no_taffo.c" path="/home/bruno/Desktop/benchmarks/doitgen/doitgen_no_taffo.c"/>
-  </source>
-  <testbench>
-    <originFiles name="doitgen_no_taffo.c" path="/home/bruno/Desktop/benchmarks/doitgen/doitgen_no_taffo.c"/>
-  </testbench>
-</autopilotfilemapping:AutoPilotFileMapping>

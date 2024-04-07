@@ -1,2 +1,0 @@
-warning: overriding the module target triple with fpga64-xilinx-none [-Woverride-module]
-1 warning generated.

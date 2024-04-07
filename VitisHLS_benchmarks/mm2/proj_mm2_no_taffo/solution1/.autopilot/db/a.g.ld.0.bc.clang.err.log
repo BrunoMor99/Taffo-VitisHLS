@@ -1,9 +1,0 @@
-remark: mm2_no_taffo.c:58:23: Sequential read of length 16 has been inferred _XLX_SEP_ OldID=for.inc.load.6,  _XLX_SEP_ scevgepseq A gmem VITIS_LOOP_58_3 mm2_no_taffo.c:58:23 mm2 
-remark: mm2_no_taffo.c:60:46: Stride is incompatible _XLX_SEP_ for.inc.load.11 B gmem VITIS_LOOP_58_3 mm2_no_taffo.c:58:23 mm2 
-remark: mm2_no_taffo.c:58:23: Stride is incompatible _XLX_SEP_ scevgepseq A gmem VITIS_LOOP_55_2 mm2_no_taffo.c:55:22 mm2 
-remark: mm2_no_taffo.c:72:38: Stride is incompatible _XLX_SEP_ for.inc56.load.9 C gmem VITIS_LOOP_70_6 mm2_no_taffo.c:70:19 mm2 
-remark: mm2_no_taffo.c:69:13: Access is clobbered by store _XLX_SEP_ VITIS_LOOP_70_6.load.4 D gmem mm2 
-remark: mm2_no_taffo.c:69:13: Access is clobbered by store _XLX_SEP_ VITIS_LOOP_70_6.store.6 D gmem mm2 
-remark: mm2_no_taffo.c:72:21: Access is clobbered by store _XLX_SEP_ for.inc59.store.1 D gmem mm2 
-remark: mm2_no_taffo.c:58:23: Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 _XLX_SEP_ scevgepseq A gmem VITIS_LOOP_58_3 mm2_no_taffo.c:58:23 mm2 
-remark: mm2_no_taffo.c:58:23: Could not burst due to multiple potential reads to the same bundle in the same region. _XLX_SEP_ seq  gmem mm2 

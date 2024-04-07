@@ -1,1 +1,0 @@
-set ::AESL_AUTOSIM::gTopFileName /home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/./sim/autowrap/testbench/fw_taffo.c_pre.c.tb.c
