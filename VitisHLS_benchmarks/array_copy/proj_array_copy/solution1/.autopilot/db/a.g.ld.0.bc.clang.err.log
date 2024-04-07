@@ -1,0 +1,6 @@
+warning: overriding the module target triple with fpga64-xilinx-none [-Woverride-module]
+remark: <unknown>:0:0: Sequential write of length 16 has been inferred _XLX_SEP_ OldID=for.inc24.store.7,  _XLX_SEP_ yseq y gmem VITIS_LOOP_54_3  array_copy 
+remark: <unknown>:0:0: Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 _XLX_SEP_ yseq y gmem VITIS_LOOP_54_3  array_copy 
+remark: <unknown>:0:0: Multiple burst writes of length 16 and bit width 32 has been inferred. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. _XLX_SEP_ seq  gmem VITIS_LOOP_54_3  array_copy 
+remark: <unknown>:0:0: Multiple burst writes of length 16 and bit width 32 in loop 'VITIS_LOOP_54_3'() has been inferred on bundle 'gmem'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+1 warning generated.

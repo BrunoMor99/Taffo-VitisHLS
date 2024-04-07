@@ -1,0 +1,146 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part virtex7 
+INFO: [HLS 200-1611] Setting target device to 'xc7v585t-ffg1761-2'
+INFO: [HLS 200-1510] Running: create_clock -period 50MHz 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.05 seconds. CPU system time: 0.03 seconds. Elapsed time: 10.11 seconds; current allocated memory: 751.711 MB.
+INFO: [HLS 200-10] Analyzing design file 'mm2_taffo.c' ... 
+WARNING: [HLS 207-5292] unused parameter 'argc' (mm2_taffo.c:80:14)
+WARNING: [HLS 207-5292] unused parameter 'argv' (mm2_taffo.c:80:27)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.85 seconds. CPU system time: 0.71 seconds. Elapsed time: 2 seconds; current allocated memory: 753.035 MB.
+INFO: [HLS 200-1022] Running custom LLVM hook 'HLS_HOOKS::opt'
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+WARNING: [HLS 207-586] overriding the module target triple with fpga64-xilinx-none
+WARNING: [HLS 214-167] The program may have out of bound array access
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.96 seconds. CPU system time: 0.96 seconds. Elapsed time: 6.71 seconds; current allocated memory: 753.492 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 753.492 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.1 seconds; current allocated memory: 754.281 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 754.348 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_55_2' in function 'mm2' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_67_5' in function 'mm2' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_55_2' in function 'mm2' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_67_5' in function 'mm2' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_58_3' in function 'mm2' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_70_6' in function 'mm2' completely with a factor of 16.
+INFO: [XFORM 203-11] Balancing expressions in function 'mm2'...15 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.18 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.22 seconds; current allocated memory: 778.695 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_53_1' in function 'mm2'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_65_4' in function 'mm2'.
+INFO: [HLS 200-472] Inferring partial write operation for 'tmp' 
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.2 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.21 seconds; current allocated memory: 794.574 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'mm2' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mm2_Pipeline_VITIS_LOOP_53_1_VITIS_LOOP_55_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'tmp'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_53_1_VITIS_LOOP_55_2'.
+WARNING: [HLS 200-885] The II Violation in module 'mm2_Pipeline_VITIS_LOOP_53_1_VITIS_LOOP_55_2' (loop 'VITIS_LOOP_53_1_VITIS_LOOP_55_2'): Unable to schedule bus request operation ('gmem_load_3_req') on port 'gmem' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'mm2_Pipeline_VITIS_LOOP_53_1_VITIS_LOOP_55_2' (loop 'VITIS_LOOP_53_1_VITIS_LOOP_55_2'): Unable to schedule bus request operation ('gmem_load_5_req') on port 'gmem' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'mm2_Pipeline_VITIS_LOOP_53_1_VITIS_LOOP_55_2' (loop 'VITIS_LOOP_53_1_VITIS_LOOP_55_2'): Unable to schedule bus request operation ('gmem_load_7_req') on port 'gmem' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'mm2_Pipeline_VITIS_LOOP_53_1_VITIS_LOOP_55_2' (loop 'VITIS_LOOP_53_1_VITIS_LOOP_55_2'): Unable to schedule bus request operation ('gmem_load_9_req') on port 'gmem' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'mm2_Pipeline_VITIS_LOOP_53_1_VITIS_LOOP_55_2' (loop 'VITIS_LOOP_53_1_VITIS_LOOP_55_2'): Unable to schedule bus request operation ('gmem_load_8_req') on port 'gmem' due to limited memory ports (II = 19). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'mm2_Pipeline_VITIS_LOOP_53_1_VITIS_LOOP_55_2' (loop 'VITIS_LOOP_53_1_VITIS_LOOP_55_2'): Unable to schedule bus request operation ('gmem_load_24_req') on port 'gmem' due to limited memory ports (II = 27). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'mm2_Pipeline_VITIS_LOOP_53_1_VITIS_LOOP_55_2' (loop 'VITIS_LOOP_53_1_VITIS_LOOP_55_2'): Unable to schedule bus request operation ('gmem_load_32_req') on port 'gmem' due to limited memory ports (II = 31). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 32, Depth = 42, loop 'VITIS_LOOP_53_1_VITIS_LOOP_55_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.99 seconds. CPU system time: 0.06 seconds. Elapsed time: 1.07 seconds; current allocated memory: 796.129 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.43 seconds. CPU system time: 0 seconds. Elapsed time: 0.43 seconds; current allocated memory: 796.129 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mm2_Pipeline_VITIS_LOOP_65_4_VITIS_LOOP_67_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'tmp'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_65_4_VITIS_LOOP_67_5'.
+WARNING: [HLS 200-880] The II Violation in module 'mm2_Pipeline_VITIS_LOOP_65_4_VITIS_LOOP_67_5' (loop 'VITIS_LOOP_65_4_VITIS_LOOP_67_5'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'mm2_Pipeline_VITIS_LOOP_65_4_VITIS_LOOP_67_5' (loop 'VITIS_LOOP_65_4_VITIS_LOOP_67_5'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'mm2_Pipeline_VITIS_LOOP_65_4_VITIS_LOOP_67_5' (loop 'VITIS_LOOP_65_4_VITIS_LOOP_67_5'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'mm2_Pipeline_VITIS_LOOP_65_4_VITIS_LOOP_67_5' (loop 'VITIS_LOOP_65_4_VITIS_LOOP_67_5'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'mm2_Pipeline_VITIS_LOOP_65_4_VITIS_LOOP_67_5' (loop 'VITIS_LOOP_65_4_VITIS_LOOP_67_5'): Unable to enforce a carried dependence constraint (II = 19, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'mm2_Pipeline_VITIS_LOOP_65_4_VITIS_LOOP_67_5' (loop 'VITIS_LOOP_65_4_VITIS_LOOP_67_5'): Unable to enforce a carried dependence constraint (II = 27, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'mm2_Pipeline_VITIS_LOOP_65_4_VITIS_LOOP_67_5' (loop 'VITIS_LOOP_65_4_VITIS_LOOP_67_5'): Unable to enforce a carried dependence constraint (II = 29, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'mm2_Pipeline_VITIS_LOOP_65_4_VITIS_LOOP_67_5' (loop 'VITIS_LOOP_65_4_VITIS_LOOP_67_5'): Unable to enforce a carried dependence constraint (II = 30, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 31, Depth = 32, loop 'VITIS_LOOP_65_4_VITIS_LOOP_67_5'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.02 seconds; current allocated memory: 798.414 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.35 seconds. CPU system time: 0 seconds. Elapsed time: 0.35 seconds; current allocated memory: 798.414 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mm2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.47 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.47 seconds; current allocated memory: 798.414 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.29 seconds. CPU system time: 0 seconds. Elapsed time: 0.3 seconds; current allocated memory: 798.414 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mm2_Pipeline_VITIS_LOOP_53_1_VITIS_LOOP_55_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mm2_Pipeline_VITIS_LOOP_53_1_VITIS_LOOP_55_2' pipeline 'VITIS_LOOP_53_1_VITIS_LOOP_55_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32s_48_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mm2_Pipeline_VITIS_LOOP_53_1_VITIS_LOOP_55_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.85 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.89 seconds; current allocated memory: 801.531 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mm2_Pipeline_VITIS_LOOP_65_4_VITIS_LOOP_67_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mm2_Pipeline_VITIS_LOOP_65_4_VITIS_LOOP_67_5' pipeline 'VITIS_LOOP_65_4_VITIS_LOOP_67_5' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_48_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mm2_Pipeline_VITIS_LOOP_65_4_VITIS_LOOP_67_5'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.7 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.73 seconds; current allocated memory: 810.426 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mm2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm2/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm2/A' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm2/B' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm2/C' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm2/D' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm2/alpha' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm2/beta' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'mm2' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'A', 'B', 'C' and 'D' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fptoui_32ns_32_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mm2'.
+INFO: [RTMG 210-278] Implementing memory 'mm2_tmp_RAM_1WNR_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.06 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.1 seconds; current allocated memory: 816.297 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.59 seconds. CPU system time: 0.04 seconds. Elapsed time: 1.66 seconds; current allocated memory: 819.633 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.9 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.91 seconds; current allocated memory: 825.723 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for mm2.
+INFO: [VLOG 209-307] Generating Verilog RTL for mm2.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 68.49 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 15.91 seconds. CPU system time: 1.93 seconds. Elapsed time: 19.28 seconds; current allocated memory: 74.109 MB.
+INFO: [HLS 200-1510] Running: cosim_design 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO

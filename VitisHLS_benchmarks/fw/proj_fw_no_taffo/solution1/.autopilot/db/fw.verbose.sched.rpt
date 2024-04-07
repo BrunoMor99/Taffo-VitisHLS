@@ -1,0 +1,131 @@
+
+
+================================================================
+== Vitis HLS Report for 'fw'
+================================================================
+* Date:           Sun Jan 28 21:02:31 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        proj_fw_no_taffo
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtex7
+* Target device:  xc7v585t-ffg1761-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+-----------+------------+
+    |  Clock |  Target  | Estimated | Uncertainty|
+    +--------+----------+-----------+------------+
+    |ap_clk  |  20.00 ns|  14.516 ns|     5.40 ns|
+    +--------+----------+-----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-------+-------+---------+
+    |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline|
+    |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |
+    +---------+---------+----------+----------+-------+-------+---------+
+    |    20754|    20754|  0.415 ms|  0.415 ms|  20755|  20755|       no|
+    +---------+---------+----------+----------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%path = alloca i64 1" [fw_no_taffo.c:28]   --->   Operation 5 'alloca' 'path' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [2/2] (0.00ns)   --->   "%call_ln0 = call void @fw_Pipeline_VITIS_LOOP_30_1_VITIS_LOOP_31_2, i32 %path"   --->   Operation 6 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 7 [1/2] (0.00ns)   --->   "%call_ln0 = call void @fw_Pipeline_VITIS_LOOP_30_1_VITIS_LOOP_31_2, i32 %path"   --->   Operation 7 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 8 [2/2] (0.00ns)   --->   "%call_ln0 = call void @fw_Pipeline_VITIS_LOOP_38_3_VITIS_LOOP_39_4_VITIS_LOOP_40_5, i32 %path"   --->   Operation 8 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 9 [1/1] (0.00ns)   --->   "%spectopmodule_ln21 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty" [fw_no_taffo.c:21]   --->   Operation 9 'spectopmodule' 'spectopmodule_ln21' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 10 [1/2] (0.00ns)   --->   "%call_ln0 = call void @fw_Pipeline_VITIS_LOOP_38_3_VITIS_LOOP_39_4_VITIS_LOOP_40_5, i32 %path"   --->   Operation 10 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 11 [1/1] (0.00ns)   --->   "%ret_ln57 = ret" [fw_no_taffo.c:57]   --->   Operation 11 'ret' 'ret_ln57' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 20ns, clock uncertainty: 5.4ns.
+
+ <State 1>: 0ns
+The critical path consists of the following:
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,42 @@
+remark: syr2k_no_taffo.c:54:19: Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma
+remark: syr2k_no_taffo.c:21:0: Unrolling loop 'VITIS_LOOP_46_1' (syr2k_no_taffo.c:46:20) in function 'syr2k' partially with a factor of 4
+remark: syr2k_no_taffo.c:50:14: Access is clobbered by store _XLX_SEP_ for.inc.load.4 C gmem syr2k 
+remark: syr2k_no_taffo.c:50:14: Access is clobbered by load _XLX_SEP_ for.inc.store.6 C gmem syr2k 
+remark: syr2k_no_taffo.c:57:15: Stride is incompatible _XLX_SEP_ for.inc37.load.5 A gmem VITIS_LOOP_54_4 syr2k_no_taffo.c:54:19 syr2k 
+remark: syr2k_no_taffo.c:57:44: Stride is incompatible _XLX_SEP_ for.inc37.load.9 B gmem VITIS_LOOP_54_4 syr2k_no_taffo.c:54:19 syr2k 
+remark: syr2k_no_taffo.c:57:12: Access is clobbered by store _XLX_SEP_ for.inc37.load.15 C gmem syr2k 
+remark: syr2k_no_taffo.c:57:12: Access is clobbered by load _XLX_SEP_ for.inc37.store.17 C gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ VITIS_LOOP_54_4.load.7 B gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ VITIS_LOOP_54_4.load.8 A gmem syr2k 
+remark: syr2k_no_taffo.c:50:14: Access is clobbered by store _XLX_SEP_ for.inc.1.load.4 C gmem syr2k 
+remark: syr2k_no_taffo.c:50:14: Access is clobbered by load _XLX_SEP_ for.inc.1.store.6 C gmem syr2k 
+remark: syr2k_no_taffo.c:57:15: Stride is incompatible _XLX_SEP_ for.inc37.1.load.5 A gmem VITIS_LOOP_54_4 syr2k_no_taffo.c:54:19 syr2k 
+remark: syr2k_no_taffo.c:57:44: Stride is incompatible _XLX_SEP_ for.inc37.1.load.9 B gmem VITIS_LOOP_54_4 syr2k_no_taffo.c:54:19 syr2k 
+remark: syr2k_no_taffo.c:57:12: Access is clobbered by store _XLX_SEP_ for.inc37.1.load.15 C gmem syr2k 
+remark: syr2k_no_taffo.c:57:12: Access is clobbered by load _XLX_SEP_ for.inc37.1.store.17 C gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ VITIS_LOOP_54_4.1.load.7 B gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ VITIS_LOOP_54_4.1.load.8 A gmem syr2k 
+remark: syr2k_no_taffo.c:50:14: Access is clobbered by store _XLX_SEP_ for.inc.2.load.4 C gmem syr2k 
+remark: syr2k_no_taffo.c:50:14: Access is clobbered by load _XLX_SEP_ for.inc.2.store.6 C gmem syr2k 
+remark: syr2k_no_taffo.c:57:15: Stride is incompatible _XLX_SEP_ for.inc37.2.load.5 A gmem VITIS_LOOP_54_4 syr2k_no_taffo.c:54:19 syr2k 
+remark: syr2k_no_taffo.c:57:44: Stride is incompatible _XLX_SEP_ for.inc37.2.load.9 B gmem VITIS_LOOP_54_4 syr2k_no_taffo.c:54:19 syr2k 
+remark: syr2k_no_taffo.c:57:12: Access is clobbered by store _XLX_SEP_ for.inc37.2.load.15 C gmem syr2k 
+remark: syr2k_no_taffo.c:57:12: Access is clobbered by load _XLX_SEP_ for.inc37.2.store.17 C gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ VITIS_LOOP_54_4.2.load.7 B gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ VITIS_LOOP_54_4.2.load.8 A gmem syr2k 
+remark: syr2k_no_taffo.c:50:14: Access is clobbered by store _XLX_SEP_ for.inc.3.load.4 C gmem syr2k 
+remark: syr2k_no_taffo.c:50:14: Access is clobbered by load _XLX_SEP_ for.inc.3.store.6 C gmem syr2k 
+remark: syr2k_no_taffo.c:57:15: Stride is incompatible _XLX_SEP_ for.inc37.3.load.5 A gmem VITIS_LOOP_54_4 syr2k_no_taffo.c:54:19 syr2k 
+remark: syr2k_no_taffo.c:57:44: Stride is incompatible _XLX_SEP_ for.inc37.3.load.9 B gmem VITIS_LOOP_54_4 syr2k_no_taffo.c:54:19 syr2k 
+remark: syr2k_no_taffo.c:57:12: Access is clobbered by store _XLX_SEP_ for.inc37.3.load.15 C gmem syr2k 
+remark: syr2k_no_taffo.c:57:12: Access is clobbered by load _XLX_SEP_ for.inc37.3.store.17 C gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ VITIS_LOOP_54_4.3.load.7 B gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ VITIS_LOOP_54_4.3.load.8 A gmem syr2k 
+remark: syr2k_no_taffo.c:54:19: Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma
+remark: syr2k_no_taffo.c:54:19: Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma
+remark: syr2k_no_taffo.c:54:19: Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma
+remark: syr2k_no_taffo.c:54:19: Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma
+remark: syr2k_no_taffo.c:54:19: Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma
+remark: syr2k_no_taffo.c:54:19: Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma
+remark: syr2k_no_taffo.c:54:19: Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma
+remark: syr2k_no_taffo.c:54:19: Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="array_copy_taffo.c" path="/home/bruno/Desktop/benchmarks/array_copy/array_copy_taffo.c"/>
+  </source>
+  <testbench>
+    <originFiles name="array_copy_taffo.c" path="/home/bruno/Desktop/benchmarks/array_copy/array_copy_taffo.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

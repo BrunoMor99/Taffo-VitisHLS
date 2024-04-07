@@ -1,0 +1,51 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/bruno/Desktop/benchmarks/gemm_large/run_hls_matmult_no_taffo.tcl:77:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=mm" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm_no_taffoin2.c:82:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm_no_taffoin2.c:85:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=4" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm_no_taffoin2.c:88:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm_no_taffoin2.c:99:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="gemm_no_taffoin2.c:100:21" msg_body="Loop 'VITIS_LOOP_100_11' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_100_11"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="gemm_no_taffoin2.c:83:19" msg_body="Loop 'VITIS_LOOP_83_8' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_83_8"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="gemm_no_taffoin2.c:87:30" msg_body="Loop 'VITIS_LOOP_87_9' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_87_9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="gemm_no_taffoin2.c:44:0" msg_body="Unrolling loop 'VITIS_LOOP_100_11' (gemm_no_taffoin2.c:100:21) in function 'mm' completely with a factor of 16">
+        <args Factor="16" LoopLoc="gemm_no_taffoin2.c:100:21" LoopName="VITIS_LOOP_100_11"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="gemm_no_taffoin2.c:44:0" msg_body="Unrolling loop 'VITIS_LOOP_83_8' (gemm_no_taffoin2.c:83:19) in function 'mm' completely with a factor of 16">
+        <args Factor="16" LoopLoc="gemm_no_taffoin2.c:83:19" LoopName="VITIS_LOOP_83_8"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="gemm_no_taffoin2.c:44:0" msg_body="Unrolling loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' completely with a factor of 16">
+        <args Factor="16" LoopLoc="gemm_no_taffoin2.c:87:30" LoopName="VITIS_LOOP_87_9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="gemm_no_taffoin2.c:44:0" msg_body="Pipeline directive for loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' has been removed because the loop is unrolled completely">
+        <args LoopLoc="gemm_no_taffoin2.c:87:30" LoopName="VITIS_LOOP_87_9"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="gemm_no_taffoin2.c:82:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=8 dim=1' for array 'A' due to pipeline pragma">
+        <args Dim="1" Factor="8" Mode="cyclic" Name="A" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="gemm_no_taffoin2.c:0:1" msg_body="array_partition dim=1 type=cyclic factor=16 variable=D 1 mm gemm_no_taffoin2.c:52:11 gemm_no_taffoin2.c:82:9D">
+        <args PragmaFunction="mm" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=16 variable=D" PragmaSrcLoc="gemm_no_taffoin2.c:82:9" PragmaType="array_partition" VarName="D" varLoc="gemm_no_taffoin2.c:52:11"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="gemm_no_taffoin2.c:82:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'D' due to pipeline pragma">
+        <args Dim="1" Factor="16" Mode="cyclic" Name="D" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="gemm_no_taffoin2.c:52:11" msg_body="Applying array_partition to 'D': Cyclic partitioning with factor 16 on dimension 1.">
+        <args Dim="1" Factor="16" Mode="Cyclic" UOName="D"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

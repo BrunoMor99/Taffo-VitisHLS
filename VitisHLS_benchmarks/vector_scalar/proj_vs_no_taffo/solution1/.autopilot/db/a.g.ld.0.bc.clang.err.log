@@ -1,0 +1,2 @@
+remark: vs_no_taffo.c:39:0: Unrolling loop 'VITIS_LOOP_48_1' (vs_no_taffo.c:48:22) in function 'vs' completely with a factor of 64
+remark: vs_no_taffo.c:39:0: Applying array_partition to 'A': Complete partitioning on dimension 1.

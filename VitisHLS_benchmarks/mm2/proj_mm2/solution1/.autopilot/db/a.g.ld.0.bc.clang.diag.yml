@@ -1,0 +1,256 @@
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        mm2
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        mm2
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        mm2
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        mm2
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        mm2
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        mm2
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+Function:        mm2
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          for.inc.load.5
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep33seq
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_58_3
+  - String:          ' '
+  - LoopLoc:         ''
+  - String:          ' '
+  - Function:        mm2
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+Function:        mm2
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.load.13
+  - String:          ' '
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_58_3
+  - String:          ' '
+  - LoopLoc:         ''
+  - String:          ' '
+  - Function:        mm2
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+Function:        mm2
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep33seq
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_55_2
+  - String:          ' '
+  - LoopLoc:         ''
+  - String:          ' '
+  - Function:        mm2
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+Function:        mm2
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc66.load.9
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_70_6
+  - String:          ' '
+  - LoopLoc:         ''
+  - String:          ' '
+  - Function:        mm2
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        mm2
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_70_6.load.3
+  - String:          ' '
+  - ArrayName:       D
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        mm2
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        mm2
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_70_6.store.9
+  - String:          ' '
+  - ArrayName:       D
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        mm2
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        mm2
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc69.store.1
+  - String:          ' '
+  - ArrayName:       D
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        mm2
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+Function:        mm2
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i32
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep33seq
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_58_3
+  - String:          ' '
+  - LoopLoc:         ''
+  - String:          ' '
+  - Function:        mm2
+  - String:          ' '
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        mm2
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        mm2
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        mm2
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        mm2
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        mm2
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            BurstConflict
+Function:        mm2
+Args:            
+  - String:          'Could not burst due to multiple potential '
+  - Direction:       reads
+  - String:          ' to the same bundle in the same region.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        mm2
+  - String:          ' '
+...

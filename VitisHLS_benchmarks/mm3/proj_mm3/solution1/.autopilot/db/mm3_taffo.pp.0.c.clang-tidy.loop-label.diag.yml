@@ -1,0 +1,157 @@
+---
+MainSourceFile:  /home/bruno/Desktop/benchmarks/mm3/proj_mm3/solution1/.autopilot/db/mm3_taffo.pp.0.c
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_63_1:  '
+    FileOffset:      63
+    FilePath:        mm3_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/mm3/proj_mm3/solution1/.autopilot/db/mm3_taffo.pp.0.c
+        Offset:          95411
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_63_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_65_2:  '
+    FileOffset:      65
+    FilePath:        mm3_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/mm3/proj_mm3/solution1/.autopilot/db/mm3_taffo.pp.0.c
+        Offset:          95442
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_65_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_68_3:  '
+    FileOffset:      68
+    FilePath:        mm3_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/mm3/proj_mm3/solution1/.autopilot/db/mm3_taffo.pp.0.c
+        Offset:          95497
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_68_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_75_4:  '
+    FileOffset:      75
+    FilePath:        mm3_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/mm3/proj_mm3/solution1/.autopilot/db/mm3_taffo.pp.0.c
+        Offset:          95596
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_75_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_77_5:  '
+    FileOffset:      77
+    FilePath:        mm3_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/mm3/proj_mm3/solution1/.autopilot/db/mm3_taffo.pp.0.c
+        Offset:          95627
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_77_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_80_6:  '
+    FileOffset:      80
+    FilePath:        mm3_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/mm3/proj_mm3/solution1/.autopilot/db/mm3_taffo.pp.0.c
+        Offset:          95682
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_80_6: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_88_7:  '
+    FileOffset:      88
+    FilePath:        mm3_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/mm3/proj_mm3/solution1/.autopilot/db/mm3_taffo.pp.0.c
+        Offset:          95782
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_88_7: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_90_8:  '
+    FileOffset:      90
+    FilePath:        mm3_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/mm3/proj_mm3/solution1/.autopilot/db/mm3_taffo.pp.0.c
+        Offset:          95813
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_90_8: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_93_9:  '
+    FileOffset:      93
+    FilePath:        mm3_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/mm3/proj_mm3/solution1/.autopilot/db/mm3_taffo.pp.0.c
+        Offset:          95868
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_93_9: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_123_1:  '
+    FileOffset:      123
+    FilePath:        mm3_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/mm3/proj_mm3/solution1/.autopilot/db/mm3_taffo.pp.0.c
+        Offset:          96235
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_123_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_124_2:  '
+    FileOffset:      124
+    FilePath:        mm3_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/mm3/proj_mm3/solution1/.autopilot/db/mm3_taffo.pp.0.c
+        Offset:          96265
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_124_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_129_3:  '
+    FileOffset:      129
+    FilePath:        mm3_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/mm3/proj_mm3/solution1/.autopilot/db/mm3_taffo.pp.0.c
+        Offset:          96349
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_129_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_130_4:  '
+    FileOffset:      130
+    FilePath:        mm3_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/mm3/proj_mm3/solution1/.autopilot/db/mm3_taffo.pp.0.c
+        Offset:          96379
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_130_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_135_5:  '
+    FileOffset:      135
+    FilePath:        mm3_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/mm3/proj_mm3/solution1/.autopilot/db/mm3_taffo.pp.0.c
+        Offset:          96467
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_135_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_136_6:  '
+    FileOffset:      136
+    FilePath:        mm3_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/mm3/proj_mm3/solution1/.autopilot/db/mm3_taffo.pp.0.c
+        Offset:          96497
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_136_6: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_141_7:  '
+    FileOffset:      141
+    FilePath:        mm3_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/mm3/proj_mm3/solution1/.autopilot/db/mm3_taffo.pp.0.c
+        Offset:          96581
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_141_7: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_142_8:  '
+    FileOffset:      142
+    FilePath:        mm3_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/mm3/proj_mm3/solution1/.autopilot/db/mm3_taffo.pp.0.c
+        Offset:          96611
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_142_8: '
+...

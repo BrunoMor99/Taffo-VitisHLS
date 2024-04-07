@@ -1,0 +1,10 @@
+/home/bruno/Desktop/benchmarks/fw/run_hls_no_taffo.tcl:44:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=fw_XLX_SEP_ PragmaOptions=name=fw_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE TOP name=fw
+        ^
+fw_no_taffo.c:60:14: warning: unused parameter 'argc' [-Wunused-parameter]
+int main(int argc, char** argv)
+             ^
+fw_no_taffo.c:60:27: warning: unused parameter 'argv' [-Wunused-parameter]
+int main(int argc, char** argv)
+                          ^
+3 warnings generated.

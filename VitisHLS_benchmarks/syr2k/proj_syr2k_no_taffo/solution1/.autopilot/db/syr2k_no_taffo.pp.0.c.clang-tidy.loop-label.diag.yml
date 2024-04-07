@@ -1,0 +1,76 @@
+---
+MainSourceFile:  /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k_no_taffo/solution1/.autopilot/db/syr2k_no_taffo.pp.0.c
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_46_1:  '
+    FileOffset:      46
+    FilePath:        syr2k_no_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k_no_taffo/solution1/.autopilot/db/syr2k_no_taffo.pp.0.c
+        Offset:          94741
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_46_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_48_2:  '
+    FileOffset:      48
+    FilePath:        syr2k_no_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k_no_taffo/solution1/.autopilot/db/syr2k_no_taffo.pp.0.c
+        Offset:          94797
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_48_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_52_3:  '
+    FileOffset:      52
+    FilePath:        syr2k_no_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k_no_taffo/solution1/.autopilot/db/syr2k_no_taffo.pp.0.c
+        Offset:          94882
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_52_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_54_4:  '
+    FileOffset:      54
+    FilePath:        syr2k_no_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k_no_taffo/solution1/.autopilot/db/syr2k_no_taffo.pp.0.c
+        Offset:          94935
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_54_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_82_1:  '
+    FileOffset:      82
+    FilePath:        syr2k_no_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k_no_taffo/solution1/.autopilot/db/syr2k_no_taffo.pp.0.c
+        Offset:          95284
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_82_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_83_2:  '
+    FileOffset:      83
+    FilePath:        syr2k_no_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k_no_taffo/solution1/.autopilot/db/syr2k_no_taffo.pp.0.c
+        Offset:          95313
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_83_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_88_3:  '
+    FileOffset:      88
+    FilePath:        syr2k_no_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k_no_taffo/solution1/.autopilot/db/syr2k_no_taffo.pp.0.c
+        Offset:          95426
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_88_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_89_4:  '
+    FileOffset:      89
+    FilePath:        syr2k_no_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k_no_taffo/solution1/.autopilot/db/syr2k_no_taffo.pp.0.c
+        Offset:          95454
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_89_4: '
+...

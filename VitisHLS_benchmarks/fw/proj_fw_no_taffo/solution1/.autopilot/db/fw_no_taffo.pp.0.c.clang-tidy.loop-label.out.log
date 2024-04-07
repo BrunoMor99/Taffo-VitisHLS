@@ -1,0 +1,30 @@
+/home/bruno/Desktop/benchmarks/fw/proj_fw_no_taffo/solution1/.autopilot/db/fw_no_taffo.pp.0.c:3303:3: warning: Added loop label VITIS_LOOP_30_1:   [xilinx-label-all-loops]
+  for (i = 0; i < n; i++){
+  ^~~
+  VITIS_LOOP_30_1: 
+/home/bruno/Desktop/benchmarks/fw/proj_fw_no_taffo/solution1/.autopilot/db/fw_no_taffo.pp.0.c:3303:3: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/fw/proj_fw_no_taffo/solution1/.autopilot/db/fw_no_taffo.pp.0.c:3304:5: warning: Added loop label VITIS_LOOP_31_2:   [xilinx-label-all-loops]
+    for (j = 0; j < n; j++) {
+    ^~~
+    VITIS_LOOP_31_2: 
+/home/bruno/Desktop/benchmarks/fw/proj_fw_no_taffo/solution1/.autopilot/db/fw_no_taffo.pp.0.c:3304:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/fw/proj_fw_no_taffo/solution1/.autopilot/db/fw_no_taffo.pp.0.c:3311:3: warning: Added loop label VITIS_LOOP_38_3:   [xilinx-label-all-loops]
+  for (k = 0; k < 16; k++){
+  ^~~
+  VITIS_LOOP_38_3: 
+/home/bruno/Desktop/benchmarks/fw/proj_fw_no_taffo/solution1/.autopilot/db/fw_no_taffo.pp.0.c:3311:3: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/fw/proj_fw_no_taffo/solution1/.autopilot/db/fw_no_taffo.pp.0.c:3312:7: warning: Added loop label VITIS_LOOP_39_4:   [xilinx-label-all-loops]
+      for(i = 0; i < 16; i++){
+      ^~~
+      VITIS_LOOP_39_4: 
+/home/bruno/Desktop/benchmarks/fw/proj_fw_no_taffo/solution1/.autopilot/db/fw_no_taffo.pp.0.c:3312:7: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/fw/proj_fw_no_taffo/solution1/.autopilot/db/fw_no_taffo.pp.0.c:3313:9: warning: Added loop label VITIS_LOOP_40_5:   [xilinx-label-all-loops]
+        for (j = 0; j < 16; j++) {
+        ^~~
+        VITIS_LOOP_40_5: 
+/home/bruno/Desktop/benchmarks/fw/proj_fw_no_taffo/solution1/.autopilot/db/fw_no_taffo.pp.0.c:3313:9: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/fw/proj_fw_no_taffo/solution1/.autopilot/db/fw_no_taffo.pp.0.c:3326:3: warning: Added loop label VITIS_LOOP_53_6:   [xilinx-label-all-loops]
+  for (i = 0; i < 16*16; i++){
+  ^~~
+  VITIS_LOOP_53_6: 
+/home/bruno/Desktop/benchmarks/fw/proj_fw_no_taffo/solution1/.autopilot/db/fw_no_taffo.pp.0.c:3326:3: note: FIX-IT applied suggested code changes

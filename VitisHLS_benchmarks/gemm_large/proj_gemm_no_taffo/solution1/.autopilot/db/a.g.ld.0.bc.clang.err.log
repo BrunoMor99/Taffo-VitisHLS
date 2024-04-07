@@ -1,0 +1,43 @@
+remark: gemm_no_taffoin2.c:100:21: Loop 'VITIS_LOOP_100_11' is marked as complete unroll implied by the pipeline pragma
+remark: gemm_no_taffoin2.c:83:19: Loop 'VITIS_LOOP_83_8' is marked as complete unroll implied by the pipeline pragma
+remark: gemm_no_taffoin2.c:87:30: Loop 'VITIS_LOOP_87_9' is marked as complete unroll implied by the pipeline pragma
+remark: gemm_no_taffoin2.c:44:0: Unrolling loop 'VITIS_LOOP_100_11' (gemm_no_taffoin2.c:100:21) in function 'mm' completely with a factor of 16
+remark: gemm_no_taffoin2.c:44:0: Unrolling loop 'VITIS_LOOP_83_8' (gemm_no_taffoin2.c:83:19) in function 'mm' completely with a factor of 16
+remark: gemm_no_taffoin2.c:44:0: Unrolling loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' completely with a factor of 16
+remark: gemm_no_taffoin2.c:44:0: Pipeline directive for loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' has been removed because the loop is unrolled completely
+remark: gemm_no_taffoin2.c:44:0: Unrolling loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' completely with a factor of 16
+remark: gemm_no_taffoin2.c:44:0: Pipeline directive for loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' has been removed because the loop is unrolled completely
+remark: gemm_no_taffoin2.c:44:0: Unrolling loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' completely with a factor of 16
+remark: gemm_no_taffoin2.c:44:0: Pipeline directive for loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' has been removed because the loop is unrolled completely
+remark: gemm_no_taffoin2.c:44:0: Unrolling loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' completely with a factor of 16
+remark: gemm_no_taffoin2.c:44:0: Pipeline directive for loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' has been removed because the loop is unrolled completely
+remark: gemm_no_taffoin2.c:44:0: Unrolling loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' completely with a factor of 16
+remark: gemm_no_taffoin2.c:44:0: Pipeline directive for loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' has been removed because the loop is unrolled completely
+remark: gemm_no_taffoin2.c:44:0: Unrolling loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' completely with a factor of 16
+remark: gemm_no_taffoin2.c:44:0: Pipeline directive for loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' has been removed because the loop is unrolled completely
+remark: gemm_no_taffoin2.c:44:0: Unrolling loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' completely with a factor of 16
+remark: gemm_no_taffoin2.c:44:0: Pipeline directive for loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' has been removed because the loop is unrolled completely
+remark: gemm_no_taffoin2.c:44:0: Unrolling loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' completely with a factor of 16
+remark: gemm_no_taffoin2.c:44:0: Pipeline directive for loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' has been removed because the loop is unrolled completely
+remark: gemm_no_taffoin2.c:44:0: Unrolling loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' completely with a factor of 16
+remark: gemm_no_taffoin2.c:44:0: Pipeline directive for loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' has been removed because the loop is unrolled completely
+remark: gemm_no_taffoin2.c:44:0: Unrolling loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' completely with a factor of 16
+remark: gemm_no_taffoin2.c:44:0: Pipeline directive for loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' has been removed because the loop is unrolled completely
+remark: gemm_no_taffoin2.c:44:0: Unrolling loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' completely with a factor of 16
+remark: gemm_no_taffoin2.c:44:0: Pipeline directive for loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' has been removed because the loop is unrolled completely
+remark: gemm_no_taffoin2.c:44:0: Unrolling loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' completely with a factor of 16
+remark: gemm_no_taffoin2.c:44:0: Pipeline directive for loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' has been removed because the loop is unrolled completely
+remark: gemm_no_taffoin2.c:44:0: Unrolling loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' completely with a factor of 16
+remark: gemm_no_taffoin2.c:44:0: Pipeline directive for loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' has been removed because the loop is unrolled completely
+remark: gemm_no_taffoin2.c:44:0: Unrolling loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' completely with a factor of 16
+remark: gemm_no_taffoin2.c:44:0: Pipeline directive for loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' has been removed because the loop is unrolled completely
+remark: gemm_no_taffoin2.c:44:0: Unrolling loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' completely with a factor of 16
+remark: gemm_no_taffoin2.c:44:0: Pipeline directive for loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' has been removed because the loop is unrolled completely
+remark: gemm_no_taffoin2.c:44:0: Unrolling loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' completely with a factor of 16
+remark: gemm_no_taffoin2.c:44:0: Pipeline directive for loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' has been removed because the loop is unrolled completely
+remark: <unknown>:0:0: array_partition dim=1 type=cyclic factor=8 variable=A 1 mm gemm_no_taffoin2.c:82:9A 
+remark: gemm_no_taffoin2.c:82:9: Inferring pragma 'array_partition type=cyclic factor=8 dim=1' for array 'A' due to pipeline pragma
+remark: gemm_no_taffoin2.c:0:1: array_partition dim=1 type=cyclic factor=16 variable=D 1 mm gemm_no_taffoin2.c:52:11 gemm_no_taffoin2.c:82:9D 
+remark: gemm_no_taffoin2.c:82:9: Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'D' due to pipeline pragma
+remark: <unknown>:0:0: Applying array_partition to 'A': Cyclic partitioning with factor 8 on dimension 1.
+remark: gemm_no_taffoin2.c:52:11: Applying array_partition to 'D': Cyclic partitioning with factor 16 on dimension 1.

@@ -1,0 +1,13 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../../../mm2_no_taffo.c in debug mode
+INFO: [HLS 200-10] Running '/home/bruno/Documents/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'bruno' on host 'bruno-ubuntu' (Linux_x86_64 version 5.15.0-97-generic) on Sat Mar 09 22:24:26 CET 2024
+INFO: [HLS 200-10] On os Ubuntu 22.04.3 LTS
+INFO: [HLS 200-10] In directory '/home/bruno/Desktop/benchmarks/mm2/proj_mm2_no_taffo/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_bruno/150281710019466437771
+INFO: [APCC 202-1] APCC is done.
+INFO: [HLS 200-112] Total CPU user time: 2.77 seconds. Total CPU system time: 0.22 seconds. Total elapsed time: 2.78 seconds; peak allocated memory: 99.055 MB.
+   Generating csim.exe
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

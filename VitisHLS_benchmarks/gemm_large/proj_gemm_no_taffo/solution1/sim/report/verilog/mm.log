@@ -1,0 +1,41 @@
+INFO: [COSIM-47] Using XSIM for RTL simulation.
+INFO: [COSIM-14] Instrumenting C test bench ...
+   Build using "/home/bruno/Documents/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/bin/g++"
+   Compiling apatb_mm.cpp
+   Compiling (apcc) gemm_no_taffoin2.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/home/bruno/Documents/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'bruno' on host 'bruno-ubuntu' (Linux_x86_64 version 5.15.0-100-generic) on Mon Mar 11 09:38:44 CET 2024
+INFO: [HLS 200-10] On os Ubuntu 22.04.3 LTS
+INFO: [HLS 200-10] In directory '/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+/home/bruno/Desktop/benchmarks/gemm_large/gemm_no_taffoin2.c:55:14: error: redefinition of 'i'
+    for (int i = 0; i < ni; i++){
+             ^
+/home/bruno/Desktop/benchmarks/gemm_large/gemm_no_taffoin2.c:53:9: note: previous definition is here
+    int i, j, k;
+        ^
+/home/bruno/Desktop/benchmarks/gemm_large/gemm_no_taffoin2.c:60:14: error: redefinition of 'i'
+    for (int i = 0; i < nk; i++){
+             ^
+/home/bruno/Desktop/benchmarks/gemm_large/gemm_no_taffoin2.c:53:9: note: previous definition is here
+    int i, j, k;
+        ^
+/home/bruno/Desktop/benchmarks/gemm_large/gemm_no_taffoin2.c:65:14: error: redefinition of 'i'
+    for (int i = 0; i < ni; i++){
+             ^
+/home/bruno/Desktop/benchmarks/gemm_large/gemm_no_taffoin2.c:53:9: note: previous definition is here
+    int i, j, k;
+        ^
+3 errors generated.
+ERROR: [APCC 202-10] clang compile failed: child process exited abnormally
+ERROR: [APCC 202-1] ProcessSources failed
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_bruno/111141710146324973900
+ERROR: [APCC 202-1] APCC failed.
+INFO: [HLS 200-112] Total CPU user time: 0.89 seconds. Total CPU system time: 0.14 seconds. Total elapsed time: 0.87 seconds; peak allocated memory: 99.055 MB.
+ERROR: [COSIM-317] C++ compile error.
+ERROR: [COSIM-321] EXE file generate failed.
+ERROR: [COSIM-321] EXE file generate failed.
+ERROR: [COSIM-331] Aborting co-simulation: C simulation failed, compilation errors.
+ERROR: [COSIM-5] *** C/RTL co-simulation file generation failed. ***
+ERROR: [COSIM-4] *** C/RTL co-simulation finished: FAIL ***

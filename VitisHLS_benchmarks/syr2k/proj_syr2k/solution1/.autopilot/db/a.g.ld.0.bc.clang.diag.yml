@@ -1,0 +1,778 @@
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+Function:        syr2k
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaPartiallyUnroll
+Function:        syr2k
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_46_1
+  - String:          ''' ('
+  - LoopLoc:         ''
+  - String:          ') '
+  - String:          'in function '''
+  - String:          syr2k
+  - String:          ''' partially '
+  - String:          ''
+  - String:          'with a factor of '
+  - Factor:          '4'
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        syr2k
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        syr2k
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        syr2k
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        syr2k
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        syr2k
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        syr2k
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        syr2k
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        syr2k
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.load.3
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.store.9
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+Function:        syr2k
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc45.load.4
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ' '
+  - LoopLoc:         ''
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+Function:        syr2k
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc45.load.14
+  - String:          ' '
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ' '
+  - LoopLoc:         ''
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc45.load.26
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc45.store.30
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_54_4.load.4
+  - String:          ' '
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_54_4.load.6
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.1.load.3
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.1.store.9
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+Function:        syr2k
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc45.1.load.4
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ' '
+  - LoopLoc:         ''
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+Function:        syr2k
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc45.1.load.14
+  - String:          ' '
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ' '
+  - LoopLoc:         ''
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc45.1.load.26
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc45.1.store.30
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_54_4.1.load.4
+  - String:          ' '
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_54_4.1.load.6
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.2.load.3
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.2.store.9
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+Function:        syr2k
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc45.2.load.4
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ' '
+  - LoopLoc:         ''
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+Function:        syr2k
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc45.2.load.14
+  - String:          ' '
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ' '
+  - LoopLoc:         ''
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc45.2.load.26
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc45.2.store.30
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_54_4.2.load.4
+  - String:          ' '
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_54_4.2.load.6
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.3.load.3
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.3.store.9
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+Function:        syr2k
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc45.3.load.4
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ' '
+  - LoopLoc:         ''
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+Function:        syr2k
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc45.3.load.14
+  - String:          ' '
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ' '
+  - LoopLoc:         ''
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc45.3.load.26
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc45.3.store.30
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_54_4.3.load.4
+  - String:          ' '
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_54_4.3.load.6
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+  - String:          ' '
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        syr2k
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        syr2k
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        syr2k
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        syr2k
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        syr2k
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        syr2k
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        syr2k
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        syr2k
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+Function:        syr2k
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+Function:        syr2k
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+Function:        syr2k
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+Function:        syr2k
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+Function:        syr2k
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+Function:        syr2k
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+Function:        syr2k
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+Function:        syr2k
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...

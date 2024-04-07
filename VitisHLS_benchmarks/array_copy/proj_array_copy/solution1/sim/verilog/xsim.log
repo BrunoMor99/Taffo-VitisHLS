@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# xsim v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sun Feb 18 18:06:54 2024
+# Process ID: 24283
+# Current directory: /home/bruno/Desktop/benchmarks/array_copy/proj_array_copy/solution1/sim/verilog
+# Command line: xsim -mode tcl -source {xsim.dir/array_copy/xsim_script.tcl}
+# Log file: /home/bruno/Desktop/benchmarks/array_copy/proj_array_copy/solution1/sim/verilog/xsim.log
+# Journal file: /home/bruno/Desktop/benchmarks/array_copy/proj_array_copy/solution1/sim/verilog/xsim.jou
+# Running On: bruno-ubuntu, OS: Linux, CPU Frequency: 2600.000 MHz, CPU Physical cores: 2, Host memory: 8200 MB
+#-----------------------------------------------------------
+source xsim.dir/array_copy/xsim_script.tcl
+# xsim {array_copy} -autoloadwcfg -tclbatch {array_copy.tcl}
+Time resolution is 1 ps
+source array_copy.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [0.00%] @ "150000"
+// RTL Simulation : 1 / 1 [100.00%] @ "2250000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 2370 ns : File "/home/bruno/Desktop/benchmarks/array_copy/proj_array_copy/solution1/sim/verilog/array_copy.autotb.v" Line 539
+## quit
+INFO: [Common 17-206] Exiting xsim at Sun Feb 18 18:06:59 2024...

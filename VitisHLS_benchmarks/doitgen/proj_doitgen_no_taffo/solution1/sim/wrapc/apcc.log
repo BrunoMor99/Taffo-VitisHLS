@@ -1,0 +1,9 @@
+INFO: [HLS 200-10] Running '/home/bruno/Documents/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'bruno' on host 'bruno-ubuntu' (Linux_x86_64 version 5.15.0-97-generic) on Sat Feb 24 13:26:17 CET 2024
+INFO: [HLS 200-10] On os Ubuntu 22.04.3 LTS
+INFO: [HLS 200-10] In directory '/home/bruno/Desktop/benchmarks/doitgen/proj_doitgen_no_taffo/solution1/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_bruno/44321708777577775235
+INFO: [APCC 202-1] APCC is done.
+INFO: [HLS 200-112] Total CPU user time: 2.55 seconds. Total CPU system time: 0.23 seconds. Total elapsed time: 2.69 seconds; peak allocated memory: 99.070 MB.

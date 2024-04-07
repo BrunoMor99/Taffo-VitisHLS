@@ -1,0 +1,24 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="mm2_taffo.c:80:14" msg_body="unused parameter 'argc'">
+        <args ClangWarningOption="unused-parameter"/>
+    </msg>
+    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="mm2_taffo.c:80:27" msg_body="unused parameter 'argv'">
+        <args ClangWarningOption="unused-parameter"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/bruno/Desktop/benchmarks/mm2/run_hls_1.tcl:55:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mm2" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=mm2" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mm2_taffo.c:25:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm2" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port = A depth = 16*16" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mm2_taffo.c:26:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm2" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port = B depth = 16*16" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mm2_taffo.c:27:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm2" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port = C depth = 16*16" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mm2_taffo.c:28:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm2" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port = D depth = 16*16" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

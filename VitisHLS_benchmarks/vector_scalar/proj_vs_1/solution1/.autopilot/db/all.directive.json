@@ -1,0 +1,18 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [{
+          "functionName": "vs",
+          "label": "",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "\/home\/bruno\/Desktop\/benchmarks\/vector_scalar\/run_hls_1.tcl",
+          "sourceLine": "77",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "vs"
+              }]
+          }
+        }]
+    }]}

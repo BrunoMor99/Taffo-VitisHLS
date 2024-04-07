@@ -1,0 +1,363 @@
+INFO: [COSIM-47] Using XSIM for RTL simulation.
+INFO: [COSIM-14] Instrumenting C test bench ...
+   Build using "/home/bruno/Documents/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/bin/g++"
+   Compiling apatb_fw.cpp
+   Compiling (apcc) fw_taffo.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/home/bruno/Documents/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'bruno' on host 'bruno-ubuntu' (Linux_x86_64 version 5.15.0-92-generic) on Sun Jan 28 20:57:33 CET 2024
+INFO: [HLS 200-10] On os Ubuntu 22.04.3 LTS
+INFO: [HLS 200-10] In directory '/home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_bruno/145421706471853186926
+INFO: [APCC 202-1] APCC is done.
+INFO: [HLS 200-112] Total CPU user time: 2.71 seconds. Total CPU system time: 0.23 seconds. Total elapsed time: 2.68 seconds; peak allocated memory: 99.055 MB.
+   Compiling apatb_fw_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM-302] Starting C TB testing ... 
+INFO: [COSIM-333] Generating C post check test bench ...
+INFO: [COSIM-12] Generating RTL test bench ...
+INFO: [COSIM-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM-323] Starting verilog simulation. 
+INFO: [COSIM-15] Starting XSIM ...
+INFO: [COSIM-316] Starting C post checking ...
+2.000000 
+1.000000 
+1.000000 
+1.000000 
+1.000000 
+1.000000 
+1.000000 
+2.000000 
+1.000000 
+1.000000 
+1.000000 
+3.000000 
+1.000000 
+3.000000 
+2.000000 
+1.000000 
+1.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+1.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+1.000000 
+2.000000 
+1.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+1.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+1.000000 
+2.000000 
+1.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+1.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+1.000000 
+2.000000 
+1.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+3.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+1.000000 
+2.000000 
+1.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+1.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+1.000000 
+2.000000 
+1.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+3.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+1.000000 
+2.000000 
+2.000000 
+1.000000 
+1.000000 
+1.000000 
+3.000000 
+1.000000 
+3.000000 
+2.000000 
+1.000000 
+1.000000 
+1.000000 
+1.000000 
+1.000000 
+1.000000 
+2.000000 
+3.000000 
+1.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+1.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+3.000000 
+2.000000 
+1.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+1.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+1.000000 
+2.000000 
+1.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+1.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+1.000000 
+2.000000 
+3.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+1.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+1.000000 
+2.000000 
+1.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+1.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+3.000000 
+2.000000 
+3.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+1.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+1.000000 
+2.000000 
+2.000000 
+1.000000 
+1.000000 
+1.000000 
+1.000000 
+1.000000 
+1.000000 
+2.000000 
+3.000000 
+1.000000 
+1.000000 
+1.000000 
+3.000000 
+1.000000 
+2.000000 
+1.000000 
+1.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+3.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+2.000000 
+1.000000 
+2.000000 
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/bruno/Documents/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_fw_top glbl -Oenable_linking_all_libraries -prj fw.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_20 -L floating_point_v7_1_15 --lib ieee_proposed=./ieee_proposed -s fw 
+Multi-threading is on. Using 2 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/sim/verilog/fw_fw_Pipeline_VITIS_LOOP_30_1_VITIS_LOOP_31_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fw_fw_Pipeline_VITIS_LOOP_30_1_VITIS_LOOP_31_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/sim/verilog/fw_urem_5ns_4ns_3_9_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fw_urem_5ns_4ns_3_9_1_divider
+INFO: [VRFC 10-311] analyzing module fw_urem_5ns_4ns_3_9_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/sim/verilog/fw_fw_Pipeline_VITIS_LOOP_38_3_VITIS_LOOP_39_4_VITIS_LOOP_40_5.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fw_fw_Pipeline_VITIS_LOOP_38_3_VITIS_LOOP_39_4_VITIS_LOOP_40_5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/sim/verilog/fw_path_s12_20fixp_RAM_1WNR_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fw_path_s12_20fixp_RAM_1WNR_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/sim/verilog/fw.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_fw_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/sim/verilog/fw_mul_5ns_5ns_8_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fw_mul_5ns_5ns_8_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/sim/verilog/fw_urem_8ns_4ns_3_12_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fw_urem_8ns_4ns_3_12_1_divider
+INFO: [VRFC 10-311] analyzing module fw_urem_8ns_4ns_3_12_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/sim/verilog/fw_urem_5ns_5ns_4_9_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fw_urem_5ns_5ns_4_9_1_divider
+INFO: [VRFC 10-311] analyzing module fw_urem_5ns_5ns_4_9_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/sim/verilog/fw.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fw
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/sim/verilog/fw_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fw_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.fw_path_s12_20fixp_RAM_1WNR_AUTO...
+Compiling module xil_defaultlib.fw_mul_5ns_5ns_8_1_1(NUM_STAGE=1...
+Compiling module xil_defaultlib.fw_urem_8ns_4ns_3_12_1_divider(i...
+Compiling module xil_defaultlib.fw_urem_8ns_4ns_3_12_1(NUM_STAGE...
+Compiling module xil_defaultlib.fw_urem_5ns_5ns_4_9_1_divider(in...
+Compiling module xil_defaultlib.fw_urem_5ns_5ns_4_9_1(NUM_STAGE=...
+Compiling module xil_defaultlib.fw_urem_5ns_4ns_3_9_1_divider(in...
+Compiling module xil_defaultlib.fw_urem_5ns_4ns_3_9_1(NUM_STAGE=...
+Compiling module xil_defaultlib.fw_flow_control_loop_pipe_sequen...
+Compiling module xil_defaultlib.fw_fw_Pipeline_VITIS_LOOP_30_1_V...
+Compiling module xil_defaultlib.fw_fw_Pipeline_VITIS_LOOP_38_3_V...
+Compiling module xil_defaultlib.fw
+Compiling module xil_defaultlib.nodf_module_intf
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=3)
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_fw_top
+Compiling module work.glbl
+Built simulation snapshot fw
+
+****** xsim v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/fw/xsim_script.tcl
+# xsim {fw} -autoloadwcfg -tclbatch {fw.tcl}
+Time resolution is 1 ps
+source fw.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [0.00%] @ "150000"
+// RTL Simulation : 1 / 1 [100.00%] @ "251330000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 251450 ns : File "/home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/sim/verilog/fw.autotb.v" Line 160
+## quit
+INFO: [Common 17-206] Exiting xsim at Sun Jan 28 20:57:52 2024...
+INFO: [COSIM-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.

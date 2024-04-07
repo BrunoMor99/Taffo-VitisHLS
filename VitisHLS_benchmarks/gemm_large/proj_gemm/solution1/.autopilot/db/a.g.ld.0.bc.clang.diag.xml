@@ -1,0 +1,17 @@
+<dict>
+  <key>main-file</key>
+  <string>/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm/solution1/.autopilot/db/a.g.ld.6.user.bc</string>
+  <key>diagnostics</key>
+  <array>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>message</key>
+      <string>overriding the module target triple with fpga64-xilinx-none</string>
+      <key>ID</key>
+      <integer>586</integer>
+      <key>WarningOption</key>
+      <string>override-module</string>
+    </dict>
+  </array>
+</dict>

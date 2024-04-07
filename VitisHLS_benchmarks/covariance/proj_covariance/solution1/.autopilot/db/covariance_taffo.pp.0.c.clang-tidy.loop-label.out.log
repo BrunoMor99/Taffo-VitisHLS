@@ -1,0 +1,60 @@
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:927:4: warning: Added loop label VITIS_LOOP_41_1:   [xilinx-label-all-loops]
+   for (j = 0; j < 16; j++)
+   ^~~
+   VITIS_LOOP_41_1: 
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:927:4: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:930:7: warning: Added loop label VITIS_LOOP_44_2:   [xilinx-label-all-loops]
+      for (i = 0; i < 16; i++){
+      ^~~
+      VITIS_LOOP_44_2: 
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:930:7: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:937:3: warning: Added loop label VITIS_LOOP_51_3:   [xilinx-label-all-loops]
+  for (i = 0; i < 16; i++){
+  ^~~
+  VITIS_LOOP_51_3: 
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:937:3: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:939:5: warning: Added loop label VITIS_LOOP_53_4:   [xilinx-label-all-loops]
+    for (j = 0; j < 16; j++){
+    ^~~
+    VITIS_LOOP_53_4: 
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:939:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:944:3: warning: Added loop label VITIS_LOOP_58_5:   [xilinx-label-all-loops]
+  for (i = 0; i < 16; i++){
+  ^~~
+  VITIS_LOOP_58_5: 
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:944:3: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:946:5: warning: Added loop label VITIS_LOOP_60_6:   [xilinx-label-all-loops]
+    for (j = i; j < 16; j++)
+    ^~~
+    VITIS_LOOP_60_6: 
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:946:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:949:9: warning: Added loop label VITIS_LOOP_63_7:   [xilinx-label-all-loops]
+        for (k = 0; k < 16; k++){
+        ^~~
+        VITIS_LOOP_63_7: 
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:949:9: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:970:5: warning: Added loop label VITIS_LOOP_84_1:   [xilinx-label-all-loops]
+    for (i = 0; i < n; i++){
+    ^~~
+    VITIS_LOOP_84_1: 
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:970:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:971:9: warning: Added loop label VITIS_LOOP_85_2:   [xilinx-label-all-loops]
+        for (j = 0; j < m; j++){
+        ^~~
+        VITIS_LOOP_85_2: 
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:971:9: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:976:5: warning: Added loop label VITIS_LOOP_90_3:   [xilinx-label-all-loops]
+    for (i = 0; i < m; i++){
+    ^~~
+    VITIS_LOOP_90_3: 
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:976:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:980:5: warning: Added loop label VITIS_LOOP_94_4:   [xilinx-label-all-loops]
+    for (i = 0; i < m; i++){
+    ^~~
+    VITIS_LOOP_94_4: 
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:980:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:981:9: warning: Added loop label VITIS_LOOP_95_5:   [xilinx-label-all-loops]
+        for (j = 0; j < m; j++){
+        ^~~
+        VITIS_LOOP_95_5: 
+/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/.autopilot/db/covariance_taffo.pp.0.c:981:9: note: FIX-IT applied suggested code changes

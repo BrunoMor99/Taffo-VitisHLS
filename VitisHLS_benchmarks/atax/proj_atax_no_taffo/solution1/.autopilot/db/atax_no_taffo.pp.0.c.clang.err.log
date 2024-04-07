@@ -1,0 +1,28 @@
+/home/bruno/Desktop/benchmarks/atax/run_hls_no_taffo.tcl:44:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=atax_XLX_SEP_ PragmaOptions=name=atax_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE TOP name=atax
+        ^
+atax_no_taffo.c:25:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=atax_XLX_SEP_ PragmaOptions=m_axi port = A depth = 256_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port = A depth = 256
+        ^
+atax_no_taffo.c:26:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=atax_XLX_SEP_ PragmaOptions=m_axi port = x depth = 16_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port = x depth = 16
+        ^
+atax_no_taffo.c:27:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=atax_XLX_SEP_ PragmaOptions=m_axi port = y depth = 16_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port = y depth = 16
+        ^
+atax_no_taffo.c:50:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=atax_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
+        ^
+atax_no_taffo.c:54:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=atax_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
+        ^
+atax_no_taffo.c:59:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=atax_XLX_SEP_ PragmaOptions=factor=4_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll factor=4
+        ^
+atax_no_taffo.c:68:14: warning: unused parameter 'argc' [-Wunused-parameter]
+int main(int argc, char** argv)
+             ^
+atax_no_taffo.c:68:27: warning: unused parameter 'argv' [-Wunused-parameter]
+int main(int argc, char** argv)
+                          ^
+9 warnings generated.

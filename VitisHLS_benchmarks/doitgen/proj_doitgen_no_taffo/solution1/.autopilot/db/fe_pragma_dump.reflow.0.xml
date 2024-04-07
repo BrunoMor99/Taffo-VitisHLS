@@ -1,0 +1,12 @@
+<pragmas>
+<pragma file="doitgen_no_taffo.c" line="51" pragmaType="pipeline" parentfunction="doitgen" off="0" ii="1" rewind="0" style=""/>
+<pragma file="doitgen_no_taffo.c" line="53" pragmaType="pipeline" parentfunction="doitgen" off="0" ii="1" rewind="0" style=""/>
+<pragma file="doitgen_no_taffo.c" line="55" pragmaType="unroll" parentfunction="doitgen" factor="8" skip_exit_check="0"/>
+<pragma file="doitgen_no_taffo.c" line="65" pragmaType="unroll" parentfunction="doitgen" factor="8" skip_exit_check="0"/>
+<pragma file="doitgen_no_taffo.c" line="58" pragmaType="pipeline" parentfunction="doitgen" off="0" ii="1" rewind="0" style=""/>
+<pragma file="doitgen_no_taffo.c" line="26" pragmaType="interface" parentfunction="doitgen" mode="m_axi" port="A" bundle="" offset="" name="" depth="4096" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="doitgen_no_taffo.c" line="27" pragmaType="interface" parentfunction="doitgen" mode="m_axi" port="C" bundle="" offset="" name="" depth="256" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="doitgen_no_taffo.c" line="28" pragmaType="interface" parentfunction="doitgen" mode="m_axi" port="sum" bundle="" offset="" name="" depth="16" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="doitgen_no_taffo.c" line="29" pragmaType="array_partition" parentfunction="doitgen" dim="1" factor="4" mode="block" dynamic="0" variable="A"/>
+<pragma file="doitgen_no_taffo.c" line="30" pragmaType="array_partition" parentfunction="doitgen" dim="1" factor="4" mode="block" dynamic="0" variable="C"/>
+</pragmas>

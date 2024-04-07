@@ -1,0 +1,426 @@
+INFO: [COSIM-47] Using XSIM for RTL simulation.
+INFO: [COSIM-14] Instrumenting C test bench ...
+   Build using "/home/bruno/Documents/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/bin/g++"
+   Compiling apatb_atax.cpp
+   Compiling (apcc) atax_no_taffo.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/home/bruno/Documents/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'bruno' on host 'bruno-ubuntu' (Linux_x86_64 version 5.15.0-94-generic) on Sat Feb 17 11:40:39 CET 2024
+INFO: [HLS 200-10] On os Ubuntu 22.04.3 LTS
+INFO: [HLS 200-10] In directory '/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_bruno/107651708166439288544
+INFO: [APCC 202-1] APCC is done.
+INFO: [HLS 200-112] Total CPU user time: 2.38 seconds. Total CPU system time: 0.15 seconds. Total elapsed time: 2.36 seconds; peak allocated memory: 99.055 MB.
+   Compiling apatb_atax_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM-302] Starting C TB testing ... 
+INFO: [COSIM-333] Generating C post check test bench ...
+INFO: [COSIM-12] Generating RTL test bench ...
+INFO: [COSIM-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM-323] Starting verilog simulation. 
+INFO: [COSIM-15] Starting XSIM ...
+INFO: [COSIM-316] Starting C post checking ...
+3.278125 
+3.278125 
+3.243750 
+3.243750 
+3.225625 
+3.225625 
+3.221250 
+3.221250 
+3.228125 
+3.228125 
+3.243750 
+3.243750 
+3.265625 
+3.265625 
+3.291250 
+3.291250 
+3.318125 
+3.318125 
+3.343750 
+3.343750 
+3.365625 
+3.365625 
+3.381250 
+3.381250 
+3.388125 
+3.388125 
+3.383750 
+3.383750 
+3.365625 
+3.365625 
+3.331250 
+3.331250 
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/bruno/Documents/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_atax_top glbl -Oenable_linking_all_libraries -prj atax.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_20 -L floating_point_v7_1_15 --lib ieee_proposed=./ieee_proposed -s atax 
+Multi-threading is on. Using 2 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/sim/verilog/ip/xil_defaultlib/atax_fmul_32ns_32ns_32_2_max_dsp_1_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module atax_fmul_32ns_32ns_32_2_max_dsp_1_ip
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/sim/verilog/ip/xil_defaultlib/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module atax_fadd_32ns_32ns_32_2_full_dsp_1_ip
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/sim/verilog/atax_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module atax_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/sim/verilog/atax_gmem_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module atax_gmem_m_axi
+INFO: [VRFC 10-311] analyzing module atax_gmem_m_axi_load
+INFO: [VRFC 10-311] analyzing module atax_gmem_m_axi_store
+INFO: [VRFC 10-311] analyzing module atax_gmem_m_axi_read
+INFO: [VRFC 10-311] analyzing module atax_gmem_m_axi_write
+INFO: [VRFC 10-311] analyzing module atax_gmem_m_axi_throttle
+INFO: [VRFC 10-311] analyzing module atax_gmem_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module atax_gmem_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module atax_gmem_m_axi_srl
+INFO: [VRFC 10-311] analyzing module atax_gmem_m_axi_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/sim/verilog/atax.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module atax
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/sim/verilog/atax_control_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module atax_control_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/sim/verilog/atax_fmul_32ns_32ns_32_2_max_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module atax_fmul_32ns_32ns_32_2_max_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/sim/verilog/AESL_axi_slave_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_slave_control
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/sim/verilog/atax.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_atax_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/sim/verilog/AESL_axi_master_gmem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_master_gmem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/sim/verilog/atax_atax_Pipeline_VITIS_LOOP_48_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module atax_atax_Pipeline_VITIS_LOOP_48_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/sim/verilog/atax_fadd_32ns_32ns_32_2_full_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module atax_fadd_32ns_32ns_32_2_full_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package floating_point_v7_1_15.floating_point_v7_1_15_viv_comp
+Compiling package ieee.numeric_std
+Compiling package xbip_utils_v3_0_10.xbip_utils_v3_0_10_pkg
+Compiling package axi_utils_v2_0_6.axi_utils_v2_0_6_pkg
+Compiling package floating_point_v7_1_15.floating_point_v7_1_15_consts
+Compiling package ieee.math_real
+Compiling package floating_point_v7_1_15.floating_point_v7_1_15_exp_table...
+Compiling package mult_gen_v12_0_18.mult_gen_v12_0_18_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling package floating_point_v7_1_15.floating_point_v7_1_15_pkg
+Compiling package floating_point_v7_1_15.flt_utils
+Compiling package xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv_comp
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=7,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_15.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_15.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture xorcy_v of entity unisim.XORCY [xorcy_default]
+Compiling architecture struct of entity floating_point_v7_1_15.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=24,length=0,fast_in...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=16,length=0)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=4,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=48,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=24,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_15.dsp48e1_wrapper [\dsp48e1_wrapper(c_part="xc7v585...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=13,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=27,length=0)\]
+Compiling architecture synth of entity floating_point_v7_1_15.align_add_dsp48e1_sgl [\align_add_dsp48e1_sgl(c_xdevice...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00000000000000001111...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00000000000000000000...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=5,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_15.lead_zero_encode_shift [\lead_zero_encode_shift(ab_fw=24...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=3,length=0)\]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111110010101001011...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00010001010111110000...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11101110101000001111...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=2,length=0)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=25,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_15.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,c_wi...]
+Compiling architecture rtl of entity floating_point_v7_1_15.norm_and_round_dsp48e1_sgl [\norm_and_round_dsp48e1_sgl(c_mu...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="10011001100110011001...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11111111000000001111...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=9,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_15.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=10,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=4,length=0,fast_inp...]
+Compiling architecture struct of entity floating_point_v7_1_15.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_15.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(length=0,fast_input=true)...]
+Compiling architecture rtl of entity floating_point_v7_1_15.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture struct of entity floating_point_v7_1_15.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_15.compare_gt [\compare_gt(c_xdevicefamily="vir...]
+Compiling architecture synth of entity floating_point_v7_1_15.compare [\compare(c_xdevicefamily="virtex...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=8,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=2,length=0,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=12,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_15.flt_add_exp_sp [\flt_add_exp_sp(c_xdevicefamily=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=23,length=0)\]
+Compiling architecture synth of entity floating_point_v7_1_15.flt_dec_op [\flt_dec_op(c_xdevicefamily="vir...]
+Compiling architecture rtl of entity floating_point_v7_1_15.flt_add_dsp [\flt_add_dsp(c_xdevicefamily="vi...]
+Compiling architecture rtl of entity floating_point_v7_1_15.flt_add [\flt_add(c_xdevicefamily="virtex...]
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=32,length=0)\]
+Compiling architecture xilinx of entity floating_point_v7_1_15.floating_point_v7_1_15_viv [\floating_point_v7_1_15_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_15.floating_point_v7_1_15 [\floating_point_v7_1_15(c_xdevic...]
+Compiling module xil_defaultlib.atax_fadd_32ns_32ns_32_2_full_ds...
+Compiling module xil_defaultlib.atax_fadd_32ns_32ns_32_2_full_ds...
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=17,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_15.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,b_wi...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_15.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,b_wi...]
+Compiling architecture struct of entity floating_point_v7_1_15.fix_mult_dsp48e1_sgl [\fix_mult_dsp48e1_sgl(registers=...]
+Compiling architecture rtl of entity floating_point_v7_1_15.fix_mult [\fix_mult(c_xdevicefamily="virte...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=8,length=0,fast_inp...]
+Compiling architecture struct of entity floating_point_v7_1_15.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=3,length=0,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=14,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_15.flt_mult_exp [\flt_mult_exp(c_xdevicefamily="v...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=30,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=18,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_15.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=30,b_wi...]
+Compiling architecture struct of entity floating_point_v7_1_15.flt_round_dsp_opt_full [\flt_round_dsp_opt_full(c_xdevic...]
+Compiling architecture rtl of entity floating_point_v7_1_15.flt_mult_round [\flt_mult_round(c_xdevicefamily=...]
+Compiling architecture synth of entity floating_point_v7_1_15.flt_dec_op_lat [\flt_dec_op_lat(c_xdevicefamily=...]
+Compiling architecture rtl of entity floating_point_v7_1_15.flt_mult [\flt_mult(c_xdevicefamily="virte...]
+Compiling architecture xilinx of entity floating_point_v7_1_15.floating_point_v7_1_15_viv [\floating_point_v7_1_15_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_15.floating_point_v7_1_15 [\floating_point_v7_1_15(c_xdevic...]
+Compiling module xil_defaultlib.atax_fmul_32ns_32ns_32_2_max_dsp...
+Compiling module xil_defaultlib.atax_fmul_32ns_32ns_32_2_max_dsp...
+Compiling module xil_defaultlib.atax_flow_control_loop_pipe_sequ...
+Compiling module xil_defaultlib.atax_atax_Pipeline_VITIS_LOOP_48...
+Compiling module xil_defaultlib.atax_control_s_axi
+Compiling module xil_defaultlib.atax_gmem_m_axi_srl(DATA_WIDTH=9...
+Compiling module xil_defaultlib.atax_gmem_m_axi_fifo(DATA_WIDTH=...
+Compiling module xil_defaultlib.atax_gmem_m_axi_mem(MEM_STYLE="b...
+Compiling module xil_defaultlib.atax_gmem_m_axi_fifo(MEM_STYLE="...
+Compiling module xil_defaultlib.atax_gmem_m_axi_srl(DATA_WIDTH=1...
+Compiling module xil_defaultlib.atax_gmem_m_axi_fifo(DATA_WIDTH=...
+Compiling module xil_defaultlib.atax_gmem_m_axi_srl(DATA_WIDTH=1...
+Compiling module xil_defaultlib.atax_gmem_m_axi_fifo(DATA_WIDTH=...
+Compiling module xil_defaultlib.atax_gmem_m_axi_store(NUM_WRITE_...
+Compiling module xil_defaultlib.atax_gmem_m_axi_mem(MEM_STYLE="b...
+Compiling module xil_defaultlib.atax_gmem_m_axi_fifo(MEM_STYLE="...
+Compiling module xil_defaultlib.atax_gmem_m_axi_load(NUM_READ_OU...
+Compiling module xil_defaultlib.atax_gmem_m_axi_reg_slice(DATA_W...
+Compiling module xil_defaultlib.atax_gmem_m_axi_srl(DATA_WIDTH=8...
+Compiling module xil_defaultlib.atax_gmem_m_axi_fifo(DATA_WIDTH=...
+Compiling module xil_defaultlib.atax_gmem_m_axi_reg_slice(DATA_W...
+Compiling module xil_defaultlib.atax_gmem_m_axi_srl(DATA_WIDTH=7...
+Compiling module xil_defaultlib.atax_gmem_m_axi_fifo(DATA_WIDTH=...
+Compiling module xil_defaultlib.atax_gmem_m_axi_srl(DATA_WIDTH=3...
+Compiling module xil_defaultlib.atax_gmem_m_axi_fifo(DATA_WIDTH=...
+Compiling module xil_defaultlib.atax_gmem_m_axi_throttle(CONSERV...
+Compiling module xil_defaultlib.atax_gmem_m_axi_reg_slice(DATA_W...
+Compiling module xil_defaultlib.atax_gmem_m_axi_write(CONSERVATI...
+Compiling module xil_defaultlib.atax_gmem_m_axi_reg_slice(DATA_W...
+Compiling module xil_defaultlib.atax_gmem_m_axi_read(C_USER_VALU...
+Compiling module xil_defaultlib.atax_gmem_m_axi(CONSERVATIVE=1,N...
+Compiling module xil_defaultlib.atax
+Compiling module xil_defaultlib.AESL_axi_master_gmem
+Compiling module xil_defaultlib.AESL_axi_slave_control
+Compiling module xil_defaultlib.nodf_module_intf
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=16)
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_atax_top
+Compiling module work.glbl
+Built simulation snapshot atax
+
+****** xsim v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/atax/xsim_script.tcl
+# xsim {atax} -autoloadwcfg -tclbatch {atax.tcl}
+Time resolution is 1 ps
+source atax.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [0.00%] @ "150000"
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 1830 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 1870 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 1910 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 1950 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 1990 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2030 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2070 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2110 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2150 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2150 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U2/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2190 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2190 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U2/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2230 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2230 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U2/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2270 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2270 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U2/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2310 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2310 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U2/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2350 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2350 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U2/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2390 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2390 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U2/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2430 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2430 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U2/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2470 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 2470 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U2/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7170 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7210 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7250 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7250 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U2/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7290 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7290 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U2/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7330 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7330 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U2/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7370 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7370 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U2/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7410 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7410 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U2/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7450 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7450 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U2/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7490 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7490 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U2/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7530 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7530 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U2/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7570 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7570 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U2/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7610 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U1/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 7610 ns  Iteration: 16  Process: /apatb_atax_top/AESL_inst_atax/grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313/fadd_32ns_32ns_32_2_full_dsp_1_U2/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /home/bruno/Documents/Vivado/2022.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+// RTL Simulation : 1 / 1 [100.00%] @ "8570000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 8690 ns : File "/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/sim/verilog/atax.autotb.v" Line 491
+## quit
+INFO: [Common 17-206] Exiting xsim at Sat Feb 17 11:41:36 2024...
+3.278125 
+3.278125 
+3.243750 
+3.243750 
+3.225625 
+3.225625 
+3.221250 
+3.221250 
+3.228125 
+3.228125 
+3.243750 
+3.243750 
+3.265625 
+3.265625 
+3.291250 
+3.291250 
+3.318125 
+3.318125 
+3.343750 
+3.343750 
+3.365625 
+3.365625 
+3.381250 
+3.381250 
+3.388125 
+3.388125 
+3.383750 
+3.383750 
+3.365625 
+3.365625 
+3.331250 
+3.331250 
+INFO: [COSIM-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.

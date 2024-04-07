@@ -1,0 +1,60 @@
+warning: overriding the module target triple with fpga64-xilinx-none [-Woverride-module]
+remark: <unknown>:0:0: Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma
+remark: <unknown>:0:0: Unrolling loop 'VITIS_LOOP_46_1' () in function 'syr2k' partially with a factor of 4
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+remark: <unknown>:0:0: Access is clobbered by store _XLX_SEP_ for.inc.load.3 C gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ for.inc.store.9 C gmem syr2k 
+remark: <unknown>:0:0: Stride is incompatible _XLX_SEP_ for.inc45.load.4 A gmem VITIS_LOOP_54_4  syr2k 
+remark: <unknown>:0:0: Stride is incompatible _XLX_SEP_ for.inc45.load.14 B gmem VITIS_LOOP_54_4  syr2k 
+remark: <unknown>:0:0: Access is clobbered by store _XLX_SEP_ for.inc45.load.26 C gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ for.inc45.store.30 C gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ VITIS_LOOP_54_4.load.4 B gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ VITIS_LOOP_54_4.load.6 A gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by store _XLX_SEP_ for.inc.1.load.3 C gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ for.inc.1.store.9 C gmem syr2k 
+remark: <unknown>:0:0: Stride is incompatible _XLX_SEP_ for.inc45.1.load.4 A gmem VITIS_LOOP_54_4  syr2k 
+remark: <unknown>:0:0: Stride is incompatible _XLX_SEP_ for.inc45.1.load.14 B gmem VITIS_LOOP_54_4  syr2k 
+remark: <unknown>:0:0: Access is clobbered by store _XLX_SEP_ for.inc45.1.load.26 C gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ for.inc45.1.store.30 C gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ VITIS_LOOP_54_4.1.load.4 B gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ VITIS_LOOP_54_4.1.load.6 A gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by store _XLX_SEP_ for.inc.2.load.3 C gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ for.inc.2.store.9 C gmem syr2k 
+remark: <unknown>:0:0: Stride is incompatible _XLX_SEP_ for.inc45.2.load.4 A gmem VITIS_LOOP_54_4  syr2k 
+remark: <unknown>:0:0: Stride is incompatible _XLX_SEP_ for.inc45.2.load.14 B gmem VITIS_LOOP_54_4  syr2k 
+remark: <unknown>:0:0: Access is clobbered by store _XLX_SEP_ for.inc45.2.load.26 C gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ for.inc45.2.store.30 C gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ VITIS_LOOP_54_4.2.load.4 B gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ VITIS_LOOP_54_4.2.load.6 A gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by store _XLX_SEP_ for.inc.3.load.3 C gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ for.inc.3.store.9 C gmem syr2k 
+remark: <unknown>:0:0: Stride is incompatible _XLX_SEP_ for.inc45.3.load.4 A gmem VITIS_LOOP_54_4  syr2k 
+remark: <unknown>:0:0: Stride is incompatible _XLX_SEP_ for.inc45.3.load.14 B gmem VITIS_LOOP_54_4  syr2k 
+remark: <unknown>:0:0: Access is clobbered by store _XLX_SEP_ for.inc45.3.load.26 C gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ for.inc45.3.store.30 C gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ VITIS_LOOP_54_4.3.load.4 B gmem syr2k 
+remark: <unknown>:0:0: Access is clobbered by load _XLX_SEP_ VITIS_LOOP_54_4.3.load.6 A gmem syr2k 
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+remark: <unknown>:0:0: Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma
+remark: <unknown>:0:0: Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma
+remark: <unknown>:0:0: Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma
+remark: <unknown>:0:0: Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma
+remark: <unknown>:0:0: Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma
+remark: <unknown>:0:0: Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma
+remark: <unknown>:0:0: Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma
+remark: <unknown>:0:0: Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma
+1 warning generated.

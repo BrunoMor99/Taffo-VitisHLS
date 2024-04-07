@@ -1,0 +1,190 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part virtex7 
+INFO: [HLS 200-1611] Setting target device to 'xc7v585t-ffg1761-2'
+INFO: [HLS 200-1510] Running: create_clock -period 50MHz 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.08 seconds. CPU system time: 0.02 seconds. Elapsed time: 10.14 seconds; current allocated memory: 751.664 MB.
+INFO: [HLS 200-10] Analyzing design file 'gemm_taffoin.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.72 seconds. CPU system time: 0.58 seconds. Elapsed time: 1.32 seconds; current allocated memory: 752.973 MB.
+INFO: [HLS 200-1022] Running custom LLVM hook 'HLS_HOOKS::opt'
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+WARNING: [HLS 207-586] overriding the module target triple with fpga64-xilinx-none
+INFO: [HLS 214-188] Unrolling loop 'VITIS_LOOP_78_8' () in function 'mm' partially with a factor of 4
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=8 dim=1' for array 'A.u3_29fixp' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'B.u2_30fixp' due to pipeline pragma
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'D.s9_23fixp' due to pipeline pragma
+INFO: [HLS 214-248] Applying array_partition to 'B.u2_30fixp': Complete partitioning on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to 'A.u3_29fixp': Cyclic partitioning with factor 8 on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to 'D.s9_23fixp': Cyclic partitioning with factor 16 on dimension 1.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.98 seconds. CPU system time: 0.83 seconds. Elapsed time: 5.91 seconds; current allocated memory: 753.285 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 753.285 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 754.828 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 754.895 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_63_6' in function 'mm' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_76_7' in function 'mm' for pipelining.
+WARNING: [XFORM 203-503] Ignored partial unroll directive for loop 'VITIS_LOOP_78_8' because its parent loop or function is pipelined.
+WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'VITIS_LOOP_82_9' because its parent loop or function is pipelined.
+WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'VITIS_LOOP_82_9' because its parent loop or function is pipelined.
+WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'VITIS_LOOP_82_9' because its parent loop or function is pipelined.
+WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'VITIS_LOOP_82_9' because its parent loop or function is pipelined.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_92_10' in function 'mm' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_78_8' in function 'mm' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_82_9' in function 'mm' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_95_11' in function 'mm' completely with a factor of 16.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1.46 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.48 seconds; current allocated memory: 786.188 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_62_5' in function 'mm'.
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_0' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_2' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_3' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_4' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_5' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_6' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_7' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_8' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_9' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_10' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_11' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_12' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_13' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_14' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_15' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_0' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_2' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_3' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_4' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_5' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_6' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_7' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_8' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_9' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_10' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_11' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_12' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_13' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_14' 
+INFO: [HLS 200-472] Inferring partial write operation for 'D.s9_23fixp_15' 
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.99 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.01 seconds; current allocated memory: 812.930 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'mm' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mm_Pipeline_VITIS_LOOP_62_5_VITIS_LOOP_63_6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_62_5_VITIS_LOOP_63_6'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 9, loop 'VITIS_LOOP_62_5_VITIS_LOOP_63_6'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.16 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.2 seconds; current allocated memory: 815.301 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 815.301 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mm_Pipeline_VITIS_LOOP_76_7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_76_7'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_76_7'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2.92 seconds. CPU system time: 0.03 seconds. Elapsed time: 2.95 seconds; current allocated memory: 830.555 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1.79 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.8 seconds; current allocated memory: 830.555 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mm_Pipeline_VITIS_LOOP_92_10' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_92_10'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_92_10'
+WARNING: [HLS 200-871] Estimated clock period (25.068ns) exceeds the target (target clock period: 20ns, clock uncertainty: 5.4ns, effective delay budget: 14.6ns).
+WARNING: [HLS 200-1016] The critical path in module 'mm_Pipeline_VITIS_LOOP_92_10' consists of the following:	'load' operation ('sum_s8_24fixp_06_load') on local variable 'sum_s8_24fixp_06' [30]  (0 ns)
+	'add' operation ('fold85') [67]  (1.51 ns)
+	'add' operation ('fold') [71]  (1.51 ns)
+	'add' operation ('fold71') [75]  (1.51 ns)
+	'add' operation ('fold72') [79]  (1.51 ns)
+	'add' operation ('fold73') [83]  (1.51 ns)
+	'add' operation ('fold74') [87]  (1.51 ns)
+	'add' operation ('fold75') [91]  (1.51 ns)
+	'add' operation ('fold76') [95]  (1.51 ns)
+	'add' operation ('fold77') [99]  (1.51 ns)
+	'add' operation ('fold78') [103]  (1.51 ns)
+	'add' operation ('fold79') [107]  (1.51 ns)
+	'add' operation ('fold80') [111]  (1.51 ns)
+	'add' operation ('fold81') [115]  (1.51 ns)
+	'add' operation ('fold82') [119]  (1.51 ns)
+	'add' operation ('fold83') [123]  (1.51 ns)
+	'add' operation ('fold84') [127]  (1.51 ns)
+	'store' operation ('sum_s8_24fixp_06_write_ln0') of variable 'tmp_47' on local variable 'sum_s8_24fixp_06' [131]  (0.844 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2.54 seconds. CPU system time: 0.01 seconds. Elapsed time: 2.56 seconds; current allocated memory: 830.555 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 830.555 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.25 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 830.555 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.87 seconds. CPU system time: 0 seconds. Elapsed time: 0.87 seconds; current allocated memory: 830.555 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mm_Pipeline_VITIS_LOOP_62_5_VITIS_LOOP_63_6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mm_Pipeline_VITIS_LOOP_62_5_VITIS_LOOP_63_6' pipeline 'VITIS_LOOP_62_5_VITIS_LOOP_63_6' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fptosi_32ns_32_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_4s_4s_4_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitofp_32ns_32_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mm_Pipeline_VITIS_LOOP_62_5_VITIS_LOOP_63_6'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.81 seconds. CPU system time: 0 seconds. Elapsed time: 1.82 seconds; current allocated memory: 830.555 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mm_Pipeline_VITIS_LOOP_76_7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mm_Pipeline_VITIS_LOOP_76_7' pipeline 'VITIS_LOOP_76_7' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'mm_Pipeline_VITIS_LOOP_76_7' is 6105 from HDL expression: ((1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))
+INFO: [RTGEN 206-100] Generating core module 'mul_30ns_32ns_60_1_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_31ns_32ns_61_1_1': 20 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_31ns_32ns_62_1_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_62_1_1': 120 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_63_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_33ns_64_1_1': 28 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mm_Pipeline_VITIS_LOOP_76_7'.
+INFO: [RTMG 210-279] Implementing memory 'mm_mm_Pipeline_VITIS_LOOP_76_7_A_u3_29fixp_1_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'mm_mm_Pipeline_VITIS_LOOP_76_7_A_u3_29fixp_2_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'mm_mm_Pipeline_VITIS_LOOP_76_7_A_u3_29fixp_3_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'mm_mm_Pipeline_VITIS_LOOP_76_7_A_u3_29fixp_4_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'mm_mm_Pipeline_VITIS_LOOP_76_7_A_u3_29fixp_5_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'mm_mm_Pipeline_VITIS_LOOP_76_7_A_u3_29fixp_6_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'mm_mm_Pipeline_VITIS_LOOP_76_7_A_u3_29fixp_7_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'mm_mm_Pipeline_VITIS_LOOP_76_7_A_u3_29fixp_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.06 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.08 seconds; current allocated memory: 850.051 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mm_Pipeline_VITIS_LOOP_92_10' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mm_Pipeline_VITIS_LOOP_92_10' pipeline 'VITIS_LOOP_92_10' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mm_Pipeline_VITIS_LOOP_92_10'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 6.68 seconds. CPU system time: 0.06 seconds. Elapsed time: 6.76 seconds; current allocated memory: 876.484 MB.

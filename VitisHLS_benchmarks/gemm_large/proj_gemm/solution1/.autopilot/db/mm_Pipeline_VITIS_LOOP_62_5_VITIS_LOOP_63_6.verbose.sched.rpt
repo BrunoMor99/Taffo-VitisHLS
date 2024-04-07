@@ -1,0 +1,279 @@
+
+
+================================================================
+== Vitis HLS Report for 'mm_Pipeline_VITIS_LOOP_62_5_VITIS_LOOP_63_6'
+================================================================
+* Date:           Mon Mar 11 09:28:57 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        proj_gemm
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtex7
+* Target device:  xc7v585t-ffg1761-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+-----------+------------+
+    |  Clock |  Target  | Estimated | Uncertainty|
+    +--------+----------+-----------+------------+
+    |ap_clk  |  20.00 ns|  14.547 ns|     5.40 ns|
+    +--------+----------+-----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      265|      265|  5.300 us|  5.300 us|  265|  265|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |             Loop Name             |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_62_5_VITIS_LOOP_63_6  |      263|      263|         9|          1|          1|   256|       yes|
+        +-----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 9
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 9
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 9, States = { 1 2 3 4 5 6 7 8 9 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 13.2>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%indvars_iv92 = alloca i32 1"   --->   Operation 12 'alloca' 'indvars_iv92' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%indvars_iv98 = alloca i32 1"   --->   Operation 13 'alloca' 'indvars_iv98' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%indvar_flatten = alloca i32 1"   --->   Operation 14 'alloca' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.84ns)   --->   "%store_ln0 = store i9 0, i9 %indvar_flatten"   --->   Operation 15 'store' 'store_ln0' <Predicate = true> <Delay = 0.84>
+ST_1 : Operation 16 [1/1] (0.84ns)   --->   "%store_ln0 = store i5 0, i5 %indvars_iv98"   --->   Operation 16 'store' 'store_ln0' <Predicate = true> <Delay = 0.84>
+ST_1 : Operation 17 [1/1] (0.84ns)   --->   "%store_ln0 = store i5 0, i5 %indvars_iv92"   --->   Operation 17 'store' 'store_ln0' <Predicate = true> <Delay = 0.84>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc54"   --->   Operation 18 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%indvar_flatten_load = load i9 %indvar_flatten"   --->   Operation 19 'load' 'indvar_flatten_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 20 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.90ns)   --->   "%exitcond_flatten = icmp_eq  i9 %indvar_flatten_load, i9 256"   --->   Operation 21 'icmp' 'exitcond_flatten' <Predicate = true> <Delay = 0.90> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.90> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 22 [1/1] (1.35ns)   --->   "%indvar_flatten_next = add i9 %indvar_flatten_load, i9 1"   --->   Operation 22 'add' 'indvar_flatten_next' <Predicate = true> <Delay = 1.35> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %exitcond_flatten, void %for.inc57, void %VITIS_LOOP_78_8.preheader.exitStub"   --->   Operation 23 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%indvars_iv92_load = load i5 %indvars_iv92"   --->   Operation 24 'load' 'indvars_iv92_load' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%indvars_iv98_load = load i5 %indvars_iv98"   --->   Operation 25 'load' 'indvars_iv98_load' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.87ns)   --->   "%exitcond971320 = icmp_eq  i5 %indvars_iv92_load, i5 16"   --->   Operation 26 'icmp' 'exitcond971320' <Predicate = (!exitcond_flatten)> <Delay = 0.87> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 27 [1/1] (0.62ns)   --->   "%indvars_iv92_mid2 = select i1 %exitcond971320, i5 0, i5 %indvars_iv92_load"   --->   Operation 27 'select' 'indvars_iv92_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.62> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.62> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 28 [1/1] (1.09ns)   --->   "%indvars_iv_next99_dup18 = add i5 %indvars_iv98_load, i5 1"   --->   Operation 28 'add' 'indvars_iv_next99_dup18' <Predicate = (!exitcond_flatten)> <Delay = 1.09> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 29 [1/1] (0.62ns)   --->   "%indvars_iv98_cast582_mid2_v = select i1 %exitcond971320, i5 %indvars_iv_next99_dup18, i5 %indvars_iv98_load"   --->   Operation 29 'select' 'indvars_iv98_cast582_mid2_v' <Predicate = (!exitcond_flatten)> <Delay = 0.62> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.62> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%empty_584 = trunc i5 %indvars_iv98_cast582_mid2_v"   --->   Operation 30 'trunc' 'empty_584' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%empty_585 = trunc i5 %indvars_iv92_mid2"   --->   Operation 31 'trunc' 'empty_585' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (1.01ns)   --->   "%empty_586 = add i4 %empty_585, i4 2"   --->   Operation 32 'add' 'empty_586' <Predicate = (!exitcond_flatten)> <Delay = 1.01> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 33 [1/1] (1.22ns)   --->   "%empty_587 = mul i4 %empty_586, i4 %empty_584"   --->   Operation 33 'mul' 'empty_587' <Predicate = (!exitcond_flatten)> <Delay = 1.22> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 1.22> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%rem45_urem_cast = zext i4 %empty_587"   --->   Operation 34 'zext' 'rem45_urem_cast' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_1 : Operation 35 [2/2] (9.54ns)   --->   "%conv = sitofp i32 %rem45_urem_cast"   --->   Operation 35 'sitofp' 'conv' <Predicate = (!exitcond_flatten)> <Delay = 9.54> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 1> <II = 1> <Delay = 9.54> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+ST_1 : Operation 36 [1/1] (0.48ns)   --->   "%switch_ln0 = switch i4 %empty_585, void %arrayidx53.s9_23fixp.case.15, i4 0, void %arrayidx53.s9_23fixp.case.0, i4 1, void %arrayidx53.s9_23fixp.case.1, i4 2, void %arrayidx53.s9_23fixp.case.2, i4 3, void %arrayidx53.s9_23fixp.case.3, i4 4, void %arrayidx53.s9_23fixp.case.4, i4 5, void %arrayidx53.s9_23fixp.case.5, i4 6, void %arrayidx53.s9_23fixp.case.6, i4 7, void %arrayidx53.s9_23fixp.case.7, i4 8, void %arrayidx53.s9_23fixp.case.8, i4 9, void %arrayidx53.s9_23fixp.case.9, i4 10, void %arrayidx53.s9_23fixp.case.10, i4 11, void %arrayidx53.s9_23fixp.case.11, i4 12, void %arrayidx53.s9_23fixp.case.12, i4 13, void %arrayidx53.s9_23fixp.case.13, i4 14, void %arrayidx53.s9_23fixp.case.14"   --->   Operation 36 'switch' 'switch_ln0' <Predicate = (!exitcond_flatten)> <Delay = 0.48>
+ST_1 : Operation 37 [1/1] (1.09ns)   --->   "%indvars_iv_next93 = add i5 %indvars_iv92_mid2, i5 1"   --->   Operation 37 'add' 'indvars_iv_next93' <Predicate = (!exitcond_flatten)> <Delay = 1.09> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 38 [1/1] (0.84ns)   --->   "%store_ln0 = store i9 %indvar_flatten_next, i9 %indvar_flatten"   --->   Operation 38 'store' 'store_ln0' <Predicate = (!exitcond_flatten)> <Delay = 0.84>
+ST_1 : Operation 39 [1/1] (0.84ns)   --->   "%store_ln0 = store i5 %indvars_iv98_cast582_mid2_v, i5 %indvars_iv98"   --->   Operation 39 'store' 'store_ln0' <Predicate = (!exitcond_flatten)> <Delay = 0.84>
+ST_1 : Operation 40 [1/1] (0.84ns)   --->   "%store_ln0 = store i5 %indvars_iv_next93, i5 %indvars_iv92"   --->   Operation 40 'store' 'store_ln0' <Predicate = (!exitcond_flatten)> <Delay = 0.84>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc54"   --->   Operation 41 'br' 'br_ln0' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 9.54>
+ST_2 : Operation 42 [1/2] (9.54ns)   --->   "%conv = sitofp i32 %rem45_urem_cast"   --->   Operation 42 'sitofp' 'conv' <Predicate = true> <Delay = 9.54> <CoreInst = "Int2Float">   --->   Core 62 'Int2Float' <Latency = 1> <II = 1> <Delay = 9.54> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 8.46>
+ST_3 : Operation 43 [2/2] (8.46ns)   --->   "%mul = fmul i32 %conv, i32 5"   --->   Operation 43 'fmul' 'mul' <Predicate = true> <Delay = 8.46> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 1> <II = 1> <Delay = 8.46> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 8.46>
+ST_4 : Operation 44 [1/2] (8.46ns)   --->   "%mul = fmul i32 %conv, i32 5"   --->   Operation 44 'fmul' 'mul' <Predicate = true> <Delay = 8.46> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 1> <II = 1> <Delay = 8.46> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 8.46>
+ST_5 : Operation 45 [2/2] (8.46ns)   --->   "%div = fmul i32 %mul, i32 0.0625"   --->   Operation 45 'fmul' 'div' <Predicate = true> <Delay = 8.46> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 1> <II = 1> <Delay = 8.46> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 6 <SV = 5> <Delay = 8.46>
+ST_6 : Operation 46 [1/2] (8.46ns)   --->   "%div = fmul i32 %mul, i32 0.0625"   --->   Operation 46 'fmul' 'div' <Predicate = true> <Delay = 8.46> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 1> <II = 1> <Delay = 8.46> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 8.46>
+ST_7 : Operation 47 [2/2] (8.46ns)   --->   "%tmp = fmul i32 %div, i32 8.38861e+06"   --->   Operation 47 'fmul' 'tmp' <Predicate = true> <Delay = 8.46> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 1> <II = 1> <Delay = 8.46> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 14.5>
+ST_8 : Operation 48 [1/2] (8.46ns)   --->   "%tmp = fmul i32 %div, i32 8.38861e+06"   --->   Operation 48 'fmul' 'tmp' <Predicate = true> <Delay = 8.46> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 1> <II = 1> <Delay = 8.46> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 49 [2/2] (6.08ns)   --->   "%empty_588 = fptosi i32 %tmp"   --->   Operation 49 'fptosi' 'empty_588' <Predicate = true> <Delay = 6.08> <CoreInst = "Float2Int">   --->   Core 63 'Float2Int' <Latency = 1> <II = 1> <Delay = 6.08> <FuncUnit> <Opcode : 'fptosi' 'fptoui'> <InPorts = 1> <OutPorts = 1>
+ST_8 : Operation 105 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 105 'ret' 'ret_ln0' <Predicate = (exitcond_flatten)> <Delay = 0.00>
+
+State 9 <SV = 8> <Delay = 7.23>
+ST_9 : Operation 50 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_62_5_VITIS_LOOP_63_6_str"   --->   Operation 50 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 51 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 256, i64 256, i64 256"   --->   Operation 51 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 52 [1/1] (0.00ns)   --->   "%indvars_iv98_cast582_mid2 = zext i5 %indvars_iv98_cast582_mid2_v"   --->   Operation 52 'zext' 'indvars_iv98_cast582_mid2' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 53 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 53 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 54 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @empty_0"   --->   Operation 54 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 55 [1/2] (6.08ns)   --->   "%empty_588 = fptosi i32 %tmp"   --->   Operation 55 'fptosi' 'empty_588' <Predicate = true> <Delay = 6.08> <CoreInst = "Float2Int">   --->   Core 63 'Float2Int' <Latency = 1> <II = 1> <Delay = 6.08> <FuncUnit> <Opcode : 'fptosi' 'fptoui'> <InPorts = 1> <OutPorts = 1>
+ST_9 : Operation 56 [1/1] (0.00ns)   --->   "%empty_589 = trunc i32 %empty_588"   --->   Operation 56 'trunc' 'empty_589' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 57 [1/1] (0.00ns)   --->   "%D_s9_23fixp_14_addr = getelementptr i31 %D_s9_23fixp_14, i64 0, i64 %indvars_iv98_cast582_mid2"   --->   Operation 57 'getelementptr' 'D_s9_23fixp_14_addr' <Predicate = (empty_585 == 14)> <Delay = 0.00>
+ST_9 : Operation 58 [1/1] (1.14ns)   --->   "%store_ln0 = store i31 %empty_589, i4 %D_s9_23fixp_14_addr"   --->   Operation 58 'store' 'store_ln0' <Predicate = (empty_585 == 14)> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 31> <Depth = 16> <RAM>
+ST_9 : Operation 59 [1/1] (0.00ns)   --->   "%br_ln0 = br void %arrayidx53.s9_23fixp.exit"   --->   Operation 59 'br' 'br_ln0' <Predicate = (empty_585 == 14)> <Delay = 0.00>
+ST_9 : Operation 60 [1/1] (0.00ns)   --->   "%D_s9_23fixp_13_addr = getelementptr i31 %D_s9_23fixp_13, i64 0, i64 %indvars_iv98_cast582_mid2"   --->   Operation 60 'getelementptr' 'D_s9_23fixp_13_addr' <Predicate = (empty_585 == 13)> <Delay = 0.00>
+ST_9 : Operation 61 [1/1] (1.14ns)   --->   "%store_ln0 = store i31 %empty_589, i4 %D_s9_23fixp_13_addr"   --->   Operation 61 'store' 'store_ln0' <Predicate = (empty_585 == 13)> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 31> <Depth = 16> <RAM>
+ST_9 : Operation 62 [1/1] (0.00ns)   --->   "%br_ln0 = br void %arrayidx53.s9_23fixp.exit"   --->   Operation 62 'br' 'br_ln0' <Predicate = (empty_585 == 13)> <Delay = 0.00>
+ST_9 : Operation 63 [1/1] (0.00ns)   --->   "%D_s9_23fixp_12_addr = getelementptr i31 %D_s9_23fixp_12, i64 0, i64 %indvars_iv98_cast582_mid2"   --->   Operation 63 'getelementptr' 'D_s9_23fixp_12_addr' <Predicate = (empty_585 == 12)> <Delay = 0.00>
+ST_9 : Operation 64 [1/1] (1.14ns)   --->   "%store_ln0 = store i31 %empty_589, i4 %D_s9_23fixp_12_addr"   --->   Operation 64 'store' 'store_ln0' <Predicate = (empty_585 == 12)> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 31> <Depth = 16> <RAM>
+ST_9 : Operation 65 [1/1] (0.00ns)   --->   "%br_ln0 = br void %arrayidx53.s9_23fixp.exit"   --->   Operation 65 'br' 'br_ln0' <Predicate = (empty_585 == 12)> <Delay = 0.00>
+ST_9 : Operation 66 [1/1] (0.00ns)   --->   "%D_s9_23fixp_11_addr = getelementptr i31 %D_s9_23fixp_11, i64 0, i64 %indvars_iv98_cast582_mid2"   --->   Operation 66 'getelementptr' 'D_s9_23fixp_11_addr' <Predicate = (empty_585 == 11)> <Delay = 0.00>
+ST_9 : Operation 67 [1/1] (1.14ns)   --->   "%store_ln0 = store i31 %empty_589, i4 %D_s9_23fixp_11_addr"   --->   Operation 67 'store' 'store_ln0' <Predicate = (empty_585 == 11)> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 31> <Depth = 16> <RAM>
+ST_9 : Operation 68 [1/1] (0.00ns)   --->   "%br_ln0 = br void %arrayidx53.s9_23fixp.exit"   --->   Operation 68 'br' 'br_ln0' <Predicate = (empty_585 == 11)> <Delay = 0.00>
+ST_9 : Operation 69 [1/1] (0.00ns)   --->   "%D_s9_23fixp_10_addr = getelementptr i31 %D_s9_23fixp_10, i64 0, i64 %indvars_iv98_cast582_mid2"   --->   Operation 69 'getelementptr' 'D_s9_23fixp_10_addr' <Predicate = (empty_585 == 10)> <Delay = 0.00>
+ST_9 : Operation 70 [1/1] (1.14ns)   --->   "%store_ln0 = store i31 %empty_589, i4 %D_s9_23fixp_10_addr"   --->   Operation 70 'store' 'store_ln0' <Predicate = (empty_585 == 10)> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 31> <Depth = 16> <RAM>
+ST_9 : Operation 71 [1/1] (0.00ns)   --->   "%br_ln0 = br void %arrayidx53.s9_23fixp.exit"   --->   Operation 71 'br' 'br_ln0' <Predicate = (empty_585 == 10)> <Delay = 0.00>
+ST_9 : Operation 72 [1/1] (0.00ns)   --->   "%D_s9_23fixp_9_addr = getelementptr i31 %D_s9_23fixp_9, i64 0, i64 %indvars_iv98_cast582_mid2"   --->   Operation 72 'getelementptr' 'D_s9_23fixp_9_addr' <Predicate = (empty_585 == 9)> <Delay = 0.00>
+ST_9 : Operation 73 [1/1] (1.14ns)   --->   "%store_ln0 = store i31 %empty_589, i4 %D_s9_23fixp_9_addr"   --->   Operation 73 'store' 'store_ln0' <Predicate = (empty_585 == 9)> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 31> <Depth = 16> <RAM>
+ST_9 : Operation 74 [1/1] (0.00ns)   --->   "%br_ln0 = br void %arrayidx53.s9_23fixp.exit"   --->   Operation 74 'br' 'br_ln0' <Predicate = (empty_585 == 9)> <Delay = 0.00>
+ST_9 : Operation 75 [1/1] (0.00ns)   --->   "%D_s9_23fixp_8_addr = getelementptr i31 %D_s9_23fixp_8, i64 0, i64 %indvars_iv98_cast582_mid2"   --->   Operation 75 'getelementptr' 'D_s9_23fixp_8_addr' <Predicate = (empty_585 == 8)> <Delay = 0.00>
+ST_9 : Operation 76 [1/1] (1.14ns)   --->   "%store_ln0 = store i31 %empty_589, i4 %D_s9_23fixp_8_addr"   --->   Operation 76 'store' 'store_ln0' <Predicate = (empty_585 == 8)> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 31> <Depth = 16> <RAM>
+ST_9 : Operation 77 [1/1] (0.00ns)   --->   "%br_ln0 = br void %arrayidx53.s9_23fixp.exit"   --->   Operation 77 'br' 'br_ln0' <Predicate = (empty_585 == 8)> <Delay = 0.00>
+ST_9 : Operation 78 [1/1] (0.00ns)   --->   "%D_s9_23fixp_7_addr = getelementptr i31 %D_s9_23fixp_7, i64 0, i64 %indvars_iv98_cast582_mid2"   --->   Operation 78 'getelementptr' 'D_s9_23fixp_7_addr' <Predicate = (empty_585 == 7)> <Delay = 0.00>
+ST_9 : Operation 79 [1/1] (1.14ns)   --->   "%store_ln0 = store i31 %empty_589, i4 %D_s9_23fixp_7_addr"   --->   Operation 79 'store' 'store_ln0' <Predicate = (empty_585 == 7)> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 31> <Depth = 16> <RAM>
+ST_9 : Operation 80 [1/1] (0.00ns)   --->   "%br_ln0 = br void %arrayidx53.s9_23fixp.exit"   --->   Operation 80 'br' 'br_ln0' <Predicate = (empty_585 == 7)> <Delay = 0.00>
+ST_9 : Operation 81 [1/1] (0.00ns)   --->   "%D_s9_23fixp_6_addr = getelementptr i31 %D_s9_23fixp_6, i64 0, i64 %indvars_iv98_cast582_mid2"   --->   Operation 81 'getelementptr' 'D_s9_23fixp_6_addr' <Predicate = (empty_585 == 6)> <Delay = 0.00>
+ST_9 : Operation 82 [1/1] (1.14ns)   --->   "%store_ln0 = store i31 %empty_589, i4 %D_s9_23fixp_6_addr"   --->   Operation 82 'store' 'store_ln0' <Predicate = (empty_585 == 6)> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 31> <Depth = 16> <RAM>
+ST_9 : Operation 83 [1/1] (0.00ns)   --->   "%br_ln0 = br void %arrayidx53.s9_23fixp.exit"   --->   Operation 83 'br' 'br_ln0' <Predicate = (empty_585 == 6)> <Delay = 0.00>
+ST_9 : Operation 84 [1/1] (0.00ns)   --->   "%D_s9_23fixp_5_addr = getelementptr i31 %D_s9_23fixp_5, i64 0, i64 %indvars_iv98_cast582_mid2"   --->   Operation 84 'getelementptr' 'D_s9_23fixp_5_addr' <Predicate = (empty_585 == 5)> <Delay = 0.00>
+ST_9 : Operation 85 [1/1] (1.14ns)   --->   "%store_ln0 = store i31 %empty_589, i4 %D_s9_23fixp_5_addr"   --->   Operation 85 'store' 'store_ln0' <Predicate = (empty_585 == 5)> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 31> <Depth = 16> <RAM>
+ST_9 : Operation 86 [1/1] (0.00ns)   --->   "%br_ln0 = br void %arrayidx53.s9_23fixp.exit"   --->   Operation 86 'br' 'br_ln0' <Predicate = (empty_585 == 5)> <Delay = 0.00>
+ST_9 : Operation 87 [1/1] (0.00ns)   --->   "%D_s9_23fixp_4_addr = getelementptr i31 %D_s9_23fixp_4, i64 0, i64 %indvars_iv98_cast582_mid2"   --->   Operation 87 'getelementptr' 'D_s9_23fixp_4_addr' <Predicate = (empty_585 == 4)> <Delay = 0.00>
+ST_9 : Operation 88 [1/1] (1.14ns)   --->   "%store_ln0 = store i31 %empty_589, i4 %D_s9_23fixp_4_addr"   --->   Operation 88 'store' 'store_ln0' <Predicate = (empty_585 == 4)> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 31> <Depth = 16> <RAM>
+ST_9 : Operation 89 [1/1] (0.00ns)   --->   "%br_ln0 = br void %arrayidx53.s9_23fixp.exit"   --->   Operation 89 'br' 'br_ln0' <Predicate = (empty_585 == 4)> <Delay = 0.00>
+ST_9 : Operation 90 [1/1] (0.00ns)   --->   "%D_s9_23fixp_3_addr = getelementptr i31 %D_s9_23fixp_3, i64 0, i64 %indvars_iv98_cast582_mid2"   --->   Operation 90 'getelementptr' 'D_s9_23fixp_3_addr' <Predicate = (empty_585 == 3)> <Delay = 0.00>
+ST_9 : Operation 91 [1/1] (1.14ns)   --->   "%store_ln0 = store i31 %empty_589, i4 %D_s9_23fixp_3_addr"   --->   Operation 91 'store' 'store_ln0' <Predicate = (empty_585 == 3)> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 31> <Depth = 16> <RAM>
+ST_9 : Operation 92 [1/1] (0.00ns)   --->   "%br_ln0 = br void %arrayidx53.s9_23fixp.exit"   --->   Operation 92 'br' 'br_ln0' <Predicate = (empty_585 == 3)> <Delay = 0.00>
+ST_9 : Operation 93 [1/1] (0.00ns)   --->   "%D_s9_23fixp_2_addr = getelementptr i31 %D_s9_23fixp_2, i64 0, i64 %indvars_iv98_cast582_mid2"   --->   Operation 93 'getelementptr' 'D_s9_23fixp_2_addr' <Predicate = (empty_585 == 2)> <Delay = 0.00>
+ST_9 : Operation 94 [1/1] (1.14ns)   --->   "%store_ln0 = store i31 %empty_589, i4 %D_s9_23fixp_2_addr"   --->   Operation 94 'store' 'store_ln0' <Predicate = (empty_585 == 2)> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 31> <Depth = 16> <RAM>
+ST_9 : Operation 95 [1/1] (0.00ns)   --->   "%br_ln0 = br void %arrayidx53.s9_23fixp.exit"   --->   Operation 95 'br' 'br_ln0' <Predicate = (empty_585 == 2)> <Delay = 0.00>
+ST_9 : Operation 96 [1/1] (0.00ns)   --->   "%D_s9_23fixp_1_addr = getelementptr i31 %D_s9_23fixp_1, i64 0, i64 %indvars_iv98_cast582_mid2"   --->   Operation 96 'getelementptr' 'D_s9_23fixp_1_addr' <Predicate = (empty_585 == 1)> <Delay = 0.00>
+ST_9 : Operation 97 [1/1] (1.14ns)   --->   "%store_ln0 = store i31 %empty_589, i4 %D_s9_23fixp_1_addr"   --->   Operation 97 'store' 'store_ln0' <Predicate = (empty_585 == 1)> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 31> <Depth = 16> <RAM>
+ST_9 : Operation 98 [1/1] (0.00ns)   --->   "%br_ln0 = br void %arrayidx53.s9_23fixp.exit"   --->   Operation 98 'br' 'br_ln0' <Predicate = (empty_585 == 1)> <Delay = 0.00>
+ST_9 : Operation 99 [1/1] (0.00ns)   --->   "%D_s9_23fixp_0_addr = getelementptr i31 %D_s9_23fixp_0, i64 0, i64 %indvars_iv98_cast582_mid2"   --->   Operation 99 'getelementptr' 'D_s9_23fixp_0_addr' <Predicate = (empty_585 == 0)> <Delay = 0.00>
+ST_9 : Operation 100 [1/1] (1.14ns)   --->   "%store_ln0 = store i31 %empty_589, i4 %D_s9_23fixp_0_addr"   --->   Operation 100 'store' 'store_ln0' <Predicate = (empty_585 == 0)> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 31> <Depth = 16> <RAM>
+ST_9 : Operation 101 [1/1] (0.00ns)   --->   "%br_ln0 = br void %arrayidx53.s9_23fixp.exit"   --->   Operation 101 'br' 'br_ln0' <Predicate = (empty_585 == 0)> <Delay = 0.00>
+ST_9 : Operation 102 [1/1] (0.00ns)   --->   "%D_s9_23fixp_15_addr = getelementptr i31 %D_s9_23fixp_15, i64 0, i64 %indvars_iv98_cast582_mid2"   --->   Operation 102 'getelementptr' 'D_s9_23fixp_15_addr' <Predicate = (empty_585 == 15)> <Delay = 0.00>
+ST_9 : Operation 103 [1/1] (1.14ns)   --->   "%store_ln0 = store i31 %empty_589, i4 %D_s9_23fixp_15_addr"   --->   Operation 103 'store' 'store_ln0' <Predicate = (empty_585 == 15)> <Delay = 1.14> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.14> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 31> <Depth = 16> <RAM>
+ST_9 : Operation 104 [1/1] (0.00ns)   --->   "%br_ln0 = br void %arrayidx53.s9_23fixp.exit"   --->   Operation 104 'br' 'br_ln0' <Predicate = (empty_585 == 15)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 20ns, clock uncertainty: 5.4ns.
+
+ <State 1>: 13.3ns
+The critical path consists of the following:
+	'alloca' operation ('indvars_iv92') [17]  (0 ns)
+	'load' operation ('indvars_iv92_load') on local variable 'indvars_iv92' [31]  (0 ns)
+	'icmp' operation ('exitcond971320') [35]  (0.871 ns)
+	'select' operation ('indvars_iv92_mid2') [36]  (0.625 ns)
+	'add' operation ('empty_586') [44]  (1.01 ns)
+	'mul' operation ('empty_587') [45]  (1.22 ns)
+	'sitofp' operation ('conv') [47]  (9.55 ns)
+
+ <State 2>: 9.55ns
+The critical path consists of the following:
+	'sitofp' operation ('conv') [47]  (9.55 ns)
+
+ <State 3>: 8.46ns
+The critical path consists of the following:
+	'fmul' operation ('mul') [48]  (8.46 ns)
+
+ <State 4>: 8.46ns
+The critical path consists of the following:
+	'fmul' operation ('mul') [48]  (8.46 ns)
+
+ <State 5>: 8.46ns
+The critical path consists of the following:
+	'fmul' operation ('div') [49]  (8.46 ns)
+
+ <State 6>: 8.46ns
+The critical path consists of the following:
+	'fmul' operation ('div') [49]  (8.46 ns)
+
+ <State 7>: 8.46ns
+The critical path consists of the following:
+	'fmul' operation ('tmp') [50]  (8.46 ns)
+
+ <State 8>: 14.5ns
+The critical path consists of the following:
+	'fmul' operation ('tmp') [50]  (8.46 ns)
+	'fptosi' operation ('empty_588') [51]  (6.08 ns)
+
+ <State 9>: 7.23ns
+The critical path consists of the following:
+	'fptosi' operation ('empty_588') [51]  (6.08 ns)
+	'store' operation ('store_ln0') of variable 'empty_589' on array 'D_s9_23fixp_14' [56]  (1.15 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

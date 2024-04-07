@@ -1,0 +1,533 @@
+INFO-FLOW: Workspace /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1 opened at Sat Feb 17 11:40:04 CET 2024
+Execute     send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute     send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vivado' config_interface -m_axi_latency=0 
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+Execute     config_interface -m_axi_latency=0 
+Command   open_solution done; 0.16 sec.
+Execute   set_part virtex7 
+INFO: [HLS 200-1510] Running: set_part virtex7 
+Execute     create_platform virtex7 -board  
+DBG:HLSDevice: Trying to load device library: /home/bruno/Documents/Vitis_HLS/2022.2/lib/lnx64.o/libxv_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /home/bruno/Documents/Vivado/2022.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7v585t-ffg1761-2'
+Command     create_platform done; 3.68 sec.
+Execute     source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Command       ap_source done; 0.12 sec.
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.16 sec.
+Execute     ap_part_info -name xc7v585t-ffg1761-2 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 3.89 sec.
+Execute   create_clock -period 50MHz 
+INFO: [HLS 200-1510] Running: create_clock -period 50MHz 
+Execute     ap_set_clock -name default -period 20 -unit ns -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+Execute   csim_design 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     ap_part_info -name xc7v585t-ffg1761-2 -data info 
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 4.59 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 4.27 seconds. CPU system time: 0.58 seconds. Elapsed time: 4.59 seconds; current allocated memory: 0.000 MB.
+Execute   csynth_design 
+INFO: [HLS 200-1510] Running: csynth_design 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 770.465 MB.
+INFO: [HLS 200-10] Analyzing design file 'atax_no_taffo.c' ... 
+INFO-FLOW: Compiling one TU...
+INFO-FLOW: Handling atax_no_taffo.c as C
+Execute       ap_part_info -name xc7v585t-ffg1761-2 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+Execute       ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang atax_no_taffo.c -foptimization-record-file=/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -gcc-toolchain /home/bruno/Documents/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0 -fhls -fno-exceptions -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/autopilot -I /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.pp.0.c -hls-platform-db-name=/home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_1590.000000_DSP_1260.000000_FF_728400.000000_LUT_364200.000000_SLICE_91050.000000_URAM_0.000000 -device-name-info=xc7v585tffg1761-2 > /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.c.clang.out.log 2> /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.c.clang.err.log 
+Command       ap_eval done; 0.25 sec.
+INFO-FLOW: Done: GCC PP 39 time: 0.2 seconds per iteration
+Execute       set_directive_top atax -name=atax 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+INFO-FLOW: Source syntax check for synthesis
+Execute       ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.pp.0.c -hls-platform-db-name=/home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_1590.000000_DSP_1260.000000_FF_728400.000000_LUT_364200.000000_SLICE_91050.000000_URAM_0.000000 -device-name-info=xc7v585tffg1761-2 > /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/clang.out.log 2> /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/clang.err.log 
+Command       ap_eval done; 0.26 sec.
+Execute       clang_tidy xilinx-systemc-detector -desc systemc-detector /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.pp.0.c std=gnu99 -target fpga  -directive=/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/.systemc_flag -fix-errors /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute       clang_tidy xilinx-directive2pragma -desc directive2pragma /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.pp.0.c std=gnu99 -target fpga  -directive=/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/all.directive.json -fix-errors /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+Execute       clang_tidy xilinx-remove-assert -desc remove-assert /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.pp.0.c std=gnu99 -target fpga  
+INFO-FLOW: exec /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-remove-assert -fix-errors /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.1 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute       clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.pp.0.c std=gnu99 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.pp.0.c.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 > /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.pp.0.c.clang-tidy.loop-label.out.log 2> /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.pp.0.c.clang-tidy.loop-label.err.log 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Command       clang_tidy done; 0.12 sec.
+Execute       ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.pp.0.c.xilinx-dataflow-lawyer.diag.yml /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.pp.0.c.xilinx-dataflow-lawyer.out.log 2> /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.pp.0.c.xilinx-dataflow-lawyer.err.log 
+Execute       ap_part_info -name xc7v585t-ffg1761-2 -data info 
+INFO-FLOW: compiling source code to llvm bc
+Execute       ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.pp.0.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.pp.0.c -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/autopilot -I /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.bc -hls-platform-db-name=/home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_1590.000000_DSP_1260.000000_FF_728400.000000_LUT_364200.000000_SLICE_91050.000000_URAM_0.000000 -device-name-info=xc7v585tffg1761-2 > /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.pp.0.c.clang.out.log 2> /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.pp.0.c.clang.err.log 
+Command       ap_eval done; 0.25 sec.
+WARNING: [HLS 207-5292] unused parameter 'argc' (atax_no_taffo.c:68:14)
+WARNING: [HLS 207-5292] unused parameter 'argv' (atax_no_taffo.c:68:27)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.71 seconds. CPU system time: 0.51 seconds. Elapsed time: 1.22 seconds; current allocated memory: 772.281 MB.
+INFO-FLOW: Linking Debug ...
+INFO-FLOW: Linking dut bc code.
+Execute       run_link_or_opt -out /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.0.bc -args  "/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.g.bc"  
+Execute         ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.g.bc -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.0.bc > /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.0.bc.llvm-link.out.log 2> /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.0.bc.llvm-link.err.log 
+INFO-FLOW: 
+Execute       run_link_or_opt -opt -out /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.1.lower.bc -args /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
+Execute         ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.diag.yml /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.1.lower.bc > /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.out.log 2> /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.err.log 
+INFO-FLOW: 
+INFO-FLOW: Linking math bc lib
+Execute       run_link_or_opt -out /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.2.m1.bc -args /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/lib/libhlsm_39.bc /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/lib/libhlsmc++_39.bc 
+Execute         ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/lib/libhlsm_39.bc /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/lib/libhlsmc++_39.bc -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.2.m1.bc > /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log 
+Command         ap_eval done; 2.94 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 2.94 sec.
+Execute       run_link_or_opt -opt -out /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=atax -reflow-float-conversion 
+Execute         ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=atax -reflow-float-conversion -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.3.fpc.bc > /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log 
+Command         ap_eval done; 1.08 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 1.08 sec.
+Execute       run_link_or_opt -out /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.4.m2.bc -args /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/lib/libfloatconversion_39.bc 
+Execute         ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/lib/libfloatconversion_39.bc -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.4.m2.bc > /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log 
+INFO-FLOW: 
+Execute       run_link_or_opt -opt -out /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.5.gdce.bc -args /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=atax 
+Execute         ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.diag.yml /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=atax -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.5.gdce.bc > /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.out.log 2> /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.err.log 
+INFO-FLOW: 
+Execute       send_msg_by_id INFO @200-777@%s Vivado 
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+Execute       is_m_axi_addr64 
+INFO-FLOW: Doing LTO.
+Execute       ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.0.bc.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=atax -mllvm -hls-db-dir -mllvm /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=slave -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshold=200000 -mllvm -reflow-auto-pipeline-threshold=64 -mllvm -reflow-enable-maxi-auto-id-channel=0 -mllvm -assume-maxi-align=1 -mllvm -reflow-pipeline-style-llvm-setting=2 -mllvm -reflow-enable-dataflow-strict-mode-checking=1 -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-array-partition=true -mllvm -reflow-enable-auto-parallel-performance-driven=true -mllvm -reflow-enable-partition-for-automation=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -reflow-assume-no-address-wrap=true -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -mllvm -default-clock-period=20 -x ir /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.5.gdce.bc -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.lto.bc -hls-platform-db-name=/home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_1590.000000_DSP_1260.000000_FF_728400.000000_LUT_364200.000000_SLICE_91050.000000_URAM_0.000000 -device-name-info=xc7v585tffg1761-2 > /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.0.bc.clang.out.log 2> /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.ld.0.bc.clang.err.log 
+Command       ap_eval done; 0.37 sec.
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_53_2' is marked as complete unroll implied by the pipeline pragma (atax_no_taffo.c:53:24)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_58_3' is marked as complete unroll implied by the pipeline pragma (atax_no_taffo.c:58:24)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_53_2' (atax_no_taffo.c:53:24) in function 'atax' completely with a factor of 16 (atax_no_taffo.c:24:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_53_2' (atax_no_taffo.c:53:24) in function 'atax' has been removed because the loop is unrolled completely (atax_no_taffo.c:24:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_58_3' (atax_no_taffo.c:58:24) in function 'atax' completely with a factor of 16 (atax_no_taffo.c:24:0)
+INFO: [HLS 214-115] Multiple burst reads of length 16 and bit width 32 has been inferred on bundle 'gmem'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 214-115] Multiple burst reads of length 16 and bit width 32 has been inferred on bundle 'gmem'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (atax_no_taffo.c:60:7)
+INFO: [HLS 214-115] Multiple burst reads of length 256 and bit width 32 in loop 'VITIS_LOOP_48_1'(atax_no_taffo.c:48:22) has been inferred on bundle 'gmem'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (atax_no_taffo.c:48:22)
+INFO: [HLS 214-115] Multiple burst writes of length 16 and bit width 32 has been inferred on bundle 'gmem'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (atax_no_taffo.c:64:1)
+INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/kernel.internal.xml
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.25 seconds. CPU system time: 0.55 seconds. Elapsed time: 4.81 seconds; current allocated memory: 773.121 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 773.121 MB.
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top atax -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.0.bc -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 774.008 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -directive-preproc -mem2reg -dse -dce -globaldce /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.1.bc -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 774.047 MB.
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.g.1.bc to /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db -interface-port-rename -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -prepare-dynamic-array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -globaldce -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -canonicalize-dataflow -dce -globaldce -scalar-preprocessing -scalar-propagation2 -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.o.1.bc -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -barrier -norm-name /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 795.727 MB.
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -deadargelim -globaldce -mem2reg -bram-byte-enable -load-elim -read-loop-dep -loop-simplify -loop-extract-inner -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable-spec-prop -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.o.2.bc -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 796.289 MB.
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 0.18 sec.
+Command     elaborate done; 6.22 sec.
+Execute     ap_eval exec zip -j /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'atax' ...
+Execute       ap_set_top_model atax 
+Execute       get_model_list atax -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model atax 
+Execute       preproc_iomode -model atax_Pipeline_VITIS_LOOP_48_1 
+Execute       get_model_list atax -filter all-wo-channel 
+INFO-FLOW: Model list for configure: atax_Pipeline_VITIS_LOOP_48_1 atax
+INFO-FLOW: Configuring Module : atax_Pipeline_VITIS_LOOP_48_1 ...
+Execute       set_default_model atax_Pipeline_VITIS_LOOP_48_1 
+Execute       apply_spec_resource_limit atax_Pipeline_VITIS_LOOP_48_1 
+INFO-FLOW: Configuring Module : atax ...
+Execute       set_default_model atax 
+Execute       apply_spec_resource_limit atax 
+INFO-FLOW: Model list for preprocess: atax_Pipeline_VITIS_LOOP_48_1 atax
+INFO-FLOW: Preprocessing Module: atax_Pipeline_VITIS_LOOP_48_1 ...
+Execute       set_default_model atax_Pipeline_VITIS_LOOP_48_1 
+Execute       cdfg_preprocess -model atax_Pipeline_VITIS_LOOP_48_1 
+Execute       rtl_gen_preprocess atax_Pipeline_VITIS_LOOP_48_1 
+INFO-FLOW: Preprocessing Module: atax ...
+Execute       set_default_model atax 
+Execute       cdfg_preprocess -model atax 
+Execute       rtl_gen_preprocess atax 
+INFO-FLOW: Model list for synthesis: atax_Pipeline_VITIS_LOOP_48_1 atax
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'atax_Pipeline_VITIS_LOOP_48_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model atax_Pipeline_VITIS_LOOP_48_1 
+Execute       schedule -model atax_Pipeline_VITIS_LOOP_48_1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_48_1'.
+WARNING: [HLS 200-880] The II Violation in module 'atax_Pipeline_VITIS_LOOP_48_1' (loop 'VITIS_LOOP_48_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem_addr_read_15', atax_no_taffo.c:55) on port 'gmem' (atax_no_taffo.c:55) and bus read operation ('gmem_addr_read', atax_no_taffo.c:55) on port 'gmem' (atax_no_taffo.c:55).
+WARNING: [HLS 200-880] The II Violation in module 'atax_Pipeline_VITIS_LOOP_48_1' (loop 'VITIS_LOOP_48_1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('gmem_addr_read_15', atax_no_taffo.c:55) on port 'gmem' (atax_no_taffo.c:55) and bus read operation ('gmem_addr_read', atax_no_taffo.c:55) on port 'gmem' (atax_no_taffo.c:55).
+WARNING: [HLS 200-880] The II Violation in module 'atax_Pipeline_VITIS_LOOP_48_1' (loop 'VITIS_LOOP_48_1'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus read operation ('gmem_addr_read_15', atax_no_taffo.c:55) on port 'gmem' (atax_no_taffo.c:55) and bus read operation ('gmem_addr_read', atax_no_taffo.c:55) on port 'gmem' (atax_no_taffo.c:55).
+WARNING: [HLS 200-880] The II Violation in module 'atax_Pipeline_VITIS_LOOP_48_1' (loop 'VITIS_LOOP_48_1'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus read operation ('gmem_addr_read_15', atax_no_taffo.c:55) on port 'gmem' (atax_no_taffo.c:55) and bus read operation ('gmem_addr_read', atax_no_taffo.c:55) on port 'gmem' (atax_no_taffo.c:55).
+WARNING: [HLS 200-880] The II Violation in module 'atax_Pipeline_VITIS_LOOP_48_1' (loop 'VITIS_LOOP_48_1'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus read operation ('gmem_addr_read_15', atax_no_taffo.c:55) on port 'gmem' (atax_no_taffo.c:55) and bus read operation ('gmem_addr_read', atax_no_taffo.c:55) on port 'gmem' (atax_no_taffo.c:55).
+WARNING: [HLS 200-880] The II Violation in module 'atax_Pipeline_VITIS_LOOP_48_1' (loop 'VITIS_LOOP_48_1'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus read operation ('gmem_addr_read_15', atax_no_taffo.c:55) on port 'gmem' (atax_no_taffo.c:55) and bus read operation ('gmem_addr_read', atax_no_taffo.c:55) on port 'gmem' (atax_no_taffo.c:55).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 16, Depth = 55, loop 'VITIS_LOOP_48_1'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.94 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.96 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.99 seconds; current allocated memory: 799.801 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_Pipeline_VITIS_LOOP_48_1.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.29 sec.
+Execute       db_write -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_Pipeline_VITIS_LOOP_48_1.sched.adb -f 
+INFO-FLOW: Finish scheduling atax_Pipeline_VITIS_LOOP_48_1.
+Execute       set_default_model atax_Pipeline_VITIS_LOOP_48_1 
+Execute       bind -model atax_Pipeline_VITIS_LOOP_48_1 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.13 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.44 seconds. CPU system time: 0 seconds. Elapsed time: 0.43 seconds; current allocated memory: 799.801 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_Pipeline_VITIS_LOOP_48_1.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.22 sec.
+Execute       db_write -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_Pipeline_VITIS_LOOP_48_1.bind.adb -f 
+INFO-FLOW: Finish binding atax_Pipeline_VITIS_LOOP_48_1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'atax' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model atax 
+Execute       schedule -model atax 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.18 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.41 seconds. CPU system time: 0 seconds. Elapsed time: 0.42 seconds; current allocated memory: 800.961 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.2 sec.
+Execute       db_write -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.sched.adb -f 
+INFO-FLOW: Finish scheduling atax.
+Execute       set_default_model atax 
+Execute       bind -model atax 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.15 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.35 seconds. CPU system time: 0 seconds. Elapsed time: 0.35 seconds; current allocated memory: 800.961 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.bind.adb -f 
+INFO-FLOW: Finish binding atax.
+Execute       get_model_list atax -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess atax_Pipeline_VITIS_LOOP_48_1 
+Execute       rtl_gen_preprocess atax 
+INFO-FLOW: Model list for RTL generation: atax_Pipeline_VITIS_LOOP_48_1 atax
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'atax_Pipeline_VITIS_LOOP_48_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model atax_Pipeline_VITIS_LOOP_48_1 -top_prefix atax_ -sub_prefix atax_ -mg_file /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_Pipeline_VITIS_LOOP_48_1.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'atax_Pipeline_VITIS_LOOP_48_1' pipeline 'VITIS_LOOP_48_1' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'atax_Pipeline_VITIS_LOOP_48_1/m_axi_gmem_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'atax_Pipeline_VITIS_LOOP_48_1/m_axi_gmem_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'atax_Pipeline_VITIS_LOOP_48_1/m_axi_gmem_ARID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'atax_Pipeline_VITIS_LOOP_48_1/m_axi_gmem_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'atax_Pipeline_VITIS_LOOP_48_1/m_axi_gmem_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'atax_Pipeline_VITIS_LOOP_48_1/m_axi_gmem_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'atax_Pipeline_VITIS_LOOP_48_1/m_axi_gmem_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'atax_Pipeline_VITIS_LOOP_48_1/m_axi_gmem_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'atax_Pipeline_VITIS_LOOP_48_1/m_axi_gmem_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'atax_Pipeline_VITIS_LOOP_48_1/m_axi_gmem_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'atax_Pipeline_VITIS_LOOP_48_1/m_axi_gmem_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'atax_Pipeline_VITIS_LOOP_48_1/m_axi_gmem_ARUSER' to 0.
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_2_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'atax_Pipeline_VITIS_LOOP_48_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.19 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.2 seconds; current allocated memory: 802.000 MB.
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.rtl_wrap.cfg.tcl 
+Execute       gen_rtl atax_Pipeline_VITIS_LOOP_48_1 -style xilinx -f -lang vhdl -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/syn/vhdl/atax_atax_Pipeline_VITIS_LOOP_48_1 
+Execute       gen_rtl atax_Pipeline_VITIS_LOOP_48_1 -style xilinx -f -lang vlog -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/syn/verilog/atax_atax_Pipeline_VITIS_LOOP_48_1 
+Execute       syn_report -csynth -model atax_Pipeline_VITIS_LOOP_48_1 -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/syn/report/atax_Pipeline_VITIS_LOOP_48_1_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model atax_Pipeline_VITIS_LOOP_48_1 -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/syn/report/atax_Pipeline_VITIS_LOOP_48_1_csynth.xml 
+Execute       syn_report -verbosereport -model atax_Pipeline_VITIS_LOOP_48_1 -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_Pipeline_VITIS_LOOP_48_1.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.29 sec.
+Execute       db_write -model atax_Pipeline_VITIS_LOOP_48_1 -f -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_Pipeline_VITIS_LOOP_48_1.adb 
+Execute       db_write -model atax_Pipeline_VITIS_LOOP_48_1 -bindview -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/design.bindinfo.xml 
+Command       db_write done; 0.21 sec.
+Execute       gen_tb_info atax_Pipeline_VITIS_LOOP_48_1 -p /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_Pipeline_VITIS_LOOP_48_1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'atax' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model atax -top_prefix  -sub_prefix atax_ -mg_file /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.compgen.tcl 
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'atax/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'atax/A' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'atax/x' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'atax/y' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'atax' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'A', 'x' and 'y' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'atax'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.82 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.84 seconds; current allocated memory: 808.242 MB.
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.rtl_wrap.cfg.tcl 
+Execute       gen_rtl atax -istop -style xilinx -f -lang vhdl -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/syn/vhdl/atax 
+Execute       gen_rtl atax -istop -style xilinx -f -lang vlog -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/syn/verilog/atax 
+Execute       syn_report -csynth -model atax -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/syn/report/atax_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model atax -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/syn/report/atax_csynth.xml 
+Execute       syn_report -verbosereport -model atax -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.14 sec.
+Execute       db_write -model atax -f -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.adb 
+Execute       db_write -model atax -bindview -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info atax -p /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax 
+Execute       export_constraint_db -f -tool general -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.constraint.tcl 
+Execute       syn_report -designview -model atax -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.design.xml 
+Execute       syn_report -csynthDesign -model atax -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/syn/report/csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -wcfg -model atax -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_dataflow_ana.wcfg 
+Execute       syn_report -protoinst -model atax -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.protoinst 
+Execute       sc_get_clocks atax 
+Execute       sc_get_portdomain atax 
+INFO-FLOW: Model list for RTL component generation: atax_Pipeline_VITIS_LOOP_48_1 atax
+INFO-FLOW: Handling components in module [atax_Pipeline_VITIS_LOOP_48_1] ... 
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_Pipeline_VITIS_LOOP_48_1.compgen.tcl 
+INFO-FLOW: Found component atax_fadd_32ns_32ns_32_2_full_dsp_1.
+INFO-FLOW: Append model atax_fadd_32ns_32ns_32_2_full_dsp_1
+INFO-FLOW: Found component atax_fmul_32ns_32ns_32_2_max_dsp_1.
+INFO-FLOW: Append model atax_fmul_32ns_32ns_32_2_max_dsp_1
+INFO-FLOW: Found component atax_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model atax_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [atax] ... 
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.compgen.tcl 
+INFO-FLOW: Found component atax_gmem_m_axi.
+INFO-FLOW: Append model atax_gmem_m_axi
+INFO-FLOW: Found component atax_control_s_axi.
+INFO-FLOW: Append model atax_control_s_axi
+INFO-FLOW: Append model atax_Pipeline_VITIS_LOOP_48_1
+INFO-FLOW: Append model atax
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: atax_fadd_32ns_32ns_32_2_full_dsp_1 atax_fmul_32ns_32ns_32_2_max_dsp_1 atax_flow_control_loop_pipe_sequential_init atax_gmem_m_axi atax_control_s_axi atax_Pipeline_VITIS_LOOP_48_1 atax
+INFO-FLOW: Generating /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/autopilot.rtl.models.txt file...
+INFO-FLOW: To file: write model atax_fadd_32ns_32ns_32_2_full_dsp_1
+INFO-FLOW: To file: write model atax_fmul_32ns_32ns_32_2_max_dsp_1
+INFO-FLOW: To file: write model atax_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model atax_gmem_m_axi
+INFO-FLOW: To file: write model atax_control_s_axi
+INFO-FLOW: To file: write model atax_Pipeline_VITIS_LOOP_48_1
+INFO-FLOW: To file: write model atax
+INFO-FLOW: Generating /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/autopilot.rtl.models.tcl file...
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::auto_generate_csynth_design
+INFO-FLOW: DBG:PUTS: read_platform_lib /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/global.setting.tcl
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/generic/autopilot/common.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/generic/autopilot/op.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/generic/autopilot/interface.gen 
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.11 sec.
+INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=20.000 (was NA)
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/vhdl' dstVlogDir='/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/vlog' tclDir='/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db' modelList='atax_fadd_32ns_32ns_32_2_full_dsp_1
+atax_fmul_32ns_32ns_32_2_max_dsp_1
+atax_flow_control_loop_pipe_sequential_init
+atax_gmem_m_axi
+atax_control_s_axi
+atax_Pipeline_VITIS_LOOP_48_1
+atax
+' expOnly='0'
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7v585t-ffg1761-2 -data names -quiet 
+Execute       ap_part_info -name xc7v585t-ffg1761-2 -data info -quiet 
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_Pipeline_VITIS_LOOP_48_1.compgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.compgen.tcl 
+Execute         source ./control.slave.tcl 
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.55 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.57 seconds; current allocated memory: 813.211 MB.
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::create_csynth_xml bind_info_var='bind_info' RtlSubPrefix='atax_' outfile=''
+INFO-FLOW: Running: create_csynth_xml read xml data
+INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml bind info
+INFO-FLOW: No bind nodes found for module_name atax
+INFO-FLOW: Done: create_csynth_xml bind info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml config info
+INFO-FLOW: Done: create_csynth_xml config info time: 0.1 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml write xml
+INFO-FLOW: Done: create_csynth_xml write xml time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      create_csynth_xml wrote csynth_xml=/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/syn/report/csynth.xml
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='atax_fadd_32ns_32ns_32_2_full_dsp_1
+atax_fmul_32ns_32ns_32_2_max_dsp_1
+atax_flow_control_loop_pipe_sequential_init
+atax_gmem_m_axi
+atax_control_s_axi
+atax_Pipeline_VITIS_LOOP_48_1
+atax
+' rtl_lang='both' bootstrap_tcl='false' outdir='' outfilename=''
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/top-io-be.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.compgen.dataonly.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.compgen.dataonly.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.rtl_wrap.cfg.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.compgen.dataonly.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_Pipeline_VITIS_LOOP_48_1.tbgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7v585t-ffg1761-2 -data names -quiet 
+Execute       ap_part_info -name xc7v585t-ffg1761-2 -data info -quiet 
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.constraint.tcl 
+Execute       sc_get_clocks atax 
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/impl/misc/atax_fadd_32ns_32ns_32_2_full_dsp_1_ip.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/impl/misc/atax_fmul_32ns_32ns_32_2_max_dsp_1_ip.tcl 
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {{BINDTYPE adapter DISPLAY {bind_adapter axilite} ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA yes RTLNAME control_s_axi_U SOURCE {} VARIABLE {} MODULE atax LOOP {} BUNDLEDNAME control DSP 0 BRAM 0 URAM 0} {BINDTYPE adapter DISPLAY {bind_adapter axi_master} ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA yes RTLNAME gmem_m_axi_U SOURCE {} VARIABLE {} MODULE atax LOOP {} BUNDLEDNAME gmem DSP 0 BRAM 0 URAM 0}} report_dict {TOPINST atax MODULE2INSTS {atax atax atax_Pipeline_VITIS_LOOP_48_1 grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313} INST2MODULE {atax atax grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313 atax_Pipeline_VITIS_LOOP_48_1} INSTDATA {atax {DEPTH 1 CHILDREN grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313} grp_atax_Pipeline_VITIS_LOOP_48_1_fu_313 {DEPTH 2 CHILDREN {}}} MODULEDATA {atax_Pipeline_VITIS_LOOP_48_1 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln48_fu_691_p2 SOURCE atax_no_taffo.c:48 VARIABLE add_ln48 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U3 SOURCE atax_no_taffo.c:55 VARIABLE mul7 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U1 SOURCE atax_no_taffo.c:55 VARIABLE tmp LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U3 SOURCE atax_no_taffo.c:55 VARIABLE mul7_1 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U1 SOURCE atax_no_taffo.c:55 VARIABLE tmp_1 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U3 SOURCE atax_no_taffo.c:55 VARIABLE mul7_2 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U1 SOURCE atax_no_taffo.c:55 VARIABLE tmp_2 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U3 SOURCE atax_no_taffo.c:55 VARIABLE mul7_3 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U1 SOURCE atax_no_taffo.c:55 VARIABLE tmp_3 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U3 SOURCE atax_no_taffo.c:55 VARIABLE mul7_4 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U1 SOURCE atax_no_taffo.c:55 VARIABLE tmp_4 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U3 SOURCE atax_no_taffo.c:55 VARIABLE mul7_5 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U1 SOURCE atax_no_taffo.c:55 VARIABLE tmp_5 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U3 SOURCE atax_no_taffo.c:55 VARIABLE mul7_6 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U1 SOURCE atax_no_taffo.c:55 VARIABLE tmp_6 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U3 SOURCE atax_no_taffo.c:55 VARIABLE mul7_7 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U1 SOURCE atax_no_taffo.c:55 VARIABLE tmp_7 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U3 SOURCE atax_no_taffo.c:55 VARIABLE mul7_8 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U2 SOURCE atax_no_taffo.c:55 VARIABLE tmp_8 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U3 SOURCE atax_no_taffo.c:55 VARIABLE mul7_9 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U2 SOURCE atax_no_taffo.c:55 VARIABLE tmp_9 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U3 SOURCE atax_no_taffo.c:55 VARIABLE mul7_s LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U2 SOURCE atax_no_taffo.c:55 VARIABLE tmp_32 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U3 SOURCE atax_no_taffo.c:55 VARIABLE mul7_10 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U2 SOURCE atax_no_taffo.c:55 VARIABLE tmp_33 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U3 SOURCE atax_no_taffo.c:55 VARIABLE mul7_11 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U2 SOURCE atax_no_taffo.c:55 VARIABLE tmp_34 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U3 SOURCE atax_no_taffo.c:55 VARIABLE mul7_12 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U2 SOURCE atax_no_taffo.c:55 VARIABLE tmp_35 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U3 SOURCE atax_no_taffo.c:55 VARIABLE mul7_13 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U2 SOURCE atax_no_taffo.c:55 VARIABLE tmp_36 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U3 SOURCE atax_no_taffo.c:55 VARIABLE mul7_14 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U2 SOURCE atax_no_taffo.c:55 VARIABLE tmp_37 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U4 SOURCE atax_no_taffo.c:60 VARIABLE mul LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U1 SOURCE atax_no_taffo.c:60 VARIABLE add LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U4 SOURCE atax_no_taffo.c:60 VARIABLE mul18_1 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U2 SOURCE atax_no_taffo.c:60 VARIABLE add19_1 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U4 SOURCE atax_no_taffo.c:60 VARIABLE mul18_2 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U1 SOURCE atax_no_taffo.c:60 VARIABLE add19_2 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U4 SOURCE atax_no_taffo.c:60 VARIABLE mul18_3 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U2 SOURCE atax_no_taffo.c:60 VARIABLE add19_3 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U4 SOURCE atax_no_taffo.c:60 VARIABLE mul18_4 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U1 SOURCE atax_no_taffo.c:60 VARIABLE add19_4 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U4 SOURCE atax_no_taffo.c:60 VARIABLE mul18_5 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U2 SOURCE atax_no_taffo.c:60 VARIABLE add19_5 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U4 SOURCE atax_no_taffo.c:60 VARIABLE mul18_6 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U1 SOURCE atax_no_taffo.c:60 VARIABLE add19_6 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U4 SOURCE atax_no_taffo.c:60 VARIABLE mul18_7 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U2 SOURCE atax_no_taffo.c:60 VARIABLE add19_7 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U4 SOURCE atax_no_taffo.c:60 VARIABLE mul18_8 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U1 SOURCE atax_no_taffo.c:60 VARIABLE add19_8 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U4 SOURCE atax_no_taffo.c:60 VARIABLE mul18_9 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U2 SOURCE atax_no_taffo.c:60 VARIABLE add19_9 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U4 SOURCE atax_no_taffo.c:60 VARIABLE mul18_s LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U1 SOURCE atax_no_taffo.c:60 VARIABLE add19_s LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U4 SOURCE atax_no_taffo.c:60 VARIABLE mul18_10 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U2 SOURCE atax_no_taffo.c:60 VARIABLE add19_10 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U4 SOURCE atax_no_taffo.c:60 VARIABLE mul18_11 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U1 SOURCE atax_no_taffo.c:60 VARIABLE add19_11 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U4 SOURCE atax_no_taffo.c:60 VARIABLE mul18_12 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U2 SOURCE atax_no_taffo.c:60 VARIABLE add19_12 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U4 SOURCE atax_no_taffo.c:60 VARIABLE mul18_13 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U1 SOURCE atax_no_taffo.c:60 VARIABLE add19_13 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U4 SOURCE atax_no_taffo.c:60 VARIABLE mul18_14 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 1 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_2_full_dsp_1_U2 SOURCE atax_no_taffo.c:60 VARIABLE add19_14 LOOP VITIS_LOOP_48_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}}} AREA {DSP 10 BRAM 0 URAM 0}} atax {AREA {DSP 10 BRAM 0 URAM 0}}}}'
+INFO-FLOW: DBG:PUTS:      update_csynth_reports json2rpt_hw_sw_interfaces
+Execute       send_msg_by_id INFO @200-1603@%s  and missed bursts 
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO-FLOW: Running: gen_csynth_sec_pragma
+INFO-FLOW: Done: gen_csynth_sec_pragma time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      update_csynth_reports wrote xml
+INFO-FLOW: DBG:PUTS:      update_csynth_reports appended to csynth rpt file
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.75 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.77 seconds; current allocated memory: 818.301 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for atax.
+INFO: [VLOG 209-307] Generating Verilog RTL for atax.
+Execute       syn_report -model atax -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 68.49 MHz
+Command     autosyn done; 4.58 sec.
+Command   csynth_design done; 10.83 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 9.63 seconds. CPU system time: 1.18 seconds. Elapsed time: 10.83 seconds; current allocated memory: 47.836 MB.
+Execute   cosim_design 
+INFO: [HLS 200-1510] Running: cosim_design 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:PUTS: read_platform_lib /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/global.setting.tcl
+Execute     source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/generic/autopilot/common.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/generic/autopilot/op.gen 
+Execute     source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/generic/autopilot/interface.gen 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.14 sec.
+Execute     ap_part_info -name xc7v585t-ffg1761-2 -data names -quiet 
+Execute     ap_part_info -name xc7v585t-ffg1761-2 -data info -quiet 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.rtl_wrap.cfg.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+Execute     ap_part_info -name xc7v585t-ffg1761-2 -data info 
+Execute     ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang -gcc-toolchain /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/gcc -foptimization-record-file=/home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.c.clang.autosim-tb.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-builtin-isinf -fno-builtin-isnan -E -Wno-unknown-pragmas -Wno-unknown-pragmas -DGCC_COMPATIBLE_APINT -DAESL_TB -D__HLS_COSIM__ -D__VITIS_HLS__ -I /usr/include/x86_64-linux-gnu -I /home/bruno/Documents/Vitis_HLS/2022.2/include -I include /home/bruno/Desktop/benchmarks/atax/atax_no_taffo.c -o /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/./sim/autowrap/testbench/atax_no_taffo.c_pre.c -std=gnu89 -D__DSP48E1__ > /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.c.clang.autosim-tb.out.log 2> /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax_no_taffo.c.clang.autosim-tb.err.log 
+INFO-FLOW: TB processing: /home/bruno/Desktop/benchmarks/atax/atax_no_taffo.c /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/./sim/autowrap/testbench/atax_no_taffo.c_pre.c
+Execute     clang_tidy xilinx-tb-process -desc tb-process /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/./sim/autowrap/testbench/atax_no_taffo.c_pre.c.tb.c std=gnu89 
+INFO-FLOW: exec /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-tb-process -fix-errors /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/./sim/autowrap/testbench/atax_no_taffo.c_pre.c.tb.c -- -std=gnu89 -fhls -ferror-limit=0
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/./sim/autowrap/testbench/tb.status.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.rtl_wrap.cfg.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.rtl_wrap.cfg.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.rtl_wrap.cfg.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute     ap_part_info -name xc7v585t-ffg1761-2 -data info 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.rtl_wrap.cfg.tcl 
+Execute     source .run_sim.tcl 
+INFO: [COSIM 212-302] Starting C TB testing ... 
+Command     ap_source done; 0.12 sec.
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+Execute     source ../tv/cdatafile/ref.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute     source ../tv/cdatafile/ref.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/atax/proj_atax_no_taffo/solution1/.autopilot/db/atax.tbgen.tcl 
+Execute     ap_part_info -name xc7v585t-ffg1761-2 -data names -quiet 
+Execute     ap_part_info -name xc7v585t-ffg1761-2 -data info -quiet 
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+Execute     source .run_sim.tcl 
+Execute       source check_sim.tcl 
+Execute       source dataflow_monitor_API.tcl 
+Execute       source .sim.status.tcl 
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+Command     ap_source done; 31.13 sec.
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+Command   cosim_design done; 63.38 sec.
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 74.3 seconds. CPU system time: 4.35 seconds. Elapsed time: 63.38 seconds; current allocated memory: 5.762 MB.
+Command ap_source done; 92.96 sec.
+Execute cleanup_all 

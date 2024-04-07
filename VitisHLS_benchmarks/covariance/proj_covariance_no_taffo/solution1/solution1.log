@@ -1,0 +1,118 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part virtex7 
+INFO: [HLS 200-1611] Setting target device to 'xc7v585t-ffg1761-2'
+INFO: [HLS 200-1510] Running: create_clock -period 50MHz 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 4.53 seconds. CPU system time: 0.56 seconds. Elapsed time: 4.79 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.01 seconds; current allocated memory: 751.711 MB.
+INFO: [HLS 200-10] Analyzing design file 'covariance_no_taffo.c' ... 
+WARNING: [HLS 207-5292] unused parameter 'argc' (covariance_no_taffo.c:85:14)
+WARNING: [HLS 207-5292] unused parameter 'argv' (covariance_no_taffo.c:85:27)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.65 seconds. CPU system time: 0.54 seconds. Elapsed time: 1.19 seconds; current allocated memory: 753.590 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.19 seconds. CPU system time: 0.58 seconds. Elapsed time: 4.78 seconds; current allocated memory: 754.242 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 754.242 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 755.020 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 755.062 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_50_1' (covariance_no_taffo.c:29) in function 'covariance' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_62_4' (covariance_no_taffo.c:29) in function 'covariance' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_70_6' (covariance_no_taffo.c:29) in function 'covariance' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_50_1' (covariance_no_taffo.c:29) in function 'covariance' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_70_6' (covariance_no_taffo.c:29) in function 'covariance' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_53_2' (covariance_no_taffo.c:28) in function 'covariance' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_73_7' (covariance_no_taffo.c:30) in function 'covariance' completely with a factor of 16.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 778.422 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_60_3' (covariance_no_taffo.c:28:5) in function 'covariance'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_68_5' (covariance_no_taffo.c:28:5) in function 'covariance' the outer loop is not a perfect loop.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.11 seconds; current allocated memory: 798.695 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'covariance' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'covariance_Pipeline_VITIS_LOOP_50_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_50_1'.
+WARNING: [HLS 200-885] The II Violation in module 'covariance_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to schedule bus request operation ('gmem_load_1_req', covariance_no_taffo.c:55) on port 'gmem' (covariance_no_taffo.c:55) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'covariance_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to schedule bus request operation ('gmem_load_5_req', covariance_no_taffo.c:55) on port 'gmem' (covariance_no_taffo.c:55) due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'covariance_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to schedule bus request operation ('gmem_load_6_req', covariance_no_taffo.c:55) on port 'gmem' (covariance_no_taffo.c:55) due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'covariance_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to schedule bus request operation ('gmem_load_7_req', covariance_no_taffo.c:55) on port 'gmem' (covariance_no_taffo.c:55) due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'covariance_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to schedule bus request operation ('gmem_load_14_req', covariance_no_taffo.c:55) on port 'gmem' (covariance_no_taffo.c:55) due to limited memory ports (II = 11). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'covariance_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to schedule bus request operation ('gmem_load_18_req', covariance_no_taffo.c:55) on port 'gmem' (covariance_no_taffo.c:55) due to limited memory ports (II = 15). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'covariance_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to schedule bus request operation ('gmem_load_19_req', covariance_no_taffo.c:55) on port 'gmem' (covariance_no_taffo.c:55) due to limited memory ports (II = 16). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 17, Depth = 50, loop 'VITIS_LOOP_50_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.38 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.41 seconds; current allocated memory: 801.703 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.31 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.32 seconds; current allocated memory: 801.703 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'covariance_Pipeline_VITIS_LOOP_60_3_VITIS_LOOP_62_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_60_3_VITIS_LOOP_62_4'.
+WARNING: [HLS 200-880] The II Violation in module 'covariance_Pipeline_VITIS_LOOP_60_3_VITIS_LOOP_62_4' (loop 'VITIS_LOOP_60_3_VITIS_LOOP_62_4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp', covariance_no_taffo.c:64) on port 'gmem' (covariance_no_taffo.c:64) and bus request operation ('gmem_load_3_req', covariance_no_taffo.c:64) on port 'gmem' (covariance_no_taffo.c:64).
+WARNING: [HLS 200-880] The II Violation in module 'covariance_Pipeline_VITIS_LOOP_60_3_VITIS_LOOP_62_4' (loop 'VITIS_LOOP_60_3_VITIS_LOOP_62_4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp', covariance_no_taffo.c:64) on port 'gmem' (covariance_no_taffo.c:64) and bus request operation ('gmem_load_3_req', covariance_no_taffo.c:64) on port 'gmem' (covariance_no_taffo.c:64).
+WARNING: [HLS 200-880] The II Violation in module 'covariance_Pipeline_VITIS_LOOP_60_3_VITIS_LOOP_62_4' (loop 'VITIS_LOOP_60_3_VITIS_LOOP_62_4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp', covariance_no_taffo.c:64) on port 'gmem' (covariance_no_taffo.c:64) and bus request operation ('gmem_load_3_req', covariance_no_taffo.c:64) on port 'gmem' (covariance_no_taffo.c:64).
+WARNING: [HLS 200-880] The II Violation in module 'covariance_Pipeline_VITIS_LOOP_60_3_VITIS_LOOP_62_4' (loop 'VITIS_LOOP_60_3_VITIS_LOOP_62_4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp', covariance_no_taffo.c:64) on port 'gmem' (covariance_no_taffo.c:64) and bus request operation ('gmem_load_3_req', covariance_no_taffo.c:64) on port 'gmem' (covariance_no_taffo.c:64).
+WARNING: [HLS 200-880] The II Violation in module 'covariance_Pipeline_VITIS_LOOP_60_3_VITIS_LOOP_62_4' (loop 'VITIS_LOOP_60_3_VITIS_LOOP_62_4'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp', covariance_no_taffo.c:64) on port 'gmem' (covariance_no_taffo.c:64) and bus request operation ('gmem_load_3_req', covariance_no_taffo.c:64) on port 'gmem' (covariance_no_taffo.c:64).
+WARNING: [HLS 200-880] The II Violation in module 'covariance_Pipeline_VITIS_LOOP_60_3_VITIS_LOOP_62_4' (loop 'VITIS_LOOP_60_3_VITIS_LOOP_62_4'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp', covariance_no_taffo.c:64) on port 'gmem' (covariance_no_taffo.c:64) and bus request operation ('gmem_load_3_req', covariance_no_taffo.c:64) on port 'gmem' (covariance_no_taffo.c:64).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 16, Depth = 18, loop 'VITIS_LOOP_60_3_VITIS_LOOP_62_4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.25 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 802.352 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 802.352 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'covariance_Pipeline_VITIS_LOOP_70_6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_70_6'.
+WARNING: [HLS 200-880] The II Violation in module 'covariance_Pipeline_VITIS_LOOP_70_6' (loop 'VITIS_LOOP_70_6'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_4_resp', covariance_no_taffo.c:77) on port 'gmem' (covariance_no_taffo.c:77) and bus request operation ('gmem_load_4_req', covariance_no_taffo.c:75) on port 'gmem' (covariance_no_taffo.c:75).
+WARNING: [HLS 200-880] The II Violation in module 'covariance_Pipeline_VITIS_LOOP_70_6' (loop 'VITIS_LOOP_70_6'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_4_resp', covariance_no_taffo.c:77) on port 'gmem' (covariance_no_taffo.c:77) and bus request operation ('gmem_load_4_req', covariance_no_taffo.c:75) on port 'gmem' (covariance_no_taffo.c:75).
+WARNING: [HLS 200-880] The II Violation in module 'covariance_Pipeline_VITIS_LOOP_70_6' (loop 'VITIS_LOOP_70_6'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_4_resp', covariance_no_taffo.c:77) on port 'gmem' (covariance_no_taffo.c:77) and bus request operation ('gmem_load_4_req', covariance_no_taffo.c:75) on port 'gmem' (covariance_no_taffo.c:75).
+WARNING: [HLS 200-880] The II Violation in module 'covariance_Pipeline_VITIS_LOOP_70_6' (loop 'VITIS_LOOP_70_6'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_4_resp', covariance_no_taffo.c:77) on port 'gmem' (covariance_no_taffo.c:77) and bus request operation ('gmem_load_4_req', covariance_no_taffo.c:75) on port 'gmem' (covariance_no_taffo.c:75).
+WARNING: [HLS 200-880] The II Violation in module 'covariance_Pipeline_VITIS_LOOP_70_6' (loop 'VITIS_LOOP_70_6'): Unable to enforce a carried dependence constraint (II = 35, distance = 1, offset = 1) between bus response operation ('gmem_addr_4_resp', covariance_no_taffo.c:77) on port 'gmem' (covariance_no_taffo.c:77) and bus request operation ('gmem_load_4_req', covariance_no_taffo.c:75) on port 'gmem' (covariance_no_taffo.c:75).
+WARNING: [HLS 200-880] The II Violation in module 'covariance_Pipeline_VITIS_LOOP_70_6' (loop 'VITIS_LOOP_70_6'): Unable to enforce a carried dependence constraint (II = 51, distance = 1, offset = 1) between bus response operation ('gmem_addr_4_resp', covariance_no_taffo.c:77) on port 'gmem' (covariance_no_taffo.c:77) and bus request operation ('gmem_load_4_req', covariance_no_taffo.c:75) on port 'gmem' (covariance_no_taffo.c:75).
+WARNING: [HLS 200-880] The II Violation in module 'covariance_Pipeline_VITIS_LOOP_70_6' (loop 'VITIS_LOOP_70_6'): Unable to enforce a carried dependence constraint (II = 55, distance = 1, offset = 1) between bus response operation ('gmem_addr_5_resp', covariance_no_taffo.c:78) on port 'gmem' (covariance_no_taffo.c:78) and bus request operation ('gmem_load_4_req', covariance_no_taffo.c:75) on port 'gmem' (covariance_no_taffo.c:75).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 56, Depth = 58, loop 'VITIS_LOOP_70_6'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.64 seconds. CPU system time: 0 seconds. Elapsed time: 0.65 seconds; current allocated memory: 804.695 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.42 seconds. CPU system time: 0 seconds. Elapsed time: 0.42 seconds; current allocated memory: 804.695 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'covariance' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.3 seconds. CPU system time: 0 seconds. Elapsed time: 0.31 seconds; current allocated memory: 804.695 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 804.695 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------

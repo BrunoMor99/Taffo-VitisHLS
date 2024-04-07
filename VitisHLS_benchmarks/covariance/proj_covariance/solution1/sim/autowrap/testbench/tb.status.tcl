@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName /home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/./sim/autowrap/testbench/covariance_taffo.c_pre.c.tb.c

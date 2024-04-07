@@ -1,0 +1,58 @@
+---
+MainSourceFile:  /home/bruno/Desktop/benchmarks/fw/proj_fw_no_taffo/solution1/.autopilot/db/fw_no_taffo.pp.0.c
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_30_1:  '
+    FileOffset:      30
+    FilePath:        fw_no_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/fw/proj_fw_no_taffo/solution1/.autopilot/db/fw_no_taffo.pp.0.c
+        Offset:          94199
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_30_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_31_2:  '
+    FileOffset:      31
+    FilePath:        fw_no_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/fw/proj_fw_no_taffo/solution1/.autopilot/db/fw_no_taffo.pp.0.c
+        Offset:          94228
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_31_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_38_3:  '
+    FileOffset:      38
+    FilePath:        fw_no_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/fw/proj_fw_no_taffo/solution1/.autopilot/db/fw_no_taffo.pp.0.c
+        Offset:          94380
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_38_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_39_4:  '
+    FileOffset:      39
+    FilePath:        fw_no_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/fw/proj_fw_no_taffo/solution1/.autopilot/db/fw_no_taffo.pp.0.c
+        Offset:          94412
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_39_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_40_5:  '
+    FileOffset:      40
+    FilePath:        fw_no_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/fw/proj_fw_no_taffo/solution1/.autopilot/db/fw_no_taffo.pp.0.c
+        Offset:          94445
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_40_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_53_6:  '
+    FileOffset:      53
+    FilePath:        fw_no_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/fw/proj_fw_no_taffo/solution1/.autopilot/db/fw_no_taffo.pp.0.c
+        Offset:          94763
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_53_6: '
+...

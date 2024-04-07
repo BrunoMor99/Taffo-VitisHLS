@@ -1,0 +1,58 @@
+---
+MainSourceFile:  /home/bruno/Desktop/benchmarks/array_copy/proj_array_copy/solution1/.autopilot/db/array_copy_taffo.pp.0.c
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_35_1:  '
+    FileOffset:      35
+    FilePath:        array_copy_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/array_copy/proj_array_copy/solution1/.autopilot/db/array_copy_taffo.pp.0.c
+        Offset:          96541
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_35_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_49_2:  '
+    FileOffset:      49
+    FilePath:        array_copy_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/array_copy/proj_array_copy/solution1/.autopilot/db/array_copy_taffo.pp.0.c
+        Offset:          96780
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_49_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_54_3:  '
+    FileOffset:      54
+    FilePath:        array_copy_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/array_copy/proj_array_copy/solution1/.autopilot/db/array_copy_taffo.pp.0.c
+        Offset:          96845
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_54_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_86_1:  '
+    FileOffset:      86
+    FilePath:        array_copy_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/array_copy/proj_array_copy/solution1/.autopilot/db/array_copy_taffo.pp.0.c
+        Offset:          97284
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_86_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_90_2:  '
+    FileOffset:      90
+    FilePath:        array_copy_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/array_copy/proj_array_copy/solution1/.autopilot/db/array_copy_taffo.pp.0.c
+        Offset:          97365
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_90_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_98_3:  '
+    FileOffset:      98
+    FilePath:        array_copy_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/array_copy/proj_array_copy/solution1/.autopilot/db/array_copy_taffo.pp.0.c
+        Offset:          97445
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_98_3: '
+...

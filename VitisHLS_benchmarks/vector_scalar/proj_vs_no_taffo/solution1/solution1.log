@@ -1,0 +1,133 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7v585t-ffg1761-2'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xc7v585t-ffg1761-2 
+INFO: [HLS 200-1510] Running: create_clock -period 100MHz -name default 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_latency 0 
+INFO: [HLS 200-1510] Running: source ./proj_vs_no_taffo/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name vs vs 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.03 seconds. CPU system time: 0.02 seconds. Elapsed time: 10.08 seconds; current allocated memory: 753.891 MB.
+INFO: [HLS 200-10] Analyzing design file 'vs_no_taffo.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.64 seconds. CPU system time: 0.69 seconds. Elapsed time: 1.39 seconds; current allocated memory: 753.891 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_48_1' (vs_no_taffo.c:48:22) in function 'vs' completely with a factor of 64 (vs_no_taffo.c:39:0)
+INFO: [HLS 214-248] Applying array_partition to 'A': Complete partitioning on dimension 1. (vs_no_taffo.c:39:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 5.65 seconds. CPU system time: 0.77 seconds. Elapsed time: 6.53 seconds; current allocated memory: 754.809 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 754.809 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 755.691 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 755.895 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.19 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.2 seconds; current allocated memory: 778.012 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 778.012 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'vs' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'vs' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.57 seconds. CPU system time: 0.05 seconds. Elapsed time: 1.63 seconds; current allocated memory: 778.012 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.66 seconds. CPU system time: 0 seconds. Elapsed time: 0.68 seconds; current allocated memory: 778.012 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'vs' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/gmem_0' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_1' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_2' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_3' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_4' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_5' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_6' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_7' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_8' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_9' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_10' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_11' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_12' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_13' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_14' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_15' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_16' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_17' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_18' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_19' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_20' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_21' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_22' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_23' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_24' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_25' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_26' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_27' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_28' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_29' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_30' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_31' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_32' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_33' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_34' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_35' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_36' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_37' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_38' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_39' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_40' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_41' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_42' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_43' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_44' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_45' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_46' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_47' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_48' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_49' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_50' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_51' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_52' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_53' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'vs/A_54' to 'ap_ovld'.

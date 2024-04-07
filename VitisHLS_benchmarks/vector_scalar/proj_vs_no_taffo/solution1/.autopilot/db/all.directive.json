@@ -1,0 +1,35 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "vs",
+          "label": "",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "\/home\/bruno\/Desktop\/benchmarks\/vector_scalar\/proj_vs_no_taffo\/solution1\/directives.tcl",
+          "sourceLine": "6",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "vs"
+              }]
+          }
+        },
+        {
+          "functionName": "vs",
+          "label": "",
+          "functionLabel": "",
+          "id": "2",
+          "sourceFile": "\/home\/bruno\/Desktop\/benchmarks\/vector_scalar\/proj_vs_no_taffo\/solution1\/csynth.tcl",
+          "sourceLine": "15",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "vs"
+              }]
+          }
+        }
+      ]
+    }]}

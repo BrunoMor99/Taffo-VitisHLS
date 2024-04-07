@@ -1,0 +1,143 @@
+INFO: [COSIM-47] Using XSIM for RTL simulation.
+INFO: [COSIM-14] Instrumenting C test bench ...
+   Build using "/home/bruno/Documents/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/bin/g++"
+   Compiling apatb_covariance.cpp
+   Compiling (apcc) covariance_taffo.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/home/bruno/Documents/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'bruno' on host 'bruno-ubuntu' (Linux_x86_64 version 5.15.0-97-generic) on Sat Mar 09 22:41:30 CET 2024
+INFO: [HLS 200-10] On os Ubuntu 22.04.3 LTS
+INFO: [HLS 200-10] In directory '/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_bruno/180621710020490806879
+INFO: [APCC 202-1] APCC is done.
+INFO: [HLS 200-112] Total CPU user time: 2.66 seconds. Total CPU system time: 0.18 seconds. Total elapsed time: 2.59 seconds; peak allocated memory: 99.055 MB.
+   Compiling apatb_covariance_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM-302] Starting C TB testing ... 
+INFO: [COSIM-333] Generating C post check test bench ...
+INFO: [COSIM-12] Generating RTL test bench ...
+INFO: [COSIM-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM-323] Starting verilog simulation. 
+INFO: [COSIM-15] Starting XSIM ...
+INFO: [COSIM-316] Starting C post checking ...
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/bruno/Documents/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_covariance_top glbl -Oenable_linking_all_libraries -prj covariance.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_20 -L floating_point_v7_1_15 --lib ieee_proposed=./ieee_proposed -s covariance 
+Multi-threading is on. Using 2 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/sim/verilog/covariance_covariance_Pipeline_VITIS_LOOP_60_6.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module covariance_covariance_Pipeline_VITIS_LOOP_60_6
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/sim/verilog/covariance_covariance_Pipeline_VITIS_LOOP_41_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module covariance_covariance_Pipeline_VITIS_LOOP_41_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/sim/verilog/covariance_covariance_Pipeline_VITIS_LOOP_51_3_VITIS_LOOP_53_4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module covariance_covariance_Pipeline_VITIS_LOOP_51_3_VITIS_LOOP_53_4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/sim/verilog/covariance_control_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module covariance_control_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/sim/verilog/covariance.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module covariance
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/sim/verilog/AESL_axi_slave_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_slave_control
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/sim/verilog/covariance_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module covariance_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/sim/verilog/covariance.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_covariance_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/sim/verilog/covariance_mul_32s_32s_61_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module covariance_mul_32s_32s_61_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/sim/verilog/covariance_mul_36ns_38ns_69_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module covariance_mul_36ns_38ns_69_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/sim/verilog/AESL_axi_master_gmem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_master_gmem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/sim/verilog/covariance_gmem_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module covariance_gmem_m_axi
+INFO: [VRFC 10-311] analyzing module covariance_gmem_m_axi_load
+INFO: [VRFC 10-311] analyzing module covariance_gmem_m_axi_store
+INFO: [VRFC 10-311] analyzing module covariance_gmem_m_axi_read
+INFO: [VRFC 10-311] analyzing module covariance_gmem_m_axi_write
+INFO: [VRFC 10-311] analyzing module covariance_gmem_m_axi_throttle
+INFO: [VRFC 10-311] analyzing module covariance_gmem_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module covariance_gmem_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module covariance_gmem_m_axi_srl
+INFO: [VRFC 10-311] analyzing module covariance_gmem_m_axi_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.covariance_flow_control_loop_pip...
+Compiling module xil_defaultlib.covariance_covariance_Pipeline_V...
+Compiling module xil_defaultlib.covariance_covariance_Pipeline_V...
+Compiling module xil_defaultlib.covariance_mul_32s_32s_61_1_1(NU...
+Compiling module xil_defaultlib.covariance_mul_36ns_38ns_69_1_1(...
+Compiling module xil_defaultlib.covariance_covariance_Pipeline_V...
+Compiling module xil_defaultlib.covariance_control_s_axi
+Compiling module xil_defaultlib.covariance_gmem_m_axi_srl(DATA_W...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_fifo(DATA_...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_mem(MEM_ST...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_fifo(MEM_S...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_srl(DATA_W...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_fifo(DATA_...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_srl(DATA_W...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_fifo(DATA_...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_store(NUM_...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_mem(MEM_ST...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_fifo(MEM_S...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_load(NUM_R...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_reg_slice(...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_srl(DATA_W...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_fifo(DATA_...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_reg_slice(...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_srl(DATA_W...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_fifo(DATA_...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_srl(DATA_W...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_fifo(DATA_...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_throttle(C...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_reg_slice(...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_write(CONS...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_reg_slice(...
+Compiling module xil_defaultlib.covariance_gmem_m_axi_read(C_USE...
+Compiling module xil_defaultlib.covariance_gmem_m_axi(CONSERVATI...
+Compiling module xil_defaultlib.covariance
+Compiling module xil_defaultlib.AESL_axi_master_gmem
+Compiling module xil_defaultlib.AESL_axi_slave_control
+Compiling module xil_defaultlib.nodf_module_intf
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=6)
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=17)
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=15)
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=32)
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_covariance_top
+Compiling module work.glbl
+Built simulation snapshot covariance
+
+****** xsim v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/covariance/xsim_script.tcl
+# xsim {covariance} -autoloadwcfg -tclbatch {covariance.tcl}
+Time resolution is 1 ps
+source covariance.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [0.00%] @ "150000"
+// RTL Simulation : 1 / 1 [100.00%] @ "329390000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 329510 ns : File "/home/bruno/Desktop/benchmarks/covariance/proj_covariance/solution1/sim/verilog/covariance.autotb.v" Line 491
+## quit
+INFO: [Common 17-206] Exiting xsim at Sat Mar  9 22:41:53 2024...
+INFO: [COSIM-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.

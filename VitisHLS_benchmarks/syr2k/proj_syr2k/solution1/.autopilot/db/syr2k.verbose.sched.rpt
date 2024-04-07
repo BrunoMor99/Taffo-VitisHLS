@@ -1,0 +1,341 @@
+
+
+================================================================
+== Vitis HLS Report for 'syr2k'
+================================================================
+* Date:           Tue Feb 27 22:18:02 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        proj_syr2k
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtex7
+* Target device:  xc7v585t-ffg1761-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+-----------+------------+
+    |  Clock |  Target  | Estimated | Uncertainty|
+    +--------+----------+-----------+------------+
+    |ap_clk  |  20.00 ns|  14.600 ns|     5.40 ns|
+    +--------+----------+-----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-------+-------+---------+
+    |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline|
+    |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |
+    +---------+---------+----------+----------+-------+-------+---------+
+    |    12891|    94555|  0.258 ms|  1.891 ms|  12892|  94556|       no|
+    +---------+---------+----------+----------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+--------------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) |   Iteration  |  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |    Latency   |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+--------------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_46_1  |    12888|    94552|  3222 ~ 23638|          -|          -|     4|        no|
+        +-------------------+---------+---------+--------------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 19
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 4 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 8.46>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%indvars_iv73 = alloca i32 1"   --->   Operation 20 'alloca' 'indvars_iv73' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%indvars_iv75 = alloca i32 1"   --->   Operation 21 'alloca' 'indvars_iv75' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%indvars_iv77 = alloca i32 1"   --->   Operation 22 'alloca' 'indvars_iv77' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%indvars_iv79 = alloca i32 1"   --->   Operation 23 'alloca' 'indvars_iv79' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%indvars_iv81 = alloca i32 1"   --->   Operation 24 'alloca' 'indvars_iv81' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%beta_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %beta"   --->   Operation 25 'read' 'beta_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%alpha_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %alpha"   --->   Operation 26 'read' 'alpha_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [2/2] (8.46ns)   --->   "%tmp = fmul i32 %alpha_read, i32 5.36871e+08"   --->   Operation 27 'fmul' 'tmp' <Predicate = true> <Delay = 8.46> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 1> <II = 1> <Delay = 8.46> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 28 [2/2] (8.46ns)   --->   "%tmp_1 = fmul i32 %beta_read, i32 5.36871e+08"   --->   Operation 28 'fmul' 'tmp_1' <Predicate = true> <Delay = 8.46> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 1> <II = 1> <Delay = 8.46> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 29 [1/1] (0.84ns)   --->   "%store_ln0 = store i5 0, i5 %indvars_iv81"   --->   Operation 29 'store' 'store_ln0' <Predicate = true> <Delay = 0.84>
+ST_1 : Operation 30 [1/1] (0.84ns)   --->   "%store_ln0 = store i5 1, i5 %indvars_iv79"   --->   Operation 30 'store' 'store_ln0' <Predicate = true> <Delay = 0.84>
+ST_1 : Operation 31 [1/1] (0.84ns)   --->   "%store_ln0 = store i5 2, i5 %indvars_iv77"   --->   Operation 31 'store' 'store_ln0' <Predicate = true> <Delay = 0.84>
+ST_1 : Operation 32 [1/1] (0.84ns)   --->   "%store_ln0 = store i5 3, i5 %indvars_iv75"   --->   Operation 32 'store' 'store_ln0' <Predicate = true> <Delay = 0.84>
+ST_1 : Operation 33 [1/1] (0.84ns)   --->   "%store_ln0 = store i5 4, i5 %indvars_iv73"   --->   Operation 33 'store' 'store_ln0' <Predicate = true> <Delay = 0.84>
+
+State 2 <SV = 1> <Delay = 14.5>
+ST_2 : Operation 34 [1/2] (8.46ns)   --->   "%tmp = fmul i32 %alpha_read, i32 5.36871e+08"   --->   Operation 34 'fmul' 'tmp' <Predicate = true> <Delay = 8.46> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 1> <II = 1> <Delay = 8.46> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 35 [2/2] (6.08ns)   --->   "%empty = fptoui i32 %tmp"   --->   Operation 35 'fptoui' 'empty' <Predicate = true> <Delay = 6.08> <CoreInst = "Float2Int">   --->   Core 63 'Float2Int' <Latency = 1> <II = 1> <Delay = 6.08> <FuncUnit> <Opcode : 'fptosi' 'fptoui'> <InPorts = 1> <OutPorts = 1>
+ST_2 : Operation 36 [1/2] (8.46ns)   --->   "%tmp_1 = fmul i32 %beta_read, i32 5.36871e+08"   --->   Operation 36 'fmul' 'tmp_1' <Predicate = true> <Delay = 8.46> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 1> <II = 1> <Delay = 8.46> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 37 [2/2] (6.08ns)   --->   "%empty_93 = fptoui i32 %tmp_1"   --->   Operation 37 'fptoui' 'empty_93' <Predicate = true> <Delay = 6.08> <CoreInst = "Float2Int">   --->   Core 63 'Float2Int' <Latency = 1> <II = 1> <Delay = 6.08> <FuncUnit> <Opcode : 'fptosi' 'fptoui'> <InPorts = 1> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 6.08>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_8"   --->   Operation 38 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem, void @empty, i32 0, i32 0, void @empty_12, i32 0, i32 256, void @empty_0, void @empty_1, void @empty_12, i32 16, i32 16, i32 16, i32 16, void @empty_12, void @empty_12, i32 4294967295, i32 0"   --->   Operation 39 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gmem"   --->   Operation 40 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %A, void @empty_2, i32 0, i32 0, void @empty_12, i32 0, i32 0, void @empty_3, void @empty_4, void @empty_12, i32 0, i32 0, i32 0, i32 0, void @empty_12, void @empty_5, i32 4294967295, i32 0"   --->   Operation 41 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %A, void @empty_13, i32 0, i32 0, void @empty_12, i32 0, i32 0, void @empty_12, void @empty_12, void @empty_12, i32 0, i32 0, i32 0, i32 0, void @empty_12, void @empty_5, i32 4294967295, i32 0"   --->   Operation 42 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %B, void @empty_2, i32 0, i32 0, void @empty_12, i32 0, i32 0, void @empty_3, void @empty_6, void @empty_12, i32 0, i32 0, i32 0, i32 0, void @empty_12, void @empty_5, i32 4294967295, i32 0"   --->   Operation 43 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %B, void @empty_13, i32 0, i32 0, void @empty_12, i32 0, i32 0, void @empty_12, void @empty_12, void @empty_12, i32 0, i32 0, i32 0, i32 0, void @empty_12, void @empty_5, i32 4294967295, i32 0"   --->   Operation 44 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %C, void @empty_2, i32 0, i32 0, void @empty_12, i32 0, i32 0, void @empty_3, void @empty_7, void @empty_12, i32 0, i32 0, i32 0, i32 0, void @empty_12, void @empty_5, i32 4294967295, i32 0"   --->   Operation 45 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %C, void @empty_13, i32 0, i32 0, void @empty_12, i32 0, i32 0, void @empty_12, void @empty_12, void @empty_12, i32 0, i32 0, i32 0, i32 0, void @empty_12, void @empty_5, i32 4294967295, i32 0"   --->   Operation 46 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %alpha"   --->   Operation 47 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %alpha, void @empty_13, i32 0, i32 0, void @empty_12, i32 0, i32 0, void @empty_12, void @empty_12, void @empty_12, i32 0, i32 0, i32 0, i32 0, void @empty_12, void @empty_12, i32 4294967295, i32 0"   --->   Operation 48 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %beta"   --->   Operation 49 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %beta, void @empty_13, i32 0, i32 0, void @empty_12, i32 0, i32 0, void @empty_12, void @empty_12, void @empty_12, i32 0, i32 0, i32 0, i32 0, void @empty_12, void @empty_12, i32 4294967295, i32 0"   --->   Operation 50 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 51 [1/1] (1.00ns)   --->   "%C_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %C"   --->   Operation 51 'read' 'C_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_3 : Operation 52 [1/1] (1.00ns)   --->   "%B_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %B"   --->   Operation 52 'read' 'B_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_3 : Operation 53 [1/1] (1.00ns)   --->   "%A_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %A"   --->   Operation 53 'read' 'A_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_3 : Operation 54 [1/2] (6.08ns)   --->   "%empty = fptoui i32 %tmp"   --->   Operation 54 'fptoui' 'empty' <Predicate = true> <Delay = 6.08> <CoreInst = "Float2Int">   --->   Core 63 'Float2Int' <Latency = 1> <II = 1> <Delay = 6.08> <FuncUnit> <Opcode : 'fptosi' 'fptoui'> <InPorts = 1> <OutPorts = 1>
+ST_3 : Operation 55 [1/2] (6.08ns)   --->   "%empty_93 = fptoui i32 %tmp_1"   --->   Operation 55 'fptoui' 'empty_93' <Predicate = true> <Delay = 6.08> <CoreInst = "Float2Int">   --->   Core 63 'Float2Int' <Latency = 1> <II = 1> <Delay = 6.08> <FuncUnit> <Opcode : 'fptosi' 'fptoui'> <InPorts = 1> <OutPorts = 1>
+ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%br_ln0 = br void %VITIS_LOOP_48_2"   --->   Operation 56 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 1.94>
+ST_4 : Operation 57 [1/1] (0.00ns)   --->   "%indvars_iv81_load = load i5 %indvars_iv81"   --->   Operation 57 'load' 'indvars_iv81_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 58 [1/1] (0.00ns)   --->   "%tmp_2 = bitselect i1 @_ssdm_op_BitSelect.i1.i5.i32, i5 %indvars_iv81_load, i32 4"   --->   Operation 58 'bitselect' 'tmp_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 59 [1/1] (0.00ns)   --->   "%empty_94 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 4, i64 4, i64 4"   --->   Operation 59 'speclooptripcount' 'empty_94' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 60 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %tmp_2, void %VITIS_LOOP_48_2.split, void %for.end53"   --->   Operation 60 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 61 [1/1] (0.00ns)   --->   "%indvars_iv79_load = load i5 %indvars_iv79"   --->   Operation 61 'load' 'indvars_iv79_load' <Predicate = (!tmp_2)> <Delay = 0.00>
+ST_4 : Operation 62 [1/1] (0.00ns)   --->   "%empty_95 = trunc i5 %indvars_iv81_load"   --->   Operation 62 'trunc' 'empty_95' <Predicate = (!tmp_2)> <Delay = 0.00>
+ST_4 : Operation 63 [2/2] (1.81ns)   --->   "%call_ln0 = call void @syr2k_Pipeline_VITIS_LOOP_48_2, i32 %gmem, i5 %indvars_iv79_load, i4 %empty_95, i64 %C_read, i32 %empty_93"   --->   Operation 63 'call' 'call_ln0' <Predicate = (!tmp_2)> <Delay = 1.81> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 64 [1/1] (1.09ns)   --->   "%indvars_iv_next82 = add i5 %indvars_iv81_load, i5 4"   --->   Operation 64 'add' 'indvars_iv_next82' <Predicate = (!tmp_2)> <Delay = 1.09> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 65 [1/1] (1.09ns)   --->   "%indvars_iv_next80 = add i5 %indvars_iv79_load, i5 4"   --->   Operation 65 'add' 'indvars_iv_next80' <Predicate = (!tmp_2)> <Delay = 1.09> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 66 [1/1] (0.84ns)   --->   "%store_ln0 = store i5 %indvars_iv_next82, i5 %indvars_iv81"   --->   Operation 66 'store' 'store_ln0' <Predicate = (!tmp_2)> <Delay = 0.84>
+ST_4 : Operation 67 [1/1] (0.84ns)   --->   "%store_ln0 = store i5 %indvars_iv_next80, i5 %indvars_iv79"   --->   Operation 67 'store' 'store_ln0' <Predicate = (!tmp_2)> <Delay = 0.84>
+ST_4 : Operation 68 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 68 'ret' 'ret_ln0' <Predicate = (tmp_2)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 69 [1/2] (0.00ns)   --->   "%call_ln0 = call void @syr2k_Pipeline_VITIS_LOOP_48_2, i32 %gmem, i5 %indvars_iv79_load, i4 %empty_95, i64 %C_read, i32 %empty_93"   --->   Operation 69 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 3.31>
+ST_6 : Operation 70 [1/1] (0.00ns)   --->   "%tmp_5 = bitconcatenate i9 @_ssdm_op_BitConcatenate.i9.i5.i4, i5 %indvars_iv79_load, i4 0"   --->   Operation 70 'bitconcatenate' 'tmp_5' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 71 [2/2] (3.31ns)   --->   "%call_ln0 = call void @syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4, i32 %gmem, i4 %empty_95, i64 %B_read, i64 %A_read, i5 %indvars_iv79_load, i9 %tmp_5, i32 %empty, i64 %C_read"   --->   Operation 71 'call' 'call_ln0' <Predicate = true> <Delay = 3.31> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 0.00>
+ST_7 : Operation 72 [1/2] (0.00ns)   --->   "%call_ln0 = call void @syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4, i32 %gmem, i4 %empty_95, i64 %B_read, i64 %A_read, i5 %indvars_iv79_load, i9 %tmp_5, i32 %empty, i64 %C_read"   --->   Operation 72 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 1.94>
+ST_8 : Operation 73 [1/1] (0.00ns)   --->   "%indvars_iv77_load = load i5 %indvars_iv77"   --->   Operation 73 'load' 'indvars_iv77_load' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 74 [1/1] (0.00ns)   --->   "%tmp_3 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i4.i4, i4 %empty_95, i4 0"   --->   Operation 74 'bitconcatenate' 'tmp_3' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 75 [1/1] (0.00ns)   --->   "%empty_96 = or i8 %tmp_3, i8 16"   --->   Operation 75 'or' 'empty_96' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 76 [2/2] (1.81ns)   --->   "%call_ln0 = call void @syr2k_Pipeline_VITIS_LOOP_48_21, i32 %gmem, i5 %indvars_iv77_load, i8 %empty_96, i64 %C_read, i32 %empty_93"   --->   Operation 76 'call' 'call_ln0' <Predicate = true> <Delay = 1.81> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 77 [1/1] (0.00ns)   --->   "%tmp_8 = partselect i4 @_ssdm_op_PartSelect.i4.i8.i32.i32, i8 %empty_96, i32 4, i32 7"   --->   Operation 77 'partselect' 'tmp_8' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 78 [1/1] (1.09ns)   --->   "%indvars_iv_next78 = add i5 %indvars_iv77_load, i5 4"   --->   Operation 78 'add' 'indvars_iv_next78' <Predicate = true> <Delay = 1.09> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 79 [1/1] (0.84ns)   --->   "%store_ln0 = store i5 %indvars_iv_next78, i5 %indvars_iv77"   --->   Operation 79 'store' 'store_ln0' <Predicate = true> <Delay = 0.84>
+
+State 9 <SV = 8> <Delay = 0.00>
+ST_9 : Operation 80 [1/2] (0.00ns)   --->   "%call_ln0 = call void @syr2k_Pipeline_VITIS_LOOP_48_21, i32 %gmem, i5 %indvars_iv77_load, i8 %empty_96, i64 %C_read, i32 %empty_93"   --->   Operation 80 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 3.31>
+ST_10 : Operation 81 [1/1] (0.00ns)   --->   "%tmp_20 = bitconcatenate i9 @_ssdm_op_BitConcatenate.i9.i5.i4, i5 %indvars_iv77_load, i4 0"   --->   Operation 81 'bitconcatenate' 'tmp_20' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 82 [2/2] (3.31ns)   --->   "%call_ln0 = call void @syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42, i32 %gmem, i4 %tmp_8, i64 %B_read, i64 %A_read, i5 %indvars_iv77_load, i9 %tmp_20, i32 %empty, i64 %C_read"   --->   Operation 82 'call' 'call_ln0' <Predicate = true> <Delay = 3.31> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 0.00>
+ST_11 : Operation 83 [1/2] (0.00ns)   --->   "%call_ln0 = call void @syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42, i32 %gmem, i4 %tmp_8, i64 %B_read, i64 %A_read, i5 %indvars_iv77_load, i9 %tmp_20, i32 %empty, i64 %C_read"   --->   Operation 83 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 11> <Delay = 1.94>
+ST_12 : Operation 84 [1/1] (0.00ns)   --->   "%indvars_iv75_load = load i5 %indvars_iv75"   --->   Operation 84 'load' 'indvars_iv75_load' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 85 [1/1] (0.00ns)   --->   "%empty_97 = or i8 %tmp_3, i8 32"   --->   Operation 85 'or' 'empty_97' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 86 [2/2] (1.81ns)   --->   "%call_ln0 = call void @syr2k_Pipeline_VITIS_LOOP_48_23, i32 %gmem, i5 %indvars_iv75_load, i8 %empty_97, i64 %C_read, i32 %empty_93"   --->   Operation 86 'call' 'call_ln0' <Predicate = true> <Delay = 1.81> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_12 : Operation 87 [1/1] (0.00ns)   --->   "%tmp_s = partselect i4 @_ssdm_op_PartSelect.i4.i8.i32.i32, i8 %empty_97, i32 4, i32 7"   --->   Operation 87 'partselect' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 88 [1/1] (1.09ns)   --->   "%indvars_iv_next76 = add i5 %indvars_iv75_load, i5 4"   --->   Operation 88 'add' 'indvars_iv_next76' <Predicate = true> <Delay = 1.09> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 89 [1/1] (0.84ns)   --->   "%store_ln0 = store i5 %indvars_iv_next76, i5 %indvars_iv75"   --->   Operation 89 'store' 'store_ln0' <Predicate = true> <Delay = 0.84>
+
+State 13 <SV = 12> <Delay = 0.00>
+ST_13 : Operation 90 [1/2] (0.00ns)   --->   "%call_ln0 = call void @syr2k_Pipeline_VITIS_LOOP_48_23, i32 %gmem, i5 %indvars_iv75_load, i8 %empty_97, i64 %C_read, i32 %empty_93"   --->   Operation 90 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 13> <Delay = 3.31>
+ST_14 : Operation 91 [1/1] (0.00ns)   --->   "%tmp_22 = bitconcatenate i9 @_ssdm_op_BitConcatenate.i9.i5.i4, i5 %indvars_iv75_load, i4 0"   --->   Operation 91 'bitconcatenate' 'tmp_22' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 92 [2/2] (3.31ns)   --->   "%call_ln0 = call void @syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44, i32 %gmem, i4 %tmp_s, i64 %B_read, i64 %A_read, i5 %indvars_iv75_load, i9 %tmp_22, i32 %empty, i64 %C_read"   --->   Operation 92 'call' 'call_ln0' <Predicate = true> <Delay = 3.31> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 14> <Delay = 0.00>
+ST_15 : Operation 93 [1/2] (0.00ns)   --->   "%call_ln0 = call void @syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44, i32 %gmem, i4 %tmp_s, i64 %B_read, i64 %A_read, i5 %indvars_iv75_load, i9 %tmp_22, i32 %empty, i64 %C_read"   --->   Operation 93 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 15> <Delay = 1.94>
+ST_16 : Operation 94 [1/1] (0.00ns)   --->   "%indvars_iv73_load = load i5 %indvars_iv73"   --->   Operation 94 'load' 'indvars_iv73_load' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 95 [1/1] (0.00ns)   --->   "%empty_98 = or i8 %tmp_3, i8 48"   --->   Operation 95 'or' 'empty_98' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 96 [2/2] (1.81ns)   --->   "%call_ln0 = call void @syr2k_Pipeline_VITIS_LOOP_48_25, i32 %gmem, i5 %indvars_iv73_load, i8 %empty_98, i64 %C_read, i32 %empty_93"   --->   Operation 96 'call' 'call_ln0' <Predicate = true> <Delay = 1.81> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_16 : Operation 97 [1/1] (0.00ns)   --->   "%tmp_15 = partselect i4 @_ssdm_op_PartSelect.i4.i8.i32.i32, i8 %empty_98, i32 4, i32 7"   --->   Operation 97 'partselect' 'tmp_15' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 98 [1/1] (1.09ns)   --->   "%indvars_iv_next74 = add i5 %indvars_iv73_load, i5 4"   --->   Operation 98 'add' 'indvars_iv_next74' <Predicate = true> <Delay = 1.09> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 99 [1/1] (0.84ns)   --->   "%store_ln0 = store i5 %indvars_iv_next74, i5 %indvars_iv73"   --->   Operation 99 'store' 'store_ln0' <Predicate = true> <Delay = 0.84>
+
+State 17 <SV = 16> <Delay = 0.00>
+ST_17 : Operation 100 [1/2] (0.00ns)   --->   "%call_ln0 = call void @syr2k_Pipeline_VITIS_LOOP_48_25, i32 %gmem, i5 %indvars_iv73_load, i8 %empty_98, i64 %C_read, i32 %empty_93"   --->   Operation 100 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 18 <SV = 17> <Delay = 3.43>
+ST_18 : Operation 101 [1/1] (0.00ns)   --->   "%tmp_23 = bitconcatenate i9 @_ssdm_op_BitConcatenate.i9.i5.i4, i5 %indvars_iv73_load, i4 0"   --->   Operation 101 'bitconcatenate' 'tmp_23' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 102 [2/2] (3.43ns)   --->   "%call_ln0 = call void @syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46, i32 %gmem, i4 %tmp_15, i64 %B_read, i64 %A_read, i9 %tmp_23, i5 %indvars_iv73_load, i32 %empty, i64 %C_read"   --->   Operation 102 'call' 'call_ln0' <Predicate = true> <Delay = 3.43> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 19 <SV = 18> <Delay = 0.00>
+ST_19 : Operation 103 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @empty_11"   --->   Operation 103 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 104 [1/2] (0.00ns)   --->   "%call_ln0 = call void @syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46, i32 %gmem, i4 %tmp_15, i64 %B_read, i64 %A_read, i9 %tmp_23, i5 %indvars_iv73_load, i32 %empty, i64 %C_read"   --->   Operation 104 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_19 : Operation 105 [1/1] (0.00ns)   --->   "%br_ln0 = br void %VITIS_LOOP_48_2"   --->   Operation 105 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 20ns, clock uncertainty: 5.4ns.
+
+ <State 1>: 8.46ns
+The critical path consists of the following:
+	wire read operation ('alpha_read') on port 'alpha' [26]  (0 ns)
+	'fmul' operation ('tmp') [30]  (8.46 ns)
+
+ <State 2>: 14.5ns
+The critical path consists of the following:
+	'fmul' operation ('tmp') [30]  (8.46 ns)
+	'fptoui' operation ('empty') [31]  (6.08 ns)
+
+ <State 3>: 6.08ns
+The critical path consists of the following:
+	'fptoui' operation ('empty') [31]  (6.08 ns)
+
+ <State 4>: 1.94ns
+The critical path consists of the following:
+	'load' operation ('indvars_iv81_load') on local variable 'indvars_iv81' [41]  (0 ns)
+	'add' operation ('indvars_iv_next82') [71]  (1.1 ns)
+	'store' operation ('store_ln0') of variable 'indvars_iv_next82' on local variable 'indvars_iv81' [76]  (0.844 ns)
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+ <State 6>: 3.31ns
+The critical path consists of the following:
+	'call' operation ('call_ln0') to 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' [55]  (3.31 ns)
+
+ <State 7>: 0ns
+The critical path consists of the following:
+
+ <State 8>: 1.94ns
+The critical path consists of the following:
+	'load' operation ('indvars_iv77_load') on local variable 'indvars_iv77' [48]  (0 ns)
+	'add' operation ('indvars_iv_next78') [73]  (1.1 ns)
+	'store' operation ('store_ln0') of variable 'indvars_iv_next78' on local variable 'indvars_iv77' [78]  (0.844 ns)
+
+ <State 9>: 0ns
+The critical path consists of the following:
+
+ <State 10>: 3.31ns
+The critical path consists of the following:
+	'call' operation ('call_ln0') to 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' [60]  (3.31 ns)
+
+ <State 11>: 0ns
+The critical path consists of the following:
+
+ <State 12>: 1.94ns
+The critical path consists of the following:
+	'load' operation ('indvars_iv75_load') on local variable 'indvars_iv75' [47]  (0 ns)
+	'add' operation ('indvars_iv_next76') [74]  (1.1 ns)
+	'store' operation ('store_ln0') of variable 'indvars_iv_next76' on local variable 'indvars_iv75' [79]  (0.844 ns)
+
+ <State 13>: 0ns
+The critical path consists of the following:
+
+ <State 14>: 3.31ns
+The critical path consists of the following:
+	'call' operation ('call_ln0') to 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' [65]  (3.31 ns)
+
+ <State 15>: 0ns
+The critical path consists of the following:
+
+ <State 16>: 1.94ns
+The critical path consists of the following:
+	'load' operation ('indvars_iv73_load') on local variable 'indvars_iv73' [46]  (0 ns)
+	'add' operation ('indvars_iv_next74') [75]  (1.1 ns)
+	'store' operation ('store_ln0') of variable 'indvars_iv_next74' on local variable 'indvars_iv73' [80]  (0.844 ns)
+
+ <State 17>: 0ns
+The critical path consists of the following:
+
+ <State 18>: 3.44ns
+The critical path consists of the following:
+	'call' operation ('call_ln0') to 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' [70]  (3.44 ns)
+
+ <State 19>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

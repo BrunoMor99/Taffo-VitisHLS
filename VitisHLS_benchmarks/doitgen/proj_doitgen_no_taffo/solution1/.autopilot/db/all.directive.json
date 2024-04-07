@@ -1,0 +1,35 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "doitgen",
+          "label": "",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "\/home\/bruno\/Desktop\/benchmarks\/doitgen\/proj_doitgen_no_taffo\/solution1\/directives.tcl",
+          "sourceLine": "6",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "doitgen"
+              }]
+          }
+        },
+        {
+          "functionName": "doitgen",
+          "label": "",
+          "functionLabel": "",
+          "id": "2",
+          "sourceFile": "\/home\/bruno\/Desktop\/benchmarks\/doitgen\/proj_doitgen_no_taffo\/solution1\/csynth.tcl",
+          "sourceLine": "15",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "doitgen"
+              }]
+          }
+        }
+      ]
+    }]}

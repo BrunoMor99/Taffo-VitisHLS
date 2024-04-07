@@ -1,0 +1,33 @@
+set SynModuleInfo {
+  {SRCNAME mm_Pipeline_VITIS_LOOP_65_5_VITIS_LOOP_66_6 MODELNAME mm_Pipeline_VITIS_LOOP_65_5_VITIS_LOOP_66_6 RTLNAME mm_mm_Pipeline_VITIS_LOOP_65_5_VITIS_LOOP_66_6
+    SUBMODULES {
+      {MODELNAME mm_sitofp_32ns_32_2_no_dsp_1 RTLNAME mm_sitofp_32ns_32_2_no_dsp_1 BINDTYPE op TYPE sitofp IMPL auto LATENCY 1 ALLOW_PRAGMA 1}
+      {MODELNAME mm_mul_4s_4s_4_1_1 RTLNAME mm_mul_4s_4s_4_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
+      {MODELNAME mm_flow_control_loop_pipe_sequential_init RTLNAME mm_flow_control_loop_pipe_sequential_init BINDTYPE interface TYPE internal_upc_flow_control INSTNAME mm_flow_control_loop_pipe_sequential_init_U}
+    }
+  }
+  {SRCNAME mm_Pipeline_VITIS_LOOP_81_7 MODELNAME mm_Pipeline_VITIS_LOOP_81_7 RTLNAME mm_mm_Pipeline_VITIS_LOOP_81_7
+    SUBMODULES {
+      {MODELNAME mm_fadd_32ns_32ns_32_2_full_dsp_1 RTLNAME mm_fadd_32ns_32ns_32_2_full_dsp_1 BINDTYPE op TYPE fadd IMPL fulldsp LATENCY 1 ALLOW_PRAGMA 1}
+      {MODELNAME mm_mm_Pipeline_VITIS_LOOP_81_7_A_0_ROM_AUTO_1R RTLNAME mm_mm_Pipeline_VITIS_LOOP_81_7_A_0_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME mm_mm_Pipeline_VITIS_LOOP_81_7_A_1_ROM_AUTO_1R RTLNAME mm_mm_Pipeline_VITIS_LOOP_81_7_A_1_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME mm_mm_Pipeline_VITIS_LOOP_81_7_A_2_ROM_AUTO_1R RTLNAME mm_mm_Pipeline_VITIS_LOOP_81_7_A_2_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME mm_mm_Pipeline_VITIS_LOOP_81_7_A_3_ROM_AUTO_1R RTLNAME mm_mm_Pipeline_VITIS_LOOP_81_7_A_3_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME mm_mm_Pipeline_VITIS_LOOP_81_7_A_4_ROM_AUTO_1R RTLNAME mm_mm_Pipeline_VITIS_LOOP_81_7_A_4_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME mm_mm_Pipeline_VITIS_LOOP_81_7_A_5_ROM_AUTO_1R RTLNAME mm_mm_Pipeline_VITIS_LOOP_81_7_A_5_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME mm_mm_Pipeline_VITIS_LOOP_81_7_A_6_ROM_AUTO_1R RTLNAME mm_mm_Pipeline_VITIS_LOOP_81_7_A_6_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME mm_mm_Pipeline_VITIS_LOOP_81_7_A_7_ROM_AUTO_1R RTLNAME mm_mm_Pipeline_VITIS_LOOP_81_7_A_7_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+    }
+  }
+  {SRCNAME mm_Pipeline_VITIS_LOOP_97_10 MODELNAME mm_Pipeline_VITIS_LOOP_97_10 RTLNAME mm_mm_Pipeline_VITIS_LOOP_97_10
+    SUBMODULES {
+      {MODELNAME mm_fadd_32ns_32ns_32_2_no_dsp_1 RTLNAME mm_fadd_32ns_32ns_32_2_no_dsp_1 BINDTYPE op TYPE fadd IMPL fabric LATENCY 1 ALLOW_PRAGMA 1}
+    }
+  }
+  {SRCNAME mm MODELNAME mm RTLNAME mm IS_TOP 1
+    SUBMODULES {
+      {MODELNAME mm_fmul_32ns_32ns_32_2_max_dsp_1 RTLNAME mm_fmul_32ns_32ns_32_2_max_dsp_1 BINDTYPE op TYPE fmul IMPL maxdsp LATENCY 1 ALLOW_PRAGMA 1}
+      {MODELNAME mm_D_RAM_AUTO_1R1W RTLNAME mm_D_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+    }
+  }
+}

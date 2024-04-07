@@ -1,0 +1,756 @@
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 54, Column: 19 }
+Function:        syr2k
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaPartiallyUnroll
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+Function:        syr2k
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_46_1
+  - String:          ''' ('
+  - LoopLoc:         'syr2k_no_taffo.c:46:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          syr2k
+  - String:          ''' partially '
+  - String:          ''
+  - String:          'with a factor of '
+  - Factor:          '4'
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 50, Column: 14 }
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 50, Column: 14 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.load.4
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 50, Column: 14 }
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 50, Column: 14 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.store.6
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 15 }
+Function:        syr2k
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc37.load.5
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ' '
+  - LoopLoc:         'syr2k_no_taffo.c:54:19'
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 44 }
+Function:        syr2k
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc37.load.9
+  - String:          ' '
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ' '
+  - LoopLoc:         'syr2k_no_taffo.c:54:19'
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 12 }
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 12 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc37.load.15
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 12 }
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 12 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc37.store.17
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 44 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_54_4.load.7
+  - String:          ' '
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 15 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_54_4.load.8
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 50, Column: 14 }
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 50, Column: 14 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.1.load.4
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 50, Column: 14 }
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 50, Column: 14 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.1.store.6
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 15 }
+Function:        syr2k
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc37.1.load.5
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ' '
+  - LoopLoc:         'syr2k_no_taffo.c:54:19'
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 44 }
+Function:        syr2k
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc37.1.load.9
+  - String:          ' '
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ' '
+  - LoopLoc:         'syr2k_no_taffo.c:54:19'
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 12 }
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 12 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc37.1.load.15
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 12 }
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 12 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc37.1.store.17
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 44 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_54_4.1.load.7
+  - String:          ' '
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 15 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_54_4.1.load.8
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 50, Column: 14 }
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 50, Column: 14 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.2.load.4
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 50, Column: 14 }
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 50, Column: 14 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.2.store.6
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 15 }
+Function:        syr2k
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc37.2.load.5
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ' '
+  - LoopLoc:         'syr2k_no_taffo.c:54:19'
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 44 }
+Function:        syr2k
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc37.2.load.9
+  - String:          ' '
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ' '
+  - LoopLoc:         'syr2k_no_taffo.c:54:19'
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 12 }
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 12 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc37.2.load.15
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 12 }
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 12 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc37.2.store.17
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 44 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_54_4.2.load.7
+  - String:          ' '
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 15 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_54_4.2.load.8
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 50, Column: 14 }
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 50, Column: 14 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.3.load.4
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 50, Column: 14 }
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 50, Column: 14 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.3.store.6
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 15 }
+Function:        syr2k
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc37.3.load.5
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ' '
+  - LoopLoc:         'syr2k_no_taffo.c:54:19'
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 44 }
+Function:        syr2k
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc37.3.load.9
+  - String:          ' '
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ' '
+  - LoopLoc:         'syr2k_no_taffo.c:54:19'
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 12 }
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 12 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc37.3.load.15
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 12 }
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 12 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc37.3.store.17
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 44 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_54_4.3.load.7
+  - String:          ' '
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        syr2k
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 57, Column: 15 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_54_4.3.load.8
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        syr2k
+    DebugLoc:        { File: syr2k_no_taffo.c, Line: 21, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 54, Column: 19 }
+Function:        syr2k
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 54, Column: 19 }
+Function:        syr2k
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 54, Column: 19 }
+Function:        syr2k
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 54, Column: 19 }
+Function:        syr2k
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 54, Column: 19 }
+Function:        syr2k
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 54, Column: 19 }
+Function:        syr2k
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 54, Column: 19 }
+Function:        syr2k
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: syr2k_no_taffo.c, Line: 54, Column: 19 }
+Function:        syr2k
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_54_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...

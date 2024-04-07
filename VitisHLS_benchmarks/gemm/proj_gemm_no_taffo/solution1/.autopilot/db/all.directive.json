@@ -1,0 +1,18 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [{
+          "functionName": "mm",
+          "label": "",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "\/home\/bruno\/Desktop\/benchmarks\/gemm\/run_hls_matmult_no_taffo.tcl",
+          "sourceLine": "77",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "mm"
+              }]
+          }
+        }]
+    }]}

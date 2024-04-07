@@ -1,0 +1,719 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+  **** SW Build 3670227 on Oct 13 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source /home/bruno/Documents/Vitis_HLS/2022.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/home/bruno/Documents/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'bruno' on host 'bruno-ubuntu' (Linux_x86_64 version 5.15.0-97-generic) on Tue Feb 27 22:17:37 CET 2024
+INFO: [HLS 200-10] On os Ubuntu 22.04.3 LTS
+INFO: [HLS 200-10] In directory '/home/bruno/Desktop/benchmarks/syr2k'
+Sourcing Tcl script 'run_hls_1.tcl'
+INFO: [HLS 200-1510] Running: source run_hls_1.tcl
+INFO: [HLS 200-1510] Running: open_project -reset proj_syr2k 
+INFO: [HLS 200-10] Opening and resetting project '/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k'.
+INFO: [HLS 200-1510] Running: add_files syr2k_taffo.c 
+INFO: [HLS 200-10] Adding design file 'syr2k_taffo.c' to the project
+INFO: [HLS 200-1510] Running: add_files -tb syr2k_taffo.c 
+INFO: [HLS 200-10] Adding test bench file 'syr2k_taffo.c' to the project
+INFO: [HLS 200-1510] Running: set_top syr2k 
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 
+INFO: [HLS 200-10] Creating and opening solution '/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part virtex7 
+INFO: [HLS 200-1611] Setting target device to 'xc7v585t-ffg1761-2'
+INFO: [HLS 200-1510] Running: create_clock -period 50MHz 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+Running Dispatch Server on port: 44059
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.03 seconds. CPU system time: 0.02 seconds. Elapsed time: 10.07 seconds; current allocated memory: 751.660 MB.
+INFO: [HLS 200-10] Analyzing design file 'syr2k_taffo.c' ... 
+WARNING: [HLS 207-5292] unused parameter 'argc' (syr2k_taffo.c:67:14)
+WARNING: [HLS 207-5292] unused parameter 'argv' (syr2k_taffo.c:67:27)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.68 seconds. CPU system time: 0.54 seconds. Elapsed time: 1.26 seconds; current allocated memory: 752.922 MB.
+INFO: [HLS 200-1022] Running custom LLVM hook 'HLS_HOOKS::opt'
+INFO: [HLS_HOOKS::opt] Using ::LLVM_CUSTOM_CMD: $LLVM_CUSTOM_OPT -Xvra -propagate-all -emit-bc $LLVM_CUSTOM_INPUT
+INFO: [HLS_HOOKS::opt] Running ::LLVM_CUSTOM_CMD: /home/bruno/Desktop/benchmarks/syr2k/magiclang5.sh -Xvra -propagate-all -emit-bc /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.5.gdce.bc
++ /home/bruno/Desktop/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/clang -O0 -c -emit-llvm /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.5.gdce.bc -S -o /home/bruno/Desktop/benchmarks/syr2k/intermediate/output.1.magiclangtmp.ll
+warning: overriding the module target triple with x86_64-unknown-linux-gnu [-Woverride-module]
+1 warning generated.
++ /home/bruno/Desktop/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/opt -load /usr/local/lib/TaffoInitializer.so -taffoinit -S -o /home/bruno/Desktop/benchmarks/syr2k/intermediate/output.2.magiclangtmp.ll /home/bruno/Desktop/benchmarks/syr2k/intermediate/output.1.magiclangtmp.ll
++ [[ 0 -eq 0 ]]
++ /home/bruno/Desktop/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/opt -load /usr/local/lib/TaffoVRA.so -taffoVRA -propagate-all -S -o /home/bruno/Desktop/benchmarks/syr2k/intermediate/output.3.magiclangtmp.ll /home/bruno/Desktop/benchmarks/syr2k/intermediate/output.2.magiclangtmp.ll
+[TAFFO] Value Range Analysis: Warning: treating llvm::ConstantPointerNull as 0
+[TAFFO] Value Range Analysis: Warning: treating llvm::ConstantPointerNull as 0
++ /home/bruno/Desktop/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/opt -load /usr/local/lib/TaffoDTA.so -taffodta -S -o /home/bruno/Desktop/benchmarks/syr2k/intermediate/output.4.magiclangtmp.ll /home/bruno/Desktop/benchmarks/syr2k/intermediate/output.3.magiclangtmp.ll
++ /home/bruno/Desktop/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/opt -load /usr/local/lib/LLVMFloatToFixed.so -flttofix -dce -S -o /home/bruno/Desktop/benchmarks/syr2k/intermediate/output.5.magiclangtmp.ll /home/bruno/Desktop/benchmarks/syr2k/intermediate/output.4.magiclangtmp.ll
++ input_file=/home/bruno/Desktop/benchmarks/syr2k/intermediate/output.5.magiclangtmp.ll
+++ mktemp
++ temp_file=/tmp/tmp.N7hTl90SaT
++ grep -v 'call void @llvm.var.annotation' /home/bruno/Desktop/benchmarks/syr2k/intermediate/output.5.magiclangtmp.ll
++ mv /tmp/tmp.N7hTl90SaT /home/bruno/Desktop/benchmarks/syr2k/intermediate/output.5.magiclangtmp.ll
++ /home/bruno/Desktop/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/clang -c /home/bruno/Desktop/benchmarks/syr2k/intermediate/output.5.magiclangtmp.ll -S -o /home/bruno/Desktop/benchmarks/syr2k/intermediate/output.6.magiclangtmp.ll
++ filename=/home/bruno/Desktop/benchmarks/syr2k/intermediate/output.5.magiclangtmp.ll
++ sed -i -e 's/"Debug Info Version", i32 3/"Debug Info Version", i32 0/g' /home/bruno/Desktop/benchmarks/syr2k/intermediate/output.5.magiclangtmp.ll
++ sed -i -e 's/!"fpga.top", !"user", !\([0-9]*\)/!"user"/g' /home/bruno/Desktop/benchmarks/syr2k/intermediate/output.5.magiclangtmp.ll
++ sed -i -e 's/"user", !\([0-9]*\)/"user"/g' /home/bruno/Desktop/benchmarks/syr2k/intermediate/output.5.magiclangtmp.ll
++ clang -emit-llvm -c /home/bruno/Desktop/benchmarks/syr2k/intermediate/output.5.magiclangtmp.ll -o /home/bruno/Desktop/benchmarks/syr2k/intermediate/a.g.ld.5.gdce.bc
+warning: ignoring debug info with an invalid version (0) in /home/bruno/Desktop/benchmarks/syr2k/intermediate/output.5.magiclangtmp.ll
++ cp /home/bruno/Desktop/benchmarks/syr2k/intermediate/a.g.ld.5.gdce.bc /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.6.user.bc
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+WARNING: [HLS 207-586] overriding the module target triple with fpga64-xilinx-none
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma
+INFO: [HLS 214-188] Unrolling loop 'VITIS_LOOP_46_1' () in function 'syr2k' partially with a factor of 4
+WARNING: [HLS 214-167] The program may have out of bound array access
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.68 seconds. CPU system time: 0.71 seconds. Elapsed time: 5.41 seconds; current allocated memory: 753.688 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 753.688 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 754.809 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 754.871 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_52_3' in function 'syr2k' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_52_3' in function 'syr2k' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_52_3' in function 'syr2k' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_52_3' in function 'syr2k' for pipelining.
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_54_4' in function 'syr2k': cannot completely unroll a loop with a variable trip count.
+Resolution: For help on HLS 200-936 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-936.html
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_54_4' in function 'syr2k': cannot completely unroll a loop with a variable trip count.
+Resolution: For help on HLS 200-936 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-936.html
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_54_4' in function 'syr2k': cannot completely unroll a loop with a variable trip count.
+Resolution: For help on HLS 200-936 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-936.html
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_54_4' in function 'syr2k': cannot completely unroll a loop with a variable trip count.
+Resolution: For help on HLS 200-936 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-936.html
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.18 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.21 seconds; current allocated memory: 778.582 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_52_3' in function 'syr2k'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_52_3' in function 'syr2k'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_52_3' in function 'syr2k'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_52_3' in function 'syr2k'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_46_1' in function 'syr2k' more than one sub loop.
+Resolution: For help on HLS 200-960 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-960.html
+INTERNAL-INFO: never seen llvm instruction 'fptoui'(36)
+INTERNAL-INFO: never seen llvm instruction 'fptoui'(36)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.17 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.21 seconds; current allocated memory: 847.336 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'syr2k' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_48_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_48_2'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 14, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 15, Depth = 16, loop 'VITIS_LOOP_48_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.14 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.16 seconds; current allocated memory: 848.594 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 848.594 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 17, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 18, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 19, Depth = 20, loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.25 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.27 seconds; current allocated memory: 849.715 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.17 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.16 seconds; current allocated memory: 849.715 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_48_21' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_48_2'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp') on port 'gmem' and bus request operation ('gmem_load_3_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp') on port 'gmem' and bus request operation ('gmem_load_3_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp') on port 'gmem' and bus request operation ('gmem_load_3_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp') on port 'gmem' and bus request operation ('gmem_load_3_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp') on port 'gmem' and bus request operation ('gmem_load_3_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp') on port 'gmem' and bus request operation ('gmem_load_3_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 14, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp') on port 'gmem' and bus request operation ('gmem_load_3_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 15, Depth = 16, loop 'VITIS_LOOP_48_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.24 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 849.973 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 849.973 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 17, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 18, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 19, Depth = 20, loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.26 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 850.238 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.19 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 850.238 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_48_23' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_48_2'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp') on port 'gmem' and bus request operation ('gmem_load_9_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp') on port 'gmem' and bus request operation ('gmem_load_9_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp') on port 'gmem' and bus request operation ('gmem_load_9_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp') on port 'gmem' and bus request operation ('gmem_load_9_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp') on port 'gmem' and bus request operation ('gmem_load_9_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp') on port 'gmem' and bus request operation ('gmem_load_9_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 14, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp') on port 'gmem' and bus request operation ('gmem_load_9_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 15, Depth = 16, loop 'VITIS_LOOP_48_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.23 seconds. CPU system time: 0 seconds. Elapsed time: 0.24 seconds; current allocated memory: 851.355 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 851.355 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 17, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 18, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 19, Depth = 20, loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.28 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.29 seconds; current allocated memory: 852.328 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.18 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.18 seconds; current allocated memory: 852.328 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_48_25' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_48_2'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp') on port 'gmem' and bus request operation ('gmem_load_15_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp') on port 'gmem' and bus request operation ('gmem_load_15_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp') on port 'gmem' and bus request operation ('gmem_load_15_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp') on port 'gmem' and bus request operation ('gmem_load_15_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp') on port 'gmem' and bus request operation ('gmem_load_15_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp') on port 'gmem' and bus request operation ('gmem_load_15_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 14, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp') on port 'gmem' and bus request operation ('gmem_load_15_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 15, Depth = 16, loop 'VITIS_LOOP_48_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.26 seconds. CPU system time: 0 seconds. Elapsed time: 0.28 seconds; current allocated memory: 852.777 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 852.777 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 17, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 18, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 19, Depth = 20, loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.27 seconds. CPU system time: 0 seconds. Elapsed time: 0.28 seconds; current allocated memory: 853.543 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.18 seconds. CPU system time: 0 seconds. Elapsed time: 0.19 seconds; current allocated memory: 853.543 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.25 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.26 seconds; current allocated memory: 854.148 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.28 seconds. CPU system time: 0 seconds. Elapsed time: 0.28 seconds; current allocated memory: 854.148 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_48_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_48_2' pipeline 'VITIS_LOOP_48_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_48_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.45 seconds. CPU system time: 0 seconds. Elapsed time: 0.44 seconds; current allocated memory: 854.359 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' pipeline 'VITIS_LOOP_52_3_VITIS_LOOP_54_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32s_48_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.23 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.25 seconds; current allocated memory: 856.410 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_48_21' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_48_21' pipeline 'VITIS_LOOP_48_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_48_21'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.47 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.48 seconds; current allocated memory: 858.715 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' pipeline 'VITIS_LOOP_52_3_VITIS_LOOP_54_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32s_48_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.26 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 860.656 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_48_23' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_48_23' pipeline 'VITIS_LOOP_48_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_48_23'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.48 seconds. CPU system time: 0 seconds. Elapsed time: 0.49 seconds; current allocated memory: 863.023 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' pipeline 'VITIS_LOOP_52_3_VITIS_LOOP_54_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32s_48_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.26 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.28 seconds; current allocated memory: 864.969 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_48_25' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_48_25' pipeline 'VITIS_LOOP_48_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_48_25'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.48 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.49 seconds; current allocated memory: 867.336 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' pipeline 'VITIS_LOOP_52_3_VITIS_LOOP_54_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32s_48_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.25 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 869.297 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'syr2k/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'syr2k/A' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'syr2k/B' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'syr2k/C' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'syr2k/alpha' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'syr2k/beta' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'syr2k' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'A', 'B' and 'C' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fptoui_32ns_32_2_no_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.56 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.58 seconds; current allocated memory: 873.816 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.45 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.49 seconds; current allocated memory: 877.719 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.96 seconds. CPU system time: 0.04 seconds. Elapsed time: 1.01 seconds; current allocated memory: 883.859 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for syr2k.
+INFO: [VLOG 209-307] Generating Verilog RTL for syr2k.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 68.49 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 15.47 seconds. CPU system time: 1.53 seconds. Elapsed time: 17.12 seconds; current allocated memory: 132.887 MB.
+INFO: [HLS 200-1510] Running: cosim_design 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "/home/bruno/Documents/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/bin/g++"
+   Compiling apatb_syr2k.cpp
+   Compiling (apcc) syr2k_taffo.c_pre.c.tb.c
+INFO: [HLS 200-10] Running '/home/bruno/Documents/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'bruno' on host 'bruno-ubuntu' (Linux_x86_64 version 5.15.0-97-generic) on Tue Feb 27 22:18:14 CET 2024
+INFO: [HLS 200-10] On os Ubuntu 22.04.3 LTS
+INFO: [HLS 200-10] In directory '/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/wrapc'
+clang: warning: argument unused during compilation: '-fno-builtin-isinf'
+clang: warning: argument unused during compilation: '-fno-builtin-isnan'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_bruno/181741709068694593649
+INFO: [APCC 202-1] APCC is done.
+INFO: [HLS 200-112] Total CPU user time: 2.51 seconds. Total CPU system time: 0.2 seconds. Total elapsed time: 2.5 seconds; peak allocated memory: 99.055 MB.
+   Compiling apatb_syr2k_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source run_vivado_gen_ip.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1704.816 ; gain = 85.992 ; free physical = 1013 ; free virtual = 5879
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/bruno/Documents/Vivado/2022.2/data/ip'.
+WARNING: [IP_Flow 19-4832] The IP name 'syr2k_fmul_32ns_32ns_32_2_max_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'syr2k_fmul_32ns_32ns_32_2_max_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'syr2k_fmul_32ns_32ns_32_2_max_dsp_1_ip'...
+WARNING: [IP_Flow 19-4832] The IP name 'syr2k_fptoui_32ns_32_2_no_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'syr2k_fptoui_32ns_32_2_no_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'syr2k_fptoui_32ns_32_2_no_dsp_1_ip'...
+INFO: [Common 17-206] Exiting Vivado at Tue Feb 27 22:18:39 2024...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/bruno/Documents/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_syr2k_top glbl -Oenable_linking_all_libraries -prj syr2k.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_20 -L floating_point_v7_1_15 --lib ieee_proposed=./ieee_proposed -s syr2k 
+Multi-threading is on. Using 2 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/ip/xil_defaultlib/syr2k_fmul_32ns_32ns_32_2_max_dsp_1_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module syr2k_fmul_32ns_32ns_32_2_max_dsp_1_ip
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/ip/xil_defaultlib/syr2k_fptoui_32ns_32_2_no_dsp_1_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module syr2k_fptoui_32ns_32_2_no_dsp_1_ip
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/syr2k_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module syr2k_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/syr2k_mul_32s_32ns_45_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module syr2k_mul_32s_32ns_45_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/syr2k_gmem_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module syr2k_gmem_m_axi
+INFO: [VRFC 10-311] analyzing module syr2k_gmem_m_axi_load
+INFO: [VRFC 10-311] analyzing module syr2k_gmem_m_axi_store
+INFO: [VRFC 10-311] analyzing module syr2k_gmem_m_axi_read
+INFO: [VRFC 10-311] analyzing module syr2k_gmem_m_axi_write
+INFO: [VRFC 10-311] analyzing module syr2k_gmem_m_axi_throttle
+INFO: [VRFC 10-311] analyzing module syr2k_gmem_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module syr2k_gmem_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module syr2k_gmem_m_axi_srl
+INFO: [VRFC 10-311] analyzing module syr2k_gmem_m_axi_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/syr2k_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module syr2k_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/syr2k_syr2k_Pipeline_VITIS_LOOP_48_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module syr2k_syr2k_Pipeline_VITIS_LOOP_48_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/syr2k_fptoui_32ns_32_2_no_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module syr2k_fptoui_32ns_32_2_no_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/syr2k_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module syr2k_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/syr2k_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module syr2k_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/syr2k_fmul_32ns_32ns_32_2_max_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module syr2k_fmul_32ns_32ns_32_2_max_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/syr2k_mul_32ns_32s_48_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module syr2k_mul_32ns_32s_48_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/AESL_axi_slave_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_slave_control
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/syr2k_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module syr2k_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/syr2k_control_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module syr2k_control_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/syr2k_syr2k_Pipeline_VITIS_LOOP_48_25.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module syr2k_syr2k_Pipeline_VITIS_LOOP_48_25
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/syr2k_syr2k_Pipeline_VITIS_LOOP_48_23.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module syr2k_syr2k_Pipeline_VITIS_LOOP_48_23
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/AESL_axi_master_gmem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_master_gmem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/syr2k_syr2k_Pipeline_VITIS_LOOP_48_21.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module syr2k_syr2k_Pipeline_VITIS_LOOP_48_21
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/syr2k.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_syr2k_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/syr2k.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module syr2k
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package floating_point_v7_1_15.floating_point_v7_1_15_viv_comp
+Compiling package ieee.numeric_std
+Compiling package xbip_utils_v3_0_10.xbip_utils_v3_0_10_pkg
+Compiling package axi_utils_v2_0_6.axi_utils_v2_0_6_pkg
+Compiling package floating_point_v7_1_15.floating_point_v7_1_15_consts
+Compiling package ieee.math_real
+Compiling package floating_point_v7_1_15.floating_point_v7_1_15_exp_table...
+Compiling package mult_gen_v12_0_18.mult_gen_v12_0_18_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling package floating_point_v7_1_15.floating_point_v7_1_15_pkg
+Compiling package floating_point_v7_1_15.flt_utils
+Compiling package unisim.vcomponents
+Compiling package xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv_comp
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.syr2k_mul_32s_32ns_45_1_1(NUM_ST...
+Compiling module xil_defaultlib.syr2k_flow_control_loop_pipe_seq...
+Compiling module xil_defaultlib.syr2k_syr2k_Pipeline_VITIS_LOOP_...
+Compiling module xil_defaultlib.syr2k_mul_32ns_32s_48_1_1(NUM_ST...
+Compiling module xil_defaultlib.syr2k_syr2k_Pipeline_VITIS_LOOP_...
+Compiling module xil_defaultlib.syr2k_syr2k_Pipeline_VITIS_LOOP_...
+Compiling module xil_defaultlib.syr2k_syr2k_Pipeline_VITIS_LOOP_...
+Compiling module xil_defaultlib.syr2k_syr2k_Pipeline_VITIS_LOOP_...
+Compiling module xil_defaultlib.syr2k_syr2k_Pipeline_VITIS_LOOP_...
+Compiling module xil_defaultlib.syr2k_syr2k_Pipeline_VITIS_LOOP_...
+Compiling module xil_defaultlib.syr2k_syr2k_Pipeline_VITIS_LOOP_...
+Compiling module xil_defaultlib.syr2k_control_s_axi
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_srl(DATA_WIDTH=...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_fifo(DATA_WIDTH...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_mem(MEM_STYLE="...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_fifo(MEM_STYLE=...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_srl(DATA_WIDTH=...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_fifo(DATA_WIDTH...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_srl(DATA_WIDTH=...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_fifo(DATA_WIDTH...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_store(NUM_WRITE...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_mem(MEM_STYLE="...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_fifo(MEM_STYLE=...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_load(NUM_READ_O...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_reg_slice(DATA_...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_srl(DATA_WIDTH=...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_fifo(DATA_WIDTH...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_reg_slice(DATA_...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_srl(DATA_WIDTH=...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_fifo(DATA_WIDTH...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_srl(DATA_WIDTH=...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_fifo(DATA_WIDTH...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_throttle(CONSER...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_reg_slice(DATA_...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_write(CONSERVAT...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_reg_slice(DATA_...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi_read(C_USER_VAL...
+Compiling module xil_defaultlib.syr2k_gmem_m_axi(CONSERVATIVE=1,...
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=7,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=4,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=16,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=24,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=17,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=25,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_15.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,b_wi...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=48,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_15.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,b_wi...]
+Compiling architecture struct of entity floating_point_v7_1_15.fix_mult_dsp48e1_sgl [\fix_mult_dsp48e1_sgl(registers=...]
+Compiling architecture rtl of entity floating_point_v7_1_15.fix_mult [\fix_mult(c_xdevicefamily="virte...]
+Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
+Compiling architecture xorcy_v of entity unisim.XORCY [xorcy_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=8,length=0,fast_inp...]
+Compiling architecture struct of entity floating_point_v7_1_15.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=32,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_15.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_15.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(length=0,fast_input=true)...]
+Compiling architecture rtl of entity floating_point_v7_1_15.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=2,length=0,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=4,length=0,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=8,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=3,length=0,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=14,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_15.flt_mult_exp [\flt_mult_exp(c_xdevicefamily="v...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=30,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=18,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_15.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=30,b_wi...]
+Compiling architecture struct of entity floating_point_v7_1_15.flt_round_dsp_opt_full [\flt_round_dsp_opt_full(c_xdevic...]
+Compiling architecture rtl of entity floating_point_v7_1_15.flt_mult_round [\flt_mult_round(c_xdevicefamily=...]
+Compiling architecture synth of entity floating_point_v7_1_15.flt_dec_op_lat [\flt_dec_op_lat(c_xdevicefamily=...]
+Compiling architecture rtl of entity floating_point_v7_1_15.flt_mult [\flt_mult(c_xdevicefamily="virte...]
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture xilinx of entity floating_point_v7_1_15.floating_point_v7_1_15_viv [\floating_point_v7_1_15_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_15.floating_point_v7_1_15 [\floating_point_v7_1_15(c_xdevic...]
+Compiling module xil_defaultlib.syr2k_fmul_32ns_32ns_32_2_max_ds...
+Compiling module xil_defaultlib.syr2k_fmul_32ns_32ns_32_2_max_ds...
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=23,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_15.carry_chain [\carry_chain(c_xdevicefamily="ki...]
+Compiling architecture synth of entity floating_point_v7_1_15.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_15.special_detect [\special_detect(a_fw=24,op_delay...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=10,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay_s [\delay_s(width=10,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=2,length=0)\]
+Compiling architecture muxf7_v of entity unisim.MUXF7 [muxf7_default]
+Compiling architecture muxf8_v of entity unisim.MUXF8 [muxf8_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=6,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_15.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_15.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_15.zero_det_sel [\zero_det_sel(c_xdevicefamily="v...]
+Compiling architecture rtl of entity floating_point_v7_1_15.shift_msb_first [\shift_msb_first(a_width=24,resu...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_15.delay [\delay(width=34,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_15.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_15.flt_to_fix_conv [\flt_to_fix_conv(c_xdevicefamily...]
+Compiling architecture xilinx of entity floating_point_v7_1_15.floating_point_v7_1_15_viv [\floating_point_v7_1_15_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_15.floating_point_v7_1_15 [\floating_point_v7_1_15(c_xdevic...]
+Compiling module xil_defaultlib.syr2k_fptoui_32ns_32_2_no_dsp_1_...
+Compiling module xil_defaultlib.syr2k_fptoui_32ns_32_2_no_dsp_1
+Compiling module xil_defaultlib.syr2k
+Compiling module xil_defaultlib.AESL_axi_master_gmem
+Compiling module xil_defaultlib.AESL_axi_slave_control
+Compiling module xil_defaultlib.nodf_module_intf
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=19)
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=15)
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=19)
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_syr2k_top
+Compiling module work.glbl
+Built simulation snapshot syr2k
+
+****** xsim v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/syr2k/xsim_script.tcl
+# xsim {syr2k} -autoloadwcfg -tclbatch {syr2k.tcl}
+Time resolution is 1 ps
+source syr2k.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [0.00%] @ "150000"
+// RTL Simulation : 1 / 1 [100.00%] @ "1609670000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 1609790 ns : File "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/sim/verilog/syr2k.autotb.v" Line 611
+## quit
+INFO: [Common 17-206] Exiting xsim at Tue Feb 27 22:19:17 2024...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 79.9 seconds. CPU system time: 4.45 seconds. Elapsed time: 68.96 seconds; current allocated memory: 5.469 MB.
+INFO: [HLS 200-112] Total CPU user time: 99.78 seconds. Total CPU system time: 6.71 seconds. Total elapsed time: 101.05 seconds; peak allocated memory: 890.016 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Tue Feb 27 22:19:18 2024...

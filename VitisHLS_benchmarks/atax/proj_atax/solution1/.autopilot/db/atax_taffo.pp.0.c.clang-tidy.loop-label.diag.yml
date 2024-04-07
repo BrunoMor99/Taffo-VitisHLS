@@ -1,0 +1,121 @@
+---
+MainSourceFile:  /home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_43_1:  '
+    FileOffset:      43
+    FilePath:        atax_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c
+        Offset:          96914
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_43_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_47_2:  '
+    FileOffset:      47
+    FilePath:        atax_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c
+        Offset:          96977
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_47_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_52_3:  '
+    FileOffset:      52
+    FilePath:        atax_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c
+        Offset:          97034
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_52_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_56_4:  '
+    FileOffset:      56
+    FilePath:        atax_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c
+        Offset:          97116
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_56_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_63_5:  '
+    FileOffset:      63
+    FilePath:        atax_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c
+        Offset:          97208
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_63_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_97_1:  '
+    FileOffset:      97
+    FilePath:        atax_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c
+        Offset:          98104
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_97_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_102_2:  '
+    FileOffset:      102
+    FilePath:        atax_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c
+        Offset:          98181
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_102_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_104_3:  '
+    FileOffset:      104
+    FilePath:        atax_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c
+        Offset:          98216
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_104_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_109_4:  '
+    FileOffset:      109
+    FilePath:        atax_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c
+        Offset:          98325
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_109_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_115_5:  '
+    FileOffset:      115
+    FilePath:        atax_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c
+        Offset:          98474
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_115_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_119_6:  '
+    FileOffset:      119
+    FilePath:        atax_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c
+        Offset:          98530
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_119_6: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_122_7:  '
+    FileOffset:      122
+    FilePath:        atax_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c
+        Offset:          98609
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_122_7: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_130_8:  '
+    FileOffset:      130
+    FilePath:        atax_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c
+        Offset:          98721
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_130_8: '
+...

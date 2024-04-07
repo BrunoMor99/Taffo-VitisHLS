@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1708275950832">
+  <ports id="1" name="gmem" type="PortType" coreId="0" bitwidth="32" direction="DirOut" iftype="IfTypeFifo">
+    <dataInputObjs>getelementptr</dataInputObjs>
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <ports id="2" name="y" type="PortType" coreId="2147483647" bitwidth="64">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="3" name="alpha" type="PortType" coreId="2147483647" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <edges id="27" source_obj="//@ports.2" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="30" source_obj="//@ports.1" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="36" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="37" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="40" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="41" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="44" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.0/@node_objs.6"/>
+  <edges id="49" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.7"/>
+  <edges id="50" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@ports.0"/>
+  <edges id="51" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.0/@node_objs.8"/>
+  <edges id="54" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.0/@node_objs.9"/>
+  <edges id="59" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@ports.0"/>
+  <edges id="60" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.10"/>
+  <edges id="61" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.10"/>
+  <edges id="64" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.0/@node_objs.11"/>
+  <edges id="162" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.0/@node_objs.10"/>
+  <edges id="163" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="164" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@blocks.0/@node_objs.11"/>
+  <edges id="165" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.9" sink_obj="//@blocks.0/@node_objs.10"/>
+  <edges id="166" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="167" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.0/@node_objs.10"/>
+  <blocks id="24" name="array_copy" type="BlockType">
+    <node_objs xsi:type="cdfg:CdfgNode" id="11" name="alpha_read" coreId="0" bitwidth="32" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <dataInputObjs>alpha</dataInputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="12" name="y_read" coreName="s_axilite" implIndex="s_axilite" control="no" opType="adapter" coreId="114" bitwidth="64" opcode="read" nodeLabel="2.0" m_display="0" m_delay="1.0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <dataInputObjs>y</dataInputObjs>
+      <dataOutputObjs>partselect</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="13" name="ys_u5_27fixp" rtlName="ys_u5_27fixp_U" coreName="RAM" implIndex="auto" control="no" opType="ram_1p" coreId="82" bitwidth="28" opcode="alloca" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="14" name="vla_u3_29fixp1" rtlName="vla_u3_29fixp1_U" coreName="RAM" implIndex="auto" control="no" opType="ram_1p" coreId="82" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="15" name="_ln0" rtlName="grp_array_copy_Pipeline_VITIS_LOOP_35_1_fu_88" coreId="0" opcode="call" nodeLatency="1" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <dataInputObjs>read</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>array_copy_Pipeline_VITIS_LOOP_35_1</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="16" name="_ln0" rtlName="grp_array_copy_Pipeline_VITIS_LOOP_49_2_fu_96" coreId="4051602356" opcode="call" nodeLabel="2.0" nodeLatency="1" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>array_copy_Pipeline_VITIS_LOOP_49_2</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="17" name="p_cast" rtlName="p_cast_reg_135" coreId="202482016" bitwidth="62" opcode="partselect" nodeLabel="2.0" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>sext</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="18" name="p_cast_cast" rtlName="p_cast_cast_fu_120_p1" coreId="0" bitwidth="64" opcode="sext" nodeLabel="3.0" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <dataInputObjs>partselect</dataInputObjs>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="19" name="gmem_addr" coreId="202496016" bitwidth="32" opcode="getelementptr" nodeLabel="3.0" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+      <dataInputObjs>sext</dataInputObjs>
+      <dataOutputObjs>gmem</dataOutputObjs>
+      <dataOutputObjs>writereq</dataOutputObjs>
+      <dataOutputObjs>writeresp</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="20" name="empty" coreName="m_axi" implIndex="m_axi" control="no" opType="adapter" coreId="113" bitwidth="1" opcode="writereq" nodeLabel="3.0" m_display="0" m_delay="14.6" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <dataInputObjs>getelementptr</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="21" name="_ln0" rtlName="fmul_32ns_32ns_32_2_max_dsp_1_U20" coreId="202497568" opcode="call" nodeLabel="4.0" nodeLatency="1" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <dataInputObjs>partselect</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataOutputObjs>gmem</dataOutputObjs>
+      <constName>array_copy_Pipeline_VITIS_LOOP_54_3</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="22" name="empty_20" coreName="m_axi" implIndex="m_axi" control="no" opType="adapter" coreId="113" bitwidth="1" opcode="writeresp" nodeLabel="6.0" nodeLatency="4" m_display="0" m_delay="14.6" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <dataInputObjs>getelementptr</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="23" name="_ln0" coreId="202498704" opcode="ret" nodeLabel="10.0" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1"/>
+  </blocks>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <ScheduleInfo time="5"/>
+  <ScheduleInfo time="6"/>
+  <ScheduleInfo time="7"/>
+  <ScheduleInfo time="8"/>
+  <ScheduleInfo time="9"/>
+  <ScheduleInfo time="10"/>
+  <regnodes realName="alpha_read_reg_130">
+    <nodeIds>11</nodeIds>
+  </regnodes>
+  <regnodes realName="gmem_addr_reg_141">
+    <nodeIds>19</nodeIds>
+  </regnodes>
+  <regnodes realName="p_cast_reg_135">
+    <nodeIds>17</nodeIds>
+  </regnodes>
+  <expressionNodes realName="ys_u5_27fixp_alloca_fu_60">
+    <nodeIds>13</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_cast_fu_110">
+    <nodeIds>17</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_cast_cast_fu_120">
+    <nodeIds>18</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="vla_u3_29fixp1_alloca_fu_64">
+    <nodeIds>14</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="gmem_addr_fu_123">
+    <nodeIds>19</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_array_copy_Pipeline_VITIS_LOOP_54_3_fu_102">
+    <nodeIds>21</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_array_copy_Pipeline_VITIS_LOOP_35_1_fu_88">
+    <nodeIds>15</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_array_copy_Pipeline_VITIS_LOOP_49_2_fu_96">
+    <nodeIds>16</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="y_read_read_fu_74">
+    <nodeIds>12</nodeIds>
+  </ioNodes>
+  <ioNodes realName="grp_writeresp_fu_80">
+    <nodeIds>20</nodeIds>
+    <nodeIds>22</nodeIds>
+  </ioNodes>
+  <ioNodes realName="alpha_read_read_fu_68">
+    <nodeIds>11</nodeIds>
+  </ioNodes>
+  <ioPorts name="alpha">
+    <contents name="read">
+      <nodeIds>11</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="gmem">
+    <contents name="call">
+      <nodeIds>21</nodeIds>
+    </contents>
+    <contents name="writereq">
+      <nodeIds>20</nodeIds>
+    </contents>
+    <contents name="writeresp">
+      <nodeIds>22</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="y">
+    <contents name="read">
+      <nodeIds>12</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="2" latency="2"/>
+    </states>
+    <states id="2">
+      <operations id="15" stage="1" latency="2"/>
+    </states>
+    <states id="3">
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="16" stage="2" latency="2"/>
+      <operations id="17" stage="1" latency="1"/>
+    </states>
+    <states id="4">
+      <operations id="16" stage="1" latency="2"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+    </states>
+    <states id="5">
+      <operations id="21" stage="2" latency="2"/>
+    </states>
+    <states id="6">
+      <operations id="21" stage="1" latency="2"/>
+    </states>
+    <states id="7">
+      <operations id="22" stage="5" latency="5"/>
+    </states>
+    <states id="8">
+      <operations id="22" stage="4" latency="5"/>
+    </states>
+    <states id="9">
+      <operations id="22" stage="3" latency="5"/>
+    </states>
+    <states id="10">
+      <operations id="22" stage="2" latency="5"/>
+    </states>
+    <states id="11">
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="5"/>
+      <operations id="23" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="5" outState="6">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="6" outState="7">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="7" outState="8">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="8" outState="9">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="9" outState="10">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="10" outState="11">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="array_copy" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="77" mMaxLatency="77">
+      <basicBlocks>24</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

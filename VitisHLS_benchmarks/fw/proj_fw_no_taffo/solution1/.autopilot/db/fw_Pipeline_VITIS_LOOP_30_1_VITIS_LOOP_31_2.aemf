@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1706472151628">
+  <ports id="1" name="path" type="PortType" coreName="RAM_1WnR" coreId="4294967295" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="256">
+    <dataInputObjs>getelementptr</dataInputObjs>
+  </ports>
+  <edges id="70" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="73" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="75" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="76" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.6"/>
+  <edges id="77" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="78" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="81" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="84" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="85" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="86" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="87" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="88" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="89" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="92" source_obj="//@regions.0/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="94" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="95" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="98" source_obj="//@regions.0/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
+  <edges id="99" source_obj="//@regions.0/@basic_blocks.1/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
+  <edges id="100" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
+  <edges id="101" source_obj="//@regions.0/@basic_blocks.1/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.6"/>
+  <edges id="102" source_obj="//@regions.0/@basic_blocks.1/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.7"/>
+  <edges id="105" source_obj="//@regions.0/@basic_blocks.1/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.8"/>
+  <edges id="108" source_obj="//@regions.0/@basic_blocks.1/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.9"/>
+  <edges id="109" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.10"/>
+  <edges id="110" source_obj="//@regions.0/@basic_blocks.1/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.11"/>
+  <edges id="111" source_obj="//@regions.0/@basic_blocks.1/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.11"/>
+  <edges id="112" source_obj="//@regions.0/@basic_blocks.1/@node_objs.11" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.12"/>
+  <edges id="115" source_obj="//@regions.0/@basic_blocks.1/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.13"/>
+  <edges id="116" source_obj="//@regions.0/@basic_blocks.1/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.14"/>
+  <edges id="119" source_obj="//@regions.0/@basic_blocks.1/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.15"/>
+  <edges id="120" source_obj="//@regions.0/@basic_blocks.1/@node_objs.15" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.16"/>
+  <edges id="121" source_obj="//@regions.0/@basic_blocks.1/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.17"/>
+  <edges id="122" source_obj="//@regions.0/@basic_blocks.1/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.17"/>
+  <edges id="123" source_obj="//@regions.0/@basic_blocks.1/@node_objs.17" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.18"/>
+  <edges id="124" source_obj="//@regions.0/@basic_blocks.1/@node_objs.19" sink_obj="//@ports.0"/>
+  <edges id="127" source_obj="//@regions.0/@basic_blocks.1/@node_objs.18" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.19"/>
+  <edges id="128" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.20"/>
+  <edges id="129" source_obj="//@regions.0/@basic_blocks.1/@node_objs.20" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.21"/>
+  <edges id="130" source_obj="//@regions.0/@basic_blocks.1/@node_objs.21" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.22"/>
+  <edges id="131" source_obj="//@regions.0/@basic_blocks.1/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.22"/>
+  <edges id="132" source_obj="//@regions.0/@basic_blocks.1/@node_objs.22" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.23"/>
+  <edges id="135" source_obj="//@regions.0/@basic_blocks.1/@node_objs.23" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.24"/>
+  <edges id="136" source_obj="//@regions.0/@basic_blocks.1/@node_objs.24" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.25"/>
+  <edges id="138" source_obj="//@regions.0/@basic_blocks.1/@node_objs.22" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.26"/>
+  <edges id="141" source_obj="//@regions.0/@basic_blocks.1/@node_objs.26" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.27"/>
+  <edges id="142" source_obj="//@regions.0/@basic_blocks.1/@node_objs.27" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.28"/>
+  <edges id="145" source_obj="//@regions.0/@basic_blocks.1/@node_objs.22" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.29"/>
+  <edges id="148" source_obj="//@regions.0/@basic_blocks.1/@node_objs.29" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.30"/>
+  <edges id="149" source_obj="//@regions.0/@basic_blocks.1/@node_objs.30" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.31"/>
+  <edges id="151" source_obj="//@regions.0/@basic_blocks.1/@node_objs.28" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.32"/>
+  <edges id="152" source_obj="//@regions.0/@basic_blocks.1/@node_objs.31" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.32"/>
+  <edges id="153" source_obj="//@regions.0/@basic_blocks.1/@node_objs.32" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.33"/>
+  <edges id="154" source_obj="//@regions.0/@basic_blocks.1/@node_objs.25" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.33"/>
+  <edges id="155" source_obj="//@regions.0/@basic_blocks.1/@node_objs.33" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.34"/>
+  <edges id="158" source_obj="//@regions.0/@basic_blocks.1/@node_objs.16" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.34"/>
+  <edges id="159" source_obj="//@regions.0/@basic_blocks.1/@node_objs.34" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.35"/>
+  <edges id="160" source_obj="//@regions.0/@basic_blocks.1/@node_objs.19" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.35"/>
+  <edges id="161" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.36"/>
+  <edges id="163" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.37"/>
+  <edges id="164" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.37"/>
+  <edges id="165" source_obj="//@regions.0/@basic_blocks.1/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.38"/>
+  <edges id="166" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.38"/>
+  <edges id="167" source_obj="//@regions.0/@basic_blocks.1/@node_objs.36" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.39"/>
+  <edges id="168" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.39"/>
+  <edges id="169" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.40"/>
+  <edges id="199" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="200" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="201" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
+  <edges id="202" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
+  <edges id="203" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.38"/>
+  <edges id="204" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.39"/>
+  <edges id="205" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="206" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.37"/>
+  <edges id="207" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="208" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.38"/>
+  <edges id="209" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="210" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.39"/>
+  <edges id="211" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.37"/>
+  <blocks id="9" name="newFuncRoot" type="BlockType">
+    <controlOutputObjs>for.body3</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="2" name="j" originalName="j" coreId="0" bitwidth="5" opcode="alloca" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="3" name="i" originalName="i" coreId="1679850272" bitwidth="5" opcode="alloca" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="4" name="indvar_flatten" coreId="30" bitwidth="9" opcode="alloca" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="5" name="indvar_flatten_write_ln0" coreId="0" opcode="store" m_display="0" m_delay="0.84" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="6" name="i_write_ln0" coreId="1330007625" opcode="store" m_display="0" m_delay="0.84" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="7" name="j_write_ln0" coreId="2962767232" opcode="store" m_display="0" m_delay="0.84" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="8" name="br_ln0" coreId="256" opcode="br" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <controlInputObjs>for.body3</controlInputObjs>
+    </node_objs>
+  </blocks>
+  <blocks id="63" name="for.body34.preheader.exitStub" type="BlockType">
+    <controlInputObjs>for.body3</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="62" name="_ln0" coreId="807418469" opcode="ret" nodeLabel="11.0" m_display="0" m_topoIndex="46" m_clusterGroupNumber="-1"/>
+  </blocks>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" iiViolation="" id="301" pipe_depth="13" RegionName="VITIS_LOOP_30_1_VITIS_LOOP_31_2">
+    <basic_blocks id="15" name="for.body3" type="BlockType">
+      <controlInputObjs>newFuncRoot</controlInputObjs>
+      <controlInputObjs>for.inc23</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>for.body34.preheader.exitStub</controlOutputObjs>
+      <controlOutputObjs>for.inc23</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="10" name="indvar_flatten_load" lineNumber="30" fileName="fw_no_taffo.c" fileDirectory=".." coreId="1323455363" contextFuncName="fw" bitwidth="9" opcode="load" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="30" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="12" name="icmp_ln30" lineNumber="30" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="icmp_ln30_fu_100_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="fw" bitwidth="1" opcode="icmp" m_display="0" m_delay="0.9" m_topoIndex="9" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="30" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="13" name="add_ln30" lineNumber="30" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="add_ln30_fu_106_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="fw" bitwidth="9" opcode="add" m_display="0" m_delay="1.35" m_topoIndex="10" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="30" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="14" name="br_ln30" lineNumber="30" fileName="fw_no_taffo.c" fileDirectory=".." coreId="540767076" contextFuncName="fw" opcode="br" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="30" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>for.inc23</controlInputObjs>
+        <controlInputObjs>for.body34.preheader.exitStub</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="fw_no_taffo.c">
+        <validLinenumbers>30</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="61" name="for.inc23" type="BlockType">
+      <controlInputObjs>for.body3</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>for.body3</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="j_load" lineNumber="31" fileName="fw_no_taffo.c" fileDirectory=".." coreId="2962816736" contextFuncName="fw" bitwidth="5" opcode="load" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="31" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="i_load" lineNumber="30" fileName="fw_no_taffo.c" fileDirectory=".." coreId="2962817448" contextFuncName="fw" bitwidth="5" opcode="load" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="30" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="icmp_ln31" lineNumber="31" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="icmp_ln31_fu_118_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="fw" bitwidth="1" opcode="icmp" m_display="0" m_delay="0.87" m_topoIndex="14" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="31" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="21" name="j_mid2" lineNumber="31" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="j_mid2_fu_124_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="fw" bitwidth="5" opcode="select" m_display="0" m_delay="0.62" m_topoIndex="15" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="31" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="add_ln30_1" lineNumber="30" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="add_ln30_1_fu_132_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="fw" bitwidth="5" opcode="add" m_display="0" m_delay="1.09" m_topoIndex="16" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="30" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="23" name="i_cast2_mid2_v" lineNumber="31" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="i_cast2_mid2_v_fu_138_p3" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="fw" bitwidth="5" opcode="select" m_display="0" m_delay="0.62" m_topoIndex="17" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="31" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="i_cast2_mid2" lineNumber="31" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="mul_ln32_fu_170_p10" coreId="0" contextFuncName="fw" bitwidth="8" opcode="zext" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="31" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>mul</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="25" name="empty_10" lineNumber="31" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="empty_10_fu_150_p1" coreId="0" contextFuncName="fw" bitwidth="4" opcode="trunc" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="31" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>bitconcatenate</dataOutputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="26" name="p_mid2" lineNumber="31" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="p_mid2_fu_154_p3" coreId="2962889120" contextFuncName="fw" bitwidth="8" opcode="bitconcatenate" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="31" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="27" name="zext_ln31_mid2" lineNumber="31" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="zext_ln31_mid2_fu_162_p1" coreId="0" contextFuncName="fw" bitwidth="5" opcode="zext" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="31" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="29" name="j_cast3" lineNumber="31" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="j_cast3_fu_166_p1" coreId="0" contextFuncName="fw" bitwidth="8" opcode="zext" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="31" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>mul</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="mul_ln32" lineNumber="31" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="mul_5ns_5ns_8_1_1_U2" coreName="Multiplier" implIndex="auto" control="no" opType="mul" coreId="3" contextFuncName="fw" bitwidth="8" opcode="mul" m_display="0" m_delay="2.12" m_topoIndex="23" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="31" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>urem</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="rem_urem" lineNumber="31" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="urem_8ns_4ns_3_12_1_U3" coreName="Divider" implIndex="auto" control="no" opType="urem" coreId="6" contextFuncName="fw" bitwidth="3" opcode="urem" nodeLatency="11" m_display="0" m_delay="2.18" m_topoIndex="24" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="31" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>mul</dataInputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="trunc_ln32" lineNumber="32" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="trunc_ln32_fu_271_p1" coreId="2962892176" contextFuncName="fw" bitwidth="3" opcode="trunc" nodeLabel="11.0" m_display="0" m_topoIndex="42" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="32" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>urem</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="34" name="add_ln32" lineNumber="32" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="add_ln32_fu_275_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="fw" bitwidth="3" opcode="add" nodeLabel="11.0" m_display="0" m_delay="0.93" m_topoIndex="43" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="32" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="35" name="zext_ln32" lineNumber="32" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="grp_fu_79_p0" coreId="2962895136" contextFuncName="fw" bitwidth="32" opcode="zext" nodeLabel="11.0" m_display="0" m_topoIndex="44" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="32" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>sitofp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="36" name="conv" lineNumber="32" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="sitofp_32ns_32_2_no_dsp_1_U1" coreName="Int2Float" implIndex="auto" control="no" opType="sitofp" coreId="62" contextFuncName="fw" bitwidth="32" opcode="sitofp" nodeLabel="11.0" nodeLatency="1" m_display="0" m_delay="9.54" m_topoIndex="45" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="32" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="add_ln32_1" lineNumber="32" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="add_ln32_1_fu_182_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="fw" bitwidth="8" opcode="add" m_display="0" m_delay="1.35" m_topoIndex="25" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="32" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataInputObjs>bitconcatenate</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="38" name="zext_ln32_1" lineNumber="32" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="zext_ln32_1_fu_286_p1" coreId="2962897792" contextFuncName="fw" bitwidth="64" opcode="zext" nodeLabel="12.0" m_display="0" m_topoIndex="47" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="32" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="39" name="path_addr" lineNumber="32" fileName="fw_no_taffo.c" fileDirectory=".." coreId="1397508187" contextFuncName="fw" bitwidth="8" opcode="getelementptr" nodeLabel="12.0" m_display="0" m_topoIndex="48" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="32" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>path</dataOutputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="40" name="trunc_ln33" lineNumber="33" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="trunc_ln33_fu_188_p1" coreId="2962899456" contextFuncName="fw" bitwidth="4" opcode="trunc" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="33" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="41" name="trunc_ln33_1_cast" lineNumber="33" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="trunc_ln33_1_cast_fu_192_p1" coreId="304" contextFuncName="fw" bitwidth="5" opcode="zext" m_display="0" m_topoIndex="27" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="33" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="42" name="empty_11" lineNumber="33" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="empty_11_fu_196_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="fw" bitwidth="5" opcode="add" m_display="0" m_delay="1.01" m_topoIndex="28" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="33" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>urem</dataOutputObjs>
+        <dataOutputObjs>urem</dataOutputObjs>
+        <dataOutputObjs>urem</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="rem7_urem" lineNumber="33" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="urem_5ns_5ns_4_9_1_U4" coreName="Divider" implIndex="auto" control="no" opType="urem" coreId="6" contextFuncName="fw" bitwidth="4" opcode="urem" nodeLatency="8" m_display="0" m_delay="1.55" m_topoIndex="29" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="33" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="trunc_ln33_1" lineNumber="33" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="trunc_ln33_1_fu_241_p1" coreId="1323392932" contextFuncName="fw" bitwidth="4" opcode="trunc" nodeLabel="8.0" m_display="0" m_topoIndex="36" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="33" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>urem</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="icmp_ln33" lineNumber="33" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="icmp_ln33_fu_245_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="fw" bitwidth="1" opcode="icmp" nodeLabel="8.0" m_display="0" m_delay="0.87" m_topoIndex="37" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="33" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="46" name="rem11_urem" lineNumber="33" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="urem_5ns_4ns_3_9_1_U5" coreName="Divider" implIndex="auto" control="no" opType="urem" coreId="6" contextFuncName="fw" bitwidth="3" opcode="urem" nodeLatency="8" m_display="0" m_delay="1.55" m_topoIndex="30" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="33" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="47" name="trunc_ln33_2" lineNumber="33" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="trunc_ln33_2_fu_251_p1" coreId="2962905552" contextFuncName="fw" bitwidth="3" opcode="trunc" nodeLabel="8.0" m_display="0" m_topoIndex="38" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="33" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>urem</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="icmp_ln33_1" lineNumber="33" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="icmp_ln33_1_fu_255_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="fw" bitwidth="1" opcode="icmp" nodeLabel="8.0" m_display="0" m_delay="0.67" m_topoIndex="39" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="33" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="49" name="rem16_urem" lineNumber="33" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="urem_5ns_5ns_4_9_1_U6" coreName="Divider" implIndex="auto" control="no" opType="urem" coreId="6" contextFuncName="fw" bitwidth="4" opcode="urem" nodeLatency="8" m_display="0" m_delay="1.55" m_topoIndex="31" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="33" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="50" name="trunc_ln33_3" lineNumber="33" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="trunc_ln33_3_fu_261_p1" coreId="0" contextFuncName="fw" bitwidth="4" opcode="trunc" nodeLabel="8.0" m_display="0" m_topoIndex="40" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="33" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>urem</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="51" name="icmp_ln33_2" lineNumber="33" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="icmp_ln33_2_fu_265_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="fw" bitwidth="1" opcode="icmp" nodeLabel="8.0" m_display="0" m_delay="0.87" m_topoIndex="41" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="33" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="52" name="or_ln33" lineNumber="33" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="or_ln33_fu_290_p2" coreName="LogicGate" implIndex="auto" control="no" opType="or" coreId="74" contextFuncName="fw" bitwidth="1" opcode="or" nodeLabel="12.0" m_display="0" m_topoIndex="49" m_clusterGroupNumber="1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="33" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="53" name="or_ln33_1" lineNumber="33" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="or_ln33_1_fu_294_p2" coreName="LogicGate" implIndex="auto" control="no" opType="or" coreId="74" contextFuncName="fw" bitwidth="1" opcode="or" nodeLabel="12.0" m_display="0" m_topoIndex="50" m_clusterGroupNumber="1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="33" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>or</dataInputObjs>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="54" name="select_ln33" lineNumber="33" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="path_d0" coreName="Sel" implIndex="auto_sel" control="no" opType="select" coreId="73" contextFuncName="fw" bitwidth="32" opcode="select" nodeLabel="12.0" m_display="0" m_delay="0.87" m_topoIndex="51" m_clusterGroupNumber="1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="33" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>or</dataInputObjs>
+        <dataInputObjs>sitofp</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="55" name="path_addr_write_ln32" lineNumber="32" fileName="fw_no_taffo.c" fileDirectory=".." coreName="RAM_1WnR" implIndex="auto" control="no" opType="ram_1wnr" coreId="83" contextFuncName="fw" opcode="store" nodeLabel="12.0" m_display="0" m_delay="2.26" m_topoIndex="52" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="32" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>getelementptr</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="56" name="add_ln31" lineNumber="31" fileName="fw_no_taffo.c" fileDirectory=".." rtlName="add_ln31_fu_220_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="fw" bitwidth="5" opcode="add" m_display="0" m_delay="1.09" m_topoIndex="32" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="31" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="57" name="indvar_flatten_write_ln31" lineNumber="31" fileName="fw_no_taffo.c" fileDirectory=".." coreId="959591725" contextFuncName="fw" opcode="store" m_display="0" m_delay="0.84" m_topoIndex="33" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="31" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="58" name="i_write_ln31" lineNumber="31" fileName="fw_no_taffo.c" fileDirectory=".." coreId="2962840776" contextFuncName="fw" opcode="store" m_display="0" m_delay="0.84" m_topoIndex="34" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="31" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="59" name="j_write_ln31" lineNumber="31" fileName="fw_no_taffo.c" fileDirectory=".." coreId="176" contextFuncName="fw" opcode="store" m_display="0" m_delay="0.84" m_topoIndex="35" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="31" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="60" name="br_ln31" lineNumber="31" fileName="fw_no_taffo.c" fileDirectory=".." coreId="151666223" contextFuncName="fw" opcode="br" nodeLabel="12.0" m_display="0" m_topoIndex="53" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="fw_no_taffo.c" linenumber="31" fileDirectory="/home/bruno/Desktop/benchmarks/fw" functionName="fw"/>
+        <controlInputObjs>for.body3</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="fw_no_taffo.c">
+        <validLinenumbers>31</validLinenumbers>
+        <validLinenumbers>30</validLinenumbers>
+        <validLinenumbers>32</validLinenumbers>
+        <validLinenumbers>33</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <ScheduleInfo time="5"/>
+  <ScheduleInfo time="6"/>
+  <ScheduleInfo time="7"/>
+  <ScheduleInfo time="8"/>
+  <ScheduleInfo time="9"/>
+  <ScheduleInfo time="10"/>
+  <ScheduleInfo time="11"/>
+  <ScheduleInfo time="12"/>
+  <regnodes realName="icmp_ln33_reg_350">
+    <nodeIds>45</nodeIds>
+  </regnodes>
+  <regnodes realName="zext_ln32_reg_365">
+    <nodeIds>35</nodeIds>
+  </regnodes>
+  <regnodes realName="mul_ln32_reg_333">
+    <nodeIds>31</nodeIds>
+  </regnodes>
+  <regnodes realName="j_reg_308">
+    <nodeIds>2</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln32_1_reg_338">
+    <nodeIds>37</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln30_reg_329">
+    <nodeIds>12</nodeIds>
+  </regnodes>
+  <regnodes realName="indvar_flatten_reg_322">
+    <nodeIds>4</nodeIds>
+  </regnodes>
+  <regnodes realName="empty_11_reg_343">
+    <nodeIds>42</nodeIds>
+  </regnodes>
+  <regnodes realName="i_reg_315">
+    <nodeIds>3</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln33_2_reg_360">
+    <nodeIds>51</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln33_1_reg_355">
+    <nodeIds>48</nodeIds>
+  </regnodes>
+  <expressionNodes realName="icmp_ln33_fu_245">
+    <nodeIds>45</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln32_fu_275">
+    <nodeIds>34</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="mul_ln32_fu_170">
+    <nodeIds>31</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln30_fu_100">
+    <nodeIds>12</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="j_cast3_fu_166">
+    <nodeIds>29</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="select_ln33_fu_299">
+    <nodeIds>54</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_mid2_fu_154">
+    <nodeIds>26</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_11_fu_196">
+    <nodeIds>42</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln30_1_fu_132">
+    <nodeIds>22</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln32_1_fu_286">
+    <nodeIds>38</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln33_1_cast_fu_192">
+    <nodeIds>41</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln33_fu_188">
+    <nodeIds>40</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln31_fu_118">
+    <nodeIds>20</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln32_fu_281">
+    <nodeIds>35</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_10_fu_150">
+    <nodeIds>25</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="j_mid2_fu_124">
+    <nodeIds>21</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln33_2_fu_265">
+    <nodeIds>51</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln33_2_fu_251">
+    <nodeIds>47</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln31_fu_220">
+    <nodeIds>56</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_fu_58">
+    <nodeIds>3</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln33_1_fu_294">
+    <nodeIds>53</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_cast2_mid2_v_fu_138">
+    <nodeIds>23</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln33_fu_290">
+    <nodeIds>52</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln30_fu_106">
+    <nodeIds>13</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_cast2_mid2_fu_146">
+    <nodeIds>24</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="indvar_flatten_fu_62">
+    <nodeIds>4</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln32_1_fu_182">
+    <nodeIds>37</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="path_addr_gep_fu_66">
+    <nodeIds>39</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln33_3_fu_261">
+    <nodeIds>50</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln31_mid2_fu_162">
+    <nodeIds>27</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln32_fu_271">
+    <nodeIds>33</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln33_1_fu_255">
+    <nodeIds>48</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="j_fu_54">
+    <nodeIds>2</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln33_1_fu_241">
+    <nodeIds>44</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_fu_208">
+    <nodeIds>46</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_fu_79">
+    <nodeIds>36</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_fu_202">
+    <nodeIds>43</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_fu_214">
+    <nodeIds>49</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_fu_176">
+    <nodeIds>32</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="store_ln0_store_fu_92">
+    <nodeIds>7</nodeIds>
+  </ioNodes>
+  <ioNodes realName="j_load_load_fu_112">
+    <nodeIds>16</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln0_store_fu_82">
+    <nodeIds>5</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln31_store_fu_226">
+    <nodeIds>57</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln31_store_fu_236">
+    <nodeIds>59</nodeIds>
+  </ioNodes>
+  <ioNodes realName="i_load_load_fu_115">
+    <nodeIds>17</nodeIds>
+  </ioNodes>
+  <ioNodes realName="indvar_flatten_load_load_fu_97">
+    <nodeIds>10</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln0_store_fu_87">
+    <nodeIds>6</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln31_store_fu_231">
+    <nodeIds>58</nodeIds>
+  </ioNodes>
+  <memoryPorts dataString="path">
+    <nodeIds>55</nodeIds>
+  </memoryPorts>
+  <ioPorts name="path(p0)">
+    <contents name="store">
+      <nodeIds>55</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="2" stage="1" latency="1"/>
+      <operations id="3" stage="1" latency="1"/>
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="32" stage="12" latency="12"/>
+      <operations id="37" stage="1" latency="1"/>
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+      <operations id="42" stage="1" latency="1"/>
+      <operations id="43" stage="9" latency="9"/>
+      <operations id="46" stage="9" latency="9"/>
+      <operations id="49" stage="9" latency="9"/>
+      <operations id="56" stage="1" latency="1"/>
+      <operations id="57" stage="1" latency="1"/>
+      <operations id="58" stage="1" latency="1"/>
+      <operations id="59" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="32" stage="11" latency="12"/>
+      <operations id="43" stage="8" latency="9"/>
+      <operations id="46" stage="8" latency="9"/>
+      <operations id="49" stage="8" latency="9"/>
+    </states>
+    <states id="3">
+      <operations id="32" stage="10" latency="12"/>
+      <operations id="43" stage="7" latency="9"/>
+      <operations id="46" stage="7" latency="9"/>
+      <operations id="49" stage="7" latency="9"/>
+    </states>
+    <states id="4">
+      <operations id="32" stage="9" latency="12"/>
+      <operations id="43" stage="6" latency="9"/>
+      <operations id="46" stage="6" latency="9"/>
+      <operations id="49" stage="6" latency="9"/>
+    </states>
+    <states id="5">
+      <operations id="32" stage="8" latency="12"/>
+      <operations id="43" stage="5" latency="9"/>
+      <operations id="46" stage="5" latency="9"/>
+      <operations id="49" stage="5" latency="9"/>
+    </states>
+    <states id="6">
+      <operations id="32" stage="7" latency="12"/>
+      <operations id="43" stage="4" latency="9"/>
+      <operations id="46" stage="4" latency="9"/>
+      <operations id="49" stage="4" latency="9"/>
+    </states>
+    <states id="7">
+      <operations id="32" stage="6" latency="12"/>
+      <operations id="43" stage="3" latency="9"/>
+      <operations id="46" stage="3" latency="9"/>
+      <operations id="49" stage="3" latency="9"/>
+    </states>
+    <states id="8">
+      <operations id="32" stage="5" latency="12"/>
+      <operations id="43" stage="2" latency="9"/>
+      <operations id="46" stage="2" latency="9"/>
+      <operations id="49" stage="2" latency="9"/>
+    </states>
+    <states id="9">
+      <operations id="32" stage="4" latency="12"/>
+      <operations id="43" stage="1" latency="9"/>
+      <operations id="44" stage="1" latency="1"/>
+      <operations id="45" stage="1" latency="1"/>
+      <operations id="46" stage="1" latency="9"/>
+      <operations id="47" stage="1" latency="1"/>
+      <operations id="48" stage="1" latency="1"/>
+      <operations id="49" stage="1" latency="9"/>
+      <operations id="50" stage="1" latency="1"/>
+      <operations id="51" stage="1" latency="1"/>
+    </states>
+    <states id="10">
+      <operations id="32" stage="3" latency="12"/>
+    </states>
+    <states id="11">
+      <operations id="32" stage="2" latency="12"/>
+    </states>
+    <states id="12">
+      <operations id="32" stage="1" latency="12"/>
+      <operations id="33" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="35" stage="1" latency="1"/>
+      <operations id="36" stage="2" latency="2"/>
+      <operations id="62" stage="1" latency="1"/>
+    </states>
+    <states id="13">
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="2"/>
+      <operations id="38" stage="1" latency="1"/>
+      <operations id="39" stage="1" latency="1"/>
+      <operations id="52" stage="1" latency="1"/>
+      <operations id="53" stage="1" latency="1"/>
+      <operations id="54" stage="1" latency="1"/>
+      <operations id="55" stage="1" latency="1"/>
+      <operations id="60" stage="1" latency="1"/>
+    </states>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="5" outState="6">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="6" outState="7">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="7" outState="8">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="8" outState="9">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="9" outState="10">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="10" outState="11">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="11" outState="12">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="12" outState="13">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="fw_Pipeline_VITIS_LOOP_30_1_VITIS_LOOP_31_2" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="269" mMaxLatency="269">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>4</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>9</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="VITIS_LOOP_30_1_VITIS_LOOP_31_2" mII="1" mDepth="13" mMinTripCount="256" mMaxTripCount="256" mMinLatency="267" mMaxLatency="267" mType="1">
+      <basicBlocks>15</basicBlocks>
+      <basicBlocks>61</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>63</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

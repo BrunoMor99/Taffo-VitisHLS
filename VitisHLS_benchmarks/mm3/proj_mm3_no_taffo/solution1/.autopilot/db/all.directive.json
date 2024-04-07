@@ -1,0 +1,18 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [{
+          "functionName": "mm3",
+          "label": "",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "\/home\/bruno\/Desktop\/benchmarks\/mm3\/run_hls_no_taffo.tcl",
+          "sourceLine": "44",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "mm3"
+              }]
+          }
+        }]
+    }]}

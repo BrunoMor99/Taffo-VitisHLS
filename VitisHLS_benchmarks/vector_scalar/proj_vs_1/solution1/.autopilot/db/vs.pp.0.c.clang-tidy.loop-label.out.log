@@ -1,0 +1,15 @@
+/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c:912:5: warning: Added loop label VITIS_LOOP_48_1:   [xilinx-label-all-loops]
+    for (i = 0; i < 64; i++)
+    ^~~
+    VITIS_LOOP_48_1: 
+/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c:912:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c:930:5: warning: Added loop label VITIS_LOOP_66_1:   [xilinx-label-all-loops]
+    for (i = 0; i < n; i++)
+    ^~~
+    VITIS_LOOP_66_1: 
+/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c:930:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c:935:5: warning: Added loop label VITIS_LOOP_71_2:   [xilinx-label-all-loops]
+    for (i=0; i < n; i++){
+    ^~~
+    VITIS_LOOP_71_2: 
+/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c:935:5: note: FIX-IT applied suggested code changes

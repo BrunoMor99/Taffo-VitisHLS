@@ -1,0 +1,300 @@
+
+
+================================================================
+== Synthesis Summary Report of 'mm3'
+================================================================
++ General Information: 
+    * Date:           Sat Mar  9 23:01:13 2024
+    * Version:        2022.2 (Build 3670227 on Oct 13 2022)
+    * Project:        proj_mm3_no_taffo
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: virtex7
+    * Target device:  xc7v585t-ffg1761-2
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-------------------------------------------------+------+-------+---------+-----------+----------+---------+------+----------+------+---------+------------+------------+-----+
+    |                     Modules                     | Issue|       | Latency |  Latency  | Iteration|         | Trip |          |      |         |            |            |     |
+    |                     & Loops                     | Type | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM |   DSP   |     FF     |     LUT    | URAM|
+    +-------------------------------------------------+------+-------+---------+-----------+----------+---------+------+----------+------+---------+------------+------------+-----+
+    |+ mm3                                            |     -|   0.00|    49163|  9.833e+05|         -|    49164|     -|        no|     -|  5 (~0%)|  12864 (1%)|  13077 (3%)|    -|
+    | + mm3_Pipeline_VITIS_LOOP_63_1_VITIS_LOOP_65_2  |     -|   0.00|    16386|  3.277e+05|         -|    16386|     -|        no|     -|        -|  3624 (~0%)|  3406 (~0%)|    -|
+    |  o VITIS_LOOP_63_1_VITIS_LOOP_65_2              |    II|  14.60|    16384|  3.277e+05|        65|       64|   256|       yes|     -|        -|           -|           -|    -|
+    | + mm3_Pipeline_VITIS_LOOP_75_4_VITIS_LOOP_77_5  |     -|   0.00|    16386|  3.277e+05|         -|    16386|     -|        no|     -|        -|  3624 (~0%)|  3406 (~0%)|    -|
+    |  o VITIS_LOOP_75_4_VITIS_LOOP_77_5              |    II|  14.60|    16384|  3.277e+05|        65|       64|   256|       yes|     -|        -|           -|           -|    -|
+    | + mm3_Pipeline_VITIS_LOOP_88_7_VITIS_LOOP_90_8  |     -|   0.00|    16386|  3.277e+05|         -|    16386|     -|        no|     -|        -|  3624 (~0%)|  3406 (~0%)|    -|
+    |  o VITIS_LOOP_88_7_VITIS_LOOP_90_8              |    II|  14.60|    16384|  3.277e+05|        65|       64|   256|       yes|     -|        -|           -|           -|    -|
+    +-------------------------------------------------+------+-------+---------+-----------+----------+---------+------+----------+------+---------+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| Interface  | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   |
+|            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |
++------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| m_axi_gmem | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          |
++------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 7             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+------------------+
+| Interface     | Register | Offset | Width | Access | Description      |
++---------------+----------+--------+-------+--------+------------------+
+| s_axi_control | A_1      | 0x10   | 32    | W      | Data signal of A |
+| s_axi_control | A_2      | 0x14   | 32    | W      | Data signal of A |
+| s_axi_control | B_1      | 0x1c   | 32    | W      | Data signal of B |
+| s_axi_control | B_2      | 0x20   | 32    | W      | Data signal of B |
+| s_axi_control | C_1      | 0x28   | 32    | W      | Data signal of C |
+| s_axi_control | C_2      | 0x2c   | 32    | W      | Data signal of C |
+| s_axi_control | D_1      | 0x34   | 32    | W      | Data signal of D |
+| s_axi_control | D_2      | 0x38   | 32    | W      | Data signal of D |
+| s_axi_control | E_1      | 0x40   | 32    | W      | Data signal of E |
+| s_axi_control | E_2      | 0x44   | 32    | W      | Data signal of E |
+| s_axi_control | F_1      | 0x4c   | 32    | W      | Data signal of F |
+| s_axi_control | F_2      | 0x50   | 32    | W      | Data signal of F |
+| s_axi_control | G_1      | 0x58   | 32    | W      | Data signal of G |
+| s_axi_control | G_2      | 0x5c   | 32    | W      | Data signal of G |
++---------------+----------+--------+-------+--------+------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst_n  | reset      | ap_rst_n                          |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| A        | inout     | float*   |
+| B        | inout     | float*   |
+| C        | inout     | float*   |
+| D        | inout     | float*   |
+| E        | inout     | float*   |
+| F        | inout     | float*   |
+| G        | inout     | float*   |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+-------------------------------+
+| Argument | HW Interface  | HW Type   | HW Usage | HW Info                       |
++----------+---------------+-----------+----------+-------------------------------+
+| A        | m_axi_gmem    | interface |          |                               |
+| A        | s_axi_control | register  | offset   | name=A_1 offset=0x10 range=32 |
+| A        | s_axi_control | register  | offset   | name=A_2 offset=0x14 range=32 |
+| B        | m_axi_gmem    | interface |          |                               |
+| B        | s_axi_control | register  | offset   | name=B_1 offset=0x1c range=32 |
+| B        | s_axi_control | register  | offset   | name=B_2 offset=0x20 range=32 |
+| C        | m_axi_gmem    | interface |          |                               |
+| C        | s_axi_control | register  | offset   | name=C_1 offset=0x28 range=32 |
+| C        | s_axi_control | register  | offset   | name=C_2 offset=0x2c range=32 |
+| D        | m_axi_gmem    | interface |          |                               |
+| D        | s_axi_control | register  | offset   | name=D_1 offset=0x34 range=32 |
+| D        | s_axi_control | register  | offset   | name=D_2 offset=0x38 range=32 |
+| E        | m_axi_gmem    | interface |          |                               |
+| E        | s_axi_control | register  | offset   | name=E_1 offset=0x40 range=32 |
+| E        | s_axi_control | register  | offset   | name=E_2 offset=0x44 range=32 |
+| F        | m_axi_gmem    | interface |          |                               |
+| F        | s_axi_control | register  | offset   | name=F_1 offset=0x4c range=32 |
+| F        | s_axi_control | register  | offset   | name=F_2 offset=0x50 range=32 |
+| G        | m_axi_gmem    | interface |          |                               |
+| G        | s_axi_control | register  | offset   | name=G_1 offset=0x58 range=32 |
+| G        | s_axi_control | register  | offset   | name=G_2 offset=0x5c range=32 |
++----------+---------------+-----------+----------+-------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Bursts and Widening Missed
++--------------+----------+-----------------+---------------------------------------------------------------------------------------------------------+------------+----------------------+
+| HW Interface | Variable | Loop            | Problem                                                                                                 | Resolution | Location             |
++--------------+----------+-----------------+---------------------------------------------------------------------------------------------------------+------------+----------------------+
+| m_axi_gmem   | B        | VITIS_LOOP_68_3 | Stride is incompatible                                                                                  | 214-230    | mm3_no_taffo.c:68:23 |
+| m_axi_gmem   | A        | VITIS_LOOP_65_2 | Stride is incompatible                                                                                  | 214-230    | mm3_no_taffo.c:65:22 |
+| m_axi_gmem   | E        |                 | Access is clobbered by store                                                                            | 214-231    | mm3_no_taffo.c:67:17 |
+| m_axi_gmem   | E        |                 | Access is clobbered by store                                                                            | 214-231    | mm3_no_taffo.c:70:21 |
+| m_axi_gmem   | D        | VITIS_LOOP_80_6 | Stride is incompatible                                                                                  | 214-230    | mm3_no_taffo.c:80:23 |
+| m_axi_gmem   | C        | VITIS_LOOP_77_5 | Stride is incompatible                                                                                  | 214-230    | mm3_no_taffo.c:77:22 |
+| m_axi_gmem   | F        |                 | Access is clobbered by store                                                                            | 214-231    | mm3_no_taffo.c:79:17 |
+| m_axi_gmem   | F        |                 | Access is clobbered by store                                                                            | 214-231    | mm3_no_taffo.c:82:21 |
+| m_axi_gmem   | F        | VITIS_LOOP_93_9 | Stride is incompatible                                                                                  | 214-230    | mm3_no_taffo.c:93:23 |
+| m_axi_gmem   | E        | VITIS_LOOP_90_8 | Stride is incompatible                                                                                  | 214-230    | mm3_no_taffo.c:90:22 |
+| m_axi_gmem   | G        |                 | Access is clobbered by store                                                                            | 214-231    | mm3_no_taffo.c:92:17 |
+| m_axi_gmem   | G        |                 | Access is clobbered by store                                                                            | 214-231    | mm3_no_taffo.c:95:21 |
+| m_axi_gmem   | E        | VITIS_LOOP_93_9 | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 | 214-353    | mm3_no_taffo.c:93:23 |
+| m_axi_gmem   | C        | VITIS_LOOP_80_6 | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 | 214-353    | mm3_no_taffo.c:80:23 |
+| m_axi_gmem   | A        | VITIS_LOOP_68_3 | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 | 214-353    | mm3_no_taffo.c:68:23 |
+| m_axi_gmem   |          |                 | Could not burst due to multiple potential reads to the same bundle in the same region.                  | 214-224    | mm3_no_taffo.c:68:23 |
+| m_axi_gmem   |          |                 | Could not burst due to multiple potential reads to the same bundle in the same region.                  | 214-224    | mm3_no_taffo.c:80:23 |
+| m_axi_gmem   |          |                 | Could not burst due to multiple potential reads to the same bundle in the same region.                  | 214-224    | mm3_no_taffo.c:93:23 |
++--------------+----------+-----------------+---------------------------------------------------------------------------------------------------------+------------+----------------------+
+
+    * Resolution URL: www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++-------------------------------------------------+-----+--------+-------------+-----+--------+---------+
+| Name                                            | DSP | Pragma | Variable    | Op  | Impl   | Latency |
++-------------------------------------------------+-----+--------+-------------+-----+--------+---------+
+| + mm3                                           | 5   |        |             |     |        |         |
+|  + mm3_Pipeline_VITIS_LOOP_63_1_VITIS_LOOP_65_2 | 0   |        |             |     |        |         |
+|    empty_29_fu_642_p2                           | -   |        | empty_29    | add | fabric | 0       |
+|    add_ln63_fu_664_p2                           | -   |        | add_ln63    | add | fabric | 0       |
+|    add_ln63_16_fu_687_p2                        | -   |        | add_ln63_16 | add | fabric | 0       |
+|    p_mid1310_fu_709_p2                          | -   |        | p_mid1310   | add | fabric | 0       |
+|    add_ln63_1_fu_823_p2                         | -   |        | add_ln63_1  | add | fabric | 0       |
+|    add_ln63_2_fu_839_p2                         | -   |        | add_ln63_2  | add | fabric | 0       |
+|    add_ln63_3_fu_854_p2                         | -   |        | add_ln63_3  | add | fabric | 0       |
+|    add_ln63_4_fu_869_p2                         | -   |        | add_ln63_4  | add | fabric | 0       |
+|    add_ln63_5_fu_884_p2                         | -   |        | add_ln63_5  | add | fabric | 0       |
+|    add_ln63_6_fu_899_p2                         | -   |        | add_ln63_6  | add | fabric | 0       |
+|    add_ln63_7_fu_914_p2                         | -   |        | add_ln63_7  | add | fabric | 0       |
+|    add_ln63_8_fu_929_p2                         | -   |        | add_ln63_8  | add | fabric | 0       |
+|    add_ln63_9_fu_944_p2                         | -   |        | add_ln63_9  | add | fabric | 0       |
+|    add_ln63_10_fu_959_p2                        | -   |        | add_ln63_10 | add | fabric | 0       |
+|    add_ln63_11_fu_974_p2                        | -   |        | add_ln63_11 | add | fabric | 0       |
+|    add_ln63_12_fu_989_p2                        | -   |        | add_ln63_12 | add | fabric | 0       |
+|    add_ln63_13_fu_1004_p2                       | -   |        | add_ln63_13 | add | fabric | 0       |
+|    add_ln63_14_fu_1019_p2                       | -   |        | add_ln63_14 | add | fabric | 0       |
+|    add_ln63_15_fu_1034_p2                       | -   |        | add_ln63_15 | add | fabric | 0       |
+|    add_ln67_fu_763_p2                           | -   |        | add_ln67    | add | fabric | 0       |
+|    add_ln70_fu_1060_p2                          | -   |        | add_ln70    | add | fabric | 0       |
+|    add_ln70_1_fu_1098_p2                        | -   |        | add_ln70_1  | add | fabric | 0       |
+|    add_ln70_2_fu_1136_p2                        | -   |        | add_ln70_2  | add | fabric | 0       |
+|    add_ln70_3_fu_1168_p2                        | -   |        | add_ln70_3  | add | fabric | 0       |
+|    add_ln70_4_fu_1206_p2                        | -   |        | add_ln70_4  | add | fabric | 0       |
+|    add_ln70_5_fu_1244_p2                        | -   |        | add_ln70_5  | add | fabric | 0       |
+|    add_ln70_6_fu_1276_p2                        | -   |        | add_ln70_6  | add | fabric | 0       |
+|    add_ln70_7_fu_1308_p2                        | -   |        | add_ln70_7  | add | fabric | 0       |
+|    add_ln70_8_fu_1346_p2                        | -   |        | add_ln70_8  | add | fabric | 0       |
+|    add_ln70_9_fu_1392_p2                        | -   |        | add_ln70_9  | add | fabric | 0       |
+|    add_ln70_10_fu_1438_p2                       | -   |        | add_ln70_10 | add | fabric | 0       |
+|    add_ln70_11_fu_1484_p2                       | -   |        | add_ln70_11 | add | fabric | 0       |
+|    add_ln70_12_fu_1524_p2                       | -   |        | add_ln70_12 | add | fabric | 0       |
+|    add_ln70_13_fu_1564_p2                       | -   |        | add_ln70_13 | add | fabric | 0       |
+|    add_ln70_14_fu_1596_p2                       | -   |        | add_ln70_14 | add | fabric | 0       |
+|    add_ln70_15_fu_1628_p2                       | -   |        | add_ln70_15 | add | fabric | 0       |
+|    add_ln65_fu_789_p2                           | -   |        | add_ln65    | add | fabric | 0       |
+|  + mm3_Pipeline_VITIS_LOOP_75_4_VITIS_LOOP_77_5 | 0   |        |             |     |        |         |
+|    empty_26_fu_642_p2                           | -   |        | empty_26    | add | fabric | 0       |
+|    add_ln75_fu_664_p2                           | -   |        | add_ln75    | add | fabric | 0       |
+|    add_ln75_16_fu_687_p2                        | -   |        | add_ln75_16 | add | fabric | 0       |
+|    p_mid1336_fu_709_p2                          | -   |        | p_mid1336   | add | fabric | 0       |
+|    add_ln75_1_fu_823_p2                         | -   |        | add_ln75_1  | add | fabric | 0       |
+|    add_ln75_2_fu_839_p2                         | -   |        | add_ln75_2  | add | fabric | 0       |
+|    add_ln75_3_fu_854_p2                         | -   |        | add_ln75_3  | add | fabric | 0       |
+|    add_ln75_4_fu_869_p2                         | -   |        | add_ln75_4  | add | fabric | 0       |
+|    add_ln75_5_fu_884_p2                         | -   |        | add_ln75_5  | add | fabric | 0       |
+|    add_ln75_6_fu_899_p2                         | -   |        | add_ln75_6  | add | fabric | 0       |
+|    add_ln75_7_fu_914_p2                         | -   |        | add_ln75_7  | add | fabric | 0       |
+|    add_ln75_8_fu_929_p2                         | -   |        | add_ln75_8  | add | fabric | 0       |
+|    add_ln75_9_fu_944_p2                         | -   |        | add_ln75_9  | add | fabric | 0       |
+|    add_ln75_10_fu_959_p2                        | -   |        | add_ln75_10 | add | fabric | 0       |
+|    add_ln75_11_fu_974_p2                        | -   |        | add_ln75_11 | add | fabric | 0       |
+|    add_ln75_12_fu_989_p2                        | -   |        | add_ln75_12 | add | fabric | 0       |
+|    add_ln75_13_fu_1004_p2                       | -   |        | add_ln75_13 | add | fabric | 0       |
+|    add_ln75_14_fu_1019_p2                       | -   |        | add_ln75_14 | add | fabric | 0       |
+|    add_ln75_15_fu_1034_p2                       | -   |        | add_ln75_15 | add | fabric | 0       |
+|    add_ln79_fu_763_p2                           | -   |        | add_ln79    | add | fabric | 0       |
+|    add_ln82_fu_1060_p2                          | -   |        | add_ln82    | add | fabric | 0       |
+|    add_ln82_1_fu_1098_p2                        | -   |        | add_ln82_1  | add | fabric | 0       |
+|    add_ln82_2_fu_1136_p2                        | -   |        | add_ln82_2  | add | fabric | 0       |
+|    add_ln82_3_fu_1168_p2                        | -   |        | add_ln82_3  | add | fabric | 0       |
+|    add_ln82_4_fu_1206_p2                        | -   |        | add_ln82_4  | add | fabric | 0       |
+|    add_ln82_5_fu_1244_p2                        | -   |        | add_ln82_5  | add | fabric | 0       |
+|    add_ln82_6_fu_1276_p2                        | -   |        | add_ln82_6  | add | fabric | 0       |
+|    add_ln82_7_fu_1308_p2                        | -   |        | add_ln82_7  | add | fabric | 0       |
+|    add_ln82_8_fu_1346_p2                        | -   |        | add_ln82_8  | add | fabric | 0       |
+|    add_ln82_9_fu_1392_p2                        | -   |        | add_ln82_9  | add | fabric | 0       |
+|    add_ln82_10_fu_1438_p2                       | -   |        | add_ln82_10 | add | fabric | 0       |
+|    add_ln82_11_fu_1484_p2                       | -   |        | add_ln82_11 | add | fabric | 0       |
+|    add_ln82_12_fu_1524_p2                       | -   |        | add_ln82_12 | add | fabric | 0       |
+|    add_ln82_13_fu_1564_p2                       | -   |        | add_ln82_13 | add | fabric | 0       |
+|    add_ln82_14_fu_1596_p2                       | -   |        | add_ln82_14 | add | fabric | 0       |
+|    add_ln82_15_fu_1628_p2                       | -   |        | add_ln82_15 | add | fabric | 0       |
+|    add_ln77_fu_789_p2                           | -   |        | add_ln77    | add | fabric | 0       |
+|  + mm3_Pipeline_VITIS_LOOP_88_7_VITIS_LOOP_90_8 | 0   |        |             |     |        |         |
+|    empty_23_fu_642_p2                           | -   |        | empty_23    | add | fabric | 0       |
+|    add_ln88_fu_664_p2                           | -   |        | add_ln88    | add | fabric | 0       |
+|    add_ln88_16_fu_687_p2                        | -   |        | add_ln88_16 | add | fabric | 0       |
+|    p_mid1365_fu_709_p2                          | -   |        | p_mid1365   | add | fabric | 0       |
+|    add_ln88_1_fu_823_p2                         | -   |        | add_ln88_1  | add | fabric | 0       |
+|    add_ln88_2_fu_839_p2                         | -   |        | add_ln88_2  | add | fabric | 0       |
+|    add_ln88_3_fu_854_p2                         | -   |        | add_ln88_3  | add | fabric | 0       |
+|    add_ln88_4_fu_869_p2                         | -   |        | add_ln88_4  | add | fabric | 0       |
+|    add_ln88_5_fu_884_p2                         | -   |        | add_ln88_5  | add | fabric | 0       |
+|    add_ln88_6_fu_899_p2                         | -   |        | add_ln88_6  | add | fabric | 0       |
+|    add_ln88_7_fu_914_p2                         | -   |        | add_ln88_7  | add | fabric | 0       |
+|    add_ln88_8_fu_929_p2                         | -   |        | add_ln88_8  | add | fabric | 0       |
+|    add_ln88_9_fu_944_p2                         | -   |        | add_ln88_9  | add | fabric | 0       |
+|    add_ln88_10_fu_959_p2                        | -   |        | add_ln88_10 | add | fabric | 0       |
+|    add_ln88_11_fu_974_p2                        | -   |        | add_ln88_11 | add | fabric | 0       |
+|    add_ln88_12_fu_989_p2                        | -   |        | add_ln88_12 | add | fabric | 0       |
+|    add_ln88_13_fu_1004_p2                       | -   |        | add_ln88_13 | add | fabric | 0       |
+|    add_ln88_14_fu_1019_p2                       | -   |        | add_ln88_14 | add | fabric | 0       |
+|    add_ln88_15_fu_1034_p2                       | -   |        | add_ln88_15 | add | fabric | 0       |
+|    add_ln92_fu_763_p2                           | -   |        | add_ln92    | add | fabric | 0       |
+|    add_ln95_fu_1060_p2                          | -   |        | add_ln95    | add | fabric | 0       |
+|    add_ln95_1_fu_1098_p2                        | -   |        | add_ln95_1  | add | fabric | 0       |
+|    add_ln95_2_fu_1136_p2                        | -   |        | add_ln95_2  | add | fabric | 0       |
+|    add_ln95_3_fu_1168_p2                        | -   |        | add_ln95_3  | add | fabric | 0       |
+|    add_ln95_4_fu_1206_p2                        | -   |        | add_ln95_4  | add | fabric | 0       |
+|    add_ln95_5_fu_1244_p2                        | -   |        | add_ln95_5  | add | fabric | 0       |
+|    add_ln95_6_fu_1276_p2                        | -   |        | add_ln95_6  | add | fabric | 0       |
+|    add_ln95_7_fu_1308_p2                        | -   |        | add_ln95_7  | add | fabric | 0       |
+|    add_ln95_8_fu_1346_p2                        | -   |        | add_ln95_8  | add | fabric | 0       |
+|    add_ln95_9_fu_1392_p2                        | -   |        | add_ln95_9  | add | fabric | 0       |
+|    add_ln95_10_fu_1438_p2                       | -   |        | add_ln95_10 | add | fabric | 0       |
+|    add_ln95_11_fu_1484_p2                       | -   |        | add_ln95_11 | add | fabric | 0       |
+|    add_ln95_12_fu_1524_p2                       | -   |        | add_ln95_12 | add | fabric | 0       |
+|    add_ln95_13_fu_1564_p2                       | -   |        | add_ln95_13 | add | fabric | 0       |
+|    add_ln95_14_fu_1596_p2                       | -   |        | add_ln95_14 | add | fabric | 0       |
+|    add_ln95_15_fu_1628_p2                       | -   |        | add_ln95_15 | add | fabric | 0       |
+|    add_ln90_fu_789_p2                           | -   |        | add_ln90    | add | fabric | 0       |
++-------------------------------------------------+-----+--------+-------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+------------------------------+--------------------------+
+| Type      | Options                      | Location                 |
++-----------+------------------------------+--------------------------+
+| interface | m_axi port = A depth = 16*16 | mm3_no_taffo.c:28 in mm3 |
+| interface | m_axi port = B depth = 16*16 | mm3_no_taffo.c:29 in mm3 |
+| interface | m_axi port = C depth = 16*16 | mm3_no_taffo.c:30 in mm3 |
+| interface | m_axi port = D depth = 16*16 | mm3_no_taffo.c:31 in mm3 |
+| interface | m_axi port = E depth = 16*16 | mm3_no_taffo.c:32 in mm3 |
+| interface | m_axi port = F depth = 16*16 | mm3_no_taffo.c:33 in mm3 |
+| interface | m_axi port = G depth = 16*16 | mm3_no_taffo.c:34 in mm3 |
++-----------+------------------------------+--------------------------+
+
+

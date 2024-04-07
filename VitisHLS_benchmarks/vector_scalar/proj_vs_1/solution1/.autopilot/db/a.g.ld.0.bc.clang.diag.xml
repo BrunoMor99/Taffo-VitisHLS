@@ -1,0 +1,15 @@
+<dict>
+  <key>main-file</key>
+  <string>/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.6.user.bc</string>
+  <key>diagnostics</key>
+  <array>
+    <dict>
+      <key>level</key>
+      <string>error</string>
+      <key>message</key>
+      <string>Invalid record</string>
+      <key>ID</key>
+      <integer>7570</integer>
+    </dict>
+  </array>
+</dict>

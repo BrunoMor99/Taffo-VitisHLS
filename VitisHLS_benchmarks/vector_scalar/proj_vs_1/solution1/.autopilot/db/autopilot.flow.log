@@ -1,0 +1,130 @@
+INFO-FLOW: Workspace /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1 opened at Sun Dec 03 09:32:35 CET 2023
+Execute     send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute     send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vivado' config_interface -m_axi_latency=0 
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+Execute     config_interface -m_axi_latency=0 
+Command   open_solution done; 0.11 sec.
+Execute   set_part virtex7 
+INFO: [HLS 200-1510] Running: set_part virtex7 
+Execute     create_platform virtex7 -board  
+DBG:HLSDevice: Trying to load device library: /home/bruno/Documents/Vitis_HLS/2022.2/lib/lnx64.o/libxv_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /home/bruno/Documents/Vivado/2022.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7v585t-ffg1761-2'
+Command     create_platform done; 2.44 sec.
+Execute     source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.11 sec.
+Execute     ap_part_info -name xc7v585t-ffg1761-2 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 2.59 sec.
+Execute   create_clock -period 100MHz 
+INFO: [HLS 200-1510] Running: create_clock -period 100MHz 
+Execute     ap_set_clock -name default -period 10 -unit ns -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute   csynth_design 
+INFO: [HLS 200-1510] Running: csynth_design 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 10.05 seconds; current allocated memory: 754.613 MB.
+INFO: [HLS 200-10] Analyzing design file 'vs.c' ... 
+INFO-FLOW: Compiling one TU...
+INFO-FLOW: Handling vs.c as C
+Execute       ap_part_info -name xc7v585t-ffg1761-2 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+Execute       ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang vs.c -foptimization-record-file=/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -gcc-toolchain /home/bruno/Documents/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0 -fhls -fno-exceptions -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/autopilot -I /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c -hls-platform-db-name=/home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_1590.000000_DSP_1260.000000_FF_728400.000000_LUT_364200.000000_SLICE_91050.000000_URAM_0.000000 -device-name-info=xc7v585tffg1761-2 > /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.c.clang.out.log 2> /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.c.clang.err.log 
+Command       ap_eval done; 0.22 sec.
+INFO-FLOW: Done: GCC PP 39 time: 0.2 seconds per iteration
+Execute       set_directive_top vs -name=vs 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+INFO-FLOW: Source syntax check for synthesis
+Execute       ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c -hls-platform-db-name=/home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_1590.000000_DSP_1260.000000_FF_728400.000000_LUT_364200.000000_SLICE_91050.000000_URAM_0.000000 -device-name-info=xc7v585tffg1761-2 > /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/clang.out.log 2> /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/clang.err.log 
+Command       ap_eval done; 0.23 sec.
+Execute       clang_tidy xilinx-systemc-detector -desc systemc-detector /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c std=gnu99 -target fpga  -directive=/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/.systemc_flag -fix-errors /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute       clang_tidy xilinx-directive2pragma -desc directive2pragma /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c std=gnu99 -target fpga  -directive=/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/all.directive.json -fix-errors /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+Execute       clang_tidy xilinx-remove-assert -desc remove-assert /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c std=gnu99 -target fpga  
+INFO-FLOW: exec /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-remove-assert -fix-errors /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.1 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute       clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c std=gnu99 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 > /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c.clang-tidy.loop-label.out.log 2> /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c.clang-tidy.loop-label.err.log 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Execute       ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c.xilinx-dataflow-lawyer.diag.yml /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c.xilinx-dataflow-lawyer.out.log 2> /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c.xilinx-dataflow-lawyer.err.log 
+Execute       ap_part_info -name xc7v585t-ffg1761-2 -data info 
+INFO-FLOW: compiling source code to llvm bc
+Execute       ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/autopilot -I /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.bc -hls-platform-db-name=/home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_1590.000000_DSP_1260.000000_FF_728400.000000_LUT_364200.000000_SLICE_91050.000000_URAM_0.000000 -device-name-info=xc7v585tffg1761-2 > /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c.clang.out.log 2> /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.pp.0.c.clang.err.log 
+Command       ap_eval done; 0.22 sec.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.47 seconds. CPU system time: 0.53 seconds. Elapsed time: 0.98 seconds; current allocated memory: 755.781 MB.
+INFO-FLOW: Linking Debug ...
+INFO-FLOW: Linking dut bc code.
+Execute       run_link_or_opt -out /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.0.bc -args  "/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.g.bc"  
+Execute         ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/vs.g.bc -o /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.0.bc > /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.0.bc.llvm-link.out.log 2> /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.0.bc.llvm-link.err.log 
+INFO-FLOW: 
+Execute       run_link_or_opt -opt -out /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.1.lower.bc -args /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
+Execute         ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.diag.yml /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.1.lower.bc > /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.out.log 2> /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.err.log 
+INFO-FLOW: 
+INFO-FLOW: Linking math bc lib
+Execute       run_link_or_opt -out /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.2.m1.bc -args /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/lib/libhlsm_39.bc /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/lib/libhlsmc++_39.bc 
+Execute         ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/lib/libhlsm_39.bc /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/lib/libhlsmc++_39.bc -o /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.2.m1.bc > /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log 
+Command         ap_eval done; 2.8 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 2.8 sec.
+Execute       run_link_or_opt -opt -out /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=vs -reflow-float-conversion 
+Execute         ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=vs -reflow-float-conversion -o /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.3.fpc.bc > /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log 
+Command         ap_eval done; 1.04 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 1.05 sec.
+Execute       run_link_or_opt -out /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.4.m2.bc -args /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/lib/libfloatconversion_39.bc 
+Execute         ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/lib/libfloatconversion_39.bc -o /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.4.m2.bc > /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log 
+INFO-FLOW: 
+Execute       run_link_or_opt -opt -out /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.5.gdce.bc -args /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=vs 
+Execute         ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.diag.yml /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=vs -o /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.5.gdce.bc > /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.out.log 2> /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.err.log 
+INFO-FLOW: 
+Execute       send_msg_by_id INFO @200-1022@%s 'HLS_HOOKS::opt' 
+INFO: [HLS 200-1022] Running custom LLVM hook 'HLS_HOOKS::opt'
+Execute       send_msg_by_id INFO @200-777@%s Vivado 
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+Execute       is_m_axi_addr64 
+INFO-FLOW: Doing LTO.
+Execute       ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.0.bc.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=vs -mllvm -hls-db-dir -mllvm /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=/home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=slave -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshold=200000 -mllvm -reflow-auto-pipeline-threshold=64 -mllvm -reflow-enable-maxi-auto-id-channel=0 -mllvm -assume-maxi-align=1 -mllvm -reflow-pipeline-style-llvm-setting=2 -mllvm -reflow-enable-dataflow-strict-mode-checking=1 -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-array-partition=true -mllvm -reflow-enable-auto-parallel-performance-driven=true -mllvm -reflow-enable-partition-for-automation=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -reflow-assume-no-address-wrap=true -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -mllvm -default-clock-period=10 -x ir /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.6.user.bc -o /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.lto.bc -hls-platform-db-name=/home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_1590.000000_DSP_1260.000000_FF_728400.000000_LUT_364200.000000_SLICE_91050.000000_URAM_0.000000 -device-name-info=xc7v585tffg1761-2 > /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.0.bc.clang.out.log 2> /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_1/solution1/.autopilot/db/a.g.ld.0.bc.clang.err.log 
+Command       ap_eval done; error code: 1; 0.24 sec.
+ERROR: [HLS 207-7570] Invalid record
+Execute       send_msg_by_id ERROR @200-1715@ 
+ERROR: [HLS 200-1715] Encountered problem during source synthesis
+INFO-FLOW: Error in clang_39: 
+INFO-FLOW: Caught error in elaborate: Pre-synthesis failed.
+    while executing
+"AP::ap_link_39 [::AP::get_bc_list  $dbgInfo] $skip_transform $LLVMFlags $dbgInfo"
+    (procedure "AP::compile_dut_files_39" line 19)
+    invoked from within
+"AP::compile_dut_files_39 $dut_files $dbgInfo $skip_cdt $skip_transform"
+    (procedure "AP::compile" line 103)
+    invoked from within
+"AP::compile 1 $skip_cdt $skip_transform"
+    (procedure "ap_internal_elaborate" line 83)
+    invoked from within
+"ap_internal_elaborate "
+Command     elaborate done; error code: 2; 5.47 sec.
+INFO-FLOW: Caught error in csynth_design: Pre-synthesis failed.
+    while executing
+"ap_internal_csynth_design "
+Command   csynth_design done; error code: 2; 5.48 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 4.39 seconds. CPU system time: 1.06 seconds. Elapsed time: 5.48 seconds; current allocated memory: 1.547 MB.
+Command ap_source done; error code: 1; 18.24 sec.
+Execute cleanup_all 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="gemm_no_taffoin2.c" path="/home/bruno/Desktop/benchmarks/gemm/gemm_no_taffoin2.c"/>
+  </source>
+  <testbench>
+    <originFiles name="gemm_no_taffoin2.c" path="/home/bruno/Desktop/benchmarks/gemm/gemm_no_taffoin2.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

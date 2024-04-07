@@ -1,0 +1,661 @@
+
+
+================================================================
+== Vitis HLS Report for 'covariance_Pipeline_VITIS_LOOP_41_1'
+================================================================
+* Date:           Sat Mar  9 22:41:18 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        proj_covariance
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtex7
+* Target device:  xc7v585t-ffg1761-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+-----------+------------+
+    |  Clock |  Target  | Estimated | Uncertainty|
+    +--------+----------+-----------+------------+
+    |ap_clk  |  20.00 ns|  14.600 ns|     5.40 ns|
+    +--------+----------+-----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      288|      288|  5.760 us|  5.760 us|  288|  288|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_41_1  |      286|      286|        32|         17|          1|    16|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 17, depth = 32
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 32
+* Pipeline : 1
+  Pipeline-0 : II = 17, D = 32, States = { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.94>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%indvars_iv40 = alloca i32 1"   --->   Operation 35 'alloca' 'indvars_iv40' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem, void @empty_1, i32 0, i32 0, void @empty_2, i32 0, i32 256, void @empty_3, void @empty_4, void @empty_2, i32 16, i32 16, i32 16, i32 16, void @empty_2, void @empty_2, i32 4294967295, i32 0"   --->   Operation 36 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%data_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %data"   --->   Operation 37 'read' 'data_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%mean_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %mean"   --->   Operation 38 'read' 'mean_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.84ns)   --->   "%store_ln0 = store i5 0, i5 %indvars_iv40"   --->   Operation 39 'store' 'store_ln0' <Predicate = true> <Delay = 0.84>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%br_ln0 = br void %VITIS_LOOP_44_2"   --->   Operation 40 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%indvars_iv40_load = load i5 %indvars_iv40"   --->   Operation 41 'load' 'indvars_iv40_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gmem"   --->   Operation 42 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 43 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.87ns)   --->   "%exitcond428 = icmp_eq  i5 %indvars_iv40_load, i5 16"   --->   Operation 44 'icmp' 'exitcond428' <Predicate = true> <Delay = 0.87> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.87> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 16, i64 16, i64 16"   --->   Operation 45 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (1.09ns)   --->   "%indvars_iv_next41 = add i5 %indvars_iv40_load, i5 1"   --->   Operation 46 'add' 'indvars_iv_next41' <Predicate = true> <Delay = 1.09> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %exitcond428, void %VITIS_LOOP_44_2.split, void %VITIS_LOOP_53_4.preheader.exitStub"   --->   Operation 47 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%empty_82 = trunc i5 %indvars_iv40_load"   --->   Operation 48 'trunc' 'empty_82' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%tmp_3 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i4.i2, i4 %empty_82, i2 0"   --->   Operation 49 'bitconcatenate' 'tmp_3' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%p_cast93 = zext i6 %tmp_3"   --->   Operation 50 'zext' 'p_cast93' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (1.81ns)   --->   "%empty_83 = add i64 %p_cast93, i64 %mean_read"   --->   Operation 51 'add' 'empty_83' <Predicate = (!exitcond428)> <Delay = 1.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%p_cast1 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %empty_83, i32 2, i32 63"   --->   Operation 52 'partselect' 'p_cast1' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%p_cast15_cast = sext i62 %p_cast1"   --->   Operation 53 'sext' 'p_cast15_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%gmem_addr = getelementptr i32 %gmem, i64 %p_cast15_cast"   --->   Operation 54 'getelementptr' 'gmem_addr' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (1.81ns)   --->   "%empty_84 = add i64 %p_cast93, i64 %data_read"   --->   Operation 55 'add' 'empty_84' <Predicate = (!exitcond428)> <Delay = 1.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%p_cast2 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %empty_84, i32 2, i32 63"   --->   Operation 56 'partselect' 'p_cast2' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%p_cast17_cast = sext i62 %p_cast2"   --->   Operation 57 'sext' 'p_cast17_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%gmem_addr_1 = getelementptr i32 %gmem, i64 %p_cast17_cast"   --->   Operation 58 'getelementptr' 'gmem_addr_1' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.84ns)   --->   "%store_ln0 = store i5 %indvars_iv_next41, i5 %indvars_iv40"   --->   Operation 59 'store' 'store_ln0' <Predicate = (!exitcond428)> <Delay = 0.84>
+
+State 2 <SV = 1> <Delay = 14.6>
+ST_2 : Operation 60 [7/7] (14.6ns)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr, i32 1"   --->   Operation 60 'readreq' 'gmem_load_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 3 <SV = 2> <Delay = 14.6>
+ST_3 : Operation 61 [6/7] (14.6ns)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr, i32 1"   --->   Operation 61 'readreq' 'gmem_load_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 62 [7/7] (14.6ns)   --->   "%gmem_load_1_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_1, i32 1"   --->   Operation 62 'readreq' 'gmem_load_1_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 63 [1/1] (0.00ns)   --->   "%p_cast95_cast = bitconcatenate i7 @_ssdm_op_BitConcatenate.i7.i1.i4.i2, i1 1, i4 %empty_82, i2 0"   --->   Operation 63 'bitconcatenate' 'p_cast95_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_3 : Operation 64 [1/1] (0.00ns)   --->   "%p_cast95_cast_cast = zext i7 %p_cast95_cast"   --->   Operation 64 'zext' 'p_cast95_cast_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_3 : Operation 65 [1/1] (1.81ns)   --->   "%empty_87 = add i64 %p_cast95_cast_cast, i64 %data_read"   --->   Operation 65 'add' 'empty_87' <Predicate = (!exitcond428)> <Delay = 1.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 66 [1/1] (0.00ns)   --->   "%p_cast3 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %empty_87, i32 2, i32 63"   --->   Operation 66 'partselect' 'p_cast3' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_3 : Operation 67 [1/1] (0.00ns)   --->   "%p_cast20_cast = sext i62 %p_cast3"   --->   Operation 67 'sext' 'p_cast20_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_3 : Operation 68 [1/1] (0.00ns)   --->   "%gmem_addr_6 = getelementptr i32 %gmem, i64 %p_cast20_cast"   --->   Operation 68 'getelementptr' 'gmem_addr_6' <Predicate = (!exitcond428)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 14.6>
+ST_4 : Operation 69 [5/7] (14.6ns)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr, i32 1"   --->   Operation 69 'readreq' 'gmem_load_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_4 : Operation 70 [6/7] (14.6ns)   --->   "%gmem_load_1_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_1, i32 1"   --->   Operation 70 'readreq' 'gmem_load_1_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_4 : Operation 71 [7/7] (14.6ns)   --->   "%gmem_load_5_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_6, i32 1"   --->   Operation 71 'readreq' 'gmem_load_5_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_4 : Operation 72 [1/1] (0.00ns)   --->   "%p_cast96_cast = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i2.i4.i2, i2 2, i4 %empty_82, i2 0"   --->   Operation 72 'bitconcatenate' 'p_cast96_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_4 : Operation 73 [1/1] (0.00ns)   --->   "%p_cast96_cast_cast = zext i8 %p_cast96_cast"   --->   Operation 73 'zext' 'p_cast96_cast_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_4 : Operation 74 [1/1] (1.81ns)   --->   "%empty_89 = add i64 %p_cast96_cast_cast, i64 %data_read"   --->   Operation 74 'add' 'empty_89' <Predicate = (!exitcond428)> <Delay = 1.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 75 [1/1] (0.00ns)   --->   "%p_cast4 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %empty_89, i32 2, i32 63"   --->   Operation 75 'partselect' 'p_cast4' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_4 : Operation 76 [1/1] (0.00ns)   --->   "%p_cast23_cast = sext i62 %p_cast4"   --->   Operation 76 'sext' 'p_cast23_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_4 : Operation 77 [1/1] (0.00ns)   --->   "%gmem_addr_7 = getelementptr i32 %gmem, i64 %p_cast23_cast"   --->   Operation 77 'getelementptr' 'gmem_addr_7' <Predicate = (!exitcond428)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 14.6>
+ST_5 : Operation 78 [4/7] (14.6ns)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr, i32 1"   --->   Operation 78 'readreq' 'gmem_load_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 79 [5/7] (14.6ns)   --->   "%gmem_load_1_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_1, i32 1"   --->   Operation 79 'readreq' 'gmem_load_1_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 80 [6/7] (14.6ns)   --->   "%gmem_load_5_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_6, i32 1"   --->   Operation 80 'readreq' 'gmem_load_5_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 81 [7/7] (14.6ns)   --->   "%gmem_load_6_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_7, i32 1"   --->   Operation 81 'readreq' 'gmem_load_6_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 82 [1/1] (0.00ns)   --->   "%p_cast97_cast = sext i7 %p_cast95_cast"   --->   Operation 82 'sext' 'p_cast97_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_5 : Operation 83 [1/1] (0.00ns)   --->   "%p_cast97_cast_cast = zext i8 %p_cast97_cast"   --->   Operation 83 'zext' 'p_cast97_cast_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_5 : Operation 84 [1/1] (1.81ns)   --->   "%empty_91 = add i64 %p_cast97_cast_cast, i64 %data_read"   --->   Operation 84 'add' 'empty_91' <Predicate = (!exitcond428)> <Delay = 1.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 85 [1/1] (0.00ns)   --->   "%p_cast5 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %empty_91, i32 2, i32 63"   --->   Operation 85 'partselect' 'p_cast5' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_5 : Operation 86 [1/1] (0.00ns)   --->   "%p_cast25_cast = sext i62 %p_cast5"   --->   Operation 86 'sext' 'p_cast25_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_5 : Operation 87 [1/1] (0.00ns)   --->   "%gmem_addr_8 = getelementptr i32 %gmem, i64 %p_cast25_cast"   --->   Operation 87 'getelementptr' 'gmem_addr_8' <Predicate = (!exitcond428)> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 14.6>
+ST_6 : Operation 88 [3/7] (14.6ns)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr, i32 1"   --->   Operation 88 'readreq' 'gmem_load_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 89 [4/7] (14.6ns)   --->   "%gmem_load_1_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_1, i32 1"   --->   Operation 89 'readreq' 'gmem_load_1_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 90 [5/7] (14.6ns)   --->   "%gmem_load_5_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_6, i32 1"   --->   Operation 90 'readreq' 'gmem_load_5_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 91 [6/7] (14.6ns)   --->   "%gmem_load_6_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_7, i32 1"   --->   Operation 91 'readreq' 'gmem_load_6_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 92 [7/7] (14.6ns)   --->   "%gmem_load_7_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_8, i32 1"   --->   Operation 92 'readreq' 'gmem_load_7_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 93 [1/1] (0.00ns)   --->   "%p_cast98_cast = bitconcatenate i9 @_ssdm_op_BitConcatenate.i9.i3.i4.i2, i3 4, i4 %empty_82, i2 0"   --->   Operation 93 'bitconcatenate' 'p_cast98_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_6 : Operation 94 [1/1] (0.00ns)   --->   "%p_cast98_cast_cast = zext i9 %p_cast98_cast"   --->   Operation 94 'zext' 'p_cast98_cast_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_6 : Operation 95 [1/1] (1.81ns)   --->   "%empty_93 = add i64 %p_cast98_cast_cast, i64 %data_read"   --->   Operation 95 'add' 'empty_93' <Predicate = (!exitcond428)> <Delay = 1.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 96 [1/1] (0.00ns)   --->   "%p_cast6 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %empty_93, i32 2, i32 63"   --->   Operation 96 'partselect' 'p_cast6' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_6 : Operation 97 [1/1] (0.00ns)   --->   "%p_cast28_cast = sext i62 %p_cast6"   --->   Operation 97 'sext' 'p_cast28_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_6 : Operation 98 [1/1] (0.00ns)   --->   "%gmem_addr_9 = getelementptr i32 %gmem, i64 %p_cast28_cast"   --->   Operation 98 'getelementptr' 'gmem_addr_9' <Predicate = (!exitcond428)> <Delay = 0.00>
+
+State 7 <SV = 6> <Delay = 14.6>
+ST_7 : Operation 99 [2/7] (14.6ns)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr, i32 1"   --->   Operation 99 'readreq' 'gmem_load_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 100 [3/7] (14.6ns)   --->   "%gmem_load_1_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_1, i32 1"   --->   Operation 100 'readreq' 'gmem_load_1_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 101 [4/7] (14.6ns)   --->   "%gmem_load_5_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_6, i32 1"   --->   Operation 101 'readreq' 'gmem_load_5_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 102 [5/7] (14.6ns)   --->   "%gmem_load_6_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_7, i32 1"   --->   Operation 102 'readreq' 'gmem_load_6_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 103 [6/7] (14.6ns)   --->   "%gmem_load_7_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_8, i32 1"   --->   Operation 103 'readreq' 'gmem_load_7_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 104 [7/7] (14.6ns)   --->   "%gmem_load_8_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_9, i32 1"   --->   Operation 104 'readreq' 'gmem_load_8_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 105 [1/1] (0.00ns)   --->   "%p_cast99_cast = bitconcatenate i9 @_ssdm_op_BitConcatenate.i9.i3.i4.i2, i3 5, i4 %empty_82, i2 0"   --->   Operation 105 'bitconcatenate' 'p_cast99_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_7 : Operation 106 [1/1] (0.00ns)   --->   "%p_cast99_cast_cast = zext i9 %p_cast99_cast"   --->   Operation 106 'zext' 'p_cast99_cast_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_7 : Operation 107 [1/1] (1.81ns)   --->   "%empty_95 = add i64 %p_cast99_cast_cast, i64 %data_read"   --->   Operation 107 'add' 'empty_95' <Predicate = (!exitcond428)> <Delay = 1.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 108 [1/1] (0.00ns)   --->   "%p_cast7 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %empty_95, i32 2, i32 63"   --->   Operation 108 'partselect' 'p_cast7' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_7 : Operation 109 [1/1] (0.00ns)   --->   "%p_cast30_cast = sext i62 %p_cast7"   --->   Operation 109 'sext' 'p_cast30_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_7 : Operation 110 [1/1] (0.00ns)   --->   "%gmem_addr_10 = getelementptr i32 %gmem, i64 %p_cast30_cast"   --->   Operation 110 'getelementptr' 'gmem_addr_10' <Predicate = (!exitcond428)> <Delay = 0.00>
+
+State 8 <SV = 7> <Delay = 14.6>
+ST_8 : Operation 111 [1/7] (14.6ns)   --->   "%gmem_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr, i32 1"   --->   Operation 111 'readreq' 'gmem_load_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 112 [2/7] (14.6ns)   --->   "%gmem_load_1_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_1, i32 1"   --->   Operation 112 'readreq' 'gmem_load_1_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 113 [3/7] (14.6ns)   --->   "%gmem_load_5_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_6, i32 1"   --->   Operation 113 'readreq' 'gmem_load_5_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 114 [4/7] (14.6ns)   --->   "%gmem_load_6_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_7, i32 1"   --->   Operation 114 'readreq' 'gmem_load_6_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 115 [5/7] (14.6ns)   --->   "%gmem_load_7_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_8, i32 1"   --->   Operation 115 'readreq' 'gmem_load_7_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 116 [6/7] (14.6ns)   --->   "%gmem_load_8_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_9, i32 1"   --->   Operation 116 'readreq' 'gmem_load_8_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 117 [7/7] (14.6ns)   --->   "%gmem_load_9_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_10, i32 1"   --->   Operation 117 'readreq' 'gmem_load_9_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 118 [1/1] (0.00ns)   --->   "%p_cast100_cast = sext i8 %p_cast96_cast"   --->   Operation 118 'sext' 'p_cast100_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_8 : Operation 119 [1/1] (0.00ns)   --->   "%p_cast100_cast_cast = zext i9 %p_cast100_cast"   --->   Operation 119 'zext' 'p_cast100_cast_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_8 : Operation 120 [1/1] (1.81ns)   --->   "%empty_97 = add i64 %p_cast100_cast_cast, i64 %data_read"   --->   Operation 120 'add' 'empty_97' <Predicate = (!exitcond428)> <Delay = 1.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 121 [1/1] (0.00ns)   --->   "%p_cast8 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %empty_97, i32 2, i32 63"   --->   Operation 121 'partselect' 'p_cast8' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_8 : Operation 122 [1/1] (0.00ns)   --->   "%p_cast32_cast = sext i62 %p_cast8"   --->   Operation 122 'sext' 'p_cast32_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_8 : Operation 123 [1/1] (0.00ns)   --->   "%gmem_addr_11 = getelementptr i32 %gmem, i64 %p_cast32_cast"   --->   Operation 123 'getelementptr' 'gmem_addr_11' <Predicate = (!exitcond428)> <Delay = 0.00>
+
+State 9 <SV = 8> <Delay = 14.6>
+ST_9 : Operation 124 [1/1] (14.6ns)   --->   "%gmem_addr_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_addr"   --->   Operation 124 'read' 'gmem_addr_read' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 125 [1/7] (14.6ns)   --->   "%gmem_load_1_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_1, i32 1"   --->   Operation 125 'readreq' 'gmem_load_1_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 126 [2/7] (14.6ns)   --->   "%gmem_load_5_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_6, i32 1"   --->   Operation 126 'readreq' 'gmem_load_5_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 127 [3/7] (14.6ns)   --->   "%gmem_load_6_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_7, i32 1"   --->   Operation 127 'readreq' 'gmem_load_6_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 128 [4/7] (14.6ns)   --->   "%gmem_load_7_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_8, i32 1"   --->   Operation 128 'readreq' 'gmem_load_7_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 129 [5/7] (14.6ns)   --->   "%gmem_load_8_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_9, i32 1"   --->   Operation 129 'readreq' 'gmem_load_8_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 130 [6/7] (14.6ns)   --->   "%gmem_load_9_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_10, i32 1"   --->   Operation 130 'readreq' 'gmem_load_9_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 131 [7/7] (14.6ns)   --->   "%gmem_load_10_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_11, i32 1"   --->   Operation 131 'readreq' 'gmem_load_10_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 132 [1/1] (0.00ns)   --->   "%p_cast101_cast = sext i7 %p_cast95_cast"   --->   Operation 132 'sext' 'p_cast101_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_9 : Operation 133 [1/1] (0.00ns)   --->   "%p_cast101_cast_cast = zext i9 %p_cast101_cast"   --->   Operation 133 'zext' 'p_cast101_cast_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_9 : Operation 134 [1/1] (1.81ns)   --->   "%empty_99 = add i64 %p_cast101_cast_cast, i64 %data_read"   --->   Operation 134 'add' 'empty_99' <Predicate = (!exitcond428)> <Delay = 1.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 135 [1/1] (0.00ns)   --->   "%p_cast9 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %empty_99, i32 2, i32 63"   --->   Operation 135 'partselect' 'p_cast9' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_9 : Operation 136 [1/1] (0.00ns)   --->   "%p_cast34_cast = sext i62 %p_cast9"   --->   Operation 136 'sext' 'p_cast34_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_9 : Operation 137 [1/1] (0.00ns)   --->   "%gmem_addr_12 = getelementptr i32 %gmem, i64 %p_cast34_cast"   --->   Operation 137 'getelementptr' 'gmem_addr_12' <Predicate = (!exitcond428)> <Delay = 0.00>
+
+State 10 <SV = 9> <Delay = 14.6>
+ST_10 : Operation 138 [1/1] (14.6ns)   --->   "%gmem_addr_1_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_addr_1"   --->   Operation 138 'read' 'gmem_addr_1_read' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 139 [1/1] (0.00ns)   --->   "%empty_85 = shl i32 %gmem_addr_1_read, i32 5"   --->   Operation 139 'shl' 'empty_85' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_10 : Operation 140 [1/7] (14.6ns)   --->   "%gmem_load_5_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_6, i32 1"   --->   Operation 140 'readreq' 'gmem_load_5_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 141 [2/7] (14.6ns)   --->   "%gmem_load_6_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_7, i32 1"   --->   Operation 141 'readreq' 'gmem_load_6_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 142 [3/7] (14.6ns)   --->   "%gmem_load_7_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_8, i32 1"   --->   Operation 142 'readreq' 'gmem_load_7_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 143 [4/7] (14.6ns)   --->   "%gmem_load_8_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_9, i32 1"   --->   Operation 143 'readreq' 'gmem_load_8_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 144 [5/7] (14.6ns)   --->   "%gmem_load_9_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_10, i32 1"   --->   Operation 144 'readreq' 'gmem_load_9_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 145 [6/7] (14.6ns)   --->   "%gmem_load_10_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_11, i32 1"   --->   Operation 145 'readreq' 'gmem_load_10_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 146 [7/7] (14.6ns)   --->   "%gmem_load_11_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_12, i32 1"   --->   Operation 146 'readreq' 'gmem_load_11_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 147 [1/1] (0.00ns)   --->   "%p_cast102_cast = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i4.i4.i2, i4 8, i4 %empty_82, i2 0"   --->   Operation 147 'bitconcatenate' 'p_cast102_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_10 : Operation 148 [1/1] (0.00ns)   --->   "%p_cast102_cast_cast = zext i10 %p_cast102_cast"   --->   Operation 148 'zext' 'p_cast102_cast_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_10 : Operation 149 [1/1] (1.81ns)   --->   "%empty_101 = add i64 %p_cast102_cast_cast, i64 %data_read"   --->   Operation 149 'add' 'empty_101' <Predicate = (!exitcond428)> <Delay = 1.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 150 [1/1] (0.00ns)   --->   "%p_cast10 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %empty_101, i32 2, i32 63"   --->   Operation 150 'partselect' 'p_cast10' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_10 : Operation 151 [1/1] (0.00ns)   --->   "%p_cast37_cast = sext i62 %p_cast10"   --->   Operation 151 'sext' 'p_cast37_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_10 : Operation 152 [1/1] (0.00ns)   --->   "%gmem_addr_13 = getelementptr i32 %gmem, i64 %p_cast37_cast"   --->   Operation 152 'getelementptr' 'gmem_addr_13' <Predicate = (!exitcond428)> <Delay = 0.00>
+
+State 11 <SV = 10> <Delay = 14.6>
+ST_11 : Operation 153 [1/1] (14.6ns)   --->   "%gmem_addr_6_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_addr_6"   --->   Operation 153 'read' 'gmem_addr_6_read' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 154 [1/7] (14.6ns)   --->   "%gmem_load_6_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_7, i32 1"   --->   Operation 154 'readreq' 'gmem_load_6_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 155 [2/7] (14.6ns)   --->   "%gmem_load_7_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_8, i32 1"   --->   Operation 155 'readreq' 'gmem_load_7_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 156 [3/7] (14.6ns)   --->   "%gmem_load_8_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_9, i32 1"   --->   Operation 156 'readreq' 'gmem_load_8_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 157 [4/7] (14.6ns)   --->   "%gmem_load_9_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_10, i32 1"   --->   Operation 157 'readreq' 'gmem_load_9_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 158 [5/7] (14.6ns)   --->   "%gmem_load_10_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_11, i32 1"   --->   Operation 158 'readreq' 'gmem_load_10_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 159 [6/7] (14.6ns)   --->   "%gmem_load_11_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_12, i32 1"   --->   Operation 159 'readreq' 'gmem_load_11_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 160 [7/7] (14.6ns)   --->   "%gmem_load_12_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_13, i32 1"   --->   Operation 160 'readreq' 'gmem_load_12_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 161 [1/1] (0.00ns)   --->   "%p_cast103_cast = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i4.i4.i2, i4 9, i4 %empty_82, i2 0"   --->   Operation 161 'bitconcatenate' 'p_cast103_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_11 : Operation 162 [1/1] (0.00ns)   --->   "%p_cast103_cast_cast = zext i10 %p_cast103_cast"   --->   Operation 162 'zext' 'p_cast103_cast_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_11 : Operation 163 [1/1] (1.81ns)   --->   "%empty_103 = add i64 %p_cast103_cast_cast, i64 %data_read"   --->   Operation 163 'add' 'empty_103' <Predicate = (!exitcond428)> <Delay = 1.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 164 [1/1] (0.00ns)   --->   "%p_cast11 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %empty_103, i32 2, i32 63"   --->   Operation 164 'partselect' 'p_cast11' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_11 : Operation 165 [1/1] (0.00ns)   --->   "%p_cast39_cast = sext i62 %p_cast11"   --->   Operation 165 'sext' 'p_cast39_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_11 : Operation 166 [1/1] (0.00ns)   --->   "%gmem_addr_14 = getelementptr i32 %gmem, i64 %p_cast39_cast"   --->   Operation 166 'getelementptr' 'gmem_addr_14' <Predicate = (!exitcond428)> <Delay = 0.00>
+
+State 12 <SV = 11> <Delay = 14.6>
+ST_12 : Operation 167 [1/1] (14.6ns)   --->   "%gmem_addr_7_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_addr_7"   --->   Operation 167 'read' 'gmem_addr_7_read' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 168 [1/7] (14.6ns)   --->   "%gmem_load_7_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_8, i32 1"   --->   Operation 168 'readreq' 'gmem_load_7_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 169 [2/7] (14.6ns)   --->   "%gmem_load_8_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_9, i32 1"   --->   Operation 169 'readreq' 'gmem_load_8_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 170 [3/7] (14.6ns)   --->   "%gmem_load_9_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_10, i32 1"   --->   Operation 170 'readreq' 'gmem_load_9_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 171 [4/7] (14.6ns)   --->   "%gmem_load_10_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_11, i32 1"   --->   Operation 171 'readreq' 'gmem_load_10_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 172 [5/7] (14.6ns)   --->   "%gmem_load_11_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_12, i32 1"   --->   Operation 172 'readreq' 'gmem_load_11_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 173 [6/7] (14.6ns)   --->   "%gmem_load_12_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_13, i32 1"   --->   Operation 173 'readreq' 'gmem_load_12_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 174 [7/7] (14.6ns)   --->   "%gmem_load_13_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_14, i32 1"   --->   Operation 174 'readreq' 'gmem_load_13_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 175 [1/1] (0.00ns)   --->   "%p_cast104_cast = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i4.i4.i2, i4 10, i4 %empty_82, i2 0"   --->   Operation 175 'bitconcatenate' 'p_cast104_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_12 : Operation 176 [1/1] (0.00ns)   --->   "%p_cast104_cast_cast = zext i10 %p_cast104_cast"   --->   Operation 176 'zext' 'p_cast104_cast_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_12 : Operation 177 [1/1] (1.81ns)   --->   "%empty_105 = add i64 %p_cast104_cast_cast, i64 %data_read"   --->   Operation 177 'add' 'empty_105' <Predicate = (!exitcond428)> <Delay = 1.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 178 [1/1] (0.00ns)   --->   "%p_cast12 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %empty_105, i32 2, i32 63"   --->   Operation 178 'partselect' 'p_cast12' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_12 : Operation 179 [1/1] (0.00ns)   --->   "%p_cast41_cast = sext i62 %p_cast12"   --->   Operation 179 'sext' 'p_cast41_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_12 : Operation 180 [1/1] (0.00ns)   --->   "%gmem_addr_15 = getelementptr i32 %gmem, i64 %p_cast41_cast"   --->   Operation 180 'getelementptr' 'gmem_addr_15' <Predicate = (!exitcond428)> <Delay = 0.00>
+
+State 13 <SV = 12> <Delay = 14.6>
+ST_13 : Operation 181 [1/1] (0.00ns)   --->   "%empty_86 = shl i32 %gmem_addr_read, i32 4"   --->   Operation 181 'shl' 'empty_86' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_13 : Operation 182 [1/1] (0.00ns) (grouped into LUT with out node tmp3)   --->   "%empty_88 = shl i32 %gmem_addr_6_read, i32 5"   --->   Operation 182 'shl' 'empty_88' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_13 : Operation 183 [1/1] (0.00ns) (grouped into LUT with out node tmp3)   --->   "%empty_90 = shl i32 %gmem_addr_7_read, i32 5"   --->   Operation 183 'shl' 'empty_90' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_13 : Operation 184 [1/1] (14.6ns)   --->   "%gmem_addr_8_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_addr_8"   --->   Operation 184 'read' 'gmem_addr_8_read' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 185 [1/7] (14.6ns)   --->   "%gmem_load_8_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_9, i32 1"   --->   Operation 185 'readreq' 'gmem_load_8_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 186 [2/7] (14.6ns)   --->   "%gmem_load_9_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_10, i32 1"   --->   Operation 186 'readreq' 'gmem_load_9_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 187 [3/7] (14.6ns)   --->   "%gmem_load_10_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_11, i32 1"   --->   Operation 187 'readreq' 'gmem_load_10_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 188 [4/7] (14.6ns)   --->   "%gmem_load_11_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_12, i32 1"   --->   Operation 188 'readreq' 'gmem_load_11_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 189 [5/7] (14.6ns)   --->   "%gmem_load_12_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_13, i32 1"   --->   Operation 189 'readreq' 'gmem_load_12_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 190 [6/7] (14.6ns)   --->   "%gmem_load_13_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_14, i32 1"   --->   Operation 190 'readreq' 'gmem_load_13_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 191 [7/7] (14.6ns)   --->   "%gmem_load_14_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_15, i32 1"   --->   Operation 191 'readreq' 'gmem_load_14_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 192 [1/1] (0.00ns)   --->   "%p_cast105_cast = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i4.i4.i2, i4 11, i4 %empty_82, i2 0"   --->   Operation 192 'bitconcatenate' 'p_cast105_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_13 : Operation 193 [1/1] (0.00ns)   --->   "%p_cast105_cast_cast = zext i10 %p_cast105_cast"   --->   Operation 193 'zext' 'p_cast105_cast_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_13 : Operation 194 [1/1] (1.81ns)   --->   "%empty_107 = add i64 %p_cast105_cast_cast, i64 %data_read"   --->   Operation 194 'add' 'empty_107' <Predicate = (!exitcond428)> <Delay = 1.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 195 [1/1] (0.00ns)   --->   "%p_cast13 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %empty_107, i32 2, i32 63"   --->   Operation 195 'partselect' 'p_cast13' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_13 : Operation 196 [1/1] (0.00ns)   --->   "%p_cast43_cast = sext i62 %p_cast13"   --->   Operation 196 'sext' 'p_cast43_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_13 : Operation 197 [1/1] (0.00ns)   --->   "%gmem_addr_16 = getelementptr i32 %gmem, i64 %p_cast43_cast"   --->   Operation 197 'getelementptr' 'gmem_addr_16' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_13 : Operation 198 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp2 = add i32 %empty_85, i32 %empty_86"   --->   Operation 198 'add' 'tmp2' <Predicate = (!exitcond428)> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.12> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_13 : Operation 199 [1/1] (1.51ns) (out node of the LUT)   --->   "%tmp3 = add i32 %empty_88, i32 %empty_90"   --->   Operation 199 'add' 'tmp3' <Predicate = (!exitcond428)> <Delay = 1.51> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.51> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 200 [1/1] (2.25ns) (root node of TernaryAdder)   --->   "%tmp1 = add i32 %tmp3, i32 %tmp2"   --->   Operation 200 'add' 'tmp1' <Predicate = (!exitcond428)> <Delay = 2.25> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.12> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+
+State 14 <SV = 13> <Delay = 14.6>
+ST_14 : Operation 201 [1/1] (14.6ns)   --->   "%gmem_addr_9_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_addr_9"   --->   Operation 201 'read' 'gmem_addr_9_read' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 202 [1/1] (0.00ns)   --->   "%empty_94 = shl i32 %gmem_addr_9_read, i32 5"   --->   Operation 202 'shl' 'empty_94' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_14 : Operation 203 [1/7] (14.6ns)   --->   "%gmem_load_9_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_10, i32 1"   --->   Operation 203 'readreq' 'gmem_load_9_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 204 [2/7] (14.6ns)   --->   "%gmem_load_10_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_11, i32 1"   --->   Operation 204 'readreq' 'gmem_load_10_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 205 [3/7] (14.6ns)   --->   "%gmem_load_11_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_12, i32 1"   --->   Operation 205 'readreq' 'gmem_load_11_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 206 [4/7] (14.6ns)   --->   "%gmem_load_12_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_13, i32 1"   --->   Operation 206 'readreq' 'gmem_load_12_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 207 [5/7] (14.6ns)   --->   "%gmem_load_13_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_14, i32 1"   --->   Operation 207 'readreq' 'gmem_load_13_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 208 [6/7] (14.6ns)   --->   "%gmem_load_14_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_15, i32 1"   --->   Operation 208 'readreq' 'gmem_load_14_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 209 [7/7] (14.6ns)   --->   "%gmem_load_15_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_16, i32 1"   --->   Operation 209 'readreq' 'gmem_load_15_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 210 [1/1] (0.00ns)   --->   "%p_cast106_cast = sext i9 %p_cast98_cast"   --->   Operation 210 'sext' 'p_cast106_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_14 : Operation 211 [1/1] (0.00ns)   --->   "%p_cast106_cast_cast = zext i10 %p_cast106_cast"   --->   Operation 211 'zext' 'p_cast106_cast_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_14 : Operation 212 [1/1] (1.81ns)   --->   "%empty_109 = add i64 %p_cast106_cast_cast, i64 %data_read"   --->   Operation 212 'add' 'empty_109' <Predicate = (!exitcond428)> <Delay = 1.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 213 [1/1] (0.00ns)   --->   "%p_cast14 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %empty_109, i32 2, i32 63"   --->   Operation 213 'partselect' 'p_cast14' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_14 : Operation 214 [1/1] (0.00ns)   --->   "%p_cast45_cast = sext i62 %p_cast14"   --->   Operation 214 'sext' 'p_cast45_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_14 : Operation 215 [1/1] (0.00ns)   --->   "%gmem_addr_17 = getelementptr i32 %gmem, i64 %p_cast45_cast"   --->   Operation 215 'getelementptr' 'gmem_addr_17' <Predicate = (!exitcond428)> <Delay = 0.00>
+
+State 15 <SV = 14> <Delay = 14.6>
+ST_15 : Operation 216 [1/1] (14.6ns)   --->   "%gmem_addr_10_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_addr_10"   --->   Operation 216 'read' 'gmem_addr_10_read' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 217 [1/7] (14.6ns)   --->   "%gmem_load_10_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_11, i32 1"   --->   Operation 217 'readreq' 'gmem_load_10_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 218 [2/7] (14.6ns)   --->   "%gmem_load_11_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_12, i32 1"   --->   Operation 218 'readreq' 'gmem_load_11_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 219 [3/7] (14.6ns)   --->   "%gmem_load_12_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_13, i32 1"   --->   Operation 219 'readreq' 'gmem_load_12_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 220 [4/7] (14.6ns)   --->   "%gmem_load_13_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_14, i32 1"   --->   Operation 220 'readreq' 'gmem_load_13_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 221 [5/7] (14.6ns)   --->   "%gmem_load_14_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_15, i32 1"   --->   Operation 221 'readreq' 'gmem_load_14_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 222 [6/7] (14.6ns)   --->   "%gmem_load_15_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_16, i32 1"   --->   Operation 222 'readreq' 'gmem_load_15_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 223 [7/7] (14.6ns)   --->   "%gmem_load_16_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_17, i32 1"   --->   Operation 223 'readreq' 'gmem_load_16_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_15 : Operation 224 [1/1] (0.00ns)   --->   "%p_cast107_cast = sext i9 %p_cast99_cast"   --->   Operation 224 'sext' 'p_cast107_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_15 : Operation 225 [1/1] (0.00ns)   --->   "%p_cast107_cast_cast = zext i10 %p_cast107_cast"   --->   Operation 225 'zext' 'p_cast107_cast_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_15 : Operation 226 [1/1] (1.81ns)   --->   "%empty_111 = add i64 %p_cast107_cast_cast, i64 %data_read"   --->   Operation 226 'add' 'empty_111' <Predicate = (!exitcond428)> <Delay = 1.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 227 [1/1] (0.00ns)   --->   "%p_cast15 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %empty_111, i32 2, i32 63"   --->   Operation 227 'partselect' 'p_cast15' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_15 : Operation 228 [1/1] (0.00ns)   --->   "%p_cast47_cast = sext i62 %p_cast15"   --->   Operation 228 'sext' 'p_cast47_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_15 : Operation 229 [1/1] (0.00ns)   --->   "%gmem_addr_18 = getelementptr i32 %gmem, i64 %p_cast47_cast"   --->   Operation 229 'getelementptr' 'gmem_addr_18' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_15 : Operation 331 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 331 'ret' 'ret_ln0' <Predicate = (exitcond428)> <Delay = 0.00>
+
+State 16 <SV = 15> <Delay = 14.6>
+ST_16 : Operation 230 [1/1] (14.6ns)   --->   "%gmem_addr_11_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_addr_11"   --->   Operation 230 'read' 'gmem_addr_11_read' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 231 [1/7] (14.6ns)   --->   "%gmem_load_11_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_12, i32 1"   --->   Operation 231 'readreq' 'gmem_load_11_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 232 [2/7] (14.6ns)   --->   "%gmem_load_12_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_13, i32 1"   --->   Operation 232 'readreq' 'gmem_load_12_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 233 [3/7] (14.6ns)   --->   "%gmem_load_13_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_14, i32 1"   --->   Operation 233 'readreq' 'gmem_load_13_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 234 [4/7] (14.6ns)   --->   "%gmem_load_14_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_15, i32 1"   --->   Operation 234 'readreq' 'gmem_load_14_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 235 [5/7] (14.6ns)   --->   "%gmem_load_15_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_16, i32 1"   --->   Operation 235 'readreq' 'gmem_load_15_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 236 [6/7] (14.6ns)   --->   "%gmem_load_16_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_17, i32 1"   --->   Operation 236 'readreq' 'gmem_load_16_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 237 [7/7] (14.6ns)   --->   "%gmem_load_17_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_18, i32 1"   --->   Operation 237 'readreq' 'gmem_load_17_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 238 [1/1] (0.00ns)   --->   "%p_cast108_cast = sext i8 %p_cast96_cast"   --->   Operation 238 'sext' 'p_cast108_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_16 : Operation 239 [1/1] (0.00ns)   --->   "%p_cast108_cast_cast = zext i10 %p_cast108_cast"   --->   Operation 239 'zext' 'p_cast108_cast_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_16 : Operation 240 [1/1] (1.81ns)   --->   "%empty_113 = add i64 %p_cast108_cast_cast, i64 %data_read"   --->   Operation 240 'add' 'empty_113' <Predicate = (!exitcond428)> <Delay = 1.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 241 [1/1] (0.00ns)   --->   "%p_cast16 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %empty_113, i32 2, i32 63"   --->   Operation 241 'partselect' 'p_cast16' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_16 : Operation 242 [1/1] (0.00ns)   --->   "%p_cast49_cast = sext i62 %p_cast16"   --->   Operation 242 'sext' 'p_cast49_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_16 : Operation 243 [1/1] (0.00ns)   --->   "%gmem_addr_19 = getelementptr i32 %gmem, i64 %p_cast49_cast"   --->   Operation 243 'getelementptr' 'gmem_addr_19' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_16 : Operation 244 [1/1] (0.00ns)   --->   "%p_cast109_cast = sext i7 %p_cast95_cast"   --->   Operation 244 'sext' 'p_cast109_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_16 : Operation 245 [1/1] (0.00ns)   --->   "%p_cast109_cast_cast = zext i10 %p_cast109_cast"   --->   Operation 245 'zext' 'p_cast109_cast_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_16 : Operation 246 [1/1] (1.81ns)   --->   "%empty_115 = add i64 %p_cast109_cast_cast, i64 %data_read"   --->   Operation 246 'add' 'empty_115' <Predicate = (!exitcond428)> <Delay = 1.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 247 [1/1] (0.00ns)   --->   "%p_cast17 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %empty_115, i32 2, i32 63"   --->   Operation 247 'partselect' 'p_cast17' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_16 : Operation 248 [1/1] (0.00ns)   --->   "%p_cast51_cast = sext i62 %p_cast17"   --->   Operation 248 'sext' 'p_cast51_cast' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_16 : Operation 249 [1/1] (0.00ns)   --->   "%gmem_addr_20 = getelementptr i32 %gmem, i64 %p_cast51_cast"   --->   Operation 249 'getelementptr' 'gmem_addr_20' <Predicate = (!exitcond428)> <Delay = 0.00>
+
+State 17 <SV = 16> <Delay = 14.6>
+ST_17 : Operation 250 [1/1] (0.00ns)   --->   "%empty_92 = shl i32 %gmem_addr_8_read, i32 5"   --->   Operation 250 'shl' 'empty_92' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_17 : Operation 251 [1/1] (0.00ns) (grouped into LUT with out node tmp6)   --->   "%empty_96 = shl i32 %gmem_addr_10_read, i32 5"   --->   Operation 251 'shl' 'empty_96' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_17 : Operation 252 [1/1] (0.00ns) (grouped into LUT with out node tmp6)   --->   "%empty_98 = shl i32 %gmem_addr_11_read, i32 5"   --->   Operation 252 'shl' 'empty_98' <Predicate = (!exitcond428)> <Delay = 0.00>
+ST_17 : Operation 253 [1/1] (14.6ns)   --->   "%gmem_addr_12_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_addr_12"   --->   Operation 253 'read' 'gmem_addr_12_read' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 254 [1/7] (14.6ns)   --->   "%gmem_load_12_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_13, i32 1"   --->   Operation 254 'readreq' 'gmem_load_12_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 255 [2/7] (14.6ns)   --->   "%gmem_load_13_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_14, i32 1"   --->   Operation 255 'readreq' 'gmem_load_13_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 256 [3/7] (14.6ns)   --->   "%gmem_load_14_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_15, i32 1"   --->   Operation 256 'readreq' 'gmem_load_14_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 257 [4/7] (14.6ns)   --->   "%gmem_load_15_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_16, i32 1"   --->   Operation 257 'readreq' 'gmem_load_15_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 258 [5/7] (14.6ns)   --->   "%gmem_load_16_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_17, i32 1"   --->   Operation 258 'readreq' 'gmem_load_16_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 259 [6/7] (14.6ns)   --->   "%gmem_load_17_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_18, i32 1"   --->   Operation 259 'readreq' 'gmem_load_17_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 260 [7/7] (14.6ns)   --->   "%gmem_load_18_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_19, i32 1"   --->   Operation 260 'readreq' 'gmem_load_18_req' <Predicate = (!exitcond428)> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 261 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp5 = add i32 %empty_92, i32 %empty_94"   --->   Operation 261 'add' 'tmp5' <Predicate = (!exitcond428)> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.12> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_17 : Operation 262 [1/1] (1.51ns) (out node of the LUT)   --->   "%tmp6 = add i32 %empty_96, i32 %empty_98"   --->   Operation 262 'add' 'tmp6' <Predicate = (!exitcond428)> <Delay = 1.51> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.51> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 263 [1/1] (2.25ns) (root node of TernaryAdder)   --->   "%tmp4 = add i32 %tmp6, i32 %tmp5"   --->   Operation 263 'add' 'tmp4' <Predicate = (!exitcond428)> <Delay = 2.25> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.12> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+
+State 18 <SV = 17> <Delay = 14.6>
+ST_18 : Operation 264 [1/1] (14.6ns)   --->   "%gmem_addr_13_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_addr_13"   --->   Operation 264 'read' 'gmem_addr_13_read' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_18 : Operation 265 [1/7] (14.6ns)   --->   "%gmem_load_13_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_14, i32 1"   --->   Operation 265 'readreq' 'gmem_load_13_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_18 : Operation 266 [2/7] (14.6ns)   --->   "%gmem_load_14_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_15, i32 1"   --->   Operation 266 'readreq' 'gmem_load_14_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_18 : Operation 267 [3/7] (14.6ns)   --->   "%gmem_load_15_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_16, i32 1"   --->   Operation 267 'readreq' 'gmem_load_15_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_18 : Operation 268 [4/7] (14.6ns)   --->   "%gmem_load_16_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_17, i32 1"   --->   Operation 268 'readreq' 'gmem_load_16_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_18 : Operation 269 [5/7] (14.6ns)   --->   "%gmem_load_17_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_18, i32 1"   --->   Operation 269 'readreq' 'gmem_load_17_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_18 : Operation 270 [6/7] (14.6ns)   --->   "%gmem_load_18_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_19, i32 1"   --->   Operation 270 'readreq' 'gmem_load_18_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_18 : Operation 271 [7/7] (14.6ns)   --->   "%gmem_load_19_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_20, i32 1"   --->   Operation 271 'readreq' 'gmem_load_19_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 19 <SV = 18> <Delay = 14.6>
+ST_19 : Operation 272 [1/1] (0.00ns) (grouped into LUT with out node tmp9)   --->   "%empty_100 = shl i32 %gmem_addr_12_read, i32 5"   --->   Operation 272 'shl' 'empty_100' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 273 [1/1] (0.00ns) (grouped into LUT with out node tmp9)   --->   "%empty_102 = shl i32 %gmem_addr_13_read, i32 5"   --->   Operation 273 'shl' 'empty_102' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 274 [1/1] (14.6ns)   --->   "%gmem_addr_14_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_addr_14"   --->   Operation 274 'read' 'gmem_addr_14_read' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_19 : Operation 275 [1/7] (14.6ns)   --->   "%gmem_load_14_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_15, i32 1"   --->   Operation 275 'readreq' 'gmem_load_14_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_19 : Operation 276 [2/7] (14.6ns)   --->   "%gmem_load_15_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_16, i32 1"   --->   Operation 276 'readreq' 'gmem_load_15_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_19 : Operation 277 [3/7] (14.6ns)   --->   "%gmem_load_16_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_17, i32 1"   --->   Operation 277 'readreq' 'gmem_load_16_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_19 : Operation 278 [4/7] (14.6ns)   --->   "%gmem_load_17_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_18, i32 1"   --->   Operation 278 'readreq' 'gmem_load_17_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_19 : Operation 279 [5/7] (14.6ns)   --->   "%gmem_load_18_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_19, i32 1"   --->   Operation 279 'readreq' 'gmem_load_18_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_19 : Operation 280 [6/7] (14.6ns)   --->   "%gmem_load_19_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_20, i32 1"   --->   Operation 280 'readreq' 'gmem_load_19_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_19 : Operation 281 [1/1] (1.51ns) (out node of the LUT)   --->   "%tmp9 = add i32 %empty_100, i32 %empty_102"   --->   Operation 281 'add' 'tmp9' <Predicate = true> <Delay = 1.51> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.51> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 14.6>
+ST_20 : Operation 282 [1/1] (14.6ns)   --->   "%gmem_addr_15_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_addr_15"   --->   Operation 282 'read' 'gmem_addr_15_read' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_20 : Operation 283 [1/7] (14.6ns)   --->   "%gmem_load_15_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_16, i32 1"   --->   Operation 283 'readreq' 'gmem_load_15_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_20 : Operation 284 [2/7] (14.6ns)   --->   "%gmem_load_16_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_17, i32 1"   --->   Operation 284 'readreq' 'gmem_load_16_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_20 : Operation 285 [3/7] (14.6ns)   --->   "%gmem_load_17_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_18, i32 1"   --->   Operation 285 'readreq' 'gmem_load_17_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_20 : Operation 286 [4/7] (14.6ns)   --->   "%gmem_load_18_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_19, i32 1"   --->   Operation 286 'readreq' 'gmem_load_18_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_20 : Operation 287 [5/7] (14.6ns)   --->   "%gmem_load_19_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_20, i32 1"   --->   Operation 287 'readreq' 'gmem_load_19_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 21 <SV = 20> <Delay = 14.6>
+ST_21 : Operation 288 [1/1] (0.00ns) (grouped into LUT with out node tmp10)   --->   "%empty_104 = shl i32 %gmem_addr_14_read, i32 5"   --->   Operation 288 'shl' 'empty_104' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 289 [1/1] (0.00ns) (grouped into LUT with out node tmp10)   --->   "%empty_106 = shl i32 %gmem_addr_15_read, i32 5"   --->   Operation 289 'shl' 'empty_106' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 290 [1/1] (14.6ns)   --->   "%gmem_addr_16_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_addr_16"   --->   Operation 290 'read' 'gmem_addr_16_read' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_21 : Operation 291 [1/1] (0.00ns)   --->   "%empty_108 = shl i32 %gmem_addr_16_read, i32 5"   --->   Operation 291 'shl' 'empty_108' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 292 [1/7] (14.6ns)   --->   "%gmem_load_16_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_17, i32 1"   --->   Operation 292 'readreq' 'gmem_load_16_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_21 : Operation 293 [2/7] (14.6ns)   --->   "%gmem_load_17_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_18, i32 1"   --->   Operation 293 'readreq' 'gmem_load_17_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_21 : Operation 294 [3/7] (14.6ns)   --->   "%gmem_load_18_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_19, i32 1"   --->   Operation 294 'readreq' 'gmem_load_18_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_21 : Operation 295 [4/7] (14.6ns)   --->   "%gmem_load_19_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_20, i32 1"   --->   Operation 295 'readreq' 'gmem_load_19_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_21 : Operation 296 [1/1] (1.51ns) (out node of the LUT)   --->   "%tmp10 = add i32 %empty_104, i32 %empty_106"   --->   Operation 296 'add' 'tmp10' <Predicate = true> <Delay = 1.51> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.51> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 21> <Delay = 14.6>
+ST_22 : Operation 297 [1/1] (14.6ns)   --->   "%gmem_addr_17_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_addr_17"   --->   Operation 297 'read' 'gmem_addr_17_read' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_22 : Operation 298 [1/1] (0.00ns)   --->   "%empty_110 = shl i32 %gmem_addr_17_read, i32 5"   --->   Operation 298 'shl' 'empty_110' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 299 [1/7] (14.6ns)   --->   "%gmem_load_17_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_18, i32 1"   --->   Operation 299 'readreq' 'gmem_load_17_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_22 : Operation 300 [2/7] (14.6ns)   --->   "%gmem_load_18_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_19, i32 1"   --->   Operation 300 'readreq' 'gmem_load_18_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_22 : Operation 301 [3/7] (14.6ns)   --->   "%gmem_load_19_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_20, i32 1"   --->   Operation 301 'readreq' 'gmem_load_19_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 23 <SV = 22> <Delay = 14.6>
+ST_23 : Operation 302 [1/1] (14.6ns)   --->   "%gmem_addr_18_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_addr_18"   --->   Operation 302 'read' 'gmem_addr_18_read' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_23 : Operation 303 [1/1] (0.00ns)   --->   "%empty_112 = shl i32 %gmem_addr_18_read, i32 5"   --->   Operation 303 'shl' 'empty_112' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 304 [1/7] (14.6ns)   --->   "%gmem_load_18_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_19, i32 1"   --->   Operation 304 'readreq' 'gmem_load_18_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_23 : Operation 305 [2/7] (14.6ns)   --->   "%gmem_load_19_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_20, i32 1"   --->   Operation 305 'readreq' 'gmem_load_19_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 24 <SV = 23> <Delay = 14.6>
+ST_24 : Operation 306 [1/1] (14.6ns)   --->   "%gmem_addr_19_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_addr_19"   --->   Operation 306 'read' 'gmem_addr_19_read' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_24 : Operation 307 [1/1] (0.00ns)   --->   "%empty_114 = shl i32 %gmem_addr_19_read, i32 5"   --->   Operation 307 'shl' 'empty_114' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 308 [1/7] (14.6ns)   --->   "%gmem_load_19_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem_addr_20, i32 1"   --->   Operation 308 'readreq' 'gmem_load_19_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 25 <SV = 24> <Delay = 14.6>
+ST_25 : Operation 309 [1/1] (14.6ns)   --->   "%gmem_addr_20_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem_addr_20"   --->   Operation 309 'read' 'gmem_addr_20_read' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_25 : Operation 310 [1/1] (0.00ns)   --->   "%empty_116 = shl i32 %gmem_addr_20_read, i32 5"   --->   Operation 310 'shl' 'empty_116' <Predicate = true> <Delay = 0.00>
+
+State 26 <SV = 25> <Delay = 14.6>
+ST_26 : Operation 311 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp = add i32 %tmp4, i32 %tmp1"   --->   Operation 311 'add' 'tmp' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.12> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_26 : Operation 312 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp8 = add i32 %tmp10, i32 %tmp9"   --->   Operation 312 'add' 'tmp8' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.12> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_26 : Operation 313 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp12 = add i32 %empty_108, i32 %empty_110"   --->   Operation 313 'add' 'tmp12' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.12> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_26 : Operation 314 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp14 = add i32 %empty_114, i32 %empty_116"   --->   Operation 314 'add' 'tmp14' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.12> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_26 : Operation 315 [1/1] (2.25ns) (root node of TernaryAdder)   --->   "%tmp13 = add i32 %tmp14, i32 %empty_112"   --->   Operation 315 'add' 'tmp13' <Predicate = true> <Delay = 2.25> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.12> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_26 : Operation 316 [1/1] (2.25ns) (root node of TernaryAdder)   --->   "%tmp11 = add i32 %tmp13, i32 %tmp12"   --->   Operation 316 'add' 'tmp11' <Predicate = true> <Delay = 2.25> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.12> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_26 : Operation 317 [1/1] (2.25ns) (root node of TernaryAdder)   --->   "%tmp7 = add i32 %tmp11, i32 %tmp8"   --->   Operation 317 'add' 'tmp7' <Predicate = true> <Delay = 2.25> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.12> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_26 : Operation 318 [1/1] (2.25ns) (root node of TernaryAdder)   --->   "%add16_u0_32fixp_15 = add i32 %tmp7, i32 %tmp"   --->   Operation 318 'add' 'add16_u0_32fixp_15' <Predicate = true> <Delay = 2.25> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.12> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_26 : Operation 319 [1/1] (0.00ns)   --->   "%tmp_s = partselect i23 @_ssdm_op_PartSelect.i23.i32.i32.i32, i32 %add16_u0_32fixp_15, i32 9, i32 31"   --->   Operation 319 'partselect' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 320 [1/1] (14.6ns)   --->   "%gmem_addr_req = writereq i1 @_ssdm_op_WriteReq.m_axi.i32P1A, i32 %gmem_addr, i32 1"   --->   Operation 320 'writereq' 'gmem_addr_req' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 27 <SV = 26> <Delay = 14.6>
+ST_27 : Operation 321 [1/1] (0.00ns)   --->   "%tmp_52 = bitconcatenate i24 @_ssdm_op_BitConcatenate.i24.i23.i1, i23 %tmp_s, i1 0"   --->   Operation 321 'bitconcatenate' 'tmp_52' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 322 [1/1] (0.00ns)   --->   "%p_cast110 = zext i24 %tmp_52"   --->   Operation 322 'zext' 'p_cast110' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 323 [1/1] (14.6ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.m_axi.i32P1A, i32 %gmem_addr, i32 %p_cast110, i4 15"   --->   Operation 323 'write' 'write_ln0' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 28 <SV = 27> <Delay = 14.6>
+ST_28 : Operation 324 [5/5] (14.6ns)   --->   "%gmem_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_addr"   --->   Operation 324 'writeresp' 'gmem_addr_resp' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 29 <SV = 28> <Delay = 14.6>
+ST_29 : Operation 325 [4/5] (14.6ns)   --->   "%gmem_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_addr"   --->   Operation 325 'writeresp' 'gmem_addr_resp' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 30 <SV = 29> <Delay = 14.6>
+ST_30 : Operation 326 [3/5] (14.6ns)   --->   "%gmem_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_addr"   --->   Operation 326 'writeresp' 'gmem_addr_resp' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 31 <SV = 30> <Delay = 14.6>
+ST_31 : Operation 327 [2/5] (14.6ns)   --->   "%gmem_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_addr"   --->   Operation 327 'writeresp' 'gmem_addr_resp' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 32 <SV = 31> <Delay = 14.6>
+ST_32 : Operation 328 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @empty_10"   --->   Operation 328 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
+ST_32 : Operation 329 [1/5] (14.6ns)   --->   "%gmem_addr_resp = writeresp i1 @_ssdm_op_WriteResp.m_axi.i32P1A, i32 %gmem_addr"   --->   Operation 329 'writeresp' 'gmem_addr_resp' <Predicate = true> <Delay = 14.6> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_32 : Operation 330 [1/1] (0.00ns)   --->   "%br_ln0 = br void %VITIS_LOOP_44_2"   --->   Operation 330 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 20ns, clock uncertainty: 5.4ns.
+
+ <State 1>: 1.94ns
+The critical path consists of the following:
+	'alloca' operation ('indvars_iv40') [4]  (0 ns)
+	'load' operation ('indvars_iv40_load') on local variable 'indvars_iv40' [11]  (0 ns)
+	'add' operation ('indvars_iv_next41') [16]  (1.1 ns)
+	'store' operation ('store_ln0') of variable 'indvars_iv_next41' on local variable 'indvars_iv40' [194]  (0.844 ns)
+
+ <State 2>: 14.6ns
+The critical path consists of the following:
+	bus request operation ('gmem_load_req') on port 'gmem' [27]  (14.6 ns)
+
+ <State 3>: 14.6ns
+The critical path consists of the following:
+	bus request operation ('gmem_load_req') on port 'gmem' [27]  (14.6 ns)
+
+ <State 4>: 14.6ns
+The critical path consists of the following:
+	bus request operation ('gmem_load_req') on port 'gmem' [27]  (14.6 ns)
+
+ <State 5>: 14.6ns
+The critical path consists of the following:
+	bus request operation ('gmem_load_req') on port 'gmem' [27]  (14.6 ns)
+
+ <State 6>: 14.6ns
+The critical path consists of the following:
+	bus request operation ('gmem_load_req') on port 'gmem' [27]  (14.6 ns)
+
+ <State 7>: 14.6ns
+The critical path consists of the following:
+	bus request operation ('gmem_load_req') on port 'gmem' [27]  (14.6 ns)
+
+ <State 8>: 14.6ns
+The critical path consists of the following:
+	bus request operation ('gmem_load_req') on port 'gmem' [27]  (14.6 ns)
+
+ <State 9>: 14.6ns
+The critical path consists of the following:
+	bus read operation ('gmem_addr_read') on port 'gmem' [28]  (14.6 ns)
+
+ <State 10>: 14.6ns
+The critical path consists of the following:
+	bus read operation ('gmem_addr_1_read') on port 'gmem' [34]  (14.6 ns)
+
+ <State 11>: 14.6ns
+The critical path consists of the following:
+	bus read operation ('gmem_addr_6_read') on port 'gmem' [44]  (14.6 ns)
+
+ <State 12>: 14.6ns
+The critical path consists of the following:
+	bus read operation ('gmem_addr_7_read') on port 'gmem' [53]  (14.6 ns)
+
+ <State 13>: 14.6ns
+The critical path consists of the following:
+	bus read operation ('gmem_addr_8_read') on port 'gmem' [62]  (14.6 ns)
+
+ <State 14>: 14.6ns
+The critical path consists of the following:
+	bus read operation ('gmem_addr_9_read') on port 'gmem' [71]  (14.6 ns)
+
+ <State 15>: 14.6ns
+The critical path consists of the following:
+	bus read operation ('gmem_addr_10_read') on port 'gmem' [80]  (14.6 ns)
+
+ <State 16>: 14.6ns
+The critical path consists of the following:
+	bus read operation ('gmem_addr_11_read') on port 'gmem' [89]  (14.6 ns)
+
+ <State 17>: 14.6ns
+The critical path consists of the following:
+	bus read operation ('gmem_addr_12_read') on port 'gmem' [98]  (14.6 ns)
+
+ <State 18>: 14.6ns
+The critical path consists of the following:
+	bus read operation ('gmem_addr_13_read') on port 'gmem' [107]  (14.6 ns)
+
+ <State 19>: 14.6ns
+The critical path consists of the following:
+	bus read operation ('gmem_addr_14_read') on port 'gmem' [116]  (14.6 ns)
+
+ <State 20>: 14.6ns
+The critical path consists of the following:
+	bus read operation ('gmem_addr_15_read') on port 'gmem' [125]  (14.6 ns)
+
+ <State 21>: 14.6ns
+The critical path consists of the following:
+	bus read operation ('gmem_addr_16_read') on port 'gmem' [134]  (14.6 ns)
+
+ <State 22>: 14.6ns
+The critical path consists of the following:
+	bus read operation ('gmem_addr_17_read') on port 'gmem' [143]  (14.6 ns)
+
+ <State 23>: 14.6ns
+The critical path consists of the following:
+	bus read operation ('gmem_addr_18_read') on port 'gmem' [152]  (14.6 ns)
+
+ <State 24>: 14.6ns
+The critical path consists of the following:
+	bus read operation ('gmem_addr_19_read') on port 'gmem' [161]  (14.6 ns)
+
+ <State 25>: 14.6ns
+The critical path consists of the following:
+	bus read operation ('gmem_addr_20_read') on port 'gmem' [170]  (14.6 ns)
+
+ <State 26>: 14.6ns
+The critical path consists of the following:
+	bus request operation ('gmem_addr_req') on port 'gmem' [191]  (14.6 ns)
+
+ <State 27>: 14.6ns
+The critical path consists of the following:
+	bus write operation ('write_ln0') on port 'gmem' [192]  (14.6 ns)
+
+ <State 28>: 14.6ns
+The critical path consists of the following:
+	bus response operation ('gmem_addr_resp') on port 'gmem' [193]  (14.6 ns)
+
+ <State 29>: 14.6ns
+The critical path consists of the following:
+	bus response operation ('gmem_addr_resp') on port 'gmem' [193]  (14.6 ns)
+
+ <State 30>: 14.6ns
+The critical path consists of the following:
+	bus response operation ('gmem_addr_resp') on port 'gmem' [193]  (14.6 ns)
+
+ <State 31>: 14.6ns
+The critical path consists of the following:
+	bus response operation ('gmem_addr_resp') on port 'gmem' [193]  (14.6 ns)
+
+ <State 32>: 14.6ns
+The critical path consists of the following:
+	bus response operation ('gmem_addr_resp') on port 'gmem' [193]  (14.6 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

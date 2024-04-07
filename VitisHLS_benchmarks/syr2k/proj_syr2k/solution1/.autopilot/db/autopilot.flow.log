@@ -1,0 +1,1076 @@
+INFO-FLOW: Workspace /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1 opened at Tue Feb 27 22:17:37 CET 2024
+Execute     send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute     send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vivado' config_interface -m_axi_latency=0 
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+Execute     config_interface -m_axi_latency=0 
+Command   open_solution done; 0.13 sec.
+Execute   set_part virtex7 
+INFO: [HLS 200-1510] Running: set_part virtex7 
+Execute     create_platform virtex7 -board  
+DBG:HLSDevice: Trying to load device library: /home/bruno/Documents/Vitis_HLS/2022.2/lib/lnx64.o/libxv_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /home/bruno/Documents/Vivado/2022.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7v585t-ffg1761-2'
+Command     create_platform done; 3.68 sec.
+Execute     source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Command       ap_source done; 0.13 sec.
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.17 sec.
+Execute     ap_part_info -name xc7v585t-ffg1761-2 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 3.9 sec.
+Execute   create_clock -period 50MHz 
+INFO: [HLS 200-1510] Running: create_clock -period 50MHz 
+Execute     ap_set_clock -name default -period 20 -unit ns -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+Execute   csynth_design 
+INFO: [HLS 200-1510] Running: csynth_design 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.03 seconds. CPU system time: 0.02 seconds. Elapsed time: 10.07 seconds; current allocated memory: 751.660 MB.
+INFO: [HLS 200-10] Analyzing design file 'syr2k_taffo.c' ... 
+INFO-FLOW: Compiling one TU...
+INFO-FLOW: Handling syr2k_taffo.c as C
+Execute       ap_part_info -name xc7v585t-ffg1761-2 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+Execute       ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang syr2k_taffo.c -foptimization-record-file=/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -gcc-toolchain /home/bruno/Documents/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0 -fhls -fno-exceptions -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/autopilot -I /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c -hls-platform-db-name=/home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_1590.000000_DSP_1260.000000_FF_728400.000000_LUT_364200.000000_SLICE_91050.000000_URAM_0.000000 -device-name-info=xc7v585tffg1761-2 > /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.c.clang.out.log 2> /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.c.clang.err.log 
+Command       ap_eval done; 0.25 sec.
+INFO-FLOW: Done: GCC PP 39 time: 0.2 seconds per iteration
+Execute       set_directive_top syr2k -name=syr2k 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+INFO-FLOW: Source syntax check for synthesis
+Execute       ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c -hls-platform-db-name=/home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_1590.000000_DSP_1260.000000_FF_728400.000000_LUT_364200.000000_SLICE_91050.000000_URAM_0.000000 -device-name-info=xc7v585tffg1761-2 > /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/clang.out.log 2> /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/clang.err.log 
+Command       ap_eval done; 0.26 sec.
+Execute       clang_tidy xilinx-systemc-detector -desc systemc-detector /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c std=gnu99 -target fpga  -directive=/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/.systemc_flag -fix-errors /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute       clang_tidy xilinx-directive2pragma -desc directive2pragma /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c std=gnu99 -target fpga  -directive=/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/all.directive.json -fix-errors /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+Execute       clang_tidy xilinx-remove-assert -desc remove-assert /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c std=gnu99 -target fpga  
+INFO-FLOW: exec /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-remove-assert -fix-errors /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.1 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute       clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c std=gnu99 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 > /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c.clang-tidy.loop-label.out.log 2> /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c.clang-tidy.loop-label.err.log 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Command       clang_tidy done; 0.15 sec.
+Execute       ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c.xilinx-dataflow-lawyer.diag.yml /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c.xilinx-dataflow-lawyer.out.log 2> /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c.xilinx-dataflow-lawyer.err.log 
+Execute       ap_part_info -name xc7v585t-ffg1761-2 -data info 
+INFO-FLOW: compiling source code to llvm bc
+Execute       ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/autopilot -I /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.bc -hls-platform-db-name=/home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_1590.000000_DSP_1260.000000_FF_728400.000000_LUT_364200.000000_SLICE_91050.000000_URAM_0.000000 -device-name-info=xc7v585tffg1761-2 > /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c.clang.out.log 2> /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c.clang.err.log 
+Command       ap_eval done; 0.26 sec.
+WARNING: [HLS 207-5292] unused parameter 'argc' (syr2k_taffo.c:67:14)
+WARNING: [HLS 207-5292] unused parameter 'argv' (syr2k_taffo.c:67:27)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.68 seconds. CPU system time: 0.54 seconds. Elapsed time: 1.26 seconds; current allocated memory: 752.922 MB.
+INFO-FLOW: Linking Debug ...
+INFO-FLOW: Linking dut bc code.
+Execute       run_link_or_opt -out /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.0.bc -args  "/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.g.bc"  
+Execute         ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.g.bc -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.0.bc > /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.0.bc.llvm-link.out.log 2> /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.0.bc.llvm-link.err.log 
+INFO-FLOW: 
+Execute       run_link_or_opt -opt -out /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.1.lower.bc -args /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
+Execute         ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.diag.yml /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.1.lower.bc > /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.out.log 2> /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.err.log 
+INFO-FLOW: 
+INFO-FLOW: Linking math bc lib
+Execute       run_link_or_opt -out /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.2.m1.bc -args /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/lib/libhlsm_39.bc /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/lib/libhlsmc++_39.bc 
+Execute         ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/lib/libhlsm_39.bc /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/lib/libhlsmc++_39.bc -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.2.m1.bc > /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log 
+Command         ap_eval done; 2.98 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 2.98 sec.
+Execute       run_link_or_opt -opt -out /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=syr2k -reflow-float-conversion 
+Execute         ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=syr2k -reflow-float-conversion -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.3.fpc.bc > /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log 
+Command         ap_eval done; 1.12 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 1.12 sec.
+Execute       run_link_or_opt -out /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.4.m2.bc -args /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/lib/libfloatconversion_39.bc 
+Execute         ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/lib/libfloatconversion_39.bc -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.4.m2.bc > /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log 
+INFO-FLOW: 
+Execute       run_link_or_opt -opt -out /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.5.gdce.bc -args /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=syr2k 
+Execute         ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.diag.yml /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=syr2k -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.5.gdce.bc > /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.out.log 2> /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.err.log 
+INFO-FLOW: 
+Execute       send_msg_by_id INFO @200-1022@%s 'HLS_HOOKS::opt' 
+INFO: [HLS 200-1022] Running custom LLVM hook 'HLS_HOOKS::opt'
+Execute       send_msg_by_id INFO @200-777@%s Vivado 
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+Execute       is_m_axi_addr64 
+INFO-FLOW: Doing LTO.
+Execute       ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.0.bc.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=syr2k -mllvm -hls-db-dir -mllvm /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=slave -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshold=200000 -mllvm -reflow-auto-pipeline-threshold=64 -mllvm -reflow-enable-maxi-auto-id-channel=0 -mllvm -assume-maxi-align=1 -mllvm -reflow-pipeline-style-llvm-setting=2 -mllvm -reflow-enable-dataflow-strict-mode-checking=1 -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-array-partition=true -mllvm -reflow-enable-auto-parallel-performance-driven=true -mllvm -reflow-enable-partition-for-automation=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -reflow-assume-no-address-wrap=true -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -mllvm -default-clock-period=20 -x ir /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.6.user.bc -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.lto.bc -hls-platform-db-name=/home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/common/platform.db -hls-platform-name=virtex7_medium -device-resource-info=BRAM_1590.000000_DSP_1260.000000_FF_728400.000000_LUT_364200.000000_SLICE_91050.000000_URAM_0.000000 -device-name-info=xc7v585tffg1761-2 > /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.0.bc.clang.out.log 2> /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.ld.0.bc.clang.err.log 
+Command       ap_eval done; 0.48 sec.
+WARNING: [HLS 207-586] overriding the module target triple with fpga64-xilinx-none
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma
+INFO: [HLS 214-188] Unrolling loop 'VITIS_LOOP_46_1' () in function 'syr2k' partially with a factor of 4
+WARNING: [HLS 214-167] The program may have out of bound array access
+INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/kernel.internal.xml
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.68 seconds. CPU system time: 0.71 seconds. Elapsed time: 5.41 seconds; current allocated memory: 753.688 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 753.688 MB.
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top syr2k -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.0.bc -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 754.809 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -directive-preproc -mem2reg -dse -dce -globaldce /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.1.bc -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 754.871 MB.
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.g.1.bc to /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db -interface-port-rename -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -prepare-dynamic-array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -globaldce -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -canonicalize-dataflow -dce -globaldce -scalar-preprocessing -scalar-propagation2 -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.o.1.bc -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_52_3' in function 'syr2k' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_52_3' in function 'syr2k' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_52_3' in function 'syr2k' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_52_3' in function 'syr2k' for pipelining.
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_54_4' in function 'syr2k': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_54_4' in function 'syr2k': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_54_4' in function 'syr2k': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_54_4' in function 'syr2k': cannot completely unroll a loop with a variable trip count.
+Command         transform done; 0.15 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -barrier -norm-name /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.18 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.21 seconds; current allocated memory: 778.582 MB.
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -deadargelim -globaldce -mem2reg -bram-byte-enable -load-elim -read-loop-dep -loop-simplify -loop-extract-inner -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable-spec-prop -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.o.2.bc -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_52_3' in function 'syr2k'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_52_3' in function 'syr2k'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_52_3' in function 'syr2k'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_52_3' in function 'syr2k'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_46_1' in function 'syr2k' more than one sub loop.
+Command         transform done; 0.21 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.17 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.21 seconds; current allocated memory: 847.336 MB.
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 0.49 sec.
+Command     elaborate done; 7.16 sec.
+Execute     ap_eval exec zip -j /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'syr2k' ...
+Execute       ap_set_top_model syr2k 
+Execute       get_model_list syr2k -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model syr2k 
+Execute       preproc_iomode -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 
+Execute       preproc_iomode -model syr2k_Pipeline_VITIS_LOOP_48_25 
+Execute       preproc_iomode -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 
+Execute       preproc_iomode -model syr2k_Pipeline_VITIS_LOOP_48_23 
+Execute       preproc_iomode -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 
+Execute       preproc_iomode -model syr2k_Pipeline_VITIS_LOOP_48_21 
+Execute       preproc_iomode -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 
+Execute       preproc_iomode -model syr2k_Pipeline_VITIS_LOOP_48_2 
+Execute       get_model_list syr2k -filter all-wo-channel 
+INFO-FLOW: Model list for configure: syr2k_Pipeline_VITIS_LOOP_48_2 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 syr2k_Pipeline_VITIS_LOOP_48_21 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 syr2k_Pipeline_VITIS_LOOP_48_23 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 syr2k_Pipeline_VITIS_LOOP_48_25 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 syr2k
+INFO-FLOW: Configuring Module : syr2k_Pipeline_VITIS_LOOP_48_2 ...
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_48_2 
+Execute       apply_spec_resource_limit syr2k_Pipeline_VITIS_LOOP_48_2 
+INFO-FLOW: Configuring Module : syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 ...
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 
+Execute       apply_spec_resource_limit syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 
+INFO-FLOW: Configuring Module : syr2k_Pipeline_VITIS_LOOP_48_21 ...
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_48_21 
+Execute       apply_spec_resource_limit syr2k_Pipeline_VITIS_LOOP_48_21 
+INFO-FLOW: Configuring Module : syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 ...
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 
+Execute       apply_spec_resource_limit syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 
+INFO-FLOW: Configuring Module : syr2k_Pipeline_VITIS_LOOP_48_23 ...
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_48_23 
+Execute       apply_spec_resource_limit syr2k_Pipeline_VITIS_LOOP_48_23 
+INFO-FLOW: Configuring Module : syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 ...
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 
+Execute       apply_spec_resource_limit syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 
+INFO-FLOW: Configuring Module : syr2k_Pipeline_VITIS_LOOP_48_25 ...
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_48_25 
+Execute       apply_spec_resource_limit syr2k_Pipeline_VITIS_LOOP_48_25 
+INFO-FLOW: Configuring Module : syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 ...
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 
+Execute       apply_spec_resource_limit syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 
+INFO-FLOW: Configuring Module : syr2k ...
+Execute       set_default_model syr2k 
+Execute       apply_spec_resource_limit syr2k 
+INFO-FLOW: Model list for preprocess: syr2k_Pipeline_VITIS_LOOP_48_2 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 syr2k_Pipeline_VITIS_LOOP_48_21 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 syr2k_Pipeline_VITIS_LOOP_48_23 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 syr2k_Pipeline_VITIS_LOOP_48_25 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 syr2k
+INFO-FLOW: Preprocessing Module: syr2k_Pipeline_VITIS_LOOP_48_2 ...
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_48_2 
+Execute       cdfg_preprocess -model syr2k_Pipeline_VITIS_LOOP_48_2 
+Execute       rtl_gen_preprocess syr2k_Pipeline_VITIS_LOOP_48_2 
+INFO-FLOW: Preprocessing Module: syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 ...
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 
+Execute       cdfg_preprocess -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 
+Execute       rtl_gen_preprocess syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 
+INFO-FLOW: Preprocessing Module: syr2k_Pipeline_VITIS_LOOP_48_21 ...
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_48_21 
+Execute       cdfg_preprocess -model syr2k_Pipeline_VITIS_LOOP_48_21 
+Execute       rtl_gen_preprocess syr2k_Pipeline_VITIS_LOOP_48_21 
+INFO-FLOW: Preprocessing Module: syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 ...
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 
+Execute       cdfg_preprocess -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 
+Execute       rtl_gen_preprocess syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 
+INFO-FLOW: Preprocessing Module: syr2k_Pipeline_VITIS_LOOP_48_23 ...
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_48_23 
+Execute       cdfg_preprocess -model syr2k_Pipeline_VITIS_LOOP_48_23 
+Execute       rtl_gen_preprocess syr2k_Pipeline_VITIS_LOOP_48_23 
+INFO-FLOW: Preprocessing Module: syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 ...
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 
+Execute       cdfg_preprocess -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 
+Execute       rtl_gen_preprocess syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 
+INFO-FLOW: Preprocessing Module: syr2k_Pipeline_VITIS_LOOP_48_25 ...
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_48_25 
+Execute       cdfg_preprocess -model syr2k_Pipeline_VITIS_LOOP_48_25 
+Execute       rtl_gen_preprocess syr2k_Pipeline_VITIS_LOOP_48_25 
+INFO-FLOW: Preprocessing Module: syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 ...
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 
+Execute       cdfg_preprocess -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 
+Execute       rtl_gen_preprocess syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 
+INFO-FLOW: Preprocessing Module: syr2k ...
+Execute       set_default_model syr2k 
+Execute       cdfg_preprocess -model syr2k 
+Execute       rtl_gen_preprocess syr2k 
+INFO-FLOW: Model list for synthesis: syr2k_Pipeline_VITIS_LOOP_48_2 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 syr2k_Pipeline_VITIS_LOOP_48_21 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 syr2k_Pipeline_VITIS_LOOP_48_23 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 syr2k_Pipeline_VITIS_LOOP_48_25 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 syr2k
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_48_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_48_2 
+Execute       schedule -model syr2k_Pipeline_VITIS_LOOP_48_2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_48_2'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 14, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 15, Depth = 16, loop 'VITIS_LOOP_48_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.14 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.16 seconds; current allocated memory: 848.594 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_2.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_2.sched.adb -f 
+INFO-FLOW: Finish scheduling syr2k_Pipeline_VITIS_LOOP_48_2.
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_48_2 
+Execute       bind -model syr2k_Pipeline_VITIS_LOOP_48_2 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 848.594 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_2.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_2.bind.adb -f 
+INFO-FLOW: Finish binding syr2k_Pipeline_VITIS_LOOP_48_2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 
+Execute       schedule -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 17, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 18, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 19, Depth = 20, loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.22 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.25 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.27 seconds; current allocated memory: 849.715 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4.sched.adb -f 
+INFO-FLOW: Finish scheduling syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4.
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 
+Execute       bind -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.17 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.16 seconds; current allocated memory: 849.715 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.14 sec.
+Execute       db_write -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4.bind.adb -f 
+INFO-FLOW: Finish binding syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_48_21' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_48_21 
+Execute       schedule -model syr2k_Pipeline_VITIS_LOOP_48_21 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_48_2'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp') on port 'gmem' and bus request operation ('gmem_load_3_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp') on port 'gmem' and bus request operation ('gmem_load_3_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp') on port 'gmem' and bus request operation ('gmem_load_3_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp') on port 'gmem' and bus request operation ('gmem_load_3_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp') on port 'gmem' and bus request operation ('gmem_load_3_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp') on port 'gmem' and bus request operation ('gmem_load_3_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 14, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp') on port 'gmem' and bus request operation ('gmem_load_3_req') on port 'gmem'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 15, Depth = 16, loop 'VITIS_LOOP_48_2'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.11 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.24 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 849.973 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_21.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_21.sched.adb -f 
+INFO-FLOW: Finish scheduling syr2k_Pipeline_VITIS_LOOP_48_21.
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_48_21 
+Execute       bind -model syr2k_Pipeline_VITIS_LOOP_48_21 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 849.973 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_21.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_21.bind.adb -f 
+INFO-FLOW: Finish binding syr2k_Pipeline_VITIS_LOOP_48_21.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 
+Execute       schedule -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 17, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 18, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 19, Depth = 20, loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.22 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.26 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 850.238 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.11 sec.
+Execute       db_write -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42.sched.adb -f 
+INFO-FLOW: Finish scheduling syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42.
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 
+Execute       bind -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.19 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 850.238 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.11 sec.
+Execute       db_write -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42.bind.adb -f 
+INFO-FLOW: Finish binding syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_48_23' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_48_23 
+Execute       schedule -model syr2k_Pipeline_VITIS_LOOP_48_23 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_48_2'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp') on port 'gmem' and bus request operation ('gmem_load_9_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp') on port 'gmem' and bus request operation ('gmem_load_9_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp') on port 'gmem' and bus request operation ('gmem_load_9_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp') on port 'gmem' and bus request operation ('gmem_load_9_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp') on port 'gmem' and bus request operation ('gmem_load_9_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp') on port 'gmem' and bus request operation ('gmem_load_9_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 14, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp') on port 'gmem' and bus request operation ('gmem_load_9_req') on port 'gmem'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 15, Depth = 16, loop 'VITIS_LOOP_48_2'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.12 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.23 seconds. CPU system time: 0 seconds. Elapsed time: 0.24 seconds; current allocated memory: 851.355 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_23.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_23.sched.adb -f 
+INFO-FLOW: Finish scheduling syr2k_Pipeline_VITIS_LOOP_48_23.
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_48_23 
+Execute       bind -model syr2k_Pipeline_VITIS_LOOP_48_23 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 851.355 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_23.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_23.bind.adb -f 
+INFO-FLOW: Finish binding syr2k_Pipeline_VITIS_LOOP_48_23.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 
+Execute       schedule -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 17, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 18, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 19, Depth = 20, loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.24 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.28 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.29 seconds; current allocated memory: 852.328 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44.sched.adb -f 
+INFO-FLOW: Finish scheduling syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44.
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 
+Execute       bind -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.18 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.18 seconds; current allocated memory: 852.328 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.12 sec.
+Execute       db_write -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44.bind.adb -f 
+INFO-FLOW: Finish binding syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_48_25' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_48_25 
+Execute       schedule -model syr2k_Pipeline_VITIS_LOOP_48_25 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_48_2'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp') on port 'gmem' and bus request operation ('gmem_load_15_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp') on port 'gmem' and bus request operation ('gmem_load_15_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp') on port 'gmem' and bus request operation ('gmem_load_15_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp') on port 'gmem' and bus request operation ('gmem_load_15_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp') on port 'gmem' and bus request operation ('gmem_load_15_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp') on port 'gmem' and bus request operation ('gmem_load_15_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 14, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp') on port 'gmem' and bus request operation ('gmem_load_15_req') on port 'gmem'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 15, Depth = 16, loop 'VITIS_LOOP_48_2'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.14 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.26 seconds. CPU system time: 0 seconds. Elapsed time: 0.28 seconds; current allocated memory: 852.777 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_25.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_25.sched.adb -f 
+INFO-FLOW: Finish scheduling syr2k_Pipeline_VITIS_LOOP_48_25.
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_48_25 
+Execute       bind -model syr2k_Pipeline_VITIS_LOOP_48_25 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 852.777 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_25.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_25.bind.adb -f 
+INFO-FLOW: Finish binding syr2k_Pipeline_VITIS_LOOP_48_25.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 
+Execute       schedule -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 17, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 18, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 19, Depth = 20, loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.23 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.27 seconds. CPU system time: 0 seconds. Elapsed time: 0.28 seconds; current allocated memory: 853.543 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46.sched.adb -f 
+INFO-FLOW: Finish scheduling syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46.
+Execute       set_default_model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 
+Execute       bind -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.18 seconds. CPU system time: 0 seconds. Elapsed time: 0.19 seconds; current allocated memory: 853.543 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.11 sec.
+Execute       db_write -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46.bind.adb -f 
+INFO-FLOW: Finish binding syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model syr2k 
+Execute       schedule -model syr2k 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.12 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.25 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.26 seconds; current allocated memory: 854.148 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.sched.adb -f 
+INFO-FLOW: Finish scheduling syr2k.
+Execute       set_default_model syr2k 
+Execute       bind -model syr2k 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.18 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.28 seconds. CPU system time: 0 seconds. Elapsed time: 0.28 seconds; current allocated memory: 854.148 MB.
+Execute       syn_report -verbosereport -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.4 sec.
+Execute       db_write -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.bind.adb -f 
+INFO-FLOW: Finish binding syr2k.
+Execute       get_model_list syr2k -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess syr2k_Pipeline_VITIS_LOOP_48_2 
+Execute       rtl_gen_preprocess syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 
+Execute       rtl_gen_preprocess syr2k_Pipeline_VITIS_LOOP_48_21 
+Execute       rtl_gen_preprocess syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 
+Execute       rtl_gen_preprocess syr2k_Pipeline_VITIS_LOOP_48_23 
+Execute       rtl_gen_preprocess syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 
+Execute       rtl_gen_preprocess syr2k_Pipeline_VITIS_LOOP_48_25 
+Execute       rtl_gen_preprocess syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 
+Execute       rtl_gen_preprocess syr2k 
+INFO-FLOW: Model list for RTL generation: syr2k_Pipeline_VITIS_LOOP_48_2 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 syr2k_Pipeline_VITIS_LOOP_48_21 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 syr2k_Pipeline_VITIS_LOOP_48_23 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 syr2k_Pipeline_VITIS_LOOP_48_25 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 syr2k
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_48_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model syr2k_Pipeline_VITIS_LOOP_48_2 -top_prefix syr2k_ -sub_prefix syr2k_ -mg_file /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_2.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_48_2' pipeline 'VITIS_LOOP_48_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_48_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.45 seconds. CPU system time: 0 seconds. Elapsed time: 0.44 seconds; current allocated memory: 854.359 MB.
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.rtl_wrap.cfg.tcl 
+Execute       gen_rtl syr2k_Pipeline_VITIS_LOOP_48_2 -style xilinx -f -lang vhdl -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/vhdl/syr2k_syr2k_Pipeline_VITIS_LOOP_48_2 
+Execute       gen_rtl syr2k_Pipeline_VITIS_LOOP_48_2 -style xilinx -f -lang vlog -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/verilog/syr2k_syr2k_Pipeline_VITIS_LOOP_48_2 
+Execute       syn_report -csynth -model syr2k_Pipeline_VITIS_LOOP_48_2 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/report/syr2k_Pipeline_VITIS_LOOP_48_2_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model syr2k_Pipeline_VITIS_LOOP_48_2 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/report/syr2k_Pipeline_VITIS_LOOP_48_2_csynth.xml 
+Execute       syn_report -verbosereport -model syr2k_Pipeline_VITIS_LOOP_48_2 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_2.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -model syr2k_Pipeline_VITIS_LOOP_48_2 -f -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_2.adb 
+Execute       db_write -model syr2k_Pipeline_VITIS_LOOP_48_2 -bindview -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info syr2k_Pipeline_VITIS_LOOP_48_2 -p /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_2 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 -top_prefix syr2k_ -sub_prefix syr2k_ -mg_file /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' pipeline 'VITIS_LOOP_52_3_VITIS_LOOP_54_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32s_48_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.23 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.25 seconds; current allocated memory: 856.410 MB.
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.rtl_wrap.cfg.tcl 
+Execute       gen_rtl syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 -style xilinx -f -lang vhdl -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/vhdl/syr2k_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 
+Execute       gen_rtl syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 -style xilinx -f -lang vlog -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/verilog/syr2k_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 
+Execute       syn_report -csynth -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/report/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.12 sec.
+Execute       syn_report -rtlxml -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/report/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4_csynth.xml 
+Execute       syn_report -verbosereport -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.19 sec.
+Execute       db_write -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 -f -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4.adb 
+Execute       db_write -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 -bindview -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 -p /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_48_21' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model syr2k_Pipeline_VITIS_LOOP_48_21 -top_prefix syr2k_ -sub_prefix syr2k_ -mg_file /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_21.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_48_21' pipeline 'VITIS_LOOP_48_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_48_21'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.47 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.48 seconds; current allocated memory: 858.715 MB.
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.rtl_wrap.cfg.tcl 
+Execute       gen_rtl syr2k_Pipeline_VITIS_LOOP_48_21 -style xilinx -f -lang vhdl -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/vhdl/syr2k_syr2k_Pipeline_VITIS_LOOP_48_21 
+Execute       gen_rtl syr2k_Pipeline_VITIS_LOOP_48_21 -style xilinx -f -lang vlog -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/verilog/syr2k_syr2k_Pipeline_VITIS_LOOP_48_21 
+Execute       syn_report -csynth -model syr2k_Pipeline_VITIS_LOOP_48_21 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/report/syr2k_Pipeline_VITIS_LOOP_48_21_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model syr2k_Pipeline_VITIS_LOOP_48_21 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/report/syr2k_Pipeline_VITIS_LOOP_48_21_csynth.xml 
+Execute       syn_report -verbosereport -model syr2k_Pipeline_VITIS_LOOP_48_21 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_21.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -model syr2k_Pipeline_VITIS_LOOP_48_21 -f -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_21.adb 
+Execute       db_write -model syr2k_Pipeline_VITIS_LOOP_48_21 -bindview -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info syr2k_Pipeline_VITIS_LOOP_48_21 -p /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_21 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 -top_prefix syr2k_ -sub_prefix syr2k_ -mg_file /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' pipeline 'VITIS_LOOP_52_3_VITIS_LOOP_54_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32s_48_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.26 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 860.656 MB.
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.rtl_wrap.cfg.tcl 
+Execute       gen_rtl syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 -style xilinx -f -lang vhdl -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/vhdl/syr2k_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 
+Execute       gen_rtl syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 -style xilinx -f -lang vlog -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/verilog/syr2k_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 
+Execute       syn_report -csynth -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/report/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.13 sec.
+Execute       syn_report -rtlxml -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/report/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42_csynth.xml 
+Execute       syn_report -verbosereport -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.18 sec.
+Execute       db_write -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 -f -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42.adb 
+Execute       db_write -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 -bindview -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 -p /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_48_23' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model syr2k_Pipeline_VITIS_LOOP_48_23 -top_prefix syr2k_ -sub_prefix syr2k_ -mg_file /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_23.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_48_23' pipeline 'VITIS_LOOP_48_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_48_23'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.48 seconds. CPU system time: 0 seconds. Elapsed time: 0.49 seconds; current allocated memory: 863.023 MB.
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.rtl_wrap.cfg.tcl 
+Execute       gen_rtl syr2k_Pipeline_VITIS_LOOP_48_23 -style xilinx -f -lang vhdl -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/vhdl/syr2k_syr2k_Pipeline_VITIS_LOOP_48_23 
+Execute       gen_rtl syr2k_Pipeline_VITIS_LOOP_48_23 -style xilinx -f -lang vlog -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/verilog/syr2k_syr2k_Pipeline_VITIS_LOOP_48_23 
+Execute       syn_report -csynth -model syr2k_Pipeline_VITIS_LOOP_48_23 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/report/syr2k_Pipeline_VITIS_LOOP_48_23_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model syr2k_Pipeline_VITIS_LOOP_48_23 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/report/syr2k_Pipeline_VITIS_LOOP_48_23_csynth.xml 
+Execute       syn_report -verbosereport -model syr2k_Pipeline_VITIS_LOOP_48_23 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_23.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -model syr2k_Pipeline_VITIS_LOOP_48_23 -f -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_23.adb 
+Execute       db_write -model syr2k_Pipeline_VITIS_LOOP_48_23 -bindview -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info syr2k_Pipeline_VITIS_LOOP_48_23 -p /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_23 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 -top_prefix syr2k_ -sub_prefix syr2k_ -mg_file /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' pipeline 'VITIS_LOOP_52_3_VITIS_LOOP_54_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32s_48_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.26 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.28 seconds; current allocated memory: 864.969 MB.
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.rtl_wrap.cfg.tcl 
+Execute       gen_rtl syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 -style xilinx -f -lang vhdl -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/vhdl/syr2k_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 
+Execute       gen_rtl syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 -style xilinx -f -lang vlog -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/verilog/syr2k_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 
+Execute       syn_report -csynth -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/report/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.13 sec.
+Execute       syn_report -rtlxml -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/report/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44_csynth.xml 
+Execute       syn_report -verbosereport -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.17 sec.
+Execute       db_write -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 -f -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44.adb 
+Execute       db_write -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 -bindview -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 -p /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_48_25' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model syr2k_Pipeline_VITIS_LOOP_48_25 -top_prefix syr2k_ -sub_prefix syr2k_ -mg_file /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_25.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_48_25' pipeline 'VITIS_LOOP_48_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_48_25'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.48 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.49 seconds; current allocated memory: 867.336 MB.
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.rtl_wrap.cfg.tcl 
+Execute       gen_rtl syr2k_Pipeline_VITIS_LOOP_48_25 -style xilinx -f -lang vhdl -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/vhdl/syr2k_syr2k_Pipeline_VITIS_LOOP_48_25 
+Execute       gen_rtl syr2k_Pipeline_VITIS_LOOP_48_25 -style xilinx -f -lang vlog -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/verilog/syr2k_syr2k_Pipeline_VITIS_LOOP_48_25 
+Execute       syn_report -csynth -model syr2k_Pipeline_VITIS_LOOP_48_25 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/report/syr2k_Pipeline_VITIS_LOOP_48_25_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model syr2k_Pipeline_VITIS_LOOP_48_25 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/report/syr2k_Pipeline_VITIS_LOOP_48_25_csynth.xml 
+Execute       syn_report -verbosereport -model syr2k_Pipeline_VITIS_LOOP_48_25 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_25.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -model syr2k_Pipeline_VITIS_LOOP_48_25 -f -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_25.adb 
+Execute       db_write -model syr2k_Pipeline_VITIS_LOOP_48_25 -bindview -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info syr2k_Pipeline_VITIS_LOOP_48_25 -p /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_25 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 -top_prefix syr2k_ -sub_prefix syr2k_ -mg_file /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' pipeline 'VITIS_LOOP_52_3_VITIS_LOOP_54_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32s_48_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.25 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 869.297 MB.
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.rtl_wrap.cfg.tcl 
+Execute       gen_rtl syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 -style xilinx -f -lang vhdl -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/vhdl/syr2k_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 
+Execute       gen_rtl syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 -style xilinx -f -lang vlog -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/verilog/syr2k_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 
+Execute       syn_report -csynth -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/report/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.13 sec.
+Execute       syn_report -rtlxml -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/report/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46_csynth.xml 
+Execute       syn_report -verbosereport -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.18 sec.
+Execute       db_write -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 -f -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46.adb 
+Execute       db_write -model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 -bindview -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 -p /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model syr2k -top_prefix  -sub_prefix syr2k_ -mg_file /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.compgen.tcl 
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'syr2k/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'syr2k/A' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'syr2k/B' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'syr2k/C' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'syr2k/alpha' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'syr2k/beta' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'syr2k' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'A', 'B' and 'C' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fptoui_32ns_32_2_no_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k'.
+Command       create_rtl_model done; 0.13 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.56 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.58 seconds; current allocated memory: 873.816 MB.
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.rtl_wrap.cfg.tcl 
+Execute       gen_rtl syr2k -istop -style xilinx -f -lang vhdl -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/vhdl/syr2k 
+Execute       gen_rtl syr2k -istop -style xilinx -f -lang vlog -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/verilog/syr2k 
+Execute       syn_report -csynth -model syr2k -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/report/syr2k_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model syr2k -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/report/syr2k_csynth.xml 
+Execute       syn_report -verbosereport -model syr2k -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.47 sec.
+Execute       db_write -model syr2k -f -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.adb 
+Execute       db_write -model syr2k -bindview -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info syr2k -p /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k 
+Execute       export_constraint_db -f -tool general -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.constraint.tcl 
+Execute       syn_report -designview -model syr2k -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.design.xml 
+Command       syn_report done; 0.56 sec.
+Execute       syn_report -csynthDesign -model syr2k -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/report/csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -wcfg -model syr2k -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_dataflow_ana.wcfg 
+Execute       syn_report -protoinst -model syr2k -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.protoinst 
+Execute       sc_get_clocks syr2k 
+Execute       sc_get_portdomain syr2k 
+INFO-FLOW: Model list for RTL component generation: syr2k_Pipeline_VITIS_LOOP_48_2 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 syr2k_Pipeline_VITIS_LOOP_48_21 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 syr2k_Pipeline_VITIS_LOOP_48_23 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 syr2k_Pipeline_VITIS_LOOP_48_25 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 syr2k
+INFO-FLOW: Handling components in module [syr2k_Pipeline_VITIS_LOOP_48_2] ... 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_2.compgen.tcl 
+INFO-FLOW: Found component syr2k_mul_32s_32ns_45_1_1.
+INFO-FLOW: Append model syr2k_mul_32s_32ns_45_1_1
+INFO-FLOW: Found component syr2k_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model syr2k_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4] ... 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4.compgen.tcl 
+INFO-FLOW: Found component syr2k_mul_32ns_32s_48_1_1.
+INFO-FLOW: Append model syr2k_mul_32ns_32s_48_1_1
+INFO-FLOW: Found component syr2k_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model syr2k_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [syr2k_Pipeline_VITIS_LOOP_48_21] ... 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_21.compgen.tcl 
+INFO-FLOW: Found component syr2k_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model syr2k_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42] ... 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42.compgen.tcl 
+INFO-FLOW: Found component syr2k_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model syr2k_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [syr2k_Pipeline_VITIS_LOOP_48_23] ... 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_23.compgen.tcl 
+INFO-FLOW: Found component syr2k_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model syr2k_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44] ... 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44.compgen.tcl 
+INFO-FLOW: Found component syr2k_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model syr2k_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [syr2k_Pipeline_VITIS_LOOP_48_25] ... 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_25.compgen.tcl 
+INFO-FLOW: Found component syr2k_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model syr2k_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46] ... 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46.compgen.tcl 
+INFO-FLOW: Found component syr2k_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model syr2k_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [syr2k] ... 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.compgen.tcl 
+INFO-FLOW: Found component syr2k_fmul_32ns_32ns_32_2_max_dsp_1.
+INFO-FLOW: Append model syr2k_fmul_32ns_32ns_32_2_max_dsp_1
+INFO-FLOW: Found component syr2k_fptoui_32ns_32_2_no_dsp_1.
+INFO-FLOW: Append model syr2k_fptoui_32ns_32_2_no_dsp_1
+INFO-FLOW: Found component syr2k_gmem_m_axi.
+INFO-FLOW: Append model syr2k_gmem_m_axi
+INFO-FLOW: Found component syr2k_control_s_axi.
+INFO-FLOW: Append model syr2k_control_s_axi
+INFO-FLOW: Append model syr2k_Pipeline_VITIS_LOOP_48_2
+INFO-FLOW: Append model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4
+INFO-FLOW: Append model syr2k_Pipeline_VITIS_LOOP_48_21
+INFO-FLOW: Append model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42
+INFO-FLOW: Append model syr2k_Pipeline_VITIS_LOOP_48_23
+INFO-FLOW: Append model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44
+INFO-FLOW: Append model syr2k_Pipeline_VITIS_LOOP_48_25
+INFO-FLOW: Append model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46
+INFO-FLOW: Append model syr2k
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: syr2k_mul_32s_32ns_45_1_1 syr2k_flow_control_loop_pipe_sequential_init syr2k_mul_32ns_32s_48_1_1 syr2k_flow_control_loop_pipe_sequential_init syr2k_flow_control_loop_pipe_sequential_init syr2k_flow_control_loop_pipe_sequential_init syr2k_flow_control_loop_pipe_sequential_init syr2k_flow_control_loop_pipe_sequential_init syr2k_flow_control_loop_pipe_sequential_init syr2k_flow_control_loop_pipe_sequential_init syr2k_fmul_32ns_32ns_32_2_max_dsp_1 syr2k_fptoui_32ns_32_2_no_dsp_1 syr2k_gmem_m_axi syr2k_control_s_axi syr2k_Pipeline_VITIS_LOOP_48_2 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 syr2k_Pipeline_VITIS_LOOP_48_21 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 syr2k_Pipeline_VITIS_LOOP_48_23 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 syr2k_Pipeline_VITIS_LOOP_48_25 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 syr2k
+INFO-FLOW: Generating /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/autopilot.rtl.models.txt file...
+INFO-FLOW: To file: write model syr2k_mul_32s_32ns_45_1_1
+INFO-FLOW: To file: write model syr2k_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model syr2k_mul_32ns_32s_48_1_1
+INFO-FLOW: To file: write model syr2k_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model syr2k_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model syr2k_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model syr2k_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model syr2k_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model syr2k_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model syr2k_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model syr2k_fmul_32ns_32ns_32_2_max_dsp_1
+INFO-FLOW: To file: write model syr2k_fptoui_32ns_32_2_no_dsp_1
+INFO-FLOW: To file: write model syr2k_gmem_m_axi
+INFO-FLOW: To file: write model syr2k_control_s_axi
+INFO-FLOW: To file: write model syr2k_Pipeline_VITIS_LOOP_48_2
+INFO-FLOW: To file: write model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4
+INFO-FLOW: To file: write model syr2k_Pipeline_VITIS_LOOP_48_21
+INFO-FLOW: To file: write model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42
+INFO-FLOW: To file: write model syr2k_Pipeline_VITIS_LOOP_48_23
+INFO-FLOW: To file: write model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44
+INFO-FLOW: To file: write model syr2k_Pipeline_VITIS_LOOP_48_25
+INFO-FLOW: To file: write model syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46
+INFO-FLOW: To file: write model syr2k
+INFO-FLOW: Generating /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/autopilot.rtl.models.tcl file...
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::auto_generate_csynth_design
+INFO-FLOW: DBG:PUTS: read_platform_lib /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/global.setting.tcl
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/generic/autopilot/common.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/generic/autopilot/op.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/generic/autopilot/interface.gen 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.12 sec.
+INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=20.000 (was NA)
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/vhdl' dstVlogDir='/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/vlog' tclDir='/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db' modelList='syr2k_mul_32s_32ns_45_1_1
+syr2k_flow_control_loop_pipe_sequential_init
+syr2k_mul_32ns_32s_48_1_1
+syr2k_flow_control_loop_pipe_sequential_init
+syr2k_flow_control_loop_pipe_sequential_init
+syr2k_flow_control_loop_pipe_sequential_init
+syr2k_flow_control_loop_pipe_sequential_init
+syr2k_flow_control_loop_pipe_sequential_init
+syr2k_flow_control_loop_pipe_sequential_init
+syr2k_flow_control_loop_pipe_sequential_init
+syr2k_fmul_32ns_32ns_32_2_max_dsp_1
+syr2k_fptoui_32ns_32_2_no_dsp_1
+syr2k_gmem_m_axi
+syr2k_control_s_axi
+syr2k_Pipeline_VITIS_LOOP_48_2
+syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4
+syr2k_Pipeline_VITIS_LOOP_48_21
+syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42
+syr2k_Pipeline_VITIS_LOOP_48_23
+syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44
+syr2k_Pipeline_VITIS_LOOP_48_25
+syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46
+syr2k
+' expOnly='0'
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7v585t-ffg1761-2 -data names -quiet 
+Execute       ap_part_info -name xc7v585t-ffg1761-2 -data info -quiet 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_2.compgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4.compgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_21.compgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42.compgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_23.compgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44.compgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_25.compgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46.compgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.compgen.tcl 
+Execute         source ./control.slave.tcl 
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.45 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.49 seconds; current allocated memory: 877.719 MB.
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::create_csynth_xml bind_info_var='bind_info' RtlSubPrefix='syr2k_' outfile=''
+INFO-FLOW: Running: create_csynth_xml read xml data
+INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml bind info
+INFO-FLOW: Done: create_csynth_xml bind info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml config info
+INFO-FLOW: Done: create_csynth_xml config info time: 0.1 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml write xml
+INFO-FLOW: Done: create_csynth_xml write xml time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      create_csynth_xml wrote csynth_xml=/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/syn/report/csynth.xml
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='syr2k_mul_32s_32ns_45_1_1
+syr2k_flow_control_loop_pipe_sequential_init
+syr2k_mul_32ns_32s_48_1_1
+syr2k_flow_control_loop_pipe_sequential_init
+syr2k_flow_control_loop_pipe_sequential_init
+syr2k_flow_control_loop_pipe_sequential_init
+syr2k_flow_control_loop_pipe_sequential_init
+syr2k_flow_control_loop_pipe_sequential_init
+syr2k_flow_control_loop_pipe_sequential_init
+syr2k_flow_control_loop_pipe_sequential_init
+syr2k_fmul_32ns_32ns_32_2_max_dsp_1
+syr2k_fptoui_32ns_32_2_no_dsp_1
+syr2k_gmem_m_axi
+syr2k_control_s_axi
+syr2k_Pipeline_VITIS_LOOP_48_2
+syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4
+syr2k_Pipeline_VITIS_LOOP_48_21
+syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42
+syr2k_Pipeline_VITIS_LOOP_48_23
+syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44
+syr2k_Pipeline_VITIS_LOOP_48_25
+syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46
+syr2k
+' rtl_lang='both' bootstrap_tcl='false' outdir='' outfilename=''
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/top-io-be.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.compgen.dataonly.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.compgen.dataonly.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.rtl_wrap.cfg.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.compgen.dataonly.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_2.tbgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4.tbgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_21.tbgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42.tbgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_23.tbgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44.tbgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_48_25.tbgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46.tbgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7v585t-ffg1761-2 -data names -quiet 
+Execute       ap_part_info -name xc7v585t-ffg1761-2 -data info -quiet 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.constraint.tcl 
+Execute       sc_get_clocks syr2k 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/impl/misc/syr2k_fmul_32ns_32ns_32_2_max_dsp_1_ip.tcl 
+Execute       source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/impl/misc/syr2k_fptoui_32ns_32_2_no_dsp_1_ip.tcl 
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {{BINDTYPE adapter DISPLAY {bind_adapter axilite} ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA yes RTLNAME control_s_axi_U SOURCE {} VARIABLE {} MODULE syr2k LOOP {} BUNDLEDNAME control DSP 0 BRAM 0 URAM 0} {BINDTYPE adapter DISPLAY {bind_adapter axi_master} ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA yes RTLNAME gmem_m_axi_U SOURCE {} VARIABLE {} MODULE syr2k LOOP {} BUNDLEDNAME gmem DSP 0 BRAM 0 URAM 0}} report_dict {TOPINST syr2k MODULE2INSTS {syr2k syr2k syr2k_Pipeline_VITIS_LOOP_48_2 grp_syr2k_Pipeline_VITIS_LOOP_48_2_fu_162 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 grp_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4_fu_172 syr2k_Pipeline_VITIS_LOOP_48_21 grp_syr2k_Pipeline_VITIS_LOOP_48_21_fu_185 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 grp_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42_fu_195 syr2k_Pipeline_VITIS_LOOP_48_23 grp_syr2k_Pipeline_VITIS_LOOP_48_23_fu_208 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 grp_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44_fu_218 syr2k_Pipeline_VITIS_LOOP_48_25 grp_syr2k_Pipeline_VITIS_LOOP_48_25_fu_231 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 grp_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46_fu_241} INST2MODULE {syr2k syr2k grp_syr2k_Pipeline_VITIS_LOOP_48_2_fu_162 syr2k_Pipeline_VITIS_LOOP_48_2 grp_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4_fu_172 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 grp_syr2k_Pipeline_VITIS_LOOP_48_21_fu_185 syr2k_Pipeline_VITIS_LOOP_48_21 grp_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42_fu_195 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 grp_syr2k_Pipeline_VITIS_LOOP_48_23_fu_208 syr2k_Pipeline_VITIS_LOOP_48_23 grp_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44_fu_218 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 grp_syr2k_Pipeline_VITIS_LOOP_48_25_fu_231 syr2k_Pipeline_VITIS_LOOP_48_25 grp_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46_fu_241 syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46} INSTDATA {syr2k {DEPTH 1 CHILDREN {grp_syr2k_Pipeline_VITIS_LOOP_48_2_fu_162 grp_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4_fu_172 grp_syr2k_Pipeline_VITIS_LOOP_48_21_fu_185 grp_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42_fu_195 grp_syr2k_Pipeline_VITIS_LOOP_48_23_fu_208 grp_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44_fu_218 grp_syr2k_Pipeline_VITIS_LOOP_48_25_fu_231 grp_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46_fu_241}} grp_syr2k_Pipeline_VITIS_LOOP_48_2_fu_162 {DEPTH 2 CHILDREN {}} grp_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4_fu_172 {DEPTH 2 CHILDREN {}} grp_syr2k_Pipeline_VITIS_LOOP_48_21_fu_185 {DEPTH 2 CHILDREN {}} grp_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42_fu_195 {DEPTH 2 CHILDREN {}} grp_syr2k_Pipeline_VITIS_LOOP_48_23_fu_208 {DEPTH 2 CHILDREN {}} grp_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44_fu_218 {DEPTH 2 CHILDREN {}} grp_syr2k_Pipeline_VITIS_LOOP_48_25_fu_231 {DEPTH 2 CHILDREN {}} grp_syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46_fu_241 {DEPTH 2 CHILDREN {}}} MODULEDATA {syr2k_Pipeline_VITIS_LOOP_48_2 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next_fu_158_p2 SOURCE {} VARIABLE indvars_iv_next LOOP VITIS_LOOP_48_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_91_fu_178_p2 SOURCE {} VARIABLE empty_91 LOOP VITIS_LOOP_48_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32ns_45_1_1_U1 SOURCE {} VARIABLE empty_92 LOOP VITIS_LOOP_48_2 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}}} AREA {DSP 3 BRAM 0 URAM 0}} syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_67_fu_282_p2 SOURCE {} VARIABLE empty_67 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_68_fu_288_p2 SOURCE {} VARIABLE empty_68 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvar_flatten_next_fu_330_p2 SOURCE {} VARIABLE indvar_flatten_next LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next16_dup315_fu_344_p2 SOURCE {} VARIABLE indvars_iv_next16_dup315 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME p_mid1228_fu_376_p2 SOURCE {} VARIABLE p_mid1228 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME p_mid1230_fu_382_p2 SOURCE {} VARIABLE p_mid1230 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_73_fu_466_p2 SOURCE {} VARIABLE empty_73 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32ns_45_1_1_U8 SOURCE {} VARIABLE empty_74 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32ns_32s_48_1_1_U9 SOURCE {} VARIABLE empty_75 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_76_fu_492_p2 SOURCE {} VARIABLE empty_76 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32ns_45_1_1_U10 SOURCE {} VARIABLE empty_77 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32ns_32s_48_1_1_U11 SOURCE {} VARIABLE empty_78 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_79_fu_532_p2 SOURCE {} VARIABLE empty_79 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next9_fu_558_p2 SOURCE {} VARIABLE indvars_iv_next9 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 12 BRAM 0 URAM 0}} syr2k_Pipeline_VITIS_LOOP_48_21 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next20_fu_164_p2 SOURCE {} VARIABLE indvars_iv_next20 LOOP VITIS_LOOP_48_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_89_fu_194_p2 SOURCE {} VARIABLE empty_89 LOOP VITIS_LOOP_48_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32ns_45_1_1_U21 SOURCE {} VARIABLE empty_90 LOOP VITIS_LOOP_48_2 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}}} AREA {DSP 3 BRAM 0 URAM 0}} syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_53_fu_282_p2 SOURCE {} VARIABLE empty_53 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_54_fu_288_p2 SOURCE {} VARIABLE empty_54 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvar_flatten_next258_fu_330_p2 SOURCE {} VARIABLE indvar_flatten_next258 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next34_dup317_fu_344_p2 SOURCE {} VARIABLE indvars_iv_next34_dup317 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME p_mid1249_fu_376_p2 SOURCE {} VARIABLE p_mid1249 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME p_mid1251_fu_382_p2 SOURCE {} VARIABLE p_mid1251 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_59_fu_466_p2 SOURCE {} VARIABLE empty_59 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32ns_45_1_1_U27 SOURCE {} VARIABLE empty_60 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32ns_32s_48_1_1_U28 SOURCE {} VARIABLE empty_61 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_62_fu_492_p2 SOURCE {} VARIABLE empty_62 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32ns_45_1_1_U29 SOURCE {} VARIABLE empty_63 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32ns_32s_48_1_1_U30 SOURCE {} VARIABLE empty_64 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_65_fu_532_p2 SOURCE {} VARIABLE empty_65 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next27_fu_558_p2 SOURCE {} VARIABLE indvars_iv_next27 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 12 BRAM 0 URAM 0}} syr2k_Pipeline_VITIS_LOOP_48_23 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next38_fu_164_p2 SOURCE {} VARIABLE indvars_iv_next38 LOOP VITIS_LOOP_48_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_86_fu_194_p2 SOURCE {} VARIABLE empty_86 LOOP VITIS_LOOP_48_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32ns_45_1_1_U39 SOURCE {} VARIABLE empty_87 LOOP VITIS_LOOP_48_2 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}}} AREA {DSP 3 BRAM 0 URAM 0}} syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_39_fu_282_p2 SOURCE {} VARIABLE empty_39 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_40_fu_288_p2 SOURCE {} VARIABLE empty_40 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvar_flatten_next282_fu_330_p2 SOURCE {} VARIABLE indvar_flatten_next282 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next52_dup319_fu_344_p2 SOURCE {} VARIABLE indvars_iv_next52_dup319 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME p_mid1273_fu_376_p2 SOURCE {} VARIABLE p_mid1273 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME p_mid1275_fu_382_p2 SOURCE {} VARIABLE p_mid1275 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_45_fu_466_p2 SOURCE {} VARIABLE empty_45 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32ns_45_1_1_U45 SOURCE {} VARIABLE empty_46 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32ns_32s_48_1_1_U46 SOURCE {} VARIABLE empty_47 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_48_fu_492_p2 SOURCE {} VARIABLE empty_48 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32ns_45_1_1_U47 SOURCE {} VARIABLE empty_49 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32ns_32s_48_1_1_U48 SOURCE {} VARIABLE empty_50 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_51_fu_532_p2 SOURCE {} VARIABLE empty_51 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next45_fu_558_p2 SOURCE {} VARIABLE indvars_iv_next45 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 12 BRAM 0 URAM 0}} syr2k_Pipeline_VITIS_LOOP_48_25 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next56_fu_160_p2 SOURCE {} VARIABLE indvars_iv_next56 LOOP VITIS_LOOP_48_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_83_fu_194_p2 SOURCE {} VARIABLE empty_83 LOOP VITIS_LOOP_48_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32ns_45_1_1_U57 SOURCE {} VARIABLE empty_84 LOOP VITIS_LOOP_48_2 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}}} AREA {DSP 3 BRAM 0 URAM 0}} syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_24_fu_275_p2 SOURCE {} VARIABLE empty_24 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_25_fu_281_p2 SOURCE {} VARIABLE empty_25 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvar_flatten_next306_fu_313_p2 SOURCE {} VARIABLE indvar_flatten_next306 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next70_dup321_fu_336_p2 SOURCE {} VARIABLE indvars_iv_next70_dup321 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME p_mid1297_fu_368_p2 SOURCE {} VARIABLE p_mid1297 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME p_mid1299_fu_374_p2 SOURCE {} VARIABLE p_mid1299 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_31_fu_462_p2 SOURCE {} VARIABLE empty_31 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32ns_45_1_1_U63 SOURCE {} VARIABLE empty_32 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32ns_32s_48_1_1_U64 SOURCE {} VARIABLE empty_33 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_34_fu_488_p2 SOURCE {} VARIABLE empty_34 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32ns_45_1_1_U65 SOURCE {} VARIABLE empty_35 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32ns_32s_48_1_1_U66 SOURCE {} VARIABLE empty_36 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_37_fu_528_p2 SOURCE {} VARIABLE empty_37 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next63_fu_554_p2 SOURCE {} VARIABLE indvars_iv_next63 LOOP VITIS_LOOP_52_3_VITIS_LOOP_54_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 12 BRAM 0 URAM 0}} syr2k {BINDINFO {{BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U75 SOURCE {} VARIABLE tmp LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 1 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_2_max_dsp_1_U76 SOURCE {} VARIABLE tmp_1 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next82_fu_319_p2 SOURCE {} VARIABLE indvars_iv_next82 LOOP VITIS_LOOP_46_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next80_fu_325_p2 SOURCE {} VARIABLE indvars_iv_next80 LOOP VITIS_LOOP_46_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next78_fu_377_p2 SOURCE {} VARIABLE indvars_iv_next78 LOOP VITIS_LOOP_46_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next76_fu_416_p2 SOURCE {} VARIABLE indvars_iv_next76 LOOP VITIS_LOOP_46_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next74_fu_455_p2 SOURCE {} VARIABLE indvars_iv_next74 LOOP VITIS_LOOP_46_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 66 BRAM 0 URAM 0}}}}'
+INFO-FLOW: DBG:PUTS:      update_csynth_reports json2rpt_hw_sw_interfaces
+INFO-FLOW: Running: gen_csynth_sec_pragma
+INFO-FLOW: Done: gen_csynth_sec_pragma time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      update_csynth_reports wrote xml
+INFO-FLOW: DBG:PUTS:      update_csynth_reports appended to csynth rpt file
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.96 seconds. CPU system time: 0.04 seconds. Elapsed time: 1.01 seconds; current allocated memory: 883.859 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for syr2k.
+INFO: [VLOG 209-307] Generating Verilog RTL for syr2k.
+Execute       syn_report -model syr2k -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 68.49 MHz
+Command     autosyn done; 9.91 sec.
+Command   csynth_design done; 17.12 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 15.47 seconds. CPU system time: 1.53 seconds. Elapsed time: 17.12 seconds; current allocated memory: 132.887 MB.
+Execute   cosim_design 
+INFO: [HLS 200-1510] Running: cosim_design 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:PUTS: read_platform_lib /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/global.setting.tcl
+Execute     source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/generic/autopilot/common.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/generic/autopilot/op.gen 
+Execute     source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/generic/autopilot/interface.gen 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source /home/bruno/Documents/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.12 sec.
+Execute     ap_part_info -name xc7v585t-ffg1761-2 -data names -quiet 
+Execute     ap_part_info -name xc7v585t-ffg1761-2 -data info -quiet 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.rtl_wrap.cfg.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+Execute     ap_part_info -name xc7v585t-ffg1761-2 -data info 
+Execute     ap_eval exec -ignorestderr /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang -gcc-toolchain /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/gcc -foptimization-record-file=/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.c.clang.autosim-tb.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-builtin-isinf -fno-builtin-isnan -E -Wno-unknown-pragmas -Wno-unknown-pragmas -DGCC_COMPATIBLE_APINT -DAESL_TB -D__HLS_COSIM__ -D__VITIS_HLS__ -I /usr/include/x86_64-linux-gnu -I /home/bruno/Documents/Vitis_HLS/2022.2/include -I include /home/bruno/Desktop/benchmarks/syr2k/syr2k_taffo.c -o /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/./sim/autowrap/testbench/syr2k_taffo.c_pre.c -std=gnu89 -D__DSP48E1__ > /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.c.clang.autosim-tb.out.log 2> /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.c.clang.autosim-tb.err.log 
+INFO-FLOW: TB processing: /home/bruno/Desktop/benchmarks/syr2k/syr2k_taffo.c /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/./sim/autowrap/testbench/syr2k_taffo.c_pre.c
+Execute     clang_tidy xilinx-tb-process -desc tb-process /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/./sim/autowrap/testbench/syr2k_taffo.c_pre.c.tb.c std=gnu89 
+INFO-FLOW: exec /home/bruno/Documents/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-tb-process -fix-errors /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/./sim/autowrap/testbench/syr2k_taffo.c_pre.c.tb.c -- -std=gnu89 -fhls -ferror-limit=0
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/./sim/autowrap/testbench/tb.status.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.rtl_wrap.cfg.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.rtl_wrap.cfg.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.rtl_wrap.cfg.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute     ap_part_info -name xc7v585t-ffg1761-2 -data info 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.rtl_wrap.cfg.tcl 
+Execute     source .run_sim.tcl 
+INFO: [COSIM 212-302] Starting C TB testing ... 
+Command     ap_source done; 0.13 sec.
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+Execute     source ../tv/cdatafile/ref.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute     source ../tv/cdatafile/ref.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute     source /home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k.tbgen.tcl 
+Execute     ap_part_info -name xc7v585t-ffg1761-2 -data names -quiet 
+Execute     ap_part_info -name xc7v585t-ffg1761-2 -data info -quiet 
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+Execute     source .run_sim.tcl 
+Execute       source check_sim.tcl 
+Execute       source dataflow_monitor_API.tcl 
+Execute       source .sim.status.tcl 
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+Command     ap_source done; 34.76 sec.
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+Command   cosim_design done; 68.96 sec.
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 79.9 seconds. CPU system time: 4.45 seconds. Elapsed time: 68.96 seconds; current allocated memory: 5.469 MB.
+Command ap_source done; 100.22 sec.
+Execute cleanup_all 

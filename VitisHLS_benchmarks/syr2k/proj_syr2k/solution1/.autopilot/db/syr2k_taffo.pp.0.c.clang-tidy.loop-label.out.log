@@ -1,0 +1,40 @@
+/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c:3319:3: warning: Added loop label VITIS_LOOP_46_1:   [xilinx-label-all-loops]
+  for (i = 0; i < 16; i++) {
+  ^~~
+  VITIS_LOOP_46_1: 
+/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c:3319:3: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c:3321:2: warning: Added loop label VITIS_LOOP_48_2:   [xilinx-label-all-loops]
+ for (j = 0; j <= i; j++){
+ ^~~
+ VITIS_LOOP_48_2: 
+/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c:3321:2: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c:3325:5: warning: Added loop label VITIS_LOOP_52_3:   [xilinx-label-all-loops]
+    for (k = 0; k < 16; k++){
+    ^~~
+    VITIS_LOOP_52_3: 
+/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c:3325:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c:3327:2: warning: Added loop label VITIS_LOOP_54_4:   [xilinx-label-all-loops]
+ for (j = 0; j <= i; j++)
+ ^~~
+ VITIS_LOOP_54_4: 
+/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c:3327:2: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c:3355:3: warning: Added loop label VITIS_LOOP_82_1:   [xilinx-label-all-loops]
+  for (i = 0; i < n; i++){
+  ^~~
+  VITIS_LOOP_82_1: 
+/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c:3355:3: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c:3356:5: warning: Added loop label VITIS_LOOP_83_2:   [xilinx-label-all-loops]
+    for (j = 0; j < m; j++) {
+    ^~~
+    VITIS_LOOP_83_2: 
+/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c:3356:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c:3361:3: warning: Added loop label VITIS_LOOP_88_3:   [xilinx-label-all-loops]
+  for (i = 0; i < n; i++)
+  ^~~
+  VITIS_LOOP_88_3: 
+/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c:3361:3: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c:3362:5: warning: Added loop label VITIS_LOOP_89_4:   [xilinx-label-all-loops]
+    for (j = 0; j < n; j++) {
+    ^~~
+    VITIS_LOOP_89_4: 
+/home/bruno/Desktop/benchmarks/syr2k/proj_syr2k/solution1/.autopilot/db/syr2k_taffo.pp.0.c:3362:5: note: FIX-IT applied suggested code changes

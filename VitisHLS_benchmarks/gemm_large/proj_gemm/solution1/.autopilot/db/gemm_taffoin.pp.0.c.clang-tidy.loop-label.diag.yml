@@ -1,0 +1,103 @@
+---
+MainSourceFile:  /home/bruno/Desktop/benchmarks/gemm_large/proj_gemm/solution1/.autopilot/db/gemm_taffoin.pp.0.c
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_52_1:  '
+    FileOffset:      52
+    FilePath:        gemm_taffoin.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/gemm_large/proj_gemm/solution1/.autopilot/db/gemm_taffoin.pp.0.c
+        Offset:          24720
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_52_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_53_2:  '
+    FileOffset:      53
+    FilePath:        gemm_taffoin.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/gemm_large/proj_gemm/solution1/.autopilot/db/gemm_taffoin.pp.0.c
+        Offset:          24754
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_53_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_57_3:  '
+    FileOffset:      57
+    FilePath:        gemm_taffoin.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/gemm_large/proj_gemm/solution1/.autopilot/db/gemm_taffoin.pp.0.c
+        Offset:          24861
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_57_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_58_4:  '
+    FileOffset:      58
+    FilePath:        gemm_taffoin.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/gemm_large/proj_gemm/solution1/.autopilot/db/gemm_taffoin.pp.0.c
+        Offset:          24895
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_58_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_62_5:  '
+    FileOffset:      62
+    FilePath:        gemm_taffoin.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/gemm_large/proj_gemm/solution1/.autopilot/db/gemm_taffoin.pp.0.c
+        Offset:          24998
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_62_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_63_6:  '
+    FileOffset:      63
+    FilePath:        gemm_taffoin.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/gemm_large/proj_gemm/solution1/.autopilot/db/gemm_taffoin.pp.0.c
+        Offset:          25032
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_63_6: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_76_7:  '
+    FileOffset:      76
+    FilePath:        gemm_taffoin.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/gemm_large/proj_gemm/solution1/.autopilot/db/gemm_taffoin.pp.0.c
+        Offset:          25559
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_76_7: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_78_8:  '
+    FileOffset:      78
+    FilePath:        gemm_taffoin.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/gemm_large/proj_gemm/solution1/.autopilot/db/gemm_taffoin.pp.0.c
+        Offset:          25615
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_78_8: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_82_9:  '
+    FileOffset:      82
+    FilePath:        gemm_taffoin.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/gemm_large/proj_gemm/solution1/.autopilot/db/gemm_taffoin.pp.0.c
+        Offset:          25703
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_82_9: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_92_10:  '
+    FileOffset:      92
+    FilePath:        gemm_taffoin.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/gemm_large/proj_gemm/solution1/.autopilot/db/gemm_taffoin.pp.0.c
+        Offset:          25966
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_92_10: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_95_11:  '
+    FileOffset:      95
+    FilePath:        gemm_taffoin.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/gemm_large/proj_gemm/solution1/.autopilot/db/gemm_taffoin.pp.0.c
+        Offset:          26027
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_95_11: '
+...

@@ -1,0 +1,296 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part virtex7 
+INFO: [HLS 200-1611] Setting target device to 'xc7v585t-ffg1761-2'
+INFO: [HLS 200-1510] Running: create_clock -period 50MHz 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.03 seconds. CPU system time: 0.02 seconds. Elapsed time: 10.07 seconds; current allocated memory: 751.660 MB.
+INFO: [HLS 200-10] Analyzing design file 'syr2k_taffo.c' ... 
+WARNING: [HLS 207-5292] unused parameter 'argc' (syr2k_taffo.c:67:14)
+WARNING: [HLS 207-5292] unused parameter 'argv' (syr2k_taffo.c:67:27)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.68 seconds. CPU system time: 0.54 seconds. Elapsed time: 1.26 seconds; current allocated memory: 752.922 MB.
+INFO: [HLS 200-1022] Running custom LLVM hook 'HLS_HOOKS::opt'
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+WARNING: [HLS 207-586] overriding the module target triple with fpga64-xilinx-none
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma
+INFO: [HLS 214-188] Unrolling loop 'VITIS_LOOP_46_1' () in function 'syr2k' partially with a factor of 4
+WARNING: [HLS 214-167] The program may have out of bound array access
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.68 seconds. CPU system time: 0.71 seconds. Elapsed time: 5.41 seconds; current allocated memory: 753.688 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 753.688 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 754.809 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 754.871 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_52_3' in function 'syr2k' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_52_3' in function 'syr2k' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_52_3' in function 'syr2k' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_52_3' in function 'syr2k' for pipelining.
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_54_4' in function 'syr2k': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_54_4' in function 'syr2k': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_54_4' in function 'syr2k': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_54_4' in function 'syr2k': cannot completely unroll a loop with a variable trip count.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.18 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.21 seconds; current allocated memory: 778.582 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_52_3' in function 'syr2k'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_52_3' in function 'syr2k'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_52_3' in function 'syr2k'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_52_3' in function 'syr2k'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_46_1' in function 'syr2k' more than one sub loop.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.17 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.21 seconds; current allocated memory: 847.336 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'syr2k' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_48_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_48_2'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 14, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp') on port 'gmem' and bus request operation ('gmem_load_req') on port 'gmem'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 15, Depth = 16, loop 'VITIS_LOOP_48_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.14 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.16 seconds; current allocated memory: 848.594 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 848.594 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 17, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 18, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp') on port 'gmem' and bus request operation ('gmem_load_1_req') on port 'gmem'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 19, Depth = 20, loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.25 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.27 seconds; current allocated memory: 849.715 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.17 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.16 seconds; current allocated memory: 849.715 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_48_21' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_48_2'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp') on port 'gmem' and bus request operation ('gmem_load_3_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp') on port 'gmem' and bus request operation ('gmem_load_3_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp') on port 'gmem' and bus request operation ('gmem_load_3_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp') on port 'gmem' and bus request operation ('gmem_load_3_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp') on port 'gmem' and bus request operation ('gmem_load_3_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp') on port 'gmem' and bus request operation ('gmem_load_3_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 14, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp') on port 'gmem' and bus request operation ('gmem_load_3_req') on port 'gmem'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 15, Depth = 16, loop 'VITIS_LOOP_48_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.24 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 849.973 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 849.973 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 17, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 18, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp') on port 'gmem' and bus request operation ('gmem_load_7_req') on port 'gmem'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 19, Depth = 20, loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.26 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 850.238 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.19 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 850.238 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_48_23' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_48_2'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp') on port 'gmem' and bus request operation ('gmem_load_9_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp') on port 'gmem' and bus request operation ('gmem_load_9_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp') on port 'gmem' and bus request operation ('gmem_load_9_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp') on port 'gmem' and bus request operation ('gmem_load_9_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp') on port 'gmem' and bus request operation ('gmem_load_9_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp') on port 'gmem' and bus request operation ('gmem_load_9_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 14, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp') on port 'gmem' and bus request operation ('gmem_load_9_req') on port 'gmem'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 15, Depth = 16, loop 'VITIS_LOOP_48_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.23 seconds. CPU system time: 0 seconds. Elapsed time: 0.24 seconds; current allocated memory: 851.355 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 851.355 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 17, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 18, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp') on port 'gmem' and bus request operation ('gmem_load_13_req') on port 'gmem'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 19, Depth = 20, loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.28 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.29 seconds; current allocated memory: 852.328 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.18 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.18 seconds; current allocated memory: 852.328 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_48_25' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_48_2'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp') on port 'gmem' and bus request operation ('gmem_load_15_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp') on port 'gmem' and bus request operation ('gmem_load_15_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp') on port 'gmem' and bus request operation ('gmem_load_15_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp') on port 'gmem' and bus request operation ('gmem_load_15_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp') on port 'gmem' and bus request operation ('gmem_load_15_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp') on port 'gmem' and bus request operation ('gmem_load_15_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 14, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp') on port 'gmem' and bus request operation ('gmem_load_15_req') on port 'gmem'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 15, Depth = 16, loop 'VITIS_LOOP_48_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.26 seconds. CPU system time: 0 seconds. Elapsed time: 0.28 seconds; current allocated memory: 852.777 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 852.777 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 17, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 18, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp') on port 'gmem' and bus request operation ('gmem_load_19_req') on port 'gmem'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 19, Depth = 20, loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.27 seconds. CPU system time: 0 seconds. Elapsed time: 0.28 seconds; current allocated memory: 853.543 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.18 seconds. CPU system time: 0 seconds. Elapsed time: 0.19 seconds; current allocated memory: 853.543 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.25 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.26 seconds; current allocated memory: 854.148 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.28 seconds. CPU system time: 0 seconds. Elapsed time: 0.28 seconds; current allocated memory: 854.148 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_48_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_48_2' pipeline 'VITIS_LOOP_48_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_48_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.45 seconds. CPU system time: 0 seconds. Elapsed time: 0.44 seconds; current allocated memory: 854.359 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' pipeline 'VITIS_LOOP_52_3_VITIS_LOOP_54_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32s_48_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.23 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.25 seconds; current allocated memory: 856.410 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_48_21' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_48_21' pipeline 'VITIS_LOOP_48_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_48_21'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.47 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.48 seconds; current allocated memory: 858.715 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' pipeline 'VITIS_LOOP_52_3_VITIS_LOOP_54_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32s_48_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.26 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 860.656 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_48_23' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_48_23' pipeline 'VITIS_LOOP_48_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_48_23'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.48 seconds. CPU system time: 0 seconds. Elapsed time: 0.49 seconds; current allocated memory: 863.023 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' pipeline 'VITIS_LOOP_52_3_VITIS_LOOP_54_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32s_48_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.26 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.28 seconds; current allocated memory: 864.969 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_48_25' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_48_25' pipeline 'VITIS_LOOP_48_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_48_25'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.48 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.49 seconds; current allocated memory: 867.336 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' pipeline 'VITIS_LOOP_52_3_VITIS_LOOP_54_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32s_48_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32ns_45_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.25 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 869.297 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'syr2k/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500]

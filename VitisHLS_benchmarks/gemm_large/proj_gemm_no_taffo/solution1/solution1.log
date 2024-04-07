@@ -1,0 +1,158 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part virtex7 
+INFO: [HLS 200-1611] Setting target device to 'xc7v585t-ffg1761-2'
+INFO: [HLS 200-1510] Running: create_clock -period 50MHz 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0.03 seconds. Elapsed time: 10.08 seconds; current allocated memory: 751.695 MB.
+INFO: [HLS 200-10] Analyzing design file 'gemm_no_taffoin2.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.62 seconds. CPU system time: 0.5 seconds. Elapsed time: 1.11 seconds; current allocated memory: 753.004 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_100_11' is marked as complete unroll implied by the pipeline pragma (gemm_no_taffoin2.c:100:21)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_83_8' is marked as complete unroll implied by the pipeline pragma (gemm_no_taffoin2.c:83:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_87_9' is marked as complete unroll implied by the pipeline pragma (gemm_no_taffoin2.c:87:30)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_100_11' (gemm_no_taffoin2.c:100:21) in function 'mm' completely with a factor of 16 (gemm_no_taffoin2.c:44:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_83_8' (gemm_no_taffoin2.c:83:19) in function 'mm' completely with a factor of 16 (gemm_no_taffoin2.c:44:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' completely with a factor of 16 (gemm_no_taffoin2.c:44:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_87_9' (gemm_no_taffoin2.c:87:30) in function 'mm' has been removed because the loop is unrolled completely (gemm_no_taffoin2.c:44:0)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=8 dim=1' for array 'A' due to pipeline pragma (gemm_no_taffoin2.c:82:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=16 dim=1' for array 'D' due to pipeline pragma (gemm_no_taffoin2.c:82:9)
+INFO: [HLS 214-248] Applying array_partition to 'A': Cyclic partitioning with factor 8 on dimension 1.
+INFO: [HLS 214-248] Applying array_partition to 'D': Cyclic partitioning with factor 16 on dimension 1. (gemm_no_taffoin2.c:52:11)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.52 seconds. CPU system time: 0.64 seconds. Elapsed time: 5.22 seconds; current allocated memory: 753.629 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 753.629 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 755.723 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 755.949 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_66_6' (gemm_no_taffoin2.c:66) in function 'mm' automatically.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.2 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.21 seconds; current allocated memory: 780.215 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_65_5' (gemm_no_taffoin2.c:65:31) in function 'mm'.
+INFO: [HLS 200-472] Inferring partial write operation for 'D' (gemm_no_taffoin2.c:67:23)
+INFO: [HLS 200-472] Inferring partial write operation for 'D' (gemm_no_taffoin2.c:93:31)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.14 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 800.863 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'mm' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mm_Pipeline_VITIS_LOOP_65_5_VITIS_LOOP_66_6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_65_5_VITIS_LOOP_66_6'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 6, loop 'VITIS_LOOP_65_5_VITIS_LOOP_66_6'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.16 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.18 seconds; current allocated memory: 803.070 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 803.070 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mm_Pipeline_VITIS_LOOP_81_7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_81_7'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 39, loop 'VITIS_LOOP_81_7'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6.48 seconds. CPU system time: 0.01 seconds. Elapsed time: 6.52 seconds; current allocated memory: 810.996 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 2.8 seconds. CPU system time: 0.01 seconds. Elapsed time: 2.82 seconds; current allocated memory: 810.996 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mm_Pipeline_VITIS_LOOP_97_10' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_97_10'.
+WARNING: [HLS 200-880] The II Violation in module 'mm_Pipeline_VITIS_LOOP_97_10' (loop 'VITIS_LOOP_97_10'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('sum_write_ln97', gemm_no_taffoin2.c:97) of variable 'sum', gemm_no_taffoin2.c:101 on local variable 'sum' and 'load' operation ('sum_load', gemm_no_taffoin2.c:101) on local variable 'sum'.
+WARNING: [HLS 200-880] The II Violation in module 'mm_Pipeline_VITIS_LOOP_97_10' (loop 'VITIS_LOOP_97_10'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('sum_write_ln97', gemm_no_taffoin2.c:97) of variable 'sum', gemm_no_taffoin2.c:101 on local variable 'sum' and 'load' operation ('sum_load', gemm_no_taffoin2.c:101) on local variable 'sum'.
+WARNING: [HLS 200-880] The II Violation in module 'mm_Pipeline_VITIS_LOOP_97_10' (loop 'VITIS_LOOP_97_10'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0) between 'store' operation ('sum_write_ln97', gemm_no_taffoin2.c:97) of variable 'sum', gemm_no_taffoin2.c:101 on local variable 'sum' and 'load' operation ('sum_load', gemm_no_taffoin2.c:101) on local variable 'sum'.
+WARNING: [HLS 200-880] The II Violation in module 'mm_Pipeline_VITIS_LOOP_97_10' (loop 'VITIS_LOOP_97_10'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0) between 'store' operation ('sum_write_ln97', gemm_no_taffoin2.c:97) of variable 'sum', gemm_no_taffoin2.c:101 on local variable 'sum' and 'load' operation ('sum_load', gemm_no_taffoin2.c:101) on local variable 'sum'.
+WARNING: [HLS 200-880] The II Violation in module 'mm_Pipeline_VITIS_LOOP_97_10' (loop 'VITIS_LOOP_97_10'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 0) between 'store' operation ('sum_write_ln97', gemm_no_taffoin2.c:97) of variable 'sum', gemm_no_taffoin2.c:101 on local variable 'sum' and 'load' operation ('sum_load', gemm_no_taffoin2.c:101) on local variable 'sum'.
+WARNING: [HLS 200-880] The II Violation in module 'mm_Pipeline_VITIS_LOOP_97_10' (loop 'VITIS_LOOP_97_10'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 0) between 'store' operation ('sum_write_ln97', gemm_no_taffoin2.c:97) of variable 'sum', gemm_no_taffoin2.c:101 on local variable 'sum' and 'load' operation ('sum_load', gemm_no_taffoin2.c:101) on local variable 'sum'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 16, Depth = 18, loop 'VITIS_LOOP_97_10'
+WARNING: [HLS 200-871] Estimated clock period (25.714ns) exceeds the target (target clock period: 20ns, clock uncertainty: 5.4ns, effective delay budget: 14.6ns).
+WARNING: [HLS 200-1016] The critical path in module 'mm_Pipeline_VITIS_LOOP_97_10' consists of the following:	'fadd' operation ('sum', gemm_no_taffoin2.c:101) [36]  (12.9 ns)
+	'fadd' operation ('sum', gemm_no_taffoin2.c:101) [39]  (12.9 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 5.44 seconds. CPU system time: 0.02 seconds. Elapsed time: 5.46 seconds; current allocated memory: 810.996 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.15 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 810.996 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.14 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 810.996 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1.59 seconds. CPU system time: 0 seconds. Elapsed time: 1.59 seconds; current allocated memory: 811.590 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mm_Pipeline_VITIS_LOOP_65_5_VITIS_LOOP_66_6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mm_Pipeline_VITIS_LOOP_65_5_VITIS_LOOP_66_6' pipeline 'VITIS_LOOP_65_5_VITIS_LOOP_66_6' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_4s_4s_4_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitofp_32ns_32_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mm_Pipeline_VITIS_LOOP_65_5_VITIS_LOOP_66_6'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3.48 seconds. CPU system time: 0 seconds. Elapsed time: 3.48 seconds; current allocated memory: 811.777 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mm_Pipeline_VITIS_LOOP_81_7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mm_Pipeline_VITIS_LOOP_81_7' pipeline 'VITIS_LOOP_81_7' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'mm_Pipeline_VITIS_LOOP_81_7' is 21161 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_2_full_dsp_1': 257 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 358 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mm_Pipeline_VITIS_LOOP_81_7'.
+INFO: [RTMG 210-279] Implementing memory 'mm_mm_Pipeline_VITIS_LOOP_81_7_A_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'mm_mm_Pipeline_VITIS_LOOP_81_7_A_1_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'mm_mm_Pipeline_VITIS_LOOP_81_7_A_2_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'mm_mm_Pipeline_VITIS_LOOP_81_7_A_3_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'mm_mm_Pipeline_VITIS_LOOP_81_7_A_4_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'mm_mm_Pipeline_VITIS_LOOP_81_7_A_5_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'mm_mm_Pipeline_VITIS_LOOP_81_7_A_6_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'mm_mm_Pipeline_VITIS_LOOP_81_7_A_7_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.57 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.61 seconds; current allocated memory: 830.453 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mm_Pipeline_VITIS_LOOP_97_10' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mm_Pipeline_VITIS_LOOP_97_10' pipeline 'VITIS_LOOP_97_10' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mm_Pipeline_VITIS_LOOP_97_10'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 12.48 seconds. CPU system time: 0.04 seconds. Elapsed time: 12.53 seconds; current allocated memory: 849.926 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/gamma' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'mm' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mm'.
+INFO: [RTMG 210-278] Implementing memory 'mm_D_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.27 seconds. CPU system time: 0 seconds. Elapsed time: 0.27 seconds; current allocated memory: 850.852 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 6 seconds. CPU system time: 0.03 seconds. Elapsed time: 6.04 seconds; current allocated memory: 854.008 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.63 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.64 seconds; current allocated memory: 866.137 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for mm.
+INFO: [VLOG 209-307] Generating Verilog RTL for mm.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 38.89 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 45.95 seconds. CPU system time: 1.34 seconds. Elapsed time: 47.45 seconds; current allocated memory: 114.441 MB.
+INFO: [HLS 200-1510] Running: cosim_design 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+ERROR: [COSIM 212-317] C++ compile error.

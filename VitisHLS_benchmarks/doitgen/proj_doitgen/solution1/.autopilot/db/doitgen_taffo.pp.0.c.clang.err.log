@@ -1,0 +1,40 @@
+/home/bruno/Desktop/benchmarks/doitgen/run_hls_1.tcl:55:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=doitgen_XLX_SEP_ PragmaOptions=name=doitgen_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE TOP name=doitgen
+        ^
+doitgen_taffo.c:26:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=doitgen_XLX_SEP_ PragmaOptions=m_axi port = A depth = 4096_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port = A depth = 4096
+        ^
+doitgen_taffo.c:27:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=doitgen_XLX_SEP_ PragmaOptions=m_axi port = C depth = 256_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port = C depth = 256
+        ^
+doitgen_taffo.c:28:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=doitgen_XLX_SEP_ PragmaOptions=m_axi port = sum depth = 16_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port = sum depth = 16
+        ^
+doitgen_taffo.c:29:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=doitgen_XLX_SEP_ PragmaOptions=variable=A type=block factor=4 dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS ARRAY_PARTITION variable=A type=block factor=4 dim=1
+        ^
+doitgen_taffo.c:30:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=doitgen_XLX_SEP_ PragmaOptions=variable=C type=block factor=4 dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS ARRAY_PARTITION variable=C type=block factor=4 dim=1
+        ^
+doitgen_taffo.c:51:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=doitgen_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
+        ^
+doitgen_taffo.c:53:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=doitgen_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
+        ^
+doitgen_taffo.c:55:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=doitgen_XLX_SEP_ PragmaOptions=factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll factor=8
+        ^
+doitgen_taffo.c:58:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=doitgen_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
+        ^
+doitgen_taffo.c:65:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=doitgen_XLX_SEP_ PragmaOptions=factor=8_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll factor=8
+        ^
+doitgen_taffo.c:75:14: warning: unused parameter 'argc' [-Wunused-parameter]
+int main(int argc, char** argv)
+             ^
+doitgen_taffo.c:75:27: warning: unused parameter 'argv' [-Wunused-parameter]
+int main(int argc, char** argv)
+                          ^
+13 warnings generated.

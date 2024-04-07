@@ -1,0 +1,417 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part virtex7 
+INFO: [HLS 200-1611] Setting target device to 'xc7v585t-ffg1761-2'
+INFO: [HLS 200-1510] Running: create_clock -period 50MHz 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 4.42 seconds. CPU system time: 0.49 seconds. Elapsed time: 4.66 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 754.676 MB.
+INFO: [HLS 200-10] Analyzing design file 'syr2k_no_taffo.c' ... 
+WARNING: [HLS 207-5292] unused parameter 'argc' (syr2k_no_taffo.c:67:14)
+WARNING: [HLS 207-5292] unused parameter 'argv' (syr2k_no_taffo.c:67:27)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.71 seconds. CPU system time: 0.57 seconds. Elapsed time: 1.29 seconds; current allocated memory: 756.430 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.21 seconds. CPU system time: 0.58 seconds. Elapsed time: 4.8 seconds; current allocated memory: 757.012 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 757.012 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 757.727 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 757.789 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_48_2' (syr2k_no_taffo.c:42) in function 'syr2k' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_54_4' (syr2k_no_taffo.c:42) in function 'syr2k' automatically.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 779.219 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_52_3' (syr2k_no_taffo.c:43:7) in function 'syr2k'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_46_1' (syr2k_no_taffo.c:41:7) in function 'syr2k' more than one sub loop.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 789.215 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'syr2k' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_48_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_48_2'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 16, Depth = 17, loop 'VITIS_LOOP_48_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.13 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.17 seconds; current allocated memory: 790.691 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 790.691 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_5_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_1_req', syr2k_no_taffo.c:43) on port 'gmem' (syr2k_no_taffo.c:43).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_5_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_1_req', syr2k_no_taffo.c:43) on port 'gmem' (syr2k_no_taffo.c:43).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_5_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_1_req', syr2k_no_taffo.c:43) on port 'gmem' (syr2k_no_taffo.c:43).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_5_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_1_req', syr2k_no_taffo.c:43) on port 'gmem' (syr2k_no_taffo.c:43).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 19, distance = 1, offset = 1) between bus response operation ('gmem_addr_5_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_1_req', syr2k_no_taffo.c:43) on port 'gmem' (syr2k_no_taffo.c:43).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 23, distance = 1, offset = 1) between bus response operation ('gmem_addr_5_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_1_req', syr2k_no_taffo.c:43) on port 'gmem' (syr2k_no_taffo.c:43).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 24, distance = 1, offset = 1) between bus response operation ('gmem_addr_5_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_1_req', syr2k_no_taffo.c:43) on port 'gmem' (syr2k_no_taffo.c:43).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 25, Depth = 26, loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.34 seconds. CPU system time: 0 seconds. Elapsed time: 0.34 seconds; current allocated memory: 791.855 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.21 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.21 seconds; current allocated memory: 791.855 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.16 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 791.965 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 791.965 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_48_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_48_2' pipeline 'VITIS_LOOP_48_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_48_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 791.965 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' pipeline 'VITIS_LOOP_52_3_VITIS_LOOP_54_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_2_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.21 seconds. CPU system time: 0 seconds. Elapsed time: 0.21 seconds; current allocated memory: 794.141 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'syr2k/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'syr2k/A' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'syr2k/B' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'syr2k/C' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'syr2k/alpha' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'syr2k/beta' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'syr2k' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'A', 'B' and 'C' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.46 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.48 seconds; current allocated memory: 797.152 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.56 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.59 seconds; current allocated memory: 800.613 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.63 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.64 seconds; current allocated memory: 805.008 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for syr2k.
+INFO: [VLOG 209-307] Generating Verilog RTL for syr2k.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 68.49 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 8.19 seconds. CPU system time: 1.25 seconds. Elapsed time: 9.49 seconds; current allocated memory: 50.434 MB.
+INFO: [HLS 200-1510] Running: cosim_design 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 93.9 seconds. CPU system time: 4.71 seconds. Elapsed time: 82.56 seconds; current allocated memory: 6.328 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7v585t-ffg1761-2'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xc7v585t-ffg1761-2 
+INFO: [HLS 200-1510] Running: create_clock -period 50MHz -name default 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_latency 0 
+INFO: [HLS 200-1510] Running: source ./proj_syr2k_no_taffo/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name syr2k syr2k 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.03 seconds. CPU system time: 0.02 seconds. Elapsed time: 10.08 seconds; current allocated memory: 753.598 MB.
+INFO: [HLS 200-10] Analyzing design file 'syr2k_no_taffo.c' ... 
+WARNING: [HLS 207-5292] unused parameter 'argc' (syr2k_no_taffo.c:67:14)
+WARNING: [HLS 207-5292] unused parameter 'argv' (syr2k_no_taffo.c:67:27)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.97 seconds. CPU system time: 0.71 seconds. Elapsed time: 1.79 seconds; current allocated memory: 753.598 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_54_4' is marked as complete unroll implied by the pipeline pragma (syr2k_no_taffo.c:54:19)
+INFO: [HLS 214-188] Unrolling loop 'VITIS_LOOP_46_1' (syr2k_no_taffo.c:46:20) in function 'syr2k' partially with a factor of 4 (syr2k_no_taffo.c:21:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 6.46 seconds. CPU system time: 0.74 seconds. Elapsed time: 7.31 seconds; current allocated memory: 754.258 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 754.258 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 755.156 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 755.199 MB.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_52_3' (syr2k_no_taffo.c:43) in function 'syr2k' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_52_3' (syr2k_no_taffo.c:43) in function 'syr2k' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_52_3' (syr2k_no_taffo.c:43) in function 'syr2k' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_52_3' (syr2k_no_taffo.c:43) in function 'syr2k' for pipelining.
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_54_4' (syr2k_no_taffo.c:42) in function 'syr2k': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_54_4' (syr2k_no_taffo.c:42) in function 'syr2k': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_54_4' (syr2k_no_taffo.c:42) in function 'syr2k': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_54_4' (syr2k_no_taffo.c:42) in function 'syr2k': cannot completely unroll a loop with a variable trip count.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.24 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.39 seconds; current allocated memory: 778.844 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_52_3' (syr2k_no_taffo.c:43:7) in function 'syr2k'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_52_3' (syr2k_no_taffo.c:43:7) in function 'syr2k'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_52_3' (syr2k_no_taffo.c:43:7) in function 'syr2k'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_52_3' (syr2k_no_taffo.c:43:7) in function 'syr2k'.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_46_1' (syr2k_no_taffo.c:41:7) in function 'syr2k' more than one sub loop.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.25 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.33 seconds; current allocated memory: 847.566 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'syr2k' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_48_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_48_2'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_2' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 14, distance = 1, offset = 1) between bus response operation ('gmem_addr_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 15, Depth = 16, loop 'VITIS_LOOP_48_2'
+WARNING: [HLS 200-871] Estimated clock period (23.065ns) exceeds the target (target clock period: 20ns, clock uncertainty: 5.4ns, effective delay budget: 14.6ns).
+WARNING: [HLS 200-1016] The critical path in module 'syr2k_Pipeline_VITIS_LOOP_48_2' consists of the following:	'fmul' operation ('mul4', syr2k_no_taffo.c:50) [34]  (8.46 ns)
+	bus write operation ('gmem_addr_write_ln50', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) [37]  (14.6 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.2 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.41 seconds; current allocated memory: 849.168 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.17 seconds. CPU system time: 0 seconds. Elapsed time: 0.23 seconds; current allocated memory: 849.168 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_1_req', syr2k_no_taffo.c:53) on port 'gmem' (syr2k_no_taffo.c:53).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_1_req', syr2k_no_taffo.c:53) on port 'gmem' (syr2k_no_taffo.c:53).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_1_req', syr2k_no_taffo.c:53) on port 'gmem' (syr2k_no_taffo.c:53).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_1_req', syr2k_no_taffo.c:53) on port 'gmem' (syr2k_no_taffo.c:53).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 19, distance = 1, offset = 1) between bus response operation ('gmem_addr_6_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_1_req', syr2k_no_taffo.c:53) on port 'gmem' (syr2k_no_taffo.c:53).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 20, Depth = 21, loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'
+WARNING: [HLS 200-871] Estimated clock period (27.457ns) exceeds the target (target clock period: 20ns, clock uncertainty: 5.4ns, effective delay budget: 14.6ns).
+WARNING: [HLS 200-1016] The critical path in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' consists of the following:	'fadd' operation ('add1', syr2k_no_taffo.c:57) [102]  (12.9 ns)
+	bus write operation ('gmem_addr_6_write_ln57', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) [105]  (14.6 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.91 seconds. CPU system time: 0 seconds. Elapsed time: 1.07 seconds; current allocated memory: 850.211 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.28 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.33 seconds; current allocated memory: 850.211 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_48_21' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_48_2'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_3_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_3_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_3_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_3_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_3_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_3_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_21' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 14, distance = 1, offset = 1) between bus response operation ('gmem_addr_3_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_3_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 15, Depth = 16, loop 'VITIS_LOOP_48_2'
+WARNING: [HLS 200-871] Estimated clock period (23.065ns) exceeds the target (target clock period: 20ns, clock uncertainty: 5.4ns, effective delay budget: 14.6ns).
+WARNING: [HLS 200-1016] The critical path in module 'syr2k_Pipeline_VITIS_LOOP_48_21' consists of the following:	'fmul' operation ('mul4_1', syr2k_no_taffo.c:50) [35]  (8.46 ns)
+	bus write operation ('gmem_addr_3_write_ln50', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) [38]  (14.6 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.35 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.51 seconds; current allocated memory: 850.527 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.19 seconds. CPU system time: 0 seconds. Elapsed time: 0.24 seconds; current allocated memory: 850.527 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_7_req', syr2k_no_taffo.c:53) on port 'gmem' (syr2k_no_taffo.c:53).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_7_req', syr2k_no_taffo.c:53) on port 'gmem' (syr2k_no_taffo.c:53).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_7_req', syr2k_no_taffo.c:53) on port 'gmem' (syr2k_no_taffo.c:53).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_7_req', syr2k_no_taffo.c:53) on port 'gmem' (syr2k_no_taffo.c:53).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 19, distance = 1, offset = 1) between bus response operation ('gmem_addr_12_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_7_req', syr2k_no_taffo.c:53) on port 'gmem' (syr2k_no_taffo.c:53).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 20, Depth = 21, loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'
+WARNING: [HLS 200-871] Estimated clock period (27.457ns) exceeds the target (target clock period: 20ns, clock uncertainty: 5.4ns, effective delay budget: 14.6ns).
+WARNING: [HLS 200-1016] The critical path in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' consists of the following:	'fadd' operation ('add36_1', syr2k_no_taffo.c:57) [102]  (12.9 ns)
+	bus write operation ('gmem_addr_10_write_ln57', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) [105]  (14.6 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.96 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.08 seconds; current allocated memory: 851.473 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.27 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.31 seconds; current allocated memory: 851.473 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_48_23' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_48_2'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_9_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_9_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_9_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_9_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_9_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_9_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_23' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 14, distance = 1, offset = 1) between bus response operation ('gmem_addr_9_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_9_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 15, Depth = 16, loop 'VITIS_LOOP_48_2'
+WARNING: [HLS 200-871] Estimated clock period (23.065ns) exceeds the target (target clock period: 20ns, clock uncertainty: 5.4ns, effective delay budget: 14.6ns).
+WARNING: [HLS 200-1016] The critical path in module 'syr2k_Pipeline_VITIS_LOOP_48_23' consists of the following:	'fmul' operation ('mul4_2', syr2k_no_taffo.c:50) [35]  (8.46 ns)
+	bus write operation ('gmem_addr_9_write_ln50', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) [38]  (14.6 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.37 seconds. CPU system time: 0 seconds. Elapsed time: 0.4 seconds; current allocated memory: 851.941 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.22 seconds. CPU system time: 0 seconds. Elapsed time: 0.38 seconds; current allocated memory: 851.941 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_13_req', syr2k_no_taffo.c:53) on port 'gmem' (syr2k_no_taffo.c:53).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_13_req', syr2k_no_taffo.c:53) on port 'gmem' (syr2k_no_taffo.c:53).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_13_req', syr2k_no_taffo.c:53) on port 'gmem' (syr2k_no_taffo.c:53).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_13_req', syr2k_no_taffo.c:53) on port 'gmem' (syr2k_no_taffo.c:53).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 19, distance = 1, offset = 1) between bus response operation ('gmem_addr_18_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_13_req', syr2k_no_taffo.c:53) on port 'gmem' (syr2k_no_taffo.c:53).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 20, Depth = 21, loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'
+WARNING: [HLS 200-871] Estimated clock period (27.457ns) exceeds the target (target clock period: 20ns, clock uncertainty: 5.4ns, effective delay budget: 14.6ns).
+WARNING: [HLS 200-1016] The critical path in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44' consists of the following:	'fadd' operation ('add36_2', syr2k_no_taffo.c:57) [102]  (12.9 ns)
+	bus write operation ('gmem_addr_8_write_ln57', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) [105]  (14.6 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.89 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.12 seconds; current allocated memory: 852.770 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.27 seconds. CPU system time: 0 seconds. Elapsed time: 0.3 seconds; current allocated memory: 852.770 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_48_25' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_48_2'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_15_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_15_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_15_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_15_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_15_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_15_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_48_25' (loop 'VITIS_LOOP_48_2'): Unable to enforce a carried dependence constraint (II = 14, distance = 1, offset = 1) between bus response operation ('gmem_addr_15_resp', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) and bus request operation ('gmem_load_15_req', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 15, Depth = 16, loop 'VITIS_LOOP_48_2'
+WARNING: [HLS 200-871] Estimated clock period (23.065ns) exceeds the target (target clock period: 20ns, clock uncertainty: 5.4ns, effective delay budget: 14.6ns).
+WARNING: [HLS 200-1016] The critical path in module 'syr2k_Pipeline_VITIS_LOOP_48_25' consists of the following:	'fmul' operation ('mul4_3', syr2k_no_taffo.c:50) [35]  (8.46 ns)
+	bus write operation ('gmem_addr_write_ln50', syr2k_no_taffo.c:50) on port 'gmem' (syr2k_no_taffo.c:50) [38]  (14.6 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.41 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.5 seconds; current allocated memory: 853.289 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.18 seconds. CPU system time: 0 seconds. Elapsed time: 0.28 seconds; current allocated memory: 853.289 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_19_req', syr2k_no_taffo.c:53) on port 'gmem' (syr2k_no_taffo.c:53).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_19_req', syr2k_no_taffo.c:53) on port 'gmem' (syr2k_no_taffo.c:53).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_19_req', syr2k_no_taffo.c:53) on port 'gmem' (syr2k_no_taffo.c:53).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_19_req', syr2k_no_taffo.c:53) on port 'gmem' (syr2k_no_taffo.c:53).
+WARNING: [HLS 200-880] The II Violation in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' (loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'): Unable to enforce a carried dependence constraint (II = 19, distance = 1, offset = 1) between bus response operation ('gmem_addr_23_resp', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) and bus request operation ('gmem_load_19_req', syr2k_no_taffo.c:53) on port 'gmem' (syr2k_no_taffo.c:53).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 20, Depth = 21, loop 'VITIS_LOOP_52_3_VITIS_LOOP_54_4'
+WARNING: [HLS 200-871] Estimated clock period (27.457ns) exceeds the target (target clock period: 20ns, clock uncertainty: 5.4ns, effective delay budget: 14.6ns).
+WARNING: [HLS 200-1016] The critical path in module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46' consists of the following:	'fadd' operation ('add36_3', syr2k_no_taffo.c:57) [102]  (12.9 ns)
+	bus write operation ('gmem_addr_4_write_ln57', syr2k_no_taffo.c:57) on port 'gmem' (syr2k_no_taffo.c:57) [105]  (14.6 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.87 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.98 seconds; current allocated memory: 854.031 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.26 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.3 seconds; current allocated memory: 854.031 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'syr2k' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.28 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.3 seconds; current allocated memory: 854.746 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.4 seconds. CPU system time: 0 seconds. Elapsed time: 0.41 seconds; current allocated memory: 854.746 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_48_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_48_2' pipeline 'VITIS_LOOP_48_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_48_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.6 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.63 seconds; current allocated memory: 855.039 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4' pipeline 'VITIS_LOOP_52_3_VITIS_LOOP_54_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.3 seconds. CPU system time: 0 seconds. Elapsed time: 0.31 seconds; current allocated memory: 856.996 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_48_21' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_48_21' pipeline 'VITIS_LOOP_48_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'syr2k_Pipeline_VITIS_LOOP_48_21'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.6 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.62 seconds; current allocated memory: 859.312 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42' pipeline 'VITIS_LOOP_52_3_VITIS_LOOP_54_4' pipeline type 'loop pipeline'

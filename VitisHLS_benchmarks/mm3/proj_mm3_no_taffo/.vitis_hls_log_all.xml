@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="proj_mm3_no_taffo" solutionName="solution1" date="2024-02-25T23:54:21.913+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mm3_Pipeline_VITIS_LOOP_88_7/m_axi_gmem_BREADY' to 0." projectName="proj_mm3_no_taffo" solutionName="solution1" date="2024-02-25T23:54:15.822+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mm3_Pipeline_VITIS_LOOP_88_7/m_axi_gmem_ARUSER' to 0." projectName="proj_mm3_no_taffo" solutionName="solution1" date="2024-02-25T23:54:15.689+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mm3_Pipeline_VITIS_LOOP_88_7/m_axi_gmem_ARREGION' to 0." projectName="proj_mm3_no_taffo" solutionName="solution1" date="2024-02-25T23:54:15.684+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mm3_Pipeline_VITIS_LOOP_88_7/m_axi_gmem_ARQOS' to 0." projectName="proj_mm3_no_taffo" solutionName="solution1" date="2024-02-25T23:54:15.674+0100" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mm3_Pipeline_VITIS_LOOP_88_7/m_axi_gmem_ARPROT' to 0." projectName="proj_mm3_no_taffo" solutionName="solution1" date="2024-02-25T23:54:15.670+0100" type="Warning"/>
+      </synLog>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

@@ -1,0 +1,7 @@
+Running: xsim.dir/syr2k/xsimk -simmode gui -wdb syr2k.wdb -simrunnum 0 -socket 44025
+Design successfully loaded
+Design Loading Memory Usage: 29080 KB (Peak: 29088 KB)
+Design Loading CPU Usage: 10 ms
+Simulation completed
+Simulation Memory Usage: 119984 KB (Peak: 168348 KB)
+Simulation CPU Usage: 4370 ms

@@ -1,0 +1,388 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part virtex7 
+INFO: [HLS 200-1611] Setting target device to 'xc7v585t-ffg1761-2'
+INFO: [HLS 200-1510] Running: create_clock -period 50MHz 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 4.47 seconds. CPU system time: 0.51 seconds. Elapsed time: 4.97 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.01 seconds; current allocated memory: 751.707 MB.
+INFO: [HLS 200-10] Analyzing design file 'doitgen_no_taffo.c' ... 
+WARNING: [HLS 207-5292] unused parameter 'argc' (doitgen_no_taffo.c:75:14)
+WARNING: [HLS 207-5292] unused parameter 'argv' (doitgen_no_taffo.c:75:27)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.79 seconds. CPU system time: 0.53 seconds. Elapsed time: 1.32 seconds; current allocated memory: 753.648 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_52_2' is marked as complete unroll implied by the pipeline pragma (doitgen_no_taffo.c:52:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_54_3' is marked as complete unroll implied by the pipeline pragma (doitgen_no_taffo.c:54:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_57_4' is marked as complete unroll implied by the pipeline pragma (doitgen_no_taffo.c:57:23)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_64_5' is marked as complete unroll implied by the pipeline pragma (doitgen_no_taffo.c:64:24)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_52_2' (doitgen_no_taffo.c:52:19) in function 'doitgen' completely with a factor of 16 (doitgen_no_taffo.c:25:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_52_2' (doitgen_no_taffo.c:52:19) in function 'doitgen' has been removed because the loop is unrolled completely (doitgen_no_taffo.c:25:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_64_5' (doitgen_no_taffo.c:64:24) in function 'doitgen' completely with a factor of 16 (doitgen_no_taffo.c:25:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_54_3' (doitgen_no_taffo.c:54:19) in function 'doitgen' completely with a factor of 16 (doitgen_no_taffo.c:25:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_57_4' (doitgen_no_taffo.c:57:23) in function 'doitgen' completely with a factor of 16 (doitgen_no_taffo.c:25:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_57_4' (doitgen_no_taffo.c:57:23) in function 'doitgen' has been removed because the loop is unrolled completely (doitgen_no_taffo.c:25:0)
+INFO: [HLS 214-248] Applying array_partition to 'A': Block partitioning with factor 4 on dimension 1. (doitgen_no_taffo.c:25:0)
+INFO: [HLS 214-248] Applying array_partition to 'C': Block partitioning with factor 4 on dimension 1. (doitgen_no_taffo.c:25:0)
+INFO: [HLS 214-115] Multiple burst reads of length 64 and bit width 32 has been inferred on bundle 'gmem_0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 214-115] Multiple burst writes of length 16 and bit width 32 has been inferred on bundle 'gmem'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (doitgen_no_taffo.c:72:1)
+INFO: [HLS 214-115] Multiple burst reads of length 256 and bit width 32 has been inferred on bundle 'gmem_0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (doitgen_no_taffo.c:59:13)
+INFO: [HLS 214-115] Multiple burst writes of length 256 and bit width 32 has been inferred on bundle 'gmem_0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (doitgen_no_taffo.c:36:7)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 26.29 seconds. CPU system time: 0.66 seconds. Elapsed time: 27.08 seconds; current allocated memory: 760.453 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 760.453 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.27 seconds. CPU system time: 0 seconds. Elapsed time: 0.28 seconds; current allocated memory: 775.184 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.16 seconds. CPU system time: 0 seconds. Elapsed time: 0.17 seconds; current allocated memory: 775.953 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1.3 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.33 seconds; current allocated memory: 825.871 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 2.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 2.11 seconds; current allocated memory: 874.711 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'doitgen' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'doitgen_Pipeline_VITIS_LOOP_50_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_50_1'.
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 130, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 193, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 225, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 241, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 249, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 253, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 255, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 256, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+INFO: [SCHED 204-61] Unable to satisfy pipeline directive for loop 'VITIS_LOOP_50_1': unable to pipeline.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 112.97 seconds. CPU system time: 0.2 seconds. Elapsed time: 113.55 seconds; current allocated memory: 982.906 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 38.54 seconds. CPU system time: 0.05 seconds. Elapsed time: 38.61 seconds; current allocated memory: 982.906 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'doitgen' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 19.98 seconds. CPU system time: 0.05 seconds. Elapsed time: 20.03 seconds; current allocated memory: 982.906 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.99 seconds. CPU system time: 0 seconds. Elapsed time: 1 seconds; current allocated memory: 982.906 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'doitgen_Pipeline_VITIS_LOOP_50_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_2_full_dsp_1': 48 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 48 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'doitgen_Pipeline_VITIS_LOOP_50_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 5.61 seconds. CPU system time: 0.03 seconds. Elapsed time: 5.67 seconds; current allocated memory: 1006.699 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'doitgen' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/gmem_0' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/A_0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/A_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/A_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/A_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/C_0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/C_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/C_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/C_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/sum' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'doitgen' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'A_0', 'C_0' and 'sum' to AXI-Lite port control.
+WARNING: [RTGEN 206-101] Port 'doitgen/A_1_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'doitgen/A_1_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'doitgen/A_1_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'doitgen/A_1_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'doitgen/A_1_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'doitgen/A_1_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'doitgen/A_1_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'doitgen/A_1_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'doitgen/A_1_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'doitgen/A_1_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101]==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7v585t-ffg1761-2'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xc7v585t-ffg1761-2 
+INFO: [HLS 200-1510] Running: create_clock -period 50MHz -name default 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_latency 0 
+INFO: [HLS 200-1510] Running: source ./proj_doitgen_no_taffo/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name doitgen doitgen 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 10.1 seconds; current allocated memory: 753.605 MB.
+INFO: [HLS 200-10] Analyzing design file 'doitgen_no_taffo.c' ... 
+WARNING: [HLS 207-5292] unused parameter 'argc' (doitgen_no_taffo.c:75:14)
+WARNING: [HLS 207-5292] unused parameter 'argv' (doitgen_no_taffo.c:75:27)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1.31 seconds. CPU system time: 0.95 seconds. Elapsed time: 3.27 seconds; current allocated memory: 753.605 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-115] Multiple burst reads of length 16 and bit width 32 in loop 'VITIS_LOOP_64_5'(doitgen_no_taffo.c:64:24) has been inferred on bundle 'gmem'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (doitgen_no_taffo.c:64:24)
+INFO: [HLS 214-115] Multiple burst writes of length 16 and bit width 32 in loop 'VITIS_LOOP_64_5'(doitgen_no_taffo.c:64:24) has been inferred on bundle 'gmem'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (doitgen_no_taffo.c:64:24)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 6.64 seconds. CPU system time: 0.98 seconds. Elapsed time: 8.8 seconds; current allocated memory: 754.059 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 754.059 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.15 seconds; current allocated memory: 754.609 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 754.672 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_54_3' (doitgen_no_taffo.c:36) in function 'doitgen' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_64_5' (doitgen_no_taffo.c:36) in function 'doitgen' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_54_3' (doitgen_no_taffo.c:36) in function 'doitgen' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_57_4' (doitgen_no_taffo.c:37) in function 'doitgen' completely with a factor of 16.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.12 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.25 seconds; current allocated memory: 777.395 MB.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_52_2' (doitgen_no_taffo.c:35:7) in function 'doitgen' more than one sub loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_50_1' (doitgen_no_taffo.c:34:8) in function 'doitgen'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.15 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.32 seconds; current allocated memory: 788.242 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'doitgen' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'doitgen_Pipeline_VITIS_LOOP_54_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_54_3'.
+WARNING: [HLS 200-885] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_54_3' (loop 'VITIS_LOOP_54_3'): Unable to schedule bus request operation ('gmem_load_16_req', doitgen_no_taffo.c:59) on port 'gmem' (doitgen_no_taffo.c:59) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_54_3' (loop 'VITIS_LOOP_54_3'): Unable to schedule bus request operation ('gmem_load_17_req', doitgen_no_taffo.c:59) on port 'gmem' (doitgen_no_taffo.c:59) due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_54_3' (loop 'VITIS_LOOP_54_3'): Unable to schedule bus request operation ('gmem_load_18_req', doitgen_no_taffo.c:59) on port 'gmem' (doitgen_no_taffo.c:59) due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_54_3' (loop 'VITIS_LOOP_54_3'): Unable to schedule bus request operation ('gmem_load_19_req', doitgen_no_taffo.c:59) on port 'gmem' (doitgen_no_taffo.c:59) due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_54_3' (loop 'VITIS_LOOP_54_3'): Unable to schedule bus request operation ('gmem_load_26_req', doitgen_no_taffo.c:59) on port 'gmem' (doitgen_no_taffo.c:59) due to limited memory ports (II = 11). Please consider using a memory core with more ports or partitioning the array.
+WARNING: [HLS 200-885] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_54_3' (loop 'VITIS_LOOP_54_3'): Unable to schedule bus request operation ('gmem_load_31_req', doitgen_no_taffo.c:59) on port 'gmem' (doitgen_no_taffo.c:59) due to limited memory ports (II = 15). Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 16, Depth = 50, loop 'VITIS_LOOP_54_3'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.14 seconds. CPU system time: 0.07 seconds. Elapsed time: 1.65 seconds; current allocated memory: 791.383 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.57 seconds. CPU system time: 0 seconds. Elapsed time: 0.63 seconds; current allocated memory: 791.383 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'doitgen_Pipeline_VITIS_LOOP_64_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_64_5'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'VITIS_LOOP_64_5'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.33 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.36 seconds; current allocated memory: 791.688 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7v585t-ffg1761-2'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xc7v585t-ffg1761-2 
+INFO: [HLS 200-1510] Running: create_clock -period 50MHz -name default 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_latency 0 
+INFO: [HLS 200-1510] Running: source ./proj_doitgen_no_taffo/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name doitgen doitgen 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0.02 seconds. Elapsed time: 10.09 seconds; current allocated memory: 753.602 MB.
+INFO: [HLS 200-10] Analyzing design file 'doitgen_no_taffo.c' ... 
+WARNING: [HLS 207-5292] unused parameter 'argc' (doitgen_no_taffo.c:75:14)
+WARNING: [HLS 207-5292] unused parameter 'argv' (doitgen_no_taffo.c:75:27)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1.09 seconds. CPU system time: 0.7 seconds. Elapsed time: 2.13 seconds; current allocated memory: 753.602 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_52_2' is marked as complete unroll implied by the pipeline pragma (doitgen_no_taffo.c:52:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_54_3' is marked as complete unroll implied by the pipeline pragma (doitgen_no_taffo.c:54:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_57_4' is marked as complete unroll implied by the pipeline pragma (doitgen_no_taffo.c:57:23)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_64_5' is marked as complete unroll implied by the pipeline pragma (doitgen_no_taffo.c:64:24)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_52_2' (doitgen_no_taffo.c:52:19) in function 'doitgen' completely with a factor of 16 (doitgen_no_taffo.c:25:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_52_2' (doitgen_no_taffo.c:52:19) in function 'doitgen' has been removed because the loop is unrolled completely (doitgen_no_taffo.c:25:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_64_5' (doitgen_no_taffo.c:64:24) in function 'doitgen' completely with a factor of 16 (doitgen_no_taffo.c:25:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_54_3' (doitgen_no_taffo.c:54:19) in function 'doitgen' completely with a factor of 16 (doitgen_no_taffo.c:25:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_57_4' (doitgen_no_taffo.c:57:23) in function 'doitgen' completely with a factor of 16 (doitgen_no_taffo.c:25:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_57_4' (doitgen_no_taffo.c:57:23) in function 'doitgen' has been removed because the loop is unrolled completely (doitgen_no_taffo.c:25:0)
+INFO: [HLS 214-115] Multiple burst reads of length 256 and bit width 32 has been inferred on bundle 'gmem'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 214-115] Multiple burst writes of length 16 and bit width 32 has been inferred on bundle 'gmem'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (doitgen_no_taffo.c:72:1)
+INFO: [HLS 214-115] Multiple burst reads of length 256 and bit width 32 has been inferred on bundle 'gmem'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (doitgen_no_taffo.c:59:13)
+INFO: [HLS 214-115] Multiple burst writes of length 256 and bit width 32 has been inferred on bundle 'gmem'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (doitgen_no_taffo.c:36:7)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 37.13 seconds. CPU system time: 1.14 seconds. Elapsed time: 39.26 seconds; current allocated memory: 760.293 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 760.293 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.44 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.54 seconds; current allocated memory: 775.090 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.28 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.33 seconds; current allocated memory: 775.590 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 2.01 seconds. CPU system time: 0.06 seconds. Elapsed time: 2.08 seconds; current allocated memory: 825.180 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 7.12 seconds. CPU system time: 0.07 seconds. Elapsed time: 7.4 seconds; current allocated memory: 881.637 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'doitgen' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'doitgen_Pipeline_VITIS_LOOP_50_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_50_1'.
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('empty_277', doitgen_no_taffo.c:36) on port 'gmem' (doitgen_no_taffo.c:36) and bus request operation ('empty_275', doitgen_no_taffo.c:59) on port 'gmem' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('empty_277', doitgen_no_taffo.c:36) on port 'gmem' (doitgen_no_taffo.c:36) and bus request operation ('empty_275', doitgen_no_taffo.c:59) on port 'gmem' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('empty_277', doitgen_no_taffo.c:36) on port 'gmem' (doitgen_no_taffo.c:36) and bus request operation ('empty_275', doitgen_no_taffo.c:59) on port 'gmem' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('empty_277', doitgen_no_taffo.c:36) on port 'gmem' (doitgen_no_taffo.c:36) and bus request operation ('empty_275', doitgen_no_taffo.c:59) on port 'gmem' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 130, distance = 1, offset = 1) between bus response operation ('empty_277', doitgen_no_taffo.c:36) on port 'gmem' (doitgen_no_taffo.c:36) and bus request operation ('empty_275', doitgen_no_taffo.c:59) on port 'gmem' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 193, distance = 1, offset = 1) between bus response operation ('empty_277', doitgen_no_taffo.c:36) on port 'gmem' (doitgen_no_taffo.c:36) and bus request operation ('empty_275', doitgen_no_taffo.c:59) on port 'gmem' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 225, distance = 1, offset = 1) between bus response operation ('empty_277', doitgen_no_taffo.c:36) on port 'gmem' (doitgen_no_taffo.c:36) and bus request operation ('empty_275', doitgen_no_taffo.c:59) on port 'gmem' (doitgen_no_taffo.c:59).
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7v585t-ffg1761-2'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xc7v585t-ffg1761-2 
+INFO: [HLS 200-1510] Running: create_clock -period 50MHz -name default 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_latency 0 
+INFO: [HLS 200-1510] Running: source ./proj_doitgen_no_taffo/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name doitgen doitgen 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 10.07 seconds; current allocated memory: 753.621 MB.
+INFO: [HLS 200-10] Analyzing design file 'doitgen_no_taffo.c' ... 
+WARNING: [HLS 207-5292] unused parameter 'argc' (doitgen_no_taffo.c:75:14)
+WARNING: [HLS 207-5292] unused parameter 'argv' (doitgen_no_taffo.c:75:27)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0.76 seconds. Elapsed time: 2.2 seconds; current allocated memory: 753.621 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_52_2' is marked as complete unroll implied by the pipeline pragma (doitgen_no_taffo.c:52:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_54_3' is marked as complete unroll implied by the pipeline pragma (doitgen_no_taffo.c:54:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_57_4' is marked as complete unroll implied by the pipeline pragma (doitgen_no_taffo.c:57:23)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_64_5' is marked as complete unroll implied by the pipeline pragma (doitgen_no_taffo.c:64:24)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_52_2' (doitgen_no_taffo.c:52:19) in function 'doitgen' completely with a factor of 16 (doitgen_no_taffo.c:25:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_52_2' (doitgen_no_taffo.c:52:19) in function 'doitgen' has been removed because the loop is unrolled completely (doitgen_no_taffo.c:25:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_64_5' (doitgen_no_taffo.c:64:24) in function 'doitgen' completely with a factor of 16 (doitgen_no_taffo.c:25:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_54_3' (doitgen_no_taffo.c:54:19) in function 'doitgen' completely with a factor of 16 (doitgen_no_taffo.c:25:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_57_4' (doitgen_no_taffo.c:57:23) in function 'doitgen' completely with a factor of 16 (doitgen_no_taffo.c:25:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_57_4' (doitgen_no_taffo.c:57:23) in function 'doitgen' has been removed because the loop is unrolled completely (doitgen_no_taffo.c:25:0)
+INFO: [HLS 214-248] Applying array_partition to 'A': Block partitioning with factor 4 on dimension 1. (doitgen_no_taffo.c:25:0)
+INFO: [HLS 214-248] Applying array_partition to 'C': Block partitioning with factor 4 on dimension 1. (doitgen_no_taffo.c:25:0)
+INFO: [HLS 214-115] Multiple burst reads of length 64 and bit width 32 has been inferred on bundle 'gmem_0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 214-115] Multiple burst writes of length 16 and bit width 32 has been inferred on bundle 'gmem'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (doitgen_no_taffo.c:72:1)
+INFO: [HLS 214-115] Multiple burst reads of length 256 and bit width 32 has been inferred on bundle 'gmem_0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (doitgen_no_taffo.c:59:13)
+INFO: [HLS 214-115] Multiple burst writes of length 256 and bit width 32 has been inferred on bundle 'gmem_0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (doitgen_no_taffo.c:36:7)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 37.01 seconds. CPU system time: 0.97 seconds. Elapsed time: 38.47 seconds; current allocated memory: 760.340 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 760.340 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.31 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.38 seconds; current allocated memory: 775.422 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.18 seconds. CPU system time: 0 seconds. Elapsed time: 0.18 seconds; current allocated memory: 775.938 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1.46 seconds. CPU system time: 0.07 seconds. Elapsed time: 1.53 seconds; current allocated memory: 825.852 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 2.44 seconds. CPU system time: 0.01 seconds. Elapsed time: 2.45 seconds; current allocated memory: 874.730 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'doitgen' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'doitgen_Pipeline_VITIS_LOOP_50_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_50_1'.
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 130, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 193, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 225, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 241, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 249, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 253, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 255, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+WARNING: [HLS 200-880] The II Violation in module 'doitgen_Pipeline_VITIS_LOOP_50_1' (loop 'VITIS_LOOP_50_1'): Unable to enforce a carried dependence constraint (II = 256, distance = 1, offset = 1) between bus response operation ('empty_279', doitgen_no_taffo.c:36) on port 'gmem_0' (doitgen_no_taffo.c:36) and bus request operation ('empty_277', doitgen_no_taffo.c:59) on port 'gmem_0' (doitgen_no_taffo.c:59).
+INFO: [SCHED 204-61] Unable to satisfy pipeline directive for loop 'VITIS_LOOP_50_1': unable to pipeline.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 153.83 seconds. CPU system time: 0.26 seconds. Elapsed time: 154.55 seconds; current allocated memory: 982.922 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 60.81 seconds. CPU system time: 0.09 seconds. Elapsed time: 61.08 seconds; current allocated memory: 982.922 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'doitgen' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 28.8 seconds. CPU system time: 0.09 seconds. Elapsed time: 28.96 seconds; current allocated memory: 982.922 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1.41 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.42 seconds; current allocated memory: 982.922 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'doitgen_Pipeline_VITIS_LOOP_50_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_2_full_dsp_1': 48 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_2_max_dsp_1': 48 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'doitgen_Pipeline_VITIS_LOOP_50_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 7.93 seconds. CPU system time: 0.05 seconds. Elapsed time: 8.03 seconds; current allocated memory: 1006.715 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'doitgen' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/gmem_0' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/A_0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/A_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/A_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/A_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/C_0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/C_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/C_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/C_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doitgen/sum' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'doitgen' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'A_0', 'C_0' and 'sum' to AXI-Lite port control.
+WARNING: [RTGEN 206-101] Port 'doitgen/A_1_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'doitgen/A_1_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'doitgen/A_1_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'doitgen/A_1_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'doitgen/A_1_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'doitgen/A_1_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'doitgen/A_1_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'doitgen/A_1_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'doitgen/A_1_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'doitgen/A_1_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'doitgen/A_1_address1' to 0.
+WARNING: [RTGEN 206-101] Port 'doitgen/A_1_ce1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'doitgen/A_1_ce1' to 0.
+WARNING: [RTGEN 206-101] Port 'doitgen/A_1_we1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.

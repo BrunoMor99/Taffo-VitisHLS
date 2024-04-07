@@ -1,0 +1,22 @@
+warning: overriding the module target triple with fpga64-xilinx-none [-Woverride-module]
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+remark: <unknown>:0:0: Sequential read of length 16 has been inferred _XLX_SEP_ OldID=for.inc.load.5,  _XLX_SEP_ scevgep33seq A gmem VITIS_LOOP_58_3  mm2 
+remark: <unknown>:0:0: Stride is incompatible _XLX_SEP_ for.inc.load.13 B gmem VITIS_LOOP_58_3  mm2 
+remark: <unknown>:0:0: Stride is incompatible _XLX_SEP_ scevgep33seq A gmem VITIS_LOOP_55_2  mm2 
+remark: <unknown>:0:0: Stride is incompatible _XLX_SEP_ for.inc66.load.9 C gmem VITIS_LOOP_70_6  mm2 
+remark: <unknown>:0:0: Access is clobbered by store _XLX_SEP_ VITIS_LOOP_70_6.load.3 D gmem mm2 
+remark: <unknown>:0:0: Access is clobbered by store _XLX_SEP_ VITIS_LOOP_70_6.store.9 D gmem mm2 
+remark: <unknown>:0:0: Access is clobbered by store _XLX_SEP_ for.inc69.store.1 D gmem mm2 
+remark: <unknown>:0:0: Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0 _XLX_SEP_ scevgep33seq A gmem VITIS_LOOP_58_3  mm2 
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+warning: <unknown>:0:0: The program may have out of bound array access
+remark: <unknown>:0:0: Could not burst due to multiple potential reads to the same bundle in the same region. _XLX_SEP_ seq  gmem mm2 
+1 warning generated.

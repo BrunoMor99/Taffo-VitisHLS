@@ -1,0 +1,252 @@
+
+
+================================================================
+== Synthesis Summary Report of 'syr2k'
+================================================================
++ General Information: 
+    * Date:           Tue Feb 27 22:16:22 2024
+    * Version:        2022.2 (Build 3670227 on Oct 13 2022)
+    * Project:        proj_syr2k_no_taffo
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: virtex7
+    * Target device:  xc7v585t-ffg1761-2
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-----------------------------------------------------+--------+--------+---------+-----------+----------+---------+------+----------+------+---------+------------+------------+-----+
+    |                       Modules                       |  Issue |        | Latency |  Latency  | Iteration|         | Trip |          |      |         |            |            |     |
+    |                       & Loops                       |  Type  |  Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM |   DSP   |     FF     |     LUT    | URAM|
+    +-----------------------------------------------------+--------+--------+---------+-----------+----------+---------+------+----------+------+---------+------------+------------+-----+
+    |+ syr2k                                              |  Timing|  -12.86|    99289|  2.726e+06|         -|    99290|     -|        no|     -|  6 (~0%)|  4078 (~0%)|   8502 (2%)|    -|
+    | o VITIS_LOOP_46_1                                   |       -|   14.60|    99288|  2.726e+06|     24822|        -|     4|        no|     -|        -|           -|           -|    -|
+    |  + syr2k_Pipeline_VITIS_LOOP_48_2                   |  Timing|   -8.47|      257|  5.928e+03|         -|      257|     -|        no|     -|        -|   119 (~0%)|   277 (~0%)|    -|
+    |   o VITIS_LOOP_48_2                                 |      II|   14.60|      255|  5.882e+03|        16|       15|    17|       yes|     -|        -|           -|           -|    -|
+    |  + syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4   |  Timing|  -12.86|     5442|  1.494e+05|         -|     5442|     -|        no|     -|        -|   490 (~0%)|  1046 (~0%)|    -|
+    |   o VITIS_LOOP_52_3_VITIS_LOOP_54_4                 |      II|   14.60|     5440|  1.494e+05|        21|       20|   272|       yes|     -|        -|           -|           -|    -|
+    |  + syr2k_Pipeline_VITIS_LOOP_48_21                  |  Timing|   -8.47|      272|  6.274e+03|         -|      272|     -|        no|     -|        -|   119 (~0%)|   277 (~0%)|    -|
+    |   o VITIS_LOOP_48_2                                 |      II|   14.60|      270|  6.228e+03|        16|       15|    18|       yes|     -|        -|           -|           -|    -|
+    |  + syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42  |  Timing|  -12.86|     5762|  1.582e+05|         -|     5762|     -|        no|     -|        -|   490 (~0%)|  1046 (~0%)|    -|
+    |   o VITIS_LOOP_52_3_VITIS_LOOP_54_4                 |      II|   14.60|     5760|  1.582e+05|        21|       20|   288|       yes|     -|        -|           -|           -|    -|
+    |  + syr2k_Pipeline_VITIS_LOOP_48_23                  |  Timing|   -8.47|      287|  6.620e+03|         -|      287|     -|        no|     -|        -|   119 (~0%)|   277 (~0%)|    -|
+    |   o VITIS_LOOP_48_2                                 |      II|   14.60|      285|  6.574e+03|        16|       15|    19|       yes|     -|        -|           -|           -|    -|
+    |  + syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44  |  Timing|  -12.86|     6082|  1.670e+05|         -|     6082|     -|        no|     -|        -|   490 (~0%)|  1046 (~0%)|    -|
+    |   o VITIS_LOOP_52_3_VITIS_LOOP_54_4                 |      II|   14.60|     6080|  1.669e+05|        21|       20|   304|       yes|     -|        -|           -|           -|    -|
+    |  + syr2k_Pipeline_VITIS_LOOP_48_25                  |  Timing|   -8.47|      302|  6.966e+03|         -|      302|     -|        no|     -|        -|   120 (~0%)|   277 (~0%)|    -|
+    |   o VITIS_LOOP_48_2                                 |      II|   14.60|      300|  6.920e+03|        16|       15|    20|       yes|     -|        -|           -|           -|    -|
+    |  + syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46  |  Timing|  -12.86|     6402|  1.758e+05|         -|     6402|     -|        no|     -|        -|   491 (~0%)|  1047 (~0%)|    -|
+    |   o VITIS_LOOP_52_3_VITIS_LOOP_54_4                 |      II|   14.60|     6400|  1.757e+05|        21|       20|   320|       yes|     -|        -|           -|           -|    -|
+    +-----------------------------------------------------+--------+--------+---------+-----------+----------+---------+------+----------+------+---------+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| Interface  | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   |
+|            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |
++------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| m_axi_gmem | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          |
++------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+------------------+
+| Interface     | Register | Offset | Width | Access | Description      |
++---------------+----------+--------+-------+--------+------------------+
+| s_axi_control | A_1      | 0x10   | 32    | W      | Data signal of A |
+| s_axi_control | A_2      | 0x14   | 32    | W      | Data signal of A |
+| s_axi_control | B_1      | 0x1c   | 32    | W      | Data signal of B |
+| s_axi_control | B_2      | 0x20   | 32    | W      | Data signal of B |
+| s_axi_control | C_1      | 0x28   | 32    | W      | Data signal of C |
+| s_axi_control | C_2      | 0x2c   | 32    | W      | Data signal of C |
++---------------+----------+--------+-------+--------+------------------+
+
+* Other Ports
++-----------+---------+----------+
+| Interface | Mode    | Bitwidth |
++-----------+---------+----------+
+| alpha     | ap_none | 32       |
+| beta      | ap_none | 32       |
++-----------+---------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst_n  | reset      | ap_rst_n                          |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| A        | inout     | float*   |
+| B        | inout     | float*   |
+| C        | inout     | float*   |
+| alpha    | in        | float    |
+| beta     | in        | float    |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+-------------------------------+
+| Argument | HW Interface  | HW Type   | HW Usage | HW Info                       |
++----------+---------------+-----------+----------+-------------------------------+
+| A        | m_axi_gmem    | interface |          |                               |
+| A        | s_axi_control | register  | offset   | name=A_1 offset=0x10 range=32 |
+| A        | s_axi_control | register  | offset   | name=A_2 offset=0x14 range=32 |
+| B        | m_axi_gmem    | interface |          |                               |
+| B        | s_axi_control | register  | offset   | name=B_1 offset=0x1c range=32 |
+| B        | s_axi_control | register  | offset   | name=B_2 offset=0x20 range=32 |
+| C        | m_axi_gmem    | interface |          |                               |
+| C        | s_axi_control | register  | offset   | name=C_1 offset=0x28 range=32 |
+| C        | s_axi_control | register  | offset   | name=C_2 offset=0x2c range=32 |
+| alpha    | alpha         | port      |          |                               |
+| beta     | beta          | port      |          |                               |
++----------+---------------+-----------+----------+-------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Bursts and Widening Missed
++--------------+----------+-----------------+------------------------------+------------+------------------------+
+| HW Interface | Variable | Loop            | Problem                      | Resolution | Location               |
++--------------+----------+-----------------+------------------------------+------------+------------------------+
+| m_axi_gmem   | C        |                 | Access is clobbered by store | 214-231    | syr2k_no_taffo.c:50:14 |
+| m_axi_gmem   | C        |                 | Access is clobbered by load  | 214-231    | syr2k_no_taffo.c:50:14 |
+| m_axi_gmem   | A        | VITIS_LOOP_54_4 | Stride is incompatible       | 214-230    | syr2k_no_taffo.c:54:19 |
+| m_axi_gmem   | B        | VITIS_LOOP_54_4 | Stride is incompatible       | 214-230    | syr2k_no_taffo.c:54:19 |
+| m_axi_gmem   | C        |                 | Access is clobbered by store | 214-231    | syr2k_no_taffo.c:57:12 |
+| m_axi_gmem   | C        |                 | Access is clobbered by load  | 214-231    | syr2k_no_taffo.c:57:12 |
+| m_axi_gmem   | C        |                 | Access is clobbered by store | 214-231    | syr2k_no_taffo.c:50:14 |
+| m_axi_gmem   | C        |                 | Access is clobbered by load  | 214-231    | syr2k_no_taffo.c:50:14 |
+| m_axi_gmem   | A        | VITIS_LOOP_54_4 | Stride is incompatible       | 214-230    | syr2k_no_taffo.c:54:19 |
+| m_axi_gmem   | B        | VITIS_LOOP_54_4 | Stride is incompatible       | 214-230    | syr2k_no_taffo.c:54:19 |
+| m_axi_gmem   | C        |                 | Access is clobbered by store | 214-231    | syr2k_no_taffo.c:57:12 |
+| m_axi_gmem   | C        |                 | Access is clobbered by load  | 214-231    | syr2k_no_taffo.c:57:12 |
+| m_axi_gmem   | C        |                 | Access is clobbered by store | 214-231    | syr2k_no_taffo.c:50:14 |
+| m_axi_gmem   | C        |                 | Access is clobbered by load  | 214-231    | syr2k_no_taffo.c:50:14 |
+| m_axi_gmem   | A        | VITIS_LOOP_54_4 | Stride is incompatible       | 214-230    | syr2k_no_taffo.c:54:19 |
+| m_axi_gmem   | B        | VITIS_LOOP_54_4 | Stride is incompatible       | 214-230    | syr2k_no_taffo.c:54:19 |
+| m_axi_gmem   | C        |                 | Access is clobbered by store | 214-231    | syr2k_no_taffo.c:57:12 |
+| m_axi_gmem   | C        |                 | Access is clobbered by load  | 214-231    | syr2k_no_taffo.c:57:12 |
+| m_axi_gmem   | C        |                 | Access is clobbered by store | 214-231    | syr2k_no_taffo.c:50:14 |
+| m_axi_gmem   | C        |                 | Access is clobbered by load  | 214-231    | syr2k_no_taffo.c:50:14 |
+| m_axi_gmem   | A        | VITIS_LOOP_54_4 | Stride is incompatible       | 214-230    | syr2k_no_taffo.c:54:19 |
+| m_axi_gmem   | B        | VITIS_LOOP_54_4 | Stride is incompatible       | 214-230    | syr2k_no_taffo.c:54:19 |
+| m_axi_gmem   | C        |                 | Access is clobbered by store | 214-231    | syr2k_no_taffo.c:57:12 |
+| m_axi_gmem   | C        |                 | Access is clobbered by load  | 214-231    | syr2k_no_taffo.c:57:12 |
++--------------+----------+-----------------+------------------------------+------------+------------------------+
+
+    * Resolution URL: www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++----------------------------------------------------+-----+--------+------------+-----+--------+---------+
+| Name                                               | DSP | Pragma | Variable   | Op  | Impl   | Latency |
++----------------------------------------------------+-----+--------+------------+-----+--------+---------+
+| + syr2k                                            | 6   |        |            |     |        |         |
+|   add_ln46_fu_297_p2                               | -   |        | add_ln46   | add | fabric | 0       |
+|   add_ln46_1_fu_303_p2                             | -   |        | add_ln46_1 | add | fabric | 0       |
+|   add_ln46_2_fu_355_p2                             | -   |        | add_ln46_2 | add | fabric | 0       |
+|   add_ln46_3_fu_394_p2                             | -   |        | add_ln46_3 | add | fabric | 0       |
+|   add_ln46_4_fu_433_p2                             | -   |        | add_ln46_4 | add | fabric | 0       |
+|  + syr2k_Pipeline_VITIS_LOOP_48_2                  | 0   |        |            |     |        |         |
+|    add_ln48_fu_152_p2                              | -   |        | add_ln48   | add | fabric | 0       |
+|    add_ln50_fu_172_p2                              | -   |        | add_ln50   | add | fabric | 0       |
+|  + syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_4  | 0   |        |            |     |        |         |
+|    empty_33_fu_286_p2                              | -   |        | empty_33   | add | fabric | 0       |
+|    empty_34_fu_292_p2                              | -   |        | empty_34   | add | fabric | 0       |
+|    add_ln52_1_fu_334_p2                            | -   |        | add_ln52_1 | add | fabric | 0       |
+|    add_ln52_fu_348_p2                              | -   |        | add_ln52   | add | fabric | 0       |
+|    p_mid1230_fu_380_p2                             | -   |        | p_mid1230  | add | fabric | 0       |
+|    p_mid1232_fu_386_p2                             | -   |        | p_mid1232  | add | fabric | 0       |
+|    add_ln57_fu_470_p2                              | -   |        | add_ln57   | add | fabric | 0       |
+|    add_ln57_1_fu_496_p2                            | -   |        | add_ln57_1 | add | fabric | 0       |
+|    add_ln57_2_fu_536_p2                            | -   |        | add_ln57_2 | add | fabric | 0       |
+|    add_ln54_fu_562_p2                              | -   |        | add_ln54   | add | fabric | 0       |
+|  + syr2k_Pipeline_VITIS_LOOP_48_21                 | 0   |        |            |     |        |         |
+|    add_ln48_fu_158_p2                              | -   |        | add_ln48   | add | fabric | 0       |
+|    add_ln50_fu_188_p2                              | -   |        | add_ln50   | add | fabric | 0       |
+|  + syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_42 | 0   |        |            |     |        |         |
+|    empty_29_fu_286_p2                              | -   |        | empty_29   | add | fabric | 0       |
+|    empty_30_fu_292_p2                              | -   |        | empty_30   | add | fabric | 0       |
+|    add_ln52_fu_334_p2                              | -   |        | add_ln52   | add | fabric | 0       |
+|    add_ln52_3_fu_348_p2                            | -   |        | add_ln52_3 | add | fabric | 0       |
+|    p_mid1257_fu_380_p2                             | -   |        | p_mid1257  | add | fabric | 0       |
+|    p_mid1259_fu_386_p2                             | -   |        | p_mid1259  | add | fabric | 0       |
+|    add_ln57_3_fu_470_p2                            | -   |        | add_ln57_3 | add | fabric | 0       |
+|    add_ln57_4_fu_496_p2                            | -   |        | add_ln57_4 | add | fabric | 0       |
+|    add_ln57_fu_536_p2                              | -   |        | add_ln57   | add | fabric | 0       |
+|    add_ln54_fu_562_p2                              | -   |        | add_ln54   | add | fabric | 0       |
+|  + syr2k_Pipeline_VITIS_LOOP_48_23                 | 0   |        |            |     |        |         |
+|    add_ln48_fu_158_p2                              | -   |        | add_ln48   | add | fabric | 0       |
+|    add_ln50_fu_188_p2                              | -   |        | add_ln50   | add | fabric | 0       |
+|  + syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_44 | 0   |        |            |     |        |         |
+|    empty_25_fu_286_p2                              | -   |        | empty_25   | add | fabric | 0       |
+|    empty_26_fu_292_p2                              | -   |        | empty_26   | add | fabric | 0       |
+|    add_ln52_fu_334_p2                              | -   |        | add_ln52   | add | fabric | 0       |
+|    add_ln52_2_fu_348_p2                            | -   |        | add_ln52_2 | add | fabric | 0       |
+|    p_mid1287_fu_380_p2                             | -   |        | p_mid1287  | add | fabric | 0       |
+|    p_mid1289_fu_386_p2                             | -   |        | p_mid1289  | add | fabric | 0       |
+|    add_ln57_fu_470_p2                              | -   |        | add_ln57   | add | fabric | 0       |
+|    add_ln57_3_fu_496_p2                            | -   |        | add_ln57_3 | add | fabric | 0       |
+|    add_ln57_4_fu_536_p2                            | -   |        | add_ln57_4 | add | fabric | 0       |
+|    add_ln54_fu_562_p2                              | -   |        | add_ln54   | add | fabric | 0       |
+|  + syr2k_Pipeline_VITIS_LOOP_48_25                 | 0   |        |            |     |        |         |
+|    add_ln48_fu_154_p2                              | -   |        | add_ln48   | add | fabric | 0       |
+|    add_ln50_fu_188_p2                              | -   |        | add_ln50   | add | fabric | 0       |
+|  + syr2k_Pipeline_VITIS_LOOP_52_3_VITIS_LOOP_54_46 | 0   |        |            |     |        |         |
+|    empty_21_fu_279_p2                              | -   |        | empty_21   | add | fabric | 0       |
+|    empty_22_fu_285_p2                              | -   |        | empty_22   | add | fabric | 0       |
+|    add_ln52_fu_317_p2                              | -   |        | add_ln52   | add | fabric | 0       |
+|    add_ln52_1_fu_340_p2                            | -   |        | add_ln52_1 | add | fabric | 0       |
+|    p_mid1317_fu_372_p2                             | -   |        | p_mid1317  | add | fabric | 0       |
+|    p_mid1319_fu_378_p2                             | -   |        | p_mid1319  | add | fabric | 0       |
+|    add_ln57_fu_466_p2                              | -   |        | add_ln57   | add | fabric | 0       |
+|    add_ln57_1_fu_492_p2                            | -   |        | add_ln57_1 | add | fabric | 0       |
+|    add_ln57_2_fu_532_p2                            | -   |        | add_ln57_2 | add | fabric | 0       |
+|    add_ln54_fu_558_p2                              | -   |        | add_ln54   | add | fabric | 0       |
++----------------------------------------------------+-----+--------+------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+------------------------------+------------------------------+
+| Type      | Options                      | Location                     |
++-----------+------------------------------+------------------------------+
+| interface | m_axi port = A depth = 16*16 | syr2k_no_taffo.c:23 in syr2k |
+| interface | m_axi port = B depth = 16*16 | syr2k_no_taffo.c:24 in syr2k |
+| interface | m_axi port = C depth = 16*16 | syr2k_no_taffo.c:25 in syr2k |
+| unroll    | factor=4                     | syr2k_no_taffo.c:47 in syr2k |
+| pipeline  | II=1                         | syr2k_no_taffo.c:49 in syr2k |
+| pipeline  | II=1                         | syr2k_no_taffo.c:53 in syr2k |
+| pipeline  | II=1                         | syr2k_no_taffo.c:56 in syr2k |
++-----------+------------------------------+------------------------------+
+
+

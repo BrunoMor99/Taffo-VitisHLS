@@ -1,0 +1,65 @@
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3384:5: warning: Added loop label VITIS_LOOP_43_1:   [xilinx-label-all-loops]
+    for (i = 0; i < 16; i++){
+    ^~~
+    VITIS_LOOP_43_1: 
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3384:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3388:5: warning: Added loop label VITIS_LOOP_47_2:   [xilinx-label-all-loops]
+    for (i = 0; i < 16; i++)
+    ^~~
+    VITIS_LOOP_47_2: 
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3388:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3393:7: warning: Added loop label VITIS_LOOP_52_3:   [xilinx-label-all-loops]
+      for (j = 0; j < 16; j++){
+      ^~~
+      VITIS_LOOP_52_3: 
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3393:7: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3397:7: warning: Added loop label VITIS_LOOP_56_4:   [xilinx-label-all-loops]
+      for (j = 0; j < 16; j++){
+      ^~~
+      VITIS_LOOP_56_4: 
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3397:7: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3404:5: warning: Added loop label VITIS_LOOP_63_5:   [xilinx-label-all-loops]
+    for (j = 0; j < 16; j++){
+    ^~~
+    VITIS_LOOP_63_5: 
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3404:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3438:5: warning: Added loop label VITIS_LOOP_97_1:   [xilinx-label-all-loops]
+    for (i = 0; i < 16; i++){
+    ^~~
+    VITIS_LOOP_97_1: 
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3438:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3443:5: warning: Added loop label VITIS_LOOP_102_2:   [xilinx-label-all-loops]
+    for (i = 0; i < 16; i++){
+    ^~~
+    VITIS_LOOP_102_2: 
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3443:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3445:9: warning: Added loop label VITIS_LOOP_104_3:   [xilinx-label-all-loops]
+        for (j = 0; j < n; j++){
+        ^~~
+        VITIS_LOOP_104_3: 
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3445:9: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3450:5: warning: Added loop label VITIS_LOOP_109_4:   [xilinx-label-all-loops]
+    for (i = 0; i < 16; i++){
+    ^~~
+    VITIS_LOOP_109_4: 
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3450:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3456:5: warning: Added loop label VITIS_LOOP_115_5:   [xilinx-label-all-loops]
+    for (i = 0; i < 16; i++)
+    ^~~
+    VITIS_LOOP_115_5: 
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3456:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3460:7: warning: Added loop label VITIS_LOOP_119_6:   [xilinx-label-all-loops]
+      for (j = 0; j < 16; j++){
+      ^~~
+      VITIS_LOOP_119_6: 
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3460:7: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3463:7: warning: Added loop label VITIS_LOOP_122_7:   [xilinx-label-all-loops]
+      for (j = 0; j < 16; j++){
+      ^~~
+      VITIS_LOOP_122_7: 
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3463:7: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3471:3: warning: Added loop label VITIS_LOOP_130_8:   [xilinx-label-all-loops]
+  for (i = 0; i < 16; i++){
+  ^~~
+  VITIS_LOOP_130_8: 
+/home/bruno/Desktop/benchmarks/atax/proj_atax/solution1/.autopilot/db/atax_taffo.pp.0.c:3471:3: note: FIX-IT applied suggested code changes

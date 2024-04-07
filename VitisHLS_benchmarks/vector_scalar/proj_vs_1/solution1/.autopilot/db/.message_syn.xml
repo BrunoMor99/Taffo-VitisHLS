@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 10.05 seconds; current allocated memory: 754.613 MB." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;vs.c&apos; ..." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished Source Code Analysis and Preprocessing: CPU user time: 0.47 seconds. CPU system time: 0.53 seconds. Elapsed time: 0.98 seconds; current allocated memory: 755.781 MB." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-1022]" key="HLS 200-1022" tag="" content="Running custom LLVM hook &apos;HLS_HOOKS::opt&apos;" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-777]" key="HLS_150_1932" tag="" content="Using interface defaults for &apos;Vivado&apos; flow target." resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-7570]" key="HLS 207-7570" tag="" content="Invalid record" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 200-1715]" key="HLS 200-1715" tag="" content="Encountered problem during source synthesis" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished Command csynth_design CPU user time: 4.39 seconds. CPU system time: 1.06 seconds. Elapsed time: 5.48 seconds; current allocated memory: 1.547 MB." resolution=""/>
+</Messages>

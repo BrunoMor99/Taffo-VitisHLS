@@ -1,0 +1,12 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="fw_no_taffo.c:60:14" msg_body="unused parameter 'argc'">
+        <args ClangWarningOption="unused-parameter"/>
+    </msg>
+    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="fw_no_taffo.c:60:27" msg_body="unused parameter 'argv'">
+        <args ClangWarningOption="unused-parameter"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/bruno/Desktop/benchmarks/fw/run_hls_no_taffo.tcl:44:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="fw" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=fw" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

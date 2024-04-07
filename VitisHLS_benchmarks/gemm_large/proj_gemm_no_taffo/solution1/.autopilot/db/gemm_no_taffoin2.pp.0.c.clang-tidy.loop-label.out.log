@@ -1,0 +1,55 @@
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:919:5: warning: Added loop label VITIS_LOOP_55_1:   [xilinx-label-all-loops]
+    for (int i = 0; i < ni; i++){
+    ^~~
+    VITIS_LOOP_55_1: 
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:919:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:920:9: warning: Added loop label VITIS_LOOP_56_2:   [xilinx-label-all-loops]
+        for (int j = 0; j < nk; j++){
+        ^~~
+        VITIS_LOOP_56_2: 
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:920:9: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:924:5: warning: Added loop label VITIS_LOOP_60_3:   [xilinx-label-all-loops]
+    for (int i = 0; i < nk; i++){
+    ^~~
+    VITIS_LOOP_60_3: 
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:924:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:925:9: warning: Added loop label VITIS_LOOP_61_4:   [xilinx-label-all-loops]
+        for (int j = 0; j < nj; j++){
+        ^~~
+        VITIS_LOOP_61_4: 
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:925:9: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:929:5: warning: Added loop label VITIS_LOOP_65_5:   [xilinx-label-all-loops]
+    for (int i = 0; i < ni; i++){
+    ^~~
+    VITIS_LOOP_65_5: 
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:929:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:930:9: warning: Added loop label VITIS_LOOP_66_6:   [xilinx-label-all-loops]
+        for (int j = 0; j < nj; j++){
+        ^~~
+        VITIS_LOOP_66_6: 
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:930:9: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:945:5: warning: Added loop label VITIS_LOOP_81_7:   [xilinx-label-all-loops]
+    for (ii = 0; ii < 16; ii++){
+    ^~~
+    VITIS_LOOP_81_7: 
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:945:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:947:2: warning: Added loop label VITIS_LOOP_83_8:   [xilinx-label-all-loops]
+ for (jj = 0; jj < 16; jj++)
+ ^~~
+ VITIS_LOOP_83_8: 
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:947:2: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:951:13: warning: Added loop label VITIS_LOOP_87_9:   [xilinx-label-all-loops]
+            for (k = 0; k < 16; k++){
+            ^~~
+            VITIS_LOOP_87_9: 
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:951:13: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:961:5: warning: Added loop label VITIS_LOOP_97_10:   [xilinx-label-all-loops]
+    for (ii = 0; ii < 16; ii++)
+    ^~~
+    VITIS_LOOP_97_10: 
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:961:5: note: FIX-IT applied suggested code changes
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:964:2: warning: Added loop label VITIS_LOOP_100_11:   [xilinx-label-all-loops]
+ for (jj = 0; jj < 16; jj++){
+ ^~~
+ VITIS_LOOP_100_11: 
+/home/bruno/Desktop/benchmarks/gemm_large/proj_gemm_no_taffo/solution1/.autopilot/db/gemm_no_taffoin2.pp.0.c:964:2: note: FIX-IT applied suggested code changes

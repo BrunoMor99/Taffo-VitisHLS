@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_no_taffo/solution1/./sim/autowrap/testbench/vs_no_taffo.c_pre.c.tb.c

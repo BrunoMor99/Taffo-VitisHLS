@@ -1,0 +1,358 @@
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        covariance
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        covariance
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        covariance
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        covariance
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        covariance
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        covariance
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        covariance
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+Function:        covariance
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          for.inc35.load.3
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - String:          ' '
+  - ArrayName:       mean
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_53_4
+  - String:          ' '
+  - LoopLoc:         ''
+  - String:          ' '
+  - Function:        covariance
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+Function:        covariance
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.load.5
+  - String:          ' '
+  - ArrayName:       data
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_44_2
+  - String:          ' '
+  - LoopLoc:         ''
+  - String:          ' '
+  - Function:        covariance
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        covariance
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_44_2.load.2
+  - String:          ' '
+  - ArrayName:       mean
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        covariance
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        covariance
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc19.store.7
+  - String:          ' '
+  - ArrayName:       mean
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        covariance
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        covariance
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc35.load.7
+  - String:          ' '
+  - ArrayName:       data
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        covariance
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        covariance
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     load
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc35.store.11
+  - String:          ' '
+  - ArrayName:       data
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        covariance
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzePattern
+Function:        covariance
+Args:            
+  - String:          Could not analyze pattern
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - String:          ' '
+  - ArrayName:       mean
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_51_3
+  - String:          ' '
+  - LoopLoc:         ''
+  - String:          ' '
+  - Function:        covariance
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+Function:        covariance
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc64.load.5
+  - String:          ' '
+  - ArrayName:       data
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_63_7
+  - String:          ' '
+  - LoopLoc:         ''
+  - String:          ' '
+  - Function:        covariance
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        covariance
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_63_7.load.3
+  - String:          ' '
+  - ArrayName:       cov
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        covariance
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        covariance
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc80.store.1
+  - String:          ' '
+  - ArrayName:       cov
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        covariance
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+Function:        covariance
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc80.store.10
+  - String:          ' '
+  - ArrayName:       cov
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        covariance
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+Function:        covariance
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc80.store.15
+  - String:          ' '
+  - ArrayName:       cov
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_60_6
+  - String:          ' '
+  - LoopLoc:         ''
+  - String:          ' '
+  - Function:        covariance
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+Function:        covariance
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i32
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - String:          ' '
+  - ArrayName:       mean
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_53_4
+  - String:          ' '
+  - LoopLoc:         ''
+  - String:          ' '
+  - Function:        covariance
+  - String:          ' '
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        covariance
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        covariance
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        covariance
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        covariance
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        covariance
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            WarningOutOfBoundArrayAccess
+Function:        covariance
+Args:            
+  - String:          The program may have out of bound array access
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            BurstConflict
+Function:        covariance
+Args:            
+  - String:          'Could not burst due to multiple potential '
+  - Direction:       reads
+  - String:          ' to the same bundle in the same region.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        covariance
+  - String:          ' '
+...

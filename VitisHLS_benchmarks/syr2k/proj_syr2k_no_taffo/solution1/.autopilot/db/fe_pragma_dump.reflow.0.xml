@@ -1,0 +1,9 @@
+<pragmas>
+<pragma file="syr2k_no_taffo.c" line="47" pragmaType="unroll" parentfunction="syr2k" factor="4" skip_exit_check="0"/>
+<pragma file="syr2k_no_taffo.c" line="49" pragmaType="pipeline" parentfunction="syr2k" off="0" ii="1" rewind="0" style=""/>
+<pragma file="syr2k_no_taffo.c" line="53" pragmaType="pipeline" parentfunction="syr2k" off="0" ii="1" rewind="0" style=""/>
+<pragma file="syr2k_no_taffo.c" line="56" pragmaType="pipeline" parentfunction="syr2k" off="0" ii="1" rewind="0" style=""/>
+<pragma file="syr2k_no_taffo.c" line="23" pragmaType="interface" parentfunction="syr2k" mode="m_axi" port="A" bundle="" offset="" name="" depth="256" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="syr2k_no_taffo.c" line="24" pragmaType="interface" parentfunction="syr2k" mode="m_axi" port="B" bundle="" offset="" name="" depth="256" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="syr2k_no_taffo.c" line="25" pragmaType="interface" parentfunction="syr2k" mode="m_axi" port="C" bundle="" offset="" name="" depth="256" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+</pragmas>

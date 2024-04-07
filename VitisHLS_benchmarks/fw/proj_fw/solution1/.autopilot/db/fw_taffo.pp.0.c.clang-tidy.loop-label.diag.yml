@@ -1,0 +1,58 @@
+---
+MainSourceFile:  /home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/.autopilot/db/fw_taffo.pp.0.c
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_30_1:  '
+    FileOffset:      30
+    FilePath:        fw_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/.autopilot/db/fw_taffo.pp.0.c
+        Offset:          94377
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_30_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_31_2:  '
+    FileOffset:      31
+    FilePath:        fw_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/.autopilot/db/fw_taffo.pp.0.c
+        Offset:          94406
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_31_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_38_3:  '
+    FileOffset:      38
+    FilePath:        fw_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/.autopilot/db/fw_taffo.pp.0.c
+        Offset:          94558
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_38_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_39_4:  '
+    FileOffset:      39
+    FilePath:        fw_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/.autopilot/db/fw_taffo.pp.0.c
+        Offset:          94590
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_39_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_40_5:  '
+    FileOffset:      40
+    FilePath:        fw_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/.autopilot/db/fw_taffo.pp.0.c
+        Offset:          94623
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_40_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_53_6:  '
+    FileOffset:      53
+    FilePath:        fw_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/fw/proj_fw/solution1/.autopilot/db/fw_taffo.pp.0.c
+        Offset:          95017
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_53_6: '
+...

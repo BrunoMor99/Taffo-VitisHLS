@@ -1,0 +1,474 @@
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: mm3_no_taffo.c, Line: 68, Column: 23 }
+Function:        mm3
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          for.inc.load.6
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgepseq
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_68_3
+  - String:          ' '
+  - LoopLoc:         'mm3_no_taffo.c:68:23'
+  - String:          ' '
+  - Function:        mm3
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: mm3_no_taffo.c, Line: 80, Column: 23 }
+Function:        mm3
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          for.inc54.load.6
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep52seq
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_80_6
+  - String:          ' '
+  - LoopLoc:         'mm3_no_taffo.c:80:23'
+  - String:          ' '
+  - Function:        mm3
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: mm3_no_taffo.c, Line: 93, Column: 23 }
+Function:        mm3
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          for.inc90.load.6
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep53seq
+  - String:          ' '
+  - ArrayName:       E
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_93_9
+  - String:          ' '
+  - LoopLoc:         'mm3_no_taffo.c:93:23'
+  - String:          ' '
+  - Function:        mm3
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: mm3_no_taffo.c, Line: 70, Column: 37 }
+Function:        mm3
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.load.10
+  - String:          ' '
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_68_3
+  - String:          ' '
+  - LoopLoc:         'mm3_no_taffo.c:68:23'
+  - String:          ' '
+  - Function:        mm3
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: mm3_no_taffo.c, Line: 68, Column: 23 }
+Function:        mm3
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgepseq
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_65_2
+  - String:          ' '
+  - LoopLoc:         'mm3_no_taffo.c:65:22'
+  - String:          ' '
+  - Function:        mm3
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: mm3_no_taffo.c, Line: 67, Column: 17 }
+Function:        mm3
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 70, Column: 21 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_68_3.store.4
+  - String:          ' '
+  - ArrayName:       E
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        mm3
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: mm3_no_taffo.c, Line: 70, Column: 21 }
+Function:        mm3
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 67, Column: 17 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc21.store.2
+  - String:          ' '
+  - ArrayName:       E
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        mm3
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: mm3_no_taffo.c, Line: 82, Column: 37 }
+Function:        mm3
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc54.load.10
+  - String:          ' '
+  - ArrayName:       D
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_80_6
+  - String:          ' '
+  - LoopLoc:         'mm3_no_taffo.c:80:23'
+  - String:          ' '
+  - Function:        mm3
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: mm3_no_taffo.c, Line: 80, Column: 23 }
+Function:        mm3
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep52seq
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_77_5
+  - String:          ' '
+  - LoopLoc:         'mm3_no_taffo.c:77:22'
+  - String:          ' '
+  - Function:        mm3
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: mm3_no_taffo.c, Line: 79, Column: 17 }
+Function:        mm3
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 82, Column: 21 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_80_6.store.4
+  - String:          ' '
+  - ArrayName:       F
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        mm3
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: mm3_no_taffo.c, Line: 82, Column: 21 }
+Function:        mm3
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 79, Column: 17 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc57.store.2
+  - String:          ' '
+  - ArrayName:       F
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        mm3
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: mm3_no_taffo.c, Line: 95, Column: 37 }
+Function:        mm3
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc90.load.10
+  - String:          ' '
+  - ArrayName:       F
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_93_9
+  - String:          ' '
+  - LoopLoc:         'mm3_no_taffo.c:93:23'
+  - String:          ' '
+  - Function:        mm3
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: mm3_no_taffo.c, Line: 93, Column: 23 }
+Function:        mm3
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep53seq
+  - String:          ' '
+  - ArrayName:       E
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_90_8
+  - String:          ' '
+  - LoopLoc:         'mm3_no_taffo.c:90:22'
+  - String:          ' '
+  - Function:        mm3
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: mm3_no_taffo.c, Line: 92, Column: 17 }
+Function:        mm3
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 95, Column: 21 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        VITIS_LOOP_93_9.store.4
+  - String:          ' '
+  - ArrayName:       G
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        mm3
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessClobbered
+DebugLoc:        { File: mm3_no_taffo.c, Line: 95, Column: 21 }
+Function:        mm3
+Args:            
+  - String:          'Access is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 92, Column: 17 }
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc93.store.2
+  - String:          ' '
+  - ArrayName:       G
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        mm3
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: mm3_no_taffo.c, Line: 93, Column: 23 }
+Function:        mm3
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep53seq
+  - String:          ' '
+  - ArrayName:       E
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_93_9
+  - String:          ' '
+  - LoopLoc:         'mm3_no_taffo.c:93:23'
+  - String:          ' '
+  - Function:        mm3
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: mm3_no_taffo.c, Line: 80, Column: 23 }
+Function:        mm3
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep52seq
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_80_6
+  - String:          ' '
+  - LoopLoc:         'mm3_no_taffo.c:80:23'
+  - String:          ' '
+  - Function:        mm3
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: mm3_no_taffo.c, Line: 68, Column: 23 }
+Function:        mm3
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgepseq
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_68_3
+  - String:          ' '
+  - LoopLoc:         'mm3_no_taffo.c:68:23'
+  - String:          ' '
+  - Function:        mm3
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            BurstConflict
+DebugLoc:        { File: mm3_no_taffo.c, Line: 68, Column: 23 }
+Function:        mm3
+Args:            
+  - String:          'Could not burst due to multiple potential '
+  - Direction:       reads
+  - String:          ' to the same bundle in the same region.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        mm3
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            BurstConflict
+DebugLoc:        { File: mm3_no_taffo.c, Line: 80, Column: 23 }
+Function:        mm3
+Args:            
+  - String:          'Could not burst due to multiple potential '
+  - Direction:       reads
+  - String:          ' to the same bundle in the same region.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq1
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        mm3
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 27, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            BurstConflict
+DebugLoc:        { File: mm3_no_taffo.c, Line: 93, Column: 23 }
+Function:        mm3
+Args:            
+  - String:          'Could not burst due to multiple potential '
+  - Direction:       reads
+  - String:          ' to the same bundle in the same region.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq2
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        mm3
+    DebugLoc:        { File: mm3_no_taffo.c, Line: 27, Column: 0 }
+  - String:          ' '
+...

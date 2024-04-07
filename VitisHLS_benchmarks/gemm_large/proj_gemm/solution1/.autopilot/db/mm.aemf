@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1710145760409">
+  <ports id="1" name="gamma" type="PortType" coreId="3621216858" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="11" name="ap_return" direction="DirOut">
+    <dataInputObjs>ret</dataInputObjs>
+  </ports>
+  <edges id="48" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="69" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="70" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="71" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="72" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="73" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="74" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="75" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="76" source_obj="//@blocks.0/@node_objs.9" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="77" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="78" source_obj="//@blocks.0/@node_objs.11" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="79" source_obj="//@blocks.0/@node_objs.12" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="80" source_obj="//@blocks.0/@node_objs.13" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="81" source_obj="//@blocks.0/@node_objs.14" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="82" source_obj="//@blocks.0/@node_objs.15" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="83" source_obj="//@blocks.0/@node_objs.16" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="84" source_obj="//@blocks.0/@node_objs.17" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="87" source_obj="//@blocks.0/@node_objs.17" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="88" source_obj="//@blocks.0/@node_objs.16" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="89" source_obj="//@blocks.0/@node_objs.15" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="90" source_obj="//@blocks.0/@node_objs.14" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="91" source_obj="//@blocks.0/@node_objs.13" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="92" source_obj="//@blocks.0/@node_objs.12" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="93" source_obj="//@blocks.0/@node_objs.11" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="94" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="95" source_obj="//@blocks.0/@node_objs.9" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="96" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="97" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="98" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="99" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="100" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="101" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="102" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="105" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.20"/>
+  <edges id="106" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.0/@node_objs.20"/>
+  <edges id="107" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.0/@node_objs.20"/>
+  <edges id="108" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.0/@node_objs.20"/>
+  <edges id="109" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.20"/>
+  <edges id="110" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.0/@node_objs.20"/>
+  <edges id="111" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.0/@node_objs.20"/>
+  <edges id="112" source_obj="//@blocks.0/@node_objs.9" sink_obj="//@blocks.0/@node_objs.20"/>
+  <edges id="113" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@blocks.0/@node_objs.20"/>
+  <edges id="114" source_obj="//@blocks.0/@node_objs.11" sink_obj="//@blocks.0/@node_objs.20"/>
+  <edges id="115" source_obj="//@blocks.0/@node_objs.12" sink_obj="//@blocks.0/@node_objs.20"/>
+  <edges id="116" source_obj="//@blocks.0/@node_objs.13" sink_obj="//@blocks.0/@node_objs.20"/>
+  <edges id="117" source_obj="//@blocks.0/@node_objs.14" sink_obj="//@blocks.0/@node_objs.20"/>
+  <edges id="118" source_obj="//@blocks.0/@node_objs.15" sink_obj="//@blocks.0/@node_objs.20"/>
+  <edges id="119" source_obj="//@blocks.0/@node_objs.16" sink_obj="//@blocks.0/@node_objs.20"/>
+  <edges id="120" source_obj="//@blocks.0/@node_objs.17" sink_obj="//@blocks.0/@node_objs.20"/>
+  <edges id="121" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.0/@node_objs.20"/>
+  <edges id="122" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.0/@node_objs.21"/>
+  <edges id="123" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.22"/>
+  <edges id="126" source_obj="//@blocks.0/@node_objs.22" sink_obj="//@blocks.0/@node_objs.23"/>
+  <edges id="127" source_obj="//@blocks.0/@node_objs.21" sink_obj="//@blocks.0/@node_objs.24"/>
+  <edges id="128" source_obj="//@blocks.0/@node_objs.23" sink_obj="//@blocks.0/@node_objs.25"/>
+  <edges id="129" source_obj="//@blocks.0/@node_objs.24" sink_obj="//@blocks.0/@node_objs.26"/>
+  <edges id="130" source_obj="//@blocks.0/@node_objs.25" sink_obj="//@blocks.0/@node_objs.26"/>
+  <edges id="133" source_obj="//@blocks.0/@node_objs.26" sink_obj="//@blocks.0/@node_objs.27"/>
+  <edges id="138" source_obj="//@blocks.0/@node_objs.27" sink_obj="//@blocks.0/@node_objs.28"/>
+  <edges id="139" source_obj="//@blocks.0/@node_objs.28" sink_obj="//@blocks.0/@node_objs.29"/>
+  <edges id="142" source_obj="//@blocks.0/@node_objs.29" sink_obj="//@blocks.0/@node_objs.30"/>
+  <edges id="143" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="144" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="145" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="146" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="147" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="148" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="149" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="150" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="185" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.19" sink_obj="//@blocks.0/@node_objs.20"/>
+  <edges id="186" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.18" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="187" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.20" sink_obj="//@blocks.0/@node_objs.21"/>
+  <edges id="188" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.18" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="189" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.19" sink_obj="//@blocks.0/@node_objs.20"/>
+  <edges source_obj="//@blocks.0/@node_objs.30" sink_obj="//@ports.1"/>
+  <blocks id="45" name="mm" type="BlockType">
+    <node_objs xsi:type="cdfg:CdfgNode" id="10" name="gamma_read" coreId="640" bitwidth="32" opcode="read" nodeLabel="4.0" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
+      <dataInputObjs>gamma</dataInputObjs>
+      <dataOutputObjs>fmul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="11" name="sum_s8_24fixp_06_loc" coreId="632799296" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="16" name="D_s9_23fixp_0" rtlName="D_s9_23fixp_0_U" coreName="RAM" implIndex="auto" control="no" opType="ram_s2p" coreId="82" bitwidth="31" opcode="alloca" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="17" name="D_s9_23fixp_1" rtlName="D_s9_23fixp_1_U" coreName="RAM" implIndex="auto" control="no" opType="ram_s2p" coreId="82" bitwidth="31" opcode="alloca" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="18" name="D_s9_23fixp_2" rtlName="D_s9_23fixp_2_U" coreName="RAM" implIndex="auto" control="no" opType="ram_s2p" coreId="82" bitwidth="31" opcode="alloca" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="19" name="D_s9_23fixp_3" rtlName="D_s9_23fixp_3_U" coreName="RAM" implIndex="auto" control="no" opType="ram_s2p" coreId="82" bitwidth="31" opcode="alloca" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="20" name="D_s9_23fixp_4" rtlName="D_s9_23fixp_4_U" coreName="RAM" implIndex="auto" control="no" opType="ram_s2p" coreId="82" bitwidth="31" opcode="alloca" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="21" name="D_s9_23fixp_5" rtlName="D_s9_23fixp_5_U" coreName="RAM" implIndex="auto" control="no" opType="ram_s2p" coreId="82" bitwidth="31" opcode="alloca" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="22" name="D_s9_23fixp_6" rtlName="D_s9_23fixp_6_U" coreName="RAM" implIndex="auto" control="no" opType="ram_s2p" coreId="82" bitwidth="31" opcode="alloca" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="23" name="D_s9_23fixp_7" rtlName="D_s9_23fixp_7_U" coreName="RAM" implIndex="auto" control="no" opType="ram_s2p" coreId="82" bitwidth="31" opcode="alloca" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="24" name="D_s9_23fixp_8" rtlName="D_s9_23fixp_8_U" coreName="RAM" implIndex="auto" control="no" opType="ram_s2p" coreId="82" bitwidth="31" opcode="alloca" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="25" name="D_s9_23fixp_9" rtlName="D_s9_23fixp_9_U" coreName="RAM" implIndex="auto" control="no" opType="ram_s2p" coreId="82" bitwidth="31" opcode="alloca" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="26" name="D_s9_23fixp_10" rtlName="D_s9_23fixp_10_U" coreName="RAM" implIndex="auto" control="no" opType="ram_s2p" coreId="82" bitwidth="31" opcode="alloca" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="27" name="D_s9_23fixp_11" rtlName="D_s9_23fixp_11_U" coreName="RAM" implIndex="auto" control="no" opType="ram_s2p" coreId="82" bitwidth="31" opcode="alloca" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="28" name="D_s9_23fixp_12" rtlName="D_s9_23fixp_12_U" coreName="RAM" implIndex="auto" control="no" opType="ram_s2p" coreId="82" bitwidth="31" opcode="alloca" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="29" name="D_s9_23fixp_13" rtlName="D_s9_23fixp_13_U" coreName="RAM" implIndex="auto" control="no" opType="ram_s2p" coreId="82" bitwidth="31" opcode="alloca" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="30" name="D_s9_23fixp_14" rtlName="D_s9_23fixp_14_U" coreName="RAM" implIndex="auto" control="no" opType="ram_s2p" coreId="82" bitwidth="31" opcode="alloca" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="31" name="D_s9_23fixp_15" rtlName="D_s9_23fixp_15_U" coreName="RAM" implIndex="auto" control="no" opType="ram_s2p" coreId="82" bitwidth="31" opcode="alloca" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="32" name="_ln0" rtlName="grp_mm_Pipeline_VITIS_LOOP_62_5_VITIS_LOOP_63_6_fu_130" coreId="0" opcode="call" nodeLatency="1" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>mm_Pipeline_VITIS_LOOP_62_5_VITIS_LOOP_63_6</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="33" name="_ln0" rtlName="grp_mm_Pipeline_VITIS_LOOP_76_7_fu_166" coreId="626752592" opcode="call" nodeLabel="2.0" nodeLatency="1" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>mm_Pipeline_VITIS_LOOP_76_7</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="34" name="_ln0" rtlName="grp_mm_Pipeline_VITIS_LOOP_92_10_fu_202" coreId="3149" opcode="call" nodeLabel="4.0" nodeLatency="1" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>mm_Pipeline_VITIS_LOOP_92_10</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="sum_s8_24fixp_06_loc_load" coreId="626757184" bitwidth="32" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataOutputObjs>sext</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="36" name="tmp_1" rtlName="fmul_32ns_32ns_32_2_max_dsp_1_U273" coreName="FMul_maxdsp" implIndex="maxdsp" control="no" opType="fmul" coreId="30" bitwidth="32" opcode="fmul" nodeLabel="4.0" nodeLatency="1" m_display="0" m_delay="8.46" m_topoIndex="22" m_clusterGroupNumber="-1">
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>fptosi</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="37" name="empty" rtlName="fptosi_32ns_32_2_no_dsp_1_U274" coreName="Float2Int" implIndex="auto" control="no" opType="fptosi" coreId="63" bitwidth="32" opcode="fptosi" nodeLabel="5.0" nodeLatency="1" m_display="0" m_delay="6.08" m_topoIndex="23" m_clusterGroupNumber="-1">
+      <dataInputObjs>fmul</dataInputObjs>
+      <dataOutputObjs>sext</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="38" name="sum_s8_24fixp_06_cast" coreId="0" bitwidth="62" opcode="sext" nodeLabel="6.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>mul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="39" name="p_cast576" coreId="626759776" bitwidth="62" opcode="sext" nodeLabel="6.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
+      <dataInputObjs>fptosi</dataInputObjs>
+      <dataOutputObjs>mul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="40" name="empty_590" rtlName="mul_32s_32s_62_1_1_U276" coreName="Multiplier" implIndex="auto" control="no" opType="mul" coreId="3" bitwidth="62" opcode="mul" nodeLabel="6.0" m_display="0" m_delay="5.48" m_topoIndex="27" m_clusterGroupNumber="-1">
+      <dataInputObjs>sext</dataInputObjs>
+      <dataInputObjs>sext</dataInputObjs>
+      <dataOutputObjs>partselect</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="41" name="mul130_s15_17fixp" rtlName="mul130_s15_17fixp_reg_280" coreId="3567991494" bitwidth="32" opcode="partselect" nodeLabel="6.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="-1">
+      <dataInputObjs>mul</dataInputObjs>
+      <dataOutputObjs>sitofp</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="42" name="tmp_2" rtlName="sitofp_32ns_32_2_no_dsp_1_U275" coreName="Int2Float" implIndex="auto" control="no" opType="sitofp" coreId="62" bitwidth="32" opcode="sitofp" nodeLabel="7.0" nodeLatency="1" m_display="0" m_delay="9.54" m_topoIndex="29" m_clusterGroupNumber="-1">
+      <dataInputObjs>partselect</dataInputObjs>
+      <dataOutputObjs>fmul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="43" name="tmp_3" rtlName="fmul_32ns_32ns_32_2_max_dsp_1_U273" coreName="FMul_maxdsp" implIndex="maxdsp" control="no" opType="fmul" coreId="30" bitwidth="32" opcode="fmul" nodeLabel="9.0" nodeLatency="1" m_display="0" m_delay="8.46" m_topoIndex="30" m_clusterGroupNumber="-1">
+      <dataInputObjs>sitofp</dataInputObjs>
+      <dataOutputObjs>ret</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="44" name="_ln0" coreId="626619800" opcode="ret" nodeLabel="10.0" m_display="0" m_topoIndex="31" m_clusterGroupNumber="-1">
+      <dataInputObjs>fmul</dataInputObjs>
+      <dataOutputObjs>ap_return</dataOutputObjs>
+    </node_objs>
+  </blocks>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <ScheduleInfo time="5"/>
+  <ScheduleInfo time="6"/>
+  <ScheduleInfo time="7"/>
+  <ScheduleInfo time="8"/>
+  <ScheduleInfo time="9"/>
+  <ScheduleInfo time="10"/>
+  <regnodes realName="gamma_read_reg_270">
+    <nodeIds>10</nodeIds>
+  </regnodes>
+  <regnodes realName="mul130_s15_17fixp_reg_280">
+    <nodeIds>41</nodeIds>
+  </regnodes>
+  <regnodes realName="sum_s8_24fixp_06_loc_reg_264">
+    <nodeIds>11</nodeIds>
+  </regnodes>
+  <regnodes realName="tmp_2_reg_285">
+    <nodeIds>42</nodeIds>
+  </regnodes>
+  <regnodes realName="tmp_1_reg_275">
+    <nodeIds>36</nodeIds>
+  </regnodes>
+  <expressionNodes realName="p_cast576_fu_244">
+    <nodeIds>39</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="D_s9_23fixp_10_alloca_fu_100">
+    <nodeIds>26</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sum_s8_24fixp_06_loc_fu_56">
+    <nodeIds>11</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="D_s9_23fixp_11_alloca_fu_104">
+    <nodeIds>27</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="D_s9_23fixp_0_alloca_fu_60">
+    <nodeIds>16</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="D_s9_23fixp_14_alloca_fu_116">
+    <nodeIds>30</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="D_s9_23fixp_9_alloca_fu_96">
+    <nodeIds>25</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="D_s9_23fixp_1_alloca_fu_64">
+    <nodeIds>17</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="D_s9_23fixp_2_alloca_fu_68">
+    <nodeIds>18</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="D_s9_23fixp_13_alloca_fu_112">
+    <nodeIds>29</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="D_s9_23fixp_3_alloca_fu_72">
+    <nodeIds>19</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="D_s9_23fixp_6_alloca_fu_84">
+    <nodeIds>22</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="D_s9_23fixp_8_alloca_fu_92">
+    <nodeIds>24</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_590_fu_248">
+    <nodeIds>40</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="D_s9_23fixp_5_alloca_fu_80">
+    <nodeIds>21</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="D_s9_23fixp_4_alloca_fu_76">
+    <nodeIds>20</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="D_s9_23fixp_12_alloca_fu_108">
+    <nodeIds>28</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sum_s8_24fixp_06_cast_fu_240">
+    <nodeIds>38</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="D_s9_23fixp_7_alloca_fu_88">
+    <nodeIds>23</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="D_s9_23fixp_15_alloca_fu_120">
+    <nodeIds>31</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="mul130_s15_17fixp_fu_254">
+    <nodeIds>41</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_mm_Pipeline_VITIS_LOOP_76_7_fu_166">
+    <nodeIds>33</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_mm_Pipeline_VITIS_LOOP_92_10_fu_202">
+    <nodeIds>34</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_fu_223">
+    <nodeIds>36</nodeIds>
+    <nodeIds>43</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_fu_234">
+    <nodeIds>42</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_mm_Pipeline_VITIS_LOOP_62_5_VITIS_LOOP_63_6_fu_130">
+    <nodeIds>32</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_fu_230">
+    <nodeIds>37</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="sum_s8_24fixp_06_loc_load_load_fu_237">
+    <nodeIds>35</nodeIds>
+  </ioNodes>
+  <ioNodes realName="gamma_read_read_fu_124">
+    <nodeIds>10</nodeIds>
+  </ioNodes>
+  <memoryPorts dataString="A_u3_29fixp_0" portID="100">
+    <nodeIds>33</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="A_u3_29fixp_1" portID="100">
+    <nodeIds>33</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="A_u3_29fixp_2" portID="100">
+    <nodeIds>33</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="A_u3_29fixp_3" portID="100">
+    <nodeIds>33</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="A_u3_29fixp_4" portID="100">
+    <nodeIds>33</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="A_u3_29fixp_5" portID="100">
+    <nodeIds>33</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="A_u3_29fixp_6" portID="100">
+    <nodeIds>33</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="A_u3_29fixp_7" portID="100">
+    <nodeIds>33</nodeIds>
+  </memoryPorts>
+  <ioPorts name="gamma">
+    <contents name="read">
+      <nodeIds>10</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="ap_return">
+    <contents name="ret">
+      <nodeIds>44</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="32" stage="2" latency="2"/>
+    </states>
+    <states id="2">
+      <operations id="32" stage="1" latency="2"/>
+    </states>
+    <states id="3">
+      <operations id="33" stage="2" latency="2"/>
+    </states>
+    <states id="4">
+      <operations id="33" stage="1" latency="2"/>
+    </states>
+    <states id="5">
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="34" stage="2" latency="2"/>
+      <operations id="36" stage="2" latency="2"/>
+    </states>
+    <states id="6">
+      <operations id="34" stage="1" latency="2"/>
+      <operations id="36" stage="1" latency="2"/>
+      <operations id="37" stage="2" latency="2"/>
+    </states>
+    <states id="7">
+      <operations id="35" stage="1" latency="1"/>
+      <operations id="37" stage="1" latency="2"/>
+      <operations id="38" stage="1" latency="1"/>
+      <operations id="39" stage="1" latency="1"/>
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+    </states>
+    <states id="8">
+      <operations id="42" stage="2" latency="2"/>
+    </states>
+    <states id="9">
+      <operations id="42" stage="1" latency="2"/>
+    </states>
+    <states id="10">
+      <operations id="43" stage="2" latency="2"/>
+    </states>
+    <states id="11">
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="43" stage="1" latency="2"/>
+      <operations id="44" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="5" outState="6">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="6" outState="7">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="7" outState="8">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="8" outState="9">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="9" outState="10">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="10" outState="11">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="mm" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="314" mMaxLatency="314">
+      <basicBlocks>45</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

@@ -1,0 +1,552 @@
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: atax_no_taffo.c, Line: 53, Column: 24 }
+Function:        atax
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_53_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: atax_no_taffo.c, Line: 58, Column: 24 }
+Function:        atax
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_58_3
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: atax_no_taffo.c, Line: 24, Column: 0 }
+Function:        atax
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_53_2
+  - String:          ''' ('
+  - LoopLoc:         'atax_no_taffo.c:53:24'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          atax
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: atax_no_taffo.c, Line: 24, Column: 0 }
+Function:        atax
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_53_2
+  - String:          ''' ('
+  - LoopLoc:         'atax_no_taffo.c:53:24'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          atax
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: atax_no_taffo.c, Line: 24, Column: 0 }
+Function:        atax
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_58_3
+  - String:          ''' ('
+  - LoopLoc:         'atax_no_taffo.c:58:24'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          atax
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: atax_no_taffo.c, Line: 64, Column: 1 }
+Function:        atax
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          for.end27.store.16
+  - String:          ', '
+  - String:          for.end27.store.17
+  - String:          ', '
+  - String:          for.end27.store.18
+  - String:          ', '
+  - String:          for.end27.store.19
+  - String:          ', '
+  - String:          for.end27.store.20
+  - String:          ', '
+  - String:          for.end27.store.21
+  - String:          ', '
+  - String:          for.end27.store.22
+  - String:          ', '
+  - String:          for.end27.store.23
+  - String:          ', '
+  - String:          for.end27.store.24
+  - String:          ', '
+  - String:          for.end27.store.25
+  - String:          ', '
+  - String:          for.end27.store.26
+  - String:          ', '
+  - String:          for.end27.store.27
+  - String:          ', '
+  - String:          for.end27.store.28
+  - String:          ', '
+  - String:          for.end27.store.29
+  - String:          ', '
+  - String:          for.end27.store.30
+  - String:          ', '
+  - String:          for.end27.store.31
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        yseq
+  - String:          ' '
+  - ArrayName:       'y'
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        atax
+    DebugLoc:        { File: atax_no_taffo.c, Line: 24, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: atax_no_taffo.c, Line: 48, Column: 22 }
+Function:        atax
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '256'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          for.inc22.load.58
+  - String:          ', '
+  - String:          for.inc22.load.67
+  - String:          ', '
+  - String:          for.inc22.load.76
+  - String:          ', '
+  - String:          for.inc22.load.85
+  - String:          ', '
+  - String:          for.inc22.load.94
+  - String:          ', '
+  - String:          for.inc22.load.103
+  - String:          ', '
+  - String:          for.inc22.load.112
+  - String:          ', '
+  - String:          for.inc22.load.121
+  - String:          ', '
+  - String:          for.inc22.load.130
+  - String:          ', '
+  - String:          for.inc22.load.139
+  - String:          ', '
+  - String:          for.inc22.load.148
+  - String:          ', '
+  - String:          for.inc22.load.157
+  - String:          ', '
+  - String:          for.inc22.load.166
+  - String:          ', '
+  - String:          for.inc22.load.175
+  - String:          ', '
+  - String:          for.inc22.load.184
+  - String:          ', '
+  - String:          for.inc22.load.193
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        Aseq
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_48_1
+  - String:          ' '
+  - LoopLoc:         'atax_no_taffo.c:48:22'
+  - String:          ' '
+  - Function:        atax
+    DebugLoc:        { File: atax_no_taffo.c, Line: 24, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+Function:        atax
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          entry.load.35
+  - String:          ', '
+  - String:          entry.load.37
+  - String:          ', '
+  - String:          entry.load.39
+  - String:          ', '
+  - String:          entry.load.41
+  - String:          ', '
+  - String:          entry.load.43
+  - String:          ', '
+  - String:          entry.load.45
+  - String:          ', '
+  - String:          entry.load.47
+  - String:          ', '
+  - String:          entry.load.49
+  - String:          ', '
+  - String:          entry.load.51
+  - String:          ', '
+  - String:          entry.load.53
+  - String:          ', '
+  - String:          entry.load.55
+  - String:          ', '
+  - String:          entry.load.57
+  - String:          ', '
+  - String:          entry.load.59
+  - String:          ', '
+  - String:          entry.load.61
+  - String:          ', '
+  - String:          entry.load.63
+  - String:          ', '
+  - String:          entry.load.65
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        xseq
+  - String:          ' '
+  - ArrayName:       x
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        atax
+    DebugLoc:        { File: atax_no_taffo.c, Line: 24, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: atax_no_taffo.c, Line: 60, Column: 7 }
+Function:        atax
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          entry.load.99
+  - String:          ', '
+  - String:          entry.load.100
+  - String:          ', '
+  - String:          entry.load.101
+  - String:          ', '
+  - String:          entry.load.102
+  - String:          ', '
+  - String:          entry.load.103
+  - String:          ', '
+  - String:          entry.load.104
+  - String:          ', '
+  - String:          entry.load.105
+  - String:          ', '
+  - String:          entry.load.106
+  - String:          ', '
+  - String:          entry.load.107
+  - String:          ', '
+  - String:          entry.load.108
+  - String:          ', '
+  - String:          entry.load.109
+  - String:          ', '
+  - String:          entry.load.110
+  - String:          ', '
+  - String:          entry.load.111
+  - String:          ', '
+  - String:          entry.load.112
+  - String:          ', '
+  - String:          entry.load.113
+  - String:          ', '
+  - String:          entry.load.114
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        yseq22
+  - String:          ' '
+  - ArrayName:       'y'
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        atax
+    DebugLoc:        { File: atax_no_taffo.c, Line: 24, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: atax_no_taffo.c, Line: 64, Column: 1 }
+Function:        atax
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        yseq
+  - String:          ' '
+  - ArrayName:       'y'
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        atax
+    DebugLoc:        { File: atax_no_taffo.c, Line: 24, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: atax_no_taffo.c, Line: 48, Column: 22 }
+Function:        atax
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        Aseq
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_48_1
+  - String:          ' '
+  - LoopLoc:         'atax_no_taffo.c:48:22'
+  - String:          ' '
+  - Function:        atax
+    DebugLoc:        { File: atax_no_taffo.c, Line: 24, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+Function:        atax
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        xseq
+  - String:          ' '
+  - ArrayName:       x
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        atax
+    DebugLoc:        { File: atax_no_taffo.c, Line: 24, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: atax_no_taffo.c, Line: 60, Column: 7 }
+Function:        atax
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        yseq22
+  - String:          ' '
+  - ArrayName:       'y'
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        atax
+    DebugLoc:        { File: atax_no_taffo.c, Line: 24, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+Function:        atax
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        atax
+    DebugLoc:        { File: atax_no_taffo.c, Line: 24, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+Function:        atax
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: atax_no_taffo.c, Line: 60, Column: 7 }
+Function:        atax
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq1
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        atax
+    DebugLoc:        { File: atax_no_taffo.c, Line: 24, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: atax_no_taffo.c, Line: 60, Column: 7 }
+Function:        atax
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: atax_no_taffo.c, Line: 48, Column: 22 }
+Function:        atax
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '256'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq2
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_48_1
+  - String:          ' '
+  - LoopLoc:         'atax_no_taffo.c:48:22'
+  - String:          ' '
+  - Function:        atax
+    DebugLoc:        { File: atax_no_taffo.c, Line: 24, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: atax_no_taffo.c, Line: 48, Column: 22 }
+Function:        atax
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '256'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_48_1
+  - String:          '''('
+  - LoopLoc:         'atax_no_taffo.c:48:22'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: atax_no_taffo.c, Line: 64, Column: 1 }
+Function:        atax
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq3
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        atax
+    DebugLoc:        { File: atax_no_taffo.c, Line: 24, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: atax_no_taffo.c, Line: 64, Column: 1 }
+Function:        atax
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...

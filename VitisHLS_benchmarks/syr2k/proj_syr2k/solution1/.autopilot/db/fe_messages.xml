@@ -1,0 +1,33 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="syr2k_taffo.c:67:14" msg_body="unused parameter 'argc'">
+        <args ClangWarningOption="unused-parameter"/>
+    </msg>
+    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="syr2k_taffo.c:67:27" msg_body="unused parameter 'argv'">
+        <args ClangWarningOption="unused-parameter"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/bruno/Desktop/benchmarks/syr2k/run_hls_1.tcl:55:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="syr2k" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=syr2k" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="syr2k_taffo.c:23:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="syr2k" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port = A depth = 16*16" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="syr2k_taffo.c:24:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="syr2k" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port = B depth = 16*16" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="syr2k_taffo.c:25:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="syr2k" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port = C depth = 16*16" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="syr2k_taffo.c:47:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="syr2k" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=4" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="syr2k_taffo.c:49:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="syr2k" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="syr2k_taffo.c:53:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="syr2k" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="syr2k_taffo.c:56:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="syr2k" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

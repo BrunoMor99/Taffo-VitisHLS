@@ -1,0 +1,13 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../../../covariance_no_taffo.c in debug mode
+INFO: [HLS 200-10] Running '/home/bruno/Documents/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'bruno' on host 'bruno-ubuntu' (Linux_x86_64 version 5.15.0-97-generic) on Sat Mar 09 22:44:46 CET 2024
+INFO: [HLS 200-10] On os Ubuntu 22.04.3 LTS
+INFO: [HLS 200-10] In directory '/home/bruno/Desktop/benchmarks/covariance/proj_covariance_no_taffo/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_bruno/187991710020686594579
+INFO: [APCC 202-1] APCC is done.
+INFO: [HLS 200-112] Total CPU user time: 2.79 seconds. Total CPU system time: 0.25 seconds. Total elapsed time: 2.75 seconds; peak allocated memory: 99.055 MB.
+   Generating csim.exe
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

@@ -1,0 +1,31 @@
+---
+MainSourceFile:  /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_no_taffo/solution1/.autopilot/db/vs_no_taffo.pp.0.c
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_48_1:  '
+    FileOffset:      48
+    FilePath:        vs_no_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_no_taffo/solution1/.autopilot/db/vs_no_taffo.pp.0.c
+        Offset:          24798
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_48_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_66_1:  '
+    FileOffset:      66
+    FilePath:        vs_no_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_no_taffo/solution1/.autopilot/db/vs_no_taffo.pp.0.c
+        Offset:          25011
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_66_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_71_2:  '
+    FileOffset:      71
+    FilePath:        vs_no_taffo.c
+    Replacements:    
+      - FilePath:        /home/bruno/Desktop/benchmarks/vector_scalar/proj_vs_no_taffo/solution1/.autopilot/db/vs_no_taffo.pp.0.c
+        Offset:          25089
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_71_2: '
+...
